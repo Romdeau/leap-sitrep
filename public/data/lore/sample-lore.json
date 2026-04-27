@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "kind": "lore",
+    "version": "packet-0-sample",
+    "generatedAt": "2026-04-27T00:00:00.000Z",
+    "sourceDocumentIds": [
+      "blkout-app-plan",
+      "blkout-implementation-workflow"
+    ],
+    "confidence": "sample"
+  },
+  "data": {
+    "factions": [
+      {
+        "id": "authority",
+        "name": "Authority",
+        "summary": "Seed lore faction placeholder carried forward from the preferred first vertical slice.",
+        "regions": [],
+        "ideology": "Placeholder sample record for Packet 0 contracts.",
+        "relatedForceIds": ["harlow-1st-reaction-force"],
+        "citations": [
+          {
+            "documentId": "blkout-implementation-workflow",
+            "label": "Preferred first vertical slice",
+            "lineStart": 138,
+            "lineEnd": 143
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "authority-overview-anchor",
+        "year": "Packet 0",
+        "title": "Authority overview route reserved",
+        "summary": "Route and contract placeholder proving the lore timeline/faction slice can attach to stable paths later.",
+        "involvedFactionIds": ["authority"],
+        "citations": [
+          {
+            "documentId": "blkout-app-plan",
+            "label": "Recommended first vertical slice",
+            "lineStart": 614,
+            "lineEnd": 618
+          }
+        ]
+      }
+    ],
+    "locations": [],
+    "species": [],
+    "glossary": []
+  }
+}

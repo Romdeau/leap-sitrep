@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "kind": "scenarios",
+    "version": "packet-0-sample",
+    "generatedAt": "2026-04-27T00:00:00.000Z",
+    "sourceDocumentIds": [
+      "blkout-implementation-workflow"
+    ],
+    "confidence": "sample"
+  },
+  "data": {
+    "scenarios": [
+      {
+        "id": "dockyard-assault",
+        "title": "Dockyard Assault",
+        "mode": "core",
+        "setup": [],
+        "scoringRules": [],
+        "specialRules": [],
+        "tableSize": "Unspecified in Packet 0 sample fixture.",
+        "hardpoints": [],
+        "pointsOfInterest": [],
+        "citations": [
+          {
+            "documentId": "blkout-implementation-workflow",
+            "label": "Seed scenario slice",
+            "lineStart": 142,
+            "lineEnd": 143
+          }
+        ]
+      }
+    ]
+  }
+}

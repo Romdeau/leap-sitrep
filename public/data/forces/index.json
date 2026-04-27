@@ -1,0 +1,588 @@
+{
+  "meta": {
+    "kind": "forces",
+    "version": "packet-3",
+    "generatedAt": "2026-04-27T07:37:24.333Z",
+    "sourceDocumentIds": [
+      "blkout-unit-cards-ocr",
+      "blkout-unit-cards-screenshots"
+    ],
+    "confidence": "verified"
+  },
+  "data": {
+    "forces": [
+      {
+        "id": "harlow-1st-reaction-force",
+        "cardId": "HFR-6770",
+        "name": "Harlow 1st Reaction Force",
+        "parentLoreFactionId": "authority",
+        "battleDrills": [
+          {
+            "id": "hfr-6770-battle-drill-assaulters",
+            "label": "Assaulters",
+            "text": "Models in this Unit cannot be Targeted by Overwatch when Repositioning.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Force card battle drills",
+                "sectionId": "screenshot-2",
+                "excerpt": "Verified against Packet 3 screenshot 2"
+              },
+              {
+                "documentId": "blkout-unit-cards-ocr",
+                "label": "OCR battle drill cross-check",
+                "lineStart": 29,
+                "lineEnd": 29,
+                "excerpt": "Assaulters: Models in this Unit cannot be Targeted by"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6770-battle-drill-chaff",
+            "label": "Chaff",
+            "text": "Place a Smoke Token (Chaff) within 6” of a Model in this Unit before Activating. Chaff Smoke Tokens Dissipate on a 10+.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Force card battle drills",
+                "sectionId": "screenshot-2",
+                "excerpt": "Verified against Packet 3 screenshot 2"
+              },
+              {
+                "documentId": "blkout-unit-cards-ocr",
+                "label": "OCR battle drill cross-check",
+                "lineStart": 31,
+                "lineEnd": 31,
+                "excerpt": "Chaff: Place a Smoke Token (Chaff) within 6” of a Model in this Unit"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6770-battle-drill-stims",
+            "label": "Stims",
+            "text": "Models in this Unit gain +2 Movement for their Activation.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Force card battle drills",
+                "sectionId": "screenshot-2",
+                "excerpt": "Verified against Packet 3 screenshot 2"
+              },
+              {
+                "documentId": "blkout-unit-cards-ocr",
+                "label": "OCR battle drill cross-check",
+                "lineStart": 33,
+                "lineEnd": 33,
+                "excerpt": "Stims: Models in this Unit gain +2 Movement for their Activation."
+              }
+            ]
+          }
+        ],
+        "forceRules": [
+          {
+            "id": "hfr-6770-force-rule",
+            "label": "Harlow First Reaction Force",
+            "text": "Harlow First Reaction Force Units gain +2 Movement when Sprinting.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Force card force rule",
+                "sectionId": "screenshot-2",
+                "excerpt": "Verified against Packet 3 screenshot 2"
+              },
+              {
+                "documentId": "blkout-unit-cards-ocr",
+                "label": "OCR force rule cross-check",
+                "lineStart": 35,
+                "lineEnd": 35,
+                "excerpt": "Harlow First Reaction Force Units gain +2 Movement"
+              }
+            ]
+          }
+        ],
+        "armory": [
+          {
+            "id": "hfr-6770-armory-boost-jump",
+            "name": "BOOST JUMP",
+            "text": "Model gains Jump (4)",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Force card armory",
+                "sectionId": "screenshot-2",
+                "excerpt": "Verified against Packet 3 screenshot 2"
+              },
+              {
+                "documentId": "blkout-unit-cards-ocr",
+                "label": "OCR armory cross-check",
+                "lineStart": 38,
+                "lineEnd": 38,
+                "excerpt": "BOOST JUMP"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6770-armory-frag-launcher",
+            "name": "FRAG LAUNCHER",
+            "text": "Sustained (2), Medium",
+            "profile": {
+              "id": "hfr-6770-armory-frag-launcher-profile",
+              "name": "Frag Launcher",
+              "range": "24”/1",
+              "damage": null,
+              "keywords": [
+                "Sustained (2)",
+                "Medium"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "Force card armory",
+                  "sectionId": "screenshot-2",
+                  "excerpt": "Verified against Packet 3 screenshot 2"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Force card armory",
+                "sectionId": "screenshot-2",
+                "excerpt": "Verified against Packet 3 screenshot 2"
+              },
+              {
+                "documentId": "blkout-unit-cards-ocr",
+                "label": "OCR armory cross-check",
+                "lineStart": 40,
+                "lineEnd": 40,
+                "excerpt": "FRAG LAUNCHER | 24”/1"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6770-armory-head",
+            "name": "HEAD",
+            "text": "Blast (1)",
+            "profile": {
+              "id": "hfr-6770-armory-head-profile",
+              "name": "HEAD",
+              "range": "16”/4",
+              "damage": null,
+              "keywords": [
+                "Blast (1)"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "Force card armory",
+                  "sectionId": "screenshot-2",
+                  "excerpt": "Verified against Packet 3 screenshot 2"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Force card armory",
+                "sectionId": "screenshot-2",
+                "excerpt": "Verified against Packet 3 screenshot 2"
+              },
+              {
+                "documentId": "blkout-unit-cards-ocr",
+                "label": "OCR armory cross-check",
+                "lineStart": 42,
+                "lineEnd": 42,
+                "excerpt": "|     | HEAD | 16”/4  |     |     |     |     | BLKOUT SECOND EDITION |     |     |"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6770-armory-micro-launcher",
+            "name": "MICRO LAUNCHER",
+            "text": "Blast (1), Heavy",
+            "profile": {
+              "id": "hfr-6770-armory-micro-launcher-profile",
+              "name": "Micro Launcher",
+              "range": "4-16”/2",
+              "damage": null,
+              "keywords": [
+                "Blast (1)",
+                "Heavy"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "Force card armory",
+                  "sectionId": "screenshot-2",
+                  "excerpt": "Verified against Packet 3 screenshot 2"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Force card armory",
+                "sectionId": "screenshot-2",
+                "excerpt": "Verified against Packet 3 screenshot 2"
+              },
+              {
+                "documentId": "blkout-unit-cards-ocr",
+                "label": "OCR armory cross-check",
+                "lineStart": 45,
+                "lineEnd": 45,
+                "excerpt": "MICRO LAUNCHER | 4-16”/2"
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Force card front",
+            "sectionId": "screenshot-1",
+            "excerpt": "Verified against Packet 3 screenshot 1"
+          },
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Force card back",
+            "sectionId": "screenshot-2",
+            "excerpt": "Verified against Packet 3 screenshot 2"
+          }
+        ],
+        "confidence": "verified"
+      }
+    ],
+    "units": [
+      {
+        "id": "harlow-control-team",
+        "cardId": "HFR-6771",
+        "forceId": "harlow-1st-reaction-force",
+        "name": "Harlow Control Team",
+        "modelCount": 1,
+        "stats": {
+          "move": "4",
+          "shoot": "6",
+          "armor": "1/6",
+          "hack": null,
+          "wounds": null
+        },
+        "specialists": [
+          {
+            "id": "hfr-6771-specialist-1",
+            "slot": 1,
+            "name": "Data Spike",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6771 back",
+                "sectionId": "screenshot-4",
+                "excerpt": "Verified against Packet 3 screenshot 4"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6771-specialist-2",
+            "slot": 2,
+            "name": "Grenade Launcher",
+            "description": "Grenade Launcher | 24”/2 Blast (1)",
+            "weaponId": "hfr-6771-weapon-grenade-launcher",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6771 back",
+                "sectionId": "screenshot-4",
+                "excerpt": "Verified against Packet 3 screenshot 4"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "hfr-6771-weapon-fal-32c",
+            "name": "FAL-32C",
+            "range": "24”/1",
+            "damage": null,
+            "keywords": [
+              "CQB"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6771 front",
+                "sectionId": "screenshot-3",
+                "excerpt": "Verified against Packet 3 screenshot 3"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6771-weapon-grenade-launcher",
+            "name": "Grenade Launcher",
+            "range": "24”/2",
+            "damage": null,
+            "keywords": [
+              "Blast (1)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6771 back",
+                "sectionId": "screenshot-4",
+                "excerpt": "Verified against Packet 3 screenshot 4"
+              }
+            ],
+            "carrier": "Grenade Launcher"
+          }
+        ],
+        "abilities": [
+          {
+            "id": "hfr-6771-control-ability",
+            "label": "Activation Control",
+            "text": "One Unit may be Activated after this Unit without spending a Control Point.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6771 back",
+                "sectionId": "screenshot-4",
+                "excerpt": "Verified against Packet 3 screenshot 4"
+              },
+              {
+                "documentId": "blkout-unit-cards-ocr",
+                "label": "OCR unit text cross-check",
+                "lineStart": 54,
+                "lineEnd": 54,
+                "excerpt": "| Chaff Discharge     |     |         | One Unit may be Activated after this  |     |         |                     |     |         |"
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6771 front",
+            "sectionId": "screenshot-3",
+            "excerpt": "Verified against Packet 3 screenshot 3"
+          },
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6771 back",
+            "sectionId": "screenshot-4",
+            "excerpt": "Verified against Packet 3 screenshot 4"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "harlow-assault-team",
+        "cardId": "HFR-6772",
+        "forceId": "harlow-1st-reaction-force",
+        "name": "Harlow Assault Team",
+        "modelCount": 2,
+        "stats": {
+          "move": "4",
+          "shoot": "6",
+          "armor": "1/6",
+          "hack": null,
+          "wounds": null
+        },
+        "specialists": [
+          {
+            "id": "hfr-6772-specialist-1",
+            "slot": 1,
+            "name": "Machine Gunner",
+            "description": "P34 | 24”/1 Cyclic, Heavy",
+            "weaponId": "hfr-6772-weapon-p34",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6772 back",
+                "sectionId": "screenshot-6",
+                "excerpt": "Verified against Packet 3 screenshot 6"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6772-specialist-2",
+            "slot": 2,
+            "name": "Team Leader",
+            "description": "When this Model gains a Ready Token it may give it to a Model in this Unit that has already made an Action.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6772 back",
+                "sectionId": "screenshot-6",
+                "excerpt": "Verified against Packet 3 screenshot 6"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "hfr-6772-weapon-fal-32c",
+            "name": "FAL-32C",
+            "range": "24”/1",
+            "damage": null,
+            "keywords": [
+              "CQB"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6772 front",
+                "sectionId": "screenshot-5",
+                "excerpt": "Verified against Packet 3 screenshot 5"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6772-weapon-p34",
+            "name": "P34",
+            "range": "24”/1",
+            "damage": null,
+            "keywords": [
+              "Cyclic",
+              "Heavy"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6772 back",
+                "sectionId": "screenshot-6",
+                "excerpt": "Verified against Packet 3 screenshot 6"
+              }
+            ],
+            "carrier": "Machine Gunner"
+          }
+        ],
+        "abilities": [
+          {
+            "id": "hfr-6772-team-leader",
+            "label": "Team Leader",
+            "text": "When this Model gains a Ready Token it may give it to a Model in this Unit that has already made an Action.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6772 back",
+                "sectionId": "screenshot-6",
+                "excerpt": "Verified against Packet 3 screenshot 6"
+              },
+              {
+                "documentId": "blkout-unit-cards-ocr",
+                "label": "OCR unit text cross-check",
+                "lineStart": 63,
+                "lineEnd": 63,
+                "excerpt": "AI, Jump(4) SPECIALIST 2: Grenade Launcher When this Model gains a Ready Token"
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6772 front",
+            "sectionId": "screenshot-5",
+            "excerpt": "Verified against Packet 3 screenshot 5"
+          },
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6772 back",
+            "sectionId": "screenshot-6",
+            "excerpt": "Verified against Packet 3 screenshot 6"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "harlow-springbok-ai",
+        "cardId": "HFR-6773",
+        "forceId": "harlow-1st-reaction-force",
+        "name": "Harlow Springbok AI",
+        "modelCount": 2,
+        "stats": {
+          "move": "6",
+          "shoot": "6",
+          "armor": "2/6",
+          "hack": null,
+          "wounds": null
+        },
+        "specialists": [],
+        "weapons": [
+          {
+            "id": "hfr-6773-weapon-fal-32d",
+            "name": "FAL-32D",
+            "range": "24”/1",
+            "damage": null,
+            "keywords": [
+              "CQB",
+              "Sustained (1)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6773 front",
+                "sectionId": "screenshot-7",
+                "excerpt": "Verified against Packet 3 screenshot 7"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "id": "hfr-6773-chaff-discharge",
+            "label": "Chaff Discharge",
+            "text": "Mark a box to prevent a single Overwatch Reaction from Targeting this Model during its Activation.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6773 back",
+                "sectionId": "screenshot-8",
+                "excerpt": "Verified against Packet 3 screenshot 8"
+              },
+              {
+                "documentId": "blkout-unit-cards-ocr",
+                "label": "OCR unit text cross-check",
+                "lineStart": 54,
+                "lineEnd": 54,
+                "excerpt": "| Chaff Discharge     |     |         | One Unit may be Activated after this  |     |         |                     |     |         |"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6773-traits",
+            "label": "Traits",
+            "text": "AI, Jump(4)",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6773 back",
+                "sectionId": "screenshot-8",
+                "excerpt": "Verified against Packet 3 screenshot 8"
+              },
+              {
+                "documentId": "blkout-unit-cards-ocr",
+                "label": "OCR unit text cross-check",
+                "lineStart": 63,
+                "lineEnd": 63,
+                "excerpt": "AI, Jump(4) SPECIALIST 2: Grenade Launcher When this Model gains a Ready Token"
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6773 front",
+            "sectionId": "screenshot-7",
+            "excerpt": "Verified against Packet 3 screenshot 7"
+          },
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6773 back",
+            "sectionId": "screenshot-8",
+            "excerpt": "Verified against Packet 3 screenshot 8"
+          }
+        ],
+        "confidence": "verified"
+      }
+    ]
+  }
+}

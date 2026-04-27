@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "kind": "forces",
+    "version": "packet-0-sample",
+    "generatedAt": "2026-04-27T00:00:00.000Z",
+    "sourceDocumentIds": [
+      "blkout-implementation-workflow"
+    ],
+    "confidence": "sample"
+  },
+  "data": {
+    "forces": [
+      {
+        "id": "harlow-1st-reaction-force",
+        "cardId": "HFR-6770",
+        "name": "Harlow 1st Reaction Force",
+        "parentLoreFactionId": "authority",
+        "battleDrills": [],
+        "forceRules": [],
+        "armory": [],
+        "citations": [
+          {
+            "documentId": "blkout-implementation-workflow",
+            "label": "Seed force slice",
+            "lineStart": 140,
+            "lineEnd": 143
+          }
+        ],
+        "confidence": "sample"
+      }
+    ],
+    "units": [
+      {
+        "id": "harlow-control-team",
+        "cardId": "HFR-6771",
+        "forceId": "harlow-1st-reaction-force",
+        "name": "Harlow Control Team",
+        "modelCount": 0,
+        "stats": {
+          "move": null,
+          "shoot": null,
+          "armor": null,
+          "hack": null,
+          "wounds": null
+        },
+        "specialists": [],
+        "weapons": [],
+        "abilities": [],
+        "citations": [
+          {
+            "documentId": "blkout-implementation-workflow",
+            "label": "Seed unit slice",
+            "lineStart": 141,
+            "lineEnd": 143
+          }
+        ],
+        "confidence": "sample"
+      }
+    ]
+  }
+}

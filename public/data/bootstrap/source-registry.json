@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "kind": "source-registry",
+    "version": "packet-0-sample",
+    "generatedAt": "2026-04-27T00:00:00.000Z",
+    "sourceDocumentIds": [
+      "blkout-app-plan",
+      "blkout-implementation-workflow",
+      "blkout-tech-stack"
+    ],
+    "confidence": "sample"
+  },
+  "data": {
+    "documents": [
+      {
+        "id": "blkout-app-plan",
+        "title": "LEAP Sitrep Implementation Plan",
+        "fileName": "blkout-app.md",
+        "documentType": "planning",
+        "version": "working-draft",
+        "isCanonical": false,
+        "notes": "Planning source used to stabilize Packet 0 routes and contracts."
+      },
+      {
+        "id": "blkout-implementation-workflow",
+        "title": "LEAP Sitrep Implementation Workflow",
+        "fileName": "blkout-implementation.md",
+        "documentType": "planning",
+        "version": "working-draft",
+        "isCanonical": false,
+        "notes": "Workflow source used to seed packet order and the first vertical slice."
+      },
+      {
+        "id": "blkout-tech-stack",
+        "title": "Technology Stack",
+        "fileName": "tech-stack.md",
+        "documentType": "planning",
+        "version": "working-draft",
+        "isCanonical": false,
+        "notes": "Stack reference for Vite, React, Tailwind, Bun, and theme-provider constraints."
+      },
+      {
+        "id": "blkout-lore-primer",
+        "title": "BLKOUT Year Two Lore Primer",
+        "fileName": "markdown/BLKOUT-Year-Two-Lore-Primer.md",
+        "documentType": "lore",
+        "version": "year-two",
+        "isCanonical": true,
+        "notes": "Primary lore source for Packet 1 ingestion."
+      },
+      {
+        "id": "blkout-core-rulebook",
+        "title": "BLKOUT Print-at-Home Rulebook",
+        "fileName": "markdown/BLKOUT-PRINT-AT-HOME-RULEBOOK.md",
+        "documentType": "rules",
+        "version": "print-at-home",
+        "isCanonical": true,
+        "precedenceRank": 4,
+        "notes": "Primary structured rules source for Packet 1 ingestion."
+      },
+      {
+        "id": "blkout-supplemental",
+        "title": "BLKOUT Supplemental 4-26",
+        "fileName": "markdown/BLKOUT_Supplemental_4-26.md",
+        "documentType": "supplemental",
+        "version": "4-26",
+        "isCanonical": true,
+        "precedenceRank": 1,
+        "notes": "Highest-precedence supplemental and FAQ source for Packet 1-2 ingestion."
+      },
+      {
+        "id": "blkout-unit-cards-ocr",
+        "title": "Unit Cards Printable 2026 OCR",
+        "fileName": "markdown/Unit-Cards-Printable-2026.md",
+        "documentType": "unit-cards",
+        "version": "2026-ocr",
+        "isCanonical": false,
+        "precedenceRank": 3,
+        "notes": "OCR assistance only; curated verification is required before use as trusted gameplay data."
+      }
+    ]
+  }
+}

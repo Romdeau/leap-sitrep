@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "kind": "rules",
+    "version": "packet-0-sample",
+    "generatedAt": "2026-04-27T00:00:00.000Z",
+    "sourceDocumentIds": [
+      "blkout-app-plan",
+      "blkout-implementation-workflow"
+    ],
+    "confidence": "sample"
+  },
+  "data": {
+    "rules": [
+      {
+        "id": "movement",
+        "title": "Movement",
+        "category": "movement",
+        "mode": "core",
+        "body": "Sample contract record only. Canonical text is deferred to Packet 1 and effective merge behavior to Packet 2.",
+        "citations": [
+          {
+            "documentId": "blkout-implementation-workflow",
+            "label": "Seed rules slice",
+            "lineStart": 138,
+            "lineEnd": 143
+          }
+        ]
+      },
+      {
+        "id": "shooting",
+        "title": "Shooting",
+        "category": "combat",
+        "mode": "core",
+        "body": "Sample contract record only. Packet 0 reserves this rule id for later ETL and precedence work.",
+        "citations": [
+          {
+            "documentId": "blkout-implementation-workflow",
+            "label": "Seed rules slice",
+            "lineStart": 138,
+            "lineEnd": 143
+          }
+        ]
+      }
+    ],
+    "effectiveRules": [],
+    "faq": [],
+    "errata": [],
+    "universalSpecialRules": []
+  }
+}

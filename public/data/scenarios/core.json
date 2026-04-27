@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "kind": "scenarios",
+    "version": "packet-1",
+    "generatedAt": "2026-04-27T07:37:24.333Z",
+    "sourceDocumentIds": [
+      "blkout-core-rulebook"
+    ],
+    "confidence": "extracted"
+  },
+  "data": {
+    "scenarios": [
+      {
+        "id": "dockyard-assault",
+        "title": "Dockyard Assault",
+        "mode": "core",
+        "setup": [
+          "Before playing the Game, Players will roll a D10 each, re-rolling ties. The Player who rolls the higher number may choose a Deployment Edge first and becomes the Attacker. Their opponent gets the opposite Deployment Edge and becomes the Defender. The Attacker may place their Models up to 2” onto the Table from their Deployment Edge. Afterward, the Defender may do so. The Attacker will always Activate First in the first Round.",
+          "Place 2x Points of Interest 6” from the non Deployment Edge Table edges, and 12” from a Deployment Edge. If playing on a Table larger than 2x2ft add 6” for each additional foot past 2x2ft. Players will alternate placing one Hardpoint each. They must be at least 6” from a Point of Interest, Table Edge, and the other Hardpoint.",
+          "Hardpoints: 2",
+          "Points of Interest: 2"
+        ],
+        "scoringRules": [
+          "Players gain an Overrun Point for: • Destroying an Enemy Unit • Locking Down more Points of Interest than their opponent. * A Player has a Point of Interest Locked Down when a Model under their Control has Line of Sight to it and is within 4” of it with no Enemy Models within 6” of it. After rolling for Initiative in a Round, Players should check their number of Overrun Points. If a Player has 2 or more Overrun Points than their opponent they immediately win and the Game ends. The Game will end after five Rounds. The Player with the most Overrun Points wins."
+        ],
+        "specialRules": [
+          "KEY TERRAIN: Models may Secure a Hardpoint by spending their Action while in Base-to- Base with it. The Player should remove it from the Game. A Player with one or more Hardpoints Secured may roll an additional D10 for Initiative.",
+          "INSIDE JOB: The Attacker may choose to spend a Control Point when placing a Unit to place the Unit up to 4” onto the Table. A shipment of military hardware and luxury goods is being transported from high orbit, and opposition forces have decided they’re taking it for themselves. A bundle of cash and veiled threats mean that not every supply container has what the manifest claims. When the shipment arrives, hidden forces strike, throwing the dockyards into disarray, moving quickly to secure their prize. Authority forces scramble to engage, but will they react in time to stop the hijacking of the delivery?"
+        ],
+        "tableSize": "2’x2’",
+        "hardpoints": [
+          "2"
+        ],
+        "pointsOfInterest": [
+          "2"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-core-rulebook",
+            "label": "DOCKYARD ASSAULT",
+            "lineStart": 648,
+            "lineEnd": 713
+          }
+        ]
+      },
+      {
+        "id": "server-defense",
+        "title": "Server Defense",
+        "mode": "core",
+        "setup": [
+          "Before playing the Game, Players will roll a D10 each, re-rolling ties. The Player who rolls the higher number may choose a Deployment Edge first and becomes the Attacker. Their opponent gets the opposite Deployment Edge and becomes the Defender. The Attacker may place their Models up to 2” onto the Table from their Deployment Edge. Afterward, the Defender may do so. The Attacker will always Activate First in the first Round.",
+          "Place 3x Points of Interest 6” from the non Deployment Edge Table edge, and each other, and 12” from a Deployment Edge. If playing on a Table larger than 2x2ft add 6” for each additional foot past 2x2ft. Players will alternate placing one Hardpoint each. They must be at least 6” from a Point of Interest, Table Edge, and the other Hardpoint.",
+          "Hardpoints: 2",
+          "Points of Interest: 3"
+        ],
+        "scoringRules": [
+          "Players gain an Overrun Point for: • Destroying an Enemy Unit • A Player will gain an Overrun Point per Round they have a Point of Interest Locked Down. Players will keep Overrun Points earned this way between Rounds. * A Player has a Point of Interest Locked Down when a Model under their Control has Line of Sight to it and is within 4” of it with no Enemy Models within 6” of it. * Players may Destroy a Point of Interest by applying 3 Successes to it in one Shoot Action. Destroyed Points of Interest cannot be Locked Down. After rolling for Initiative in a Round, Players should check their number of Overrun Points. If a Player has 3 or more Overrun Points than their opponent they immediately win and the Game ends. The Game will end after five Rounds. The Player with the most Overrun Points wins."
+        ],
+        "specialRules": [
+          "KEY TERRAIN: Models may Secure a Hardpoint by spending their Action while in Base-to- Base with it. The Player should remove it from the Game. A Player with one or more Hardpoints Secured may roll an additional D10 for Initiative, or spend the Hardpoint to ignore one Enemy Model that would be preventing them from Locking Down a Point of Interest when measuring Overrun Points.",
+          "ALERTED: The Defender may choose to spend a Control Point when placing a Unit to place the Unit up to 4” onto the Table before. Data Warfare has become a staple on Abol, with combat hackers and infiltration protocols becoming valuable assets for any force to have. Inexperienced cyber warriors often run afoul of the advanced security systems set up by major powers, and even veteran hackers sometimes find themselves alerting an enemy before the assault begins. Unfortunately for these assaulters, their specialist isn’t as talented as they claimed, making this smash and grab a bit more difficult."
+        ],
+        "tableSize": "2’x2’",
+        "hardpoints": [
+          "2"
+        ],
+        "pointsOfInterest": [
+          "3"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-core-rulebook",
+            "label": "SERVER DEFENSE",
+            "lineStart": 714,
+            "lineEnd": 787
+          }
+        ]
+      },
+      {
+        "id": "hvt-evac",
+        "title": "Hvt Evac",
+        "mode": "core",
+        "setup": [
+          "Before playing the Game, Players will roll a D10 each, re-rolling ties. The Player who rolls the higher number may choose a Deployment Edge first and place their Models within 2” of it. Afterwards the other Player may do so.",
+          "Hardpoints: 2",
+          "Points of Interest: 4"
+        ],
+        "scoringRules": [
+          "Players gain an Overrun Point for: • Destroying an Enemy Unit • Locking down more Points of Interest than their opponent * A Player has a Point of Interest Locked Down when a Model under their Control has Line of Sight to it and is within 4” of it with no Enemy Models within 6” of it. After rolling for Initiative in a Round, Players should check their number of Overrun Points. If a Player has 2 or more Overrun Points than their opponent they immediately win and the Game ends. The Game will end after five Rounds. The Player with the most Overrun Points wins. The winner will always Activate First in the first Round."
+        ],
+        "specialRules": [
+          "COME WITH ME!: Place 4x Points of Interest, one in the center of each quadrant of the Table. Players will alternate placing one Hardpoint each. They must be at least 6” from a Point of Interest, Table Edge, and the other Hardpoint. After measuring Overrun Points an Infantry Model in Base-to-Base with a Point of Interest may gain an Engaged Token to move both the Model and the Point of Interest up to 2”. A Point of Interest may only be Moved once per Operations.",
+          "DRONE SWARMS: Models may Secure a Hardpoint by spending their Action while in Base-to- Base with it. The Player should remove it from the Game. A Player may spend a Secured Hardpoint to place a 25mm Token anywhere on the Table. All Infantry within 2” must make an Armor Check, suffering a point of Damage per D10 that rolls under their Armor. A group of executives decided to go planetside to see local assets in person, with grave consequences. The locals, fed up with the authoritarian boot on their necks, took out the luxury aircar and now there is a scramble to recover them before opposing forces capture them and extract any useful data they can. The circling drones overhead promise that someone, somewhere, is watching, though whether the drones are just for reconnaissance remains to be seen."
+        ],
+        "tableSize": "2’x2’",
+        "hardpoints": [
+          "2"
+        ],
+        "pointsOfInterest": [
+          "4"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-core-rulebook",
+            "label": "HVT EVAC",
+            "lineStart": 788,
+            "lineEnd": 852
+          }
+        ]
+      },
+      {
+        "id": "zero-day",
+        "title": "Zero Day",
+        "mode": "core",
+        "setup": [
+          "Before playing the Game, Players will roll a D10 each, re-rolling ties. The Player who rolls the higher number may choose a Deployment Edge first and place their Models within 2” of it. Afterwards the other Player may do so. The winner will always Activate First in the first Round.",
+          "Place 4x Points of Interest, one in the center of each quadrant of the Table.",
+          "Hardpoints: 0",
+          "Points of Interest: 4"
+        ],
+        "scoringRules": [
+          "Players gain an Overrun Point for: • Destroying an Enemy Unit • Securing more Points of Interest * Models may secure a Point of Interest by spending their Action while in Base-to-Base with it. * A Player may Secure a Point of Interest another Player has already Secured. This will cause it to become unsecured for the other Player. After rolling for Initiative in a Round, Players should check their number of Overrun Points. If a Player has 2 or more Overrun Points than their opponent they immediately win and the Game ends. The Game will end after five Rounds. The Player with the most Overrun Points wins."
+        ],
+        "specialRules": [
+          "JACKED IN: Only a Model with a Data Spike may Secure a Point of Interest. A Grunt may Secure a Point of Interest but must use one of their Units Combat Loads.",
+          "DROP IN: A Player who has Secured two Points of Interest may, instead of Activating, spend 3 Control Points to place a Duster Unit of their choice within 4 inches of their Deployment Edge. This Duster Unit will receive an Activation Marker, be added to their Group, and come under their control. Some more enterprising individuals have realized that data attacks and remote breaching is a real threat to the security of their assets. These operatives keep their information and security protocols analog, requiring an operator to physically jack into a hardpoint to access the files. While this deters many of the low level gangs, sometimes it’s worth the effort to physically obtain the information, and a ‘Data Recovery’ team has been dispatched to extract the information their patron desires."
+        ],
+        "tableSize": "3’x3’",
+        "hardpoints": [
+          "0"
+        ],
+        "pointsOfInterest": [
+          "4"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-core-rulebook",
+            "label": "ZERO DAY",
+            "lineStart": 853,
+            "lineEnd": 912
+          }
+        ]
+      }
+    ]
+  }
+}

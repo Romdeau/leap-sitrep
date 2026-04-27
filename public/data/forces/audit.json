@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "kind": "force-audit",
+    "version": "packet-3",
+    "generatedAt": "2026-04-27T07:37:24.333Z",
+    "sourceDocumentIds": [
+      "blkout-unit-cards-ocr",
+      "blkout-unit-cards-screenshots"
+    ],
+    "confidence": "raw"
+  },
+  "data": {
+    "rawCards": [
+      {
+        "id": "hfr-6770-raw",
+        "cardId": "HFR-6770",
+        "name": "Harlow 1st Reaction Force",
+        "recordType": "force",
+        "rawLines": [
+          "HFR-6770",
+          "The strong right arm of The",
+          "Authority, the Harlow 1st",
+          "Reaction Force are the elite",
+          "mercenaries of Harlow Kinetic",
+          "Solutions. Equipped with jump",
+          "jets, smart weapons, and",
+          "combat inorganics, the 1st",
+          "Reaction Force hits hard, and",
+          "they hit fast.",
+          "HARLOW 1ST REACTION FORCE",
+          "ECROF NOITCAER TS1 WOLRAH ECROF NOITCAER TS1 WOLRAH ECROF NOITCAER TS1 WOLRAH",
+          "| 6   | 6   | 6   |",
+          "| --- | --- | --- |",
+          "| 4   | 4   | 6   |",
+          "| 1/6 | 1/6 | 2/6 |",
+          "MAET LORTNOC",
+          "MAET TLUASSA",
+          "| 2   | 1   | 2   |",
+          "| --- | --- | --- |",
+          "IA KOBGNIRPS",
+          "184A5O6IF2M99E-34-313222 184A5O6IF2M99E-34-313222 184A5O6IF2M99E-34-313222",
+          "| FAL-32C | 24”/1  | FAL-32C | 24”/1  | FAL-32D | 24”/1    |",
+          "| ---------------- | ---------------- | ------------------ |",
+          "| CQB              | CQB              | CQB, Sustained (1) |",
+          "PRINT ALONG THE LONG EDGE DOUBLE SIDED | CUT ALONG CROP MARKS",
+          "",
+          "BATTLE DRILLS",
+          "Assaulters: Models in this Unit cannot be Targeted by",
+          "Overwatch when Repositioning.",
+          "Chaff: Place a Smoke Token (Chaff) within 6” of a Model in this Unit",
+          "before Activating. Chaff Smoke Tokens Dissipate on a 10+.",
+          "Stims: Models in this Unit gain +2 Movement for their Activation.",
+          "FORCE RULE",
+          "Harlow First Reaction Force Units gain +2 Movement",
+          "when Sprinting.",
+          "ARMORY",
+          "BOOST JUMP",
+          "Model gains Jump (4)",
+          "FRAG LAUNCHER | 24”/1",
+          "Sustained (2), Medium",
+          "|     | HEAD | 16”/4  |     |     |     |     | BLKOUT SECOND EDITION |     |     |",
+          "| --- | ------------- | --- | --- | --- | --- | --------------------- | --- | --- |",
+          "Blast (1)",
+          "MICRO LAUNCHER | 4-16”/2",
+          "Blast (1), Heavy",
+          "SCAN TO CHECK",
+          "FOR UNIT UPDATES",
+          "| HFR-6773            |     |         | HFR-6771                              |     |         | HFR-6772            |     |         |",
+          "| ------------------- | --- | ------- | ------------------------------------- | --- | ------- | ------------------- | --- | ------- |",
+          "|                     |     | DH93745 |                                       |     | DH93745 |                     |     | DH93745 |",
+          "|                     |     | 064567  |                                       |     | 064567  |                     |     | 064567  |",
+          "| HARLOW SPRINGBOK AI |     |         | HARLOW CONTROL TEAM                   |     |         | HARLOW ASSAULT TEAM |     |         |",
+          "| Chaff Discharge     |     |         | One Unit may be Activated after this  |     |         |                     |     |         |",
+          "Mark a box to prevent a single  Unit without spending a Control Point. SPECIALIST 1: Machine Gunner",
+          "| Overwatch Reaction from  |     |     |     |     |     | P34 | 24”/1  |     |     |",
+          "| ------------------------ | --- | --- | --- | --- | --- | ------------ | --- | --- |",
+          "Targeting this Model during",
+          "|     |     |     | SPECIALIST 1: Data Spike |     |     | Cyclic, Heavy |     |     |",
+          "| --- | --- | --- | ------------------------ | --- | --- | ------------- | --- | --- |",
+          "its Activation.",
+          "SPECIALIST 2: Team Leader",
+          "AI, Jump(4) SPECIALIST 2: Grenade Launcher When this Model gains a Ready Token",
+          "|     |                  |     | GRENADE LAUNCHER | 24”/2  |                  |     | it may give it to a Model in this Unit  |                  |     |",
+          "| --- | ---------------- | --- | ------------------------- | ---------------- | --- | --------------------------------------- | ---------------- | --- |",
+          "|     |                  |     | Blast (1)                 |                  |     | that has already made an Action.        |                  |     |",
+          "|     | SCAN TO CHECK    |     |                           | SCAN TO CHECK    |     |                                         | SCAN TO CHECK    |     |",
+          "|     | FOR UNIT UPDATES |     |                           | FOR UNIT UPDATES |     |                                         | FOR UNIT UPDATES |     |"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "OCR retained for audit only. All curated force fields verified against screenshots side1 and side2.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-ocr",
+            "label": "HFR-6770 OCR excerpt",
+            "lineStart": 1,
+            "lineEnd": 68
+          }
+        ]
+      },
+      {
+        "id": "hfr-6771-raw",
+        "cardId": "HFR-6771",
+        "name": "Harlow Control Team",
+        "recordType": "unit",
+        "rawLines": [
+          "| HFR-6773            |     |         | HFR-6771                              |     |         | HFR-6772            |     |         |",
+          "| ------------------- | --- | ------- | ------------------------------------- | --- | ------- | ------------------- | --- | ------- |",
+          "|                     |     | DH93745 |                                       |     | DH93745 |                     |     | DH93745 |",
+          "|                     |     | 064567  |                                       |     | 064567  |                     |     | 064567  |",
+          "| HARLOW SPRINGBOK AI |     |         | HARLOW CONTROL TEAM                   |     |         | HARLOW ASSAULT TEAM |     |         |",
+          "| Chaff Discharge     |     |         | One Unit may be Activated after this  |     |         |                     |     |         |",
+          "Mark a box to prevent a single  Unit without spending a Control Point. SPECIALIST 1: Machine Gunner",
+          "| Overwatch Reaction from  |     |     |     |     |     | P34 | 24”/1  |     |     |",
+          "| ------------------------ | --- | --- | --- | --- | --- | ------------ | --- | --- |",
+          "Targeting this Model during",
+          "|     |     |     | SPECIALIST 1: Data Spike |     |     | Cyclic, Heavy |     |     |",
+          "| --- | --- | --- | ------------------------ | --- | --- | ------------- | --- | --- |",
+          "its Activation.",
+          "SPECIALIST 2: Team Leader",
+          "AI, Jump(4) SPECIALIST 2: Grenade Launcher When this Model gains a Ready Token",
+          "|     |                  |     | GRENADE LAUNCHER | 24”/2  |                  |     | it may give it to a Model in this Unit  |                  |     |",
+          "| --- | ---------------- | --- | ------------------------- | ---------------- | --- | --------------------------------------- | ---------------- | --- |",
+          "|     |                  |     | Blast (1)                 |                  |     | that has already made an Action.        |                  |     |",
+          "|     | SCAN TO CHECK    |     |                           | SCAN TO CHECK    |     |                                         | SCAN TO CHECK    |     |",
+          "|     | FOR UNIT UPDATES |     |                           | FOR UNIT UPDATES |     |                                         | FOR UNIT UPDATES |     |"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "OCR retained for audit only. Stats, weapon, specialists, and rules verified against screenshots side1 and side2.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-ocr",
+            "label": "HFR-6771 OCR excerpt",
+            "lineStart": 49,
+            "lineEnd": 68
+          }
+        ]
+      },
+      {
+        "id": "hfr-6772-raw",
+        "cardId": "HFR-6772",
+        "name": "Harlow Assault Team",
+        "recordType": "unit",
+        "rawLines": [
+          "| HFR-6773            |     |         | HFR-6771                              |     |         | HFR-6772            |     |         |",
+          "| ------------------- | --- | ------- | ------------------------------------- | --- | ------- | ------------------- | --- | ------- |",
+          "|                     |     | DH93745 |                                       |     | DH93745 |                     |     | DH93745 |",
+          "|                     |     | 064567  |                                       |     | 064567  |                     |     | 064567  |",
+          "| HARLOW SPRINGBOK AI |     |         | HARLOW CONTROL TEAM                   |     |         | HARLOW ASSAULT TEAM |     |         |",
+          "| Chaff Discharge     |     |         | One Unit may be Activated after this  |     |         |                     |     |         |",
+          "Mark a box to prevent a single  Unit without spending a Control Point. SPECIALIST 1: Machine Gunner",
+          "| Overwatch Reaction from  |     |     |     |     |     | P34 | 24”/1  |     |     |",
+          "| ------------------------ | --- | --- | --- | --- | --- | ------------ | --- | --- |",
+          "Targeting this Model during",
+          "|     |     |     | SPECIALIST 1: Data Spike |     |     | Cyclic, Heavy |     |     |",
+          "| --- | --- | --- | ------------------------ | --- | --- | ------------- | --- | --- |",
+          "its Activation.",
+          "SPECIALIST 2: Team Leader",
+          "AI, Jump(4) SPECIALIST 2: Grenade Launcher When this Model gains a Ready Token",
+          "|     |                  |     | GRENADE LAUNCHER | 24”/2  |                  |     | it may give it to a Model in this Unit  |                  |     |",
+          "| --- | ---------------- | --- | ------------------------- | ---------------- | --- | --------------------------------------- | ---------------- | --- |",
+          "|     |                  |     | Blast (1)                 |                  |     | that has already made an Action.        |                  |     |",
+          "|     | SCAN TO CHECK    |     |                           | SCAN TO CHECK    |     |                                         | SCAN TO CHECK    |     |",
+          "|     | FOR UNIT UPDATES |     |                           | FOR UNIT UPDATES |     |                                         | FOR UNIT UPDATES |     |"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "OCR retained for audit only. Stats, weapon, specialists, and rules verified against screenshots side1 and side2.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-ocr",
+            "label": "HFR-6772 OCR excerpt",
+            "lineStart": 49,
+            "lineEnd": 68
+          }
+        ]
+      },
+      {
+        "id": "hfr-6773-raw",
+        "cardId": "HFR-6773",
+        "name": "Harlow Springbok AI",
+        "recordType": "unit",
+        "rawLines": [
+          "| HFR-6773            |     |         | HFR-6771                              |     |         | HFR-6772            |     |         |",
+          "| ------------------- | --- | ------- | ------------------------------------- | --- | ------- | ------------------- | --- | ------- |",
+          "|                     |     | DH93745 |                                       |     | DH93745 |                     |     | DH93745 |",
+          "|                     |     | 064567  |                                       |     | 064567  |                     |     | 064567  |",
+          "| HARLOW SPRINGBOK AI |     |         | HARLOW CONTROL TEAM                   |     |         | HARLOW ASSAULT TEAM |     |         |",
+          "| Chaff Discharge     |     |         | One Unit may be Activated after this  |     |         |                     |     |         |",
+          "Mark a box to prevent a single  Unit without spending a Control Point. SPECIALIST 1: Machine Gunner",
+          "| Overwatch Reaction from  |     |     |     |     |     | P34 | 24”/1  |     |     |",
+          "| ------------------------ | --- | --- | --- | --- | --- | ------------ | --- | --- |",
+          "Targeting this Model during",
+          "|     |     |     | SPECIALIST 1: Data Spike |     |     | Cyclic, Heavy |     |     |",
+          "| --- | --- | --- | ------------------------ | --- | --- | ------------- | --- | --- |",
+          "its Activation.",
+          "SPECIALIST 2: Team Leader",
+          "AI, Jump(4) SPECIALIST 2: Grenade Launcher When this Model gains a Ready Token",
+          "|     |                  |     | GRENADE LAUNCHER | 24”/2  |                  |     | it may give it to a Model in this Unit  |                  |     |",
+          "| --- | ---------------- | --- | ------------------------- | ---------------- | --- | --------------------------------------- | ---------------- | --- |",
+          "|     |                  |     | Blast (1)                 |                  |     | that has already made an Action.        |                  |     |",
+          "|     | SCAN TO CHECK    |     |                           | SCAN TO CHECK    |     |                                         | SCAN TO CHECK    |     |",
+          "|     | FOR UNIT UPDATES |     |                           | FOR UNIT UPDATES |     |                                         | FOR UNIT UPDATES |     |"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "OCR retained for audit only. Stats, weapon, and abilities verified against screenshots side1 and side2.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-ocr",
+            "label": "HFR-6773 OCR excerpt",
+            "lineStart": 49,
+            "lineEnd": 68
+          }
+        ]
+      }
+    ]
+  }
+}

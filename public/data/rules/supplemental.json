@@ -1,0 +1,1092 @@
+{
+  "meta": {
+    "kind": "rules",
+    "version": "packet-1",
+    "generatedAt": "2026-04-27T07:37:24.333Z",
+    "sourceDocumentIds": [
+      "blkout-supplemental"
+    ],
+    "confidence": "extracted"
+  },
+  "data": {
+    "rules": [
+      {
+        "id": "matched-play-rules",
+        "title": "Matched Play Rules",
+        "category": "matched-play",
+        "mode": "matched-play",
+        "overview": "MATCHED PLAY COVER RULES Any special rules giving a Model Cover will always count as Partial Cover. Multiple instances of Partial Cover do not stack to Full Cover. Full Cover | Shooting at a Model in Cover will only subtract a D10 from the Shooting Action if the Target is within 1” of the piece of terrain providing it Cover. Partial Cover | Models that are in Cover but not within 1” of the terrain providing them Cover are in Partial Cover. Shooting Actions Targeting them will neither add nor subtract a D10. Lean Out | Drawing only line of sight to a Lean Out Marker will give that Model Partial Cover. They will gain Full Cover if that Model is within 1” of the piece of terrain blocking Line of Sight to the Model. COVER CHART +1D10 Target is not 50% or more obscured by Terrain. NO CHANGE Target is 50% or more obscured. -1D10 Target is 50% or more obscured and within 1” of the terrain obscuring them. MATCHED PLAY STRUCTURES When using the Matched Play Cover rules, use the following rules instead of those provided in section [8.4] Terrain of the Core Rulebook. Structures | Structures are buildings or areas with clear boundaries that Models might enter into. Discuss with your opponent what terrain will classify as a structure before your game. Cover | Models inside a Structure have Full Cover when Targeted by Models outside the Structure. • If both the attacking Model and the Target are within the same Structure, use the normal Matched Play Cover rules to determine the level of Cover the Models are in. Line of Sight | Line of Sight may not be drawn through a Structure to Models or Markers on the other side of a Structure. SCAN FOR THE MOST UP-TO-DATE UNIVERSAL SPECIAL RULES CONTROL POINTS Players will begin each game with 3 Control Points. They may never regain these Control Points. Players may spend a Control Point to: Battle Drills | Spend a Control Point before Activating a Force Unit to allow it to benefit from a Battle Drill during its Activation. A Unit may only benefit from one Battle Drill per Activation. Handler Activation | Once per Round, spend a Control Point to remove an Activation Marker, and any Ready or Engaged Tokens from a Handler after it has finished its Activation. Chained Activation | Once per Round you may spend a Control Point to Activate a Unit after finishing an Activation with a different Unit. COUNTER EWAR When an Enemy Model makes a Data Attack Action, one Model in your Group with a Data Spike may make a Skill Check. If the Skill Check results in more successes than the Data Attack Skill Check, the Data Attack is nullified. This does not count as a Reaction. DUSTERS A Player may only use a Duster Unit if both Players agree. If they agree, any Player may replace one of their Force Units and all of their Control Points with a single Duster Unit. If both Players take a Duster, they both keep their Control Points. HEIGHT Infantry Model’s whose base is 3” or more above a Target Infantry Model’s base will treat the Target’s Partial Cover as no Cover, and gain Partial Cover from any Infantry Model whose base is 3” or more below their base. JUKE REACTION Models can perform the Juke Reaction when Targeted by a Shoot Action. The Shoot Action rolls -1D10. If they survive the Shoot Action, they may move up to half of their Movement Value after the Action concludes. SMOKE Models with only part of their base inside Smoke gain Partial Cover and treat their Targets as in Partial Cover. Models with their entire base inside Smoke gain Full Cover and treat their Targets as in Full Cover. Line of Sight may not be drawn through a 3” area around a Smoke Token to Models or Markers outside of the area around the Token.",
+        "subsections": [],
+        "body": "MATCHED PLAY COVER RULES Any special rules giving a Model Cover will always count as Partial Cover. Multiple instances of Partial Cover do not stack to Full Cover. Full Cover | Shooting at a Model in Cover will only subtract a D10 from the Shooting Action if the Target is within 1” of the piece of terrain providing it Cover. Partial Cover | Models that are in Cover but not within 1” of the terrain providing them Cover are in Partial Cover. Shooting Actions Targeting them will neither add nor subtract a D10. Lean Out | Drawing only line of sight to a Lean Out Marker will give that Model Partial Cover. They will gain Full Cover if that Model is within 1” of the piece of terrain blocking Line of Sight to the Model. COVER CHART +1D10 Target is not 50% or more obscured by Terrain. NO CHANGE Target is 50% or more obscured. -1D10 Target is 50% or more obscured and within 1” of the terrain obscuring them. MATCHED PLAY STRUCTURES When using the Matched Play Cover rules, use the following rules instead of those provided in section [8.4] Terrain of the Core Rulebook. Structures | Structures are buildings or areas with clear boundaries that Models might enter into. Discuss with your opponent what terrain will classify as a structure before your game. Cover | Models inside a Structure have Full Cover when Targeted by Models outside the Structure. • If both the attacking Model and the Target are within the same Structure, use the normal Matched Play Cover rules to determine the level of Cover the Models are in. Line of Sight | Line of Sight may not be drawn through a Structure to Models or Markers on the other side of a Structure. SCAN FOR THE MOST UP-TO-DATE UNIVERSAL SPECIAL RULES CONTROL POINTS Players will begin each game with 3 Control Points. They may never regain these Control Points. Players may spend a Control Point to: Battle Drills | Spend a Control Point before Activating a Force Unit to allow it to benefit from a Battle Drill during its Activation. A Unit may only benefit from one Battle Drill per Activation. Handler Activation | Once per Round, spend a Control Point to remove an Activation Marker, and any Ready or Engaged Tokens from a Handler after it has finished its Activation. Chained Activation | Once per Round you may spend a Control Point to Activate a Unit after finishing an Activation with a different Unit. COUNTER EWAR When an Enemy Model makes a Data Attack Action, one Model in your Group with a Data Spike may make a Skill Check. If the Skill Check results in more successes than the Data Attack Skill Check, the Data Attack is nullified. This does not count as a Reaction. DUSTERS A Player may only use a Duster Unit if both Players agree. If they agree, any Player may replace one of their Force Units and all of their Control Points with a single Duster Unit. If both Players take a Duster, they both keep their Control Points. HEIGHT Infantry Model’s whose base is 3” or more above a Target Infantry Model’s base will treat the Target’s Partial Cover as no Cover, and gain Partial Cover from any Infantry Model whose base is 3” or more below their base. JUKE REACTION Models can perform the Juke Reaction when Targeted by a Shoot Action. The Shoot Action rolls -1D10. If they survive the Shoot Action, they may move up to half of their Movement Value after the Action concludes. SMOKE Models with only part of their base inside Smoke gain Partial Cover and treat their Targets as in Partial Cover. Models with their entire base inside Smoke gain Full Cover and treat their Targets as in Full Cover. Line of Sight may not be drawn through a 3” area around a Smoke Token to Models or Markers outside of the area around the Token.",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "Matched play rules",
+            "lineStart": 25,
+            "lineEnd": 133
+          }
+        ]
+      }
+    ],
+    "effectiveRules": [],
+    "faq": [
+      {
+        "question": "Does a Unit keep its Armory Item?",
+        "answer": "No. A Model benefits from the Armory or uses the Weapon only during the Activation in which it marked its Combat Load. Imagine the Armory as limited use or one time abilities.",
+        "topic": "general",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ general",
+            "lineStart": 269,
+            "lineEnd": 272
+          }
+        ],
+        "id": "faq-general-1"
+      },
+      {
+        "question": "Can I activate more than one Battle Drill on a Unit?",
+        "answer": "No. You can only choose one Battle Drill for the Unit to benefit from during its Activation.",
+        "topic": "general",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ general",
+            "lineStart": 274,
+            "lineEnd": 276
+          }
+        ],
+        "id": "faq-general-2"
+      },
+      {
+        "question": "Does the Impisi Force Rule Apply to the whole Force or just the Impisi Insurgents Unit?",
+        "answer": "The Impisi Force Rule applies to the entire Force, not just the Unit.",
+        "topic": "general",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ general",
+            "lineStart": 278,
+            "lineEnd": 279
+          }
+        ],
+        "id": "faq-general-3"
+      },
+      {
+        "question": "Is there Unit coherency?",
+        "answer": "No.",
+        "topic": "movement",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ movement",
+            "lineStart": 282,
+            "lineEnd": 283
+          }
+        ],
+        "id": "faq-movement-4"
+      },
+      {
+        "question": "Can a Lean Out Move be Reacted to by Overwatch?",
+        "answer": "Only if the Model is leaning out during a sprint action. The Model is spending its Movement not Moving that distance when Leaning Out.",
+        "topic": "movement",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ movement",
+            "lineStart": 285,
+            "lineEnd": 287
+          }
+        ],
+        "id": "faq-movement-5"
+      },
+      {
+        "question": "When Jumping do I have to have Line of Sight to the final point?",
+        "answer": "No, as long as Terrain doesn’t prevent the Model from “moving” from its original point to the new point. IE: Jumping through a wall of a totally enclosed structure.",
+        "topic": "movement",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ movement",
+            "lineStart": 289,
+            "lineEnd": 291
+          }
+        ],
+        "id": "faq-movement-6"
+      },
+      {
+        "question": "Can a Unit with Jump (4) jump over an obstacle that is 4 inches high and end up on ground level on the other side? (Or would they only be allowed to jump up onto the obstacle?) The Model is allowed to be placed on the other side of the obstacle if there is no intervening Terrain in the way, such as a roof. Can a Model come down from a height if they do not have the Jump (X) rule?",
+        "answer": "No. The Model must find a safer way down, such as stairs or a ladder.",
+        "topic": "movement",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ movement",
+            "lineStart": 293,
+            "lineEnd": 299
+          }
+        ],
+        "id": "faq-movement-7"
+      },
+      {
+        "question": "Can a Model climb a surface, or does a Model wishing to move vertically require an obvious means to do so (e.g., ladder, stack of crates, etc.)?",
+        "answer": "The Model requires an obvious means to move vertically.",
+        "topic": "movement",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ movement",
+            "lineStart": 301,
+            "lineEnd": 303
+          }
+        ],
+        "id": "faq-movement-8"
+      },
+      {
+        "question": "Does the use of an ability or battle drill that gives a Unit/Model “+X” movement increase the half movement distance a Model can make to avoid Overwatch?",
+        "answer": "Yes, increase the movement value before determining the half movement value.",
+        "topic": "movement",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ movement",
+            "lineStart": 305,
+            "lineEnd": 307
+          }
+        ],
+        "id": "faq-movement-9"
+      },
+      {
+        "question": "Can you Ace Armor Checks?",
+        "answer": "No, you can only Ace Skill Checks.",
+        "topic": "combat",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ combat",
+            "lineStart": 310,
+            "lineEnd": 311
+          }
+        ],
+        "id": "faq-combat-10"
+      },
+      {
+        "question": "Do Units with multiple primary weapons (i.e. Peacemakers or Razorbacks) get to fire all of them as a single Action or just one?",
+        "answer": "Non-vehicle Models can only use one weapon profile per Shoot action or Reaction, not all of their listed weapons.",
+        "topic": "combat",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ combat",
+            "lineStart": 313,
+            "lineEnd": 316
+          }
+        ],
+        "id": "faq-combat-11"
+      },
+      {
+        "question": "Can you Target additional Models with Auto, if said Models are within your minimum range, but within 4” of the original Target Model?",
+        "answer": "No, you cannot Target Models within a weapons minimum range.",
+        "topic": "combat",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ combat",
+            "lineStart": 318,
+            "lineEnd": 320
+          }
+        ],
+        "id": "faq-combat-12"
+      },
+      {
+        "question": "How does Seeking work with the matched play Cover rules?",
+        "answer": "Weapons with the Seeking special rule will only ignore the -1D10 (Shot) penalty of Models benefiting from Full Cover.",
+        "topic": "combat",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ combat",
+            "lineStart": 322,
+            "lineEnd": 324
+          }
+        ],
+        "id": "faq-combat-13"
+      },
+      {
+        "question": "When using a weapon that says it ignores Cover, do I roll 2D10 or 3D10 for the attack?",
+        "answer": "If the Target is in Cover you will roll 2D10 as you ignore the -1D10 to your Skill Check of your Target being in Cover, but you do not gain the +1D10 of your Target being in the open.",
+        "topic": "combat",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ combat",
+            "lineStart": 326,
+            "lineEnd": 329
+          }
+        ],
+        "id": "faq-combat-14"
+      },
+      {
+        "question": "How does Auto interact with Cyclic?",
+        "answer": "When an active Model makes a Shoot action with a weapon that has both Auto and Cyclic special rules, the sequence of actions goes like;",
+        "topic": "combat",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ combat",
+            "lineStart": 331,
+            "lineEnd": 333
+          }
+        ],
+        "id": "faq-combat-15"
+      },
+      {
+        "question": "1. Make the first attack for the weapon, return fire Reaction is applicable here. 2. Overwatch Reactions to the Shoot action occur. 3. The Model makes additional Auto Shoot actions, these cannot be Reacted to. 4. The Model then chooses to either gain a Ready Token, or repeat steps 1-3. UN Raid Force Alpha Specialists, if the sniper moves with the deployed weapon, do they still roll 2D10 from the faction rule?",
+        "answer": "No, the Deployed USR only allows from 1D10 to be rolled if the Model moved, thus stopping the Force Rule from triggering.",
+        "topic": "combat",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ combat",
+            "lineStart": 335,
+            "lineEnd": 346
+          }
+        ],
+        "id": "faq-combat-16"
+      },
+      {
+        "question": "What is the difference between Melee and CQC?",
+        "answer": "-Melee is a special rule for certain weapons, and is resolved as a modified Shoot Action. -CQC occurs after a Model has completed its action and it is still in Base-to-Base with an enemy infantry Model and is a skill check roll off [3.3]. CQC continues until one Model is destroyed.",
+        "topic": "cqc",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ cqc",
+            "lineStart": 349,
+            "lineEnd": 354
+          }
+        ],
+        "id": "faq-cqc-17"
+      },
+      {
+        "question": "Does the Drone auto lose CQC or does a CQC not occur?",
+        "answer": "As Drones cannot participate in CQC, no CQC would occur, even if an enemy Model is in Base-to-Base contact.",
+        "topic": "cqc",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ cqc",
+            "lineStart": 356,
+            "lineEnd": 358
+          }
+        ],
+        "id": "faq-cqc-18"
+      },
+      {
+        "question": "Can Models in CQC range still Shoot?",
+        "answer": "Yes, Models in CQC can still perform Actions and Reactions.",
+        "topic": "cqc",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ cqc",
+            "lineStart": 360,
+            "lineEnd": 361
+          }
+        ],
+        "id": "faq-cqc-19"
+      },
+      {
+        "question": "When does CQC happen?",
+        "answer": "CQC occurs after the Model has completed its Action and after Overwatch Reactions have been resolved. So a Model can Reposition into Base-to-Base, be Reacted to, perform an Action, be Reacted to, and then resolve CQC.",
+        "topic": "cqc",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ cqc",
+            "lineStart": 363,
+            "lineEnd": 366
+          }
+        ],
+        "id": "faq-cqc-20"
+      },
+      {
+        "question": "When does CQC occur, after a melee action?",
+        "answer": "After the Model using the melee weapon has finished its action and any Models have finished their Reactions.",
+        "topic": "cqc",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ cqc",
+            "lineStart": 368,
+            "lineEnd": 370
+          }
+        ],
+        "id": "faq-cqc-21"
+      },
+      {
+        "question": "When does a CQC finish?",
+        "answer": "When a Model is Destroyed. If both Models survive the initial CQC, roll the Models’ Skill Checks again (keeping the Damage applied by the previous rolls) until a Model is Destroyed.",
+        "topic": "cqc",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ cqc",
+            "lineStart": 372,
+            "lineEnd": 375
+          }
+        ],
+        "id": "faq-cqc-22"
+      },
+      {
+        "question": "When placing a Blast Token, do I have to see the center of the Token, or do I only need to see part of it?",
+        "answer": "You only need to be able to draw line of sight to part of the Blast Token when placing it.",
+        "topic": "explosives and blast",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ explosives and blast",
+            "lineStart": 378,
+            "lineEnd": 381
+          }
+        ],
+        "id": "faq-explosives and blast-23"
+      },
+      {
+        "question": "What special rules apply to Blast attacks? AP and HE versions -For AP, the following USR’s would apply: AP, Auto, CQB, Cyclic, Deployed, EMP, Heavy, Indirect, Medium, Seeking, Sustained. -For HE, the following USR’s would apply: Cyclic, Deployed, EMP, Heavy, Medium. Do keywords that provide ‘+1 Shot’ apply to Blast rolls when using them against Infantry?",
+        "answer": "Eg. Heavy Yes.",
+        "topic": "explosives and blast",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ explosives and blast",
+            "lineStart": 383,
+            "lineEnd": 391
+          }
+        ],
+        "id": "faq-explosives and blast-24"
+      },
+      {
+        "question": "Do Blast Markers require Line of Sight to the Models within their Blast radius?",
+        "answer": "No, Blast affects all Models within X” of it, regardless of Line of Sight or Cover. Always agree with your opponent on if this is realistic.",
+        "topic": "explosives and blast",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ explosives and blast",
+            "lineStart": 393,
+            "lineEnd": 395
+          }
+        ],
+        "id": "faq-explosives and blast-25"
+      },
+      {
+        "question": "What is the Damage of Blast Weapons?",
+        "answer": "When Targeting Dusters or Vehicles, use the Damage number printed on the card for the Weapon. When using Blast [X], it is essentially Damage 1 with the Target rolling 1D10 for each success of the Skill Check.",
+        "topic": "explosives and blast",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ explosives and blast",
+            "lineStart": 397,
+            "lineEnd": 400
+          }
+        ],
+        "id": "faq-explosives and blast-26"
+      },
+      {
+        "question": "Can I place a Blast Marker outside of Line of Sight?",
+        "answer": "Only if your opponent agrees. We like to eyeball it and say if it’s a thrown weapon like a hand grenade, then you can simply halve the Range of the Weapon to simulate the arc.",
+        "topic": "explosives and blast",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ explosives and blast",
+            "lineStart": 402,
+            "lineEnd": 405
+          }
+        ],
+        "id": "faq-explosives and blast-27"
+      },
+      {
+        "question": "When you roll the same amount of successes when making a Return Fire Reaction, who wins?",
+        "answer": "Whichever Model rolled the highest result on a D10 in their Skill Check. If both Models tie, reroll the Skill Check and any Special Rules.",
+        "topic": "explosives and blast",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ explosives and blast",
+            "lineStart": 407,
+            "lineEnd": 409
+          }
+        ],
+        "id": "faq-explosives and blast-28"
+      },
+      {
+        "question": "How does Indirect work with the Blast special rule?",
+        "answer": "When Targeting Vehicles and Dusters, the Unit Shooting the weapon may use another Model’s line of sight.",
+        "topic": "explosives and blast",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ explosives and blast",
+            "lineStart": 411,
+            "lineEnd": 413
+          }
+        ],
+        "id": "faq-explosives and blast-29"
+      },
+      {
+        "question": "Can Blast [X] weapons be used in Reactions?",
+        "answer": "Only against vehicles and Dusters, as Blast Weapons cannot Target Infantry Models.",
+        "topic": "reactions",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ reactions",
+            "lineStart": 419,
+            "lineEnd": 421
+          }
+        ],
+        "id": "faq-reactions-30"
+      },
+      {
+        "question": "Can Blast weapons trigger the Return Fire Reaction?",
+        "answer": "Yes, as using Blast weapons is still making a Shoot Action.",
+        "topic": "reactions",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ reactions",
+            "lineStart": 423,
+            "lineEnd": 424
+          }
+        ],
+        "id": "faq-reactions-31"
+      },
+      {
+        "question": "Does Cyclic work on Reaction Shooting?",
+        "answer": "No, Cyclic only triggers on a Shoot Action, which can only be done by an active Unit.",
+        "topic": "reactions",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ reactions",
+            "lineStart": 426,
+            "lineEnd": 428
+          }
+        ],
+        "id": "faq-reactions-32"
+      },
+      {
+        "question": "Do Data Attacks have a maximum range or require Line of sight?",
+        "answer": "If a Range is listed on the Data weapon, that is its maximum range. If no Range is listed, it has unlimited Range.",
+        "topic": "data attacks",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ data attacks",
+            "lineStart": 500,
+            "lineEnd": 502
+          }
+        ],
+        "id": "faq-data attacks-33"
+      },
+      {
+        "question": "Can Data Knives give Units a Pinned Token?",
+        "answer": "No, Data Knives and Data Spikes cause different results when they succeed a Data Attack Action:",
+        "topic": "data attacks",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ data attacks",
+            "lineStart": 518,
+            "lineEnd": 520
+          }
+        ],
+        "id": "faq-data attacks-34"
+      },
+      {
+        "question": "What happens when you get an Ace on the backside of a duster? Is it double Damage+1 or does it double the bonus Damage as well?",
+        "answer": "The weapon gaining +1 Damage occurs before dice are rolled in the Shooting action or Reaction.",
+        "topic": "dusters",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ dusters",
+            "lineStart": 531,
+            "lineEnd": 534
+          }
+        ],
+        "id": "faq-dusters-35"
+      },
+      {
+        "question": "Does a Smoke Token have a certain height?",
+        "answer": "For blocking Line of Sight, no. For counting as in Smoke, yes. Models within 3” of the Token, measured vertically, are in Smoke. Imagine it as having infinite height for drawing Line of Sight through it, but not for counting Models as in Smoke.",
+        "topic": "smoke",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ smoke",
+            "lineStart": 537,
+            "lineEnd": 540
+          }
+        ],
+        "id": "faq-smoke-36"
+      },
+      {
+        "question": "Are Models considered to be in Smoke if any part of their base is within Smoke, or if their whole base is?",
+        "answer": "Models are considered in Smoke if any part of their base is within the Smoke effect.",
+        "topic": "smoke",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "FAQ smoke",
+            "lineStart": 542,
+            "lineEnd": 545
+          }
+        ],
+        "id": "faq-smoke-37"
+      }
+    ],
+    "errata": [
+      {
+        "id": "errata-1",
+        "target": "[1.7] LINE OF SIGHT Add the following paragraph;",
+        "oldTextSummary": "See core rulebook section referenced by [1.7] LINE OF SIGHT Add the following paragraph;.",
+        "newTextSummary": "[1.7.3] Intervening Models Line of Sight cannot be made if it would pass fully through an infantry Model, if the Target is also an infantry Model.",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "RULEBOOK - [1.7] LINE OF SIGHT Add the following paragraph;",
+            "lineStart": 434,
+            "lineEnd": 440
+          }
+        ]
+      },
+      {
+        "id": "errata-2",
+        "target": "[1.9] FORCE DOCUMENT Add the following paragraph;",
+        "oldTextSummary": "See core rulebook section referenced by [1.9] FORCE DOCUMENT Add the following paragraph;.",
+        "newTextSummary": "[1.9.1] Combat Loads and Armory",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "RULEBOOK - [1.9] FORCE DOCUMENT Add the following paragraph;",
+            "lineStart": 447,
+            "lineEnd": 450
+          }
+        ]
+      },
+      {
+        "id": "errata-3",
+        "target": "AP - Targeting Dusters and Vehicles (As per normal Shooting rules).",
+        "oldTextSummary": "DATA ATTACKS",
+        "newTextSummary": "• Pick a Duster or Vehicle Model that your Shooting Model has line of sight to, and is within the Weapon’s Range. • Determine Cover. • Make Skill Check (2D10), +1D10 if the Target is not in Cover or Data Attacks don’t require Line of Sight to their Target. -1D10 if they are.",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "AP - Targeting Dusters and Vehicles (As per normal Shooting rules).",
+            "lineStart": 504,
+            "lineEnd": 516
+          }
+        ]
+      },
+      {
+        "id": "errata-4",
+        "target": "HE - AOE and affecting Infantry.",
+        "oldTextSummary": "EXPLOSIVES AND BLAST",
+        "newTextSummary": "• Place a 25mm Blast Marker within line of sight and range of the Shooting Model. • This Marker must be flat and stable on the table or terrain. Eg. Shouldn’t be overhanging off an edge, or floating, nor overlapping a model’s base. • The Shooting Model makes a Skill Check (2D10), and may be modified by special rules. Determine successes. • Infantry Models within X” of the Blast Marker must make an Armor Check, with the number of D10’s rolled being equal to the number of successes in the Shooting Models Skill Check. • For every failed Armor Check roll, the Model takes 1 Damage. • Using this mode does not count as Targeting a Model for the purposes of interacting with Special Rules, eg; Indirect, Seeking etc.",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "HE - AOE and affecting Infantry.",
+            "lineStart": 555,
+            "lineEnd": 579
+          }
+        ]
+      },
+      {
+        "id": "errata-5",
+        "target": "Boone Recon Force - Small Unit Tactics Your Models get to Shoot during the reposition step instead of moving, then you don’t get to take an action or movement in the action step with those Models.",
+        "oldTextSummary": "Dusters You will require the Impact Expansion to find the core Front Line Duster Rules.",
+        "newTextSummary": "Dusters You will require the Impact Expansion to find the core Front Line Duster Rules.",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "Boone Recon Force - Small Unit Tactics Your Models get to Shoot during the reposition step instead of moving, then you don’t get to take an action or movement in the action step with those Models.",
+            "lineStart": 600,
+            "lineEnd": 603
+          }
+        ]
+      },
+      {
+        "id": "errata-6",
+        "target": "UN Raid Force Alpha and Black Pact - Close Assault Replace with the following paragraph;",
+        "oldTextSummary": "Dusters You will require the Impact Expansion to find the core Front Line Duster Rules.",
+        "newTextSummary": "Models in this Unit may Move 2” after completing their Action, only if this Move would bring them into CQC with an Enemy Model.",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "UN Raid Force Alpha and Black Pact - Close Assault Replace with the following paragraph;",
+            "lineStart": 605,
+            "lineEnd": 609
+          }
+        ]
+      },
+      {
+        "id": "errata-7",
+        "target": "UN 3rd Battalion - Switchback You cannot use the Jump Special Rule during the Pre-Activation 2” Move.",
+        "oldTextSummary": "Dusters You will require the Impact Expansion to find the core Front Line Duster Rules.",
+        "newTextSummary": "• Dusters do not have to spend Movement to rotate, and they do not need to Move in straight lines.",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "UN 3rd Battalion - Switchback You cannot use the Jump Special Rule during the Pre-Activation 2” Move.",
+            "lineStart": 611,
+            "lineEnd": 616
+          }
+        ]
+      },
+      {
+        "id": "errata-8",
+        "target": "Impisi Insurgents - Force Rule Replace with the following paragraph;",
+        "oldTextSummary": "Dusters You will require the Impact Expansion to find the core Front Line Duster Rules.",
+        "newTextSummary": "• Dusters do not provide Cover to Models behind them. • The first paragraph of the Front Line Duster Combat rules replaces the core rule: RUN THEM OVER!. • Dusters may only fire 1 weapon listed on their profile when making a Shoot Action and Overwatch and Return Fire Reactions. • Enemy Models may choose to Target the Dusters Mobility or Chassis. - Models must be able to see the Duster’s entire base to Target its Mobility. Destroying the Duster if its Mobility Damage Track is filled. - When determining if a Model can see the Duster’s entire base, if that Model’s line of sight must pass through Smoke to see, the Model cannot Target the Duster’s Mobility. Note: This is if the Smoke is between the two Models, if one of the Models are in range of the Smoke Token, then the Attacker only has their dice modified, but can still Target the Mobility of the Duster. When using a Combat Load weapon, the Duster will use the Combat Load Weapon profile in its Shooting Action, instead of the Weapon Profile listed on its card. After completing an Activation with any Impisi Insurgent Unit, spend one Control Point to return a Grunt Model to the Unit. Place the Model within 2” of another Model in the Unit (not in Line of Sight or within 8” of an enemy). You may never exceed the number of Grunts on the Unit Card. Note: This rule applies to any Unit in the Impisi Insurgents Force, not only the Impisi Insurgents Unit Card.",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "Impisi Insurgents - Force Rule Replace with the following paragraph;",
+            "lineStart": 618,
+            "lineEnd": 654
+          }
+        ]
+      }
+    ],
+    "universalSpecialRules": [
+      {
+        "id": "ai",
+        "name": "AI",
+        "currentText": "This Model may be affected by Special Rules that only affect AI Models.",
+        "aliases": [
+          "artificial intelligence"
+        ],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR AI",
+            "lineStart": 685,
+            "lineEnd": 685
+          }
+        ]
+      },
+      {
+        "id": "ap-x",
+        "name": "AP (X)",
+        "currentText": "When a weapon with AP(X) inflicts damage, increase the Target’s Armor Check by +X for that attack. This makes their armor less effective—they must roll higher numbers to block damage. Example: A Model with Armor 2/4 hit by an AP(2) Weapon would now have Armor 2/6 for that attack.",
+        "aliases": [
+          "armor piercing"
+        ],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR AP (X)",
+            "lineStart": 687,
+            "lineEnd": 692
+          }
+        ]
+      },
+      {
+        "id": "auto-x",
+        "name": "Auto (X)",
+        "currentText": "After making a Shoot Action with this Weapon, this Model may make up to X additional Shoot Actions with that Weapon, that cannot be Reacted to. Each additional attack must target a different Model within 4” of the original Target. Synergies: If the Weapon also has the Cyclic special rule, the Model may chain multiple Auto(X) attacks, benefiting from the extra Shoot Action granted by Cyclic. Limitations: The original Target and all additional Targets must still fall within the Weapon’s minimum and maximum Range.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Auto (X)",
+            "lineStart": 694,
+            "lineEnd": 706
+          }
+        ]
+      },
+      {
+        "id": "controller",
+        "name": "Controller",
+        "currentText": "This Unit may activate a friendly Unit after completing its Activation, without spending a Control Point. If Controller is granted by a Specialist, the ability is lost when that Model is removed from play.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Controller",
+            "lineStart": 708,
+            "lineEnd": 712
+          }
+        ]
+      },
+      {
+        "id": "cqb",
+        "name": "CQB",
+        "currentText": "This Weapon may re-roll all failed Shots against a Target within half of its maximum range. Example: A Weapon with a 24” Range may re-roll failed Shots against a Target within 12”.",
+        "aliases": [
+          "close quarters battle"
+        ],
+        "relatedRuleIds": [
+          "combat"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR CQB",
+            "lineStart": 714,
+            "lineEnd": 718
+          }
+        ]
+      },
+      {
+        "id": "cyclic",
+        "name": "Cyclic",
+        "currentText": "After making a Shoot Action with this Weapon, this Model may immediately make one additional Shoot or Ready Action. The extra Shoot Action is treated the same as any regular Shoot Action, subject to Weapon’s special rules. Limitations: Additional Shoot Action must be made with the Weapon that triggered Cyclic. Cyclic cannot be used in Reactions.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Cyclic",
+            "lineStart": 720,
+            "lineEnd": 727
+          }
+        ]
+      },
+      {
+        "id": "data-knife",
+        "name": "Data Knife",
+        "currentText": "This Model may make a Data Attack Action targeting an AI or Powered Model within Range. On a successful Skill Check, deal 1 Damage with no Armor Check allowed.",
+        "aliases": [],
+        "relatedRuleIds": [
+          "data-attacks"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Data Knife",
+            "lineStart": 729,
+            "lineEnd": 731
+          }
+        ]
+      },
+      {
+        "id": "data-spike",
+        "name": "Data Spike",
+        "currentText": "This Model may make a Data Attack Action to either apply a Pinned Marker to an enemy Unit or remove a Pinned Marker from a friendly Unit, on a successful Skill Check.",
+        "aliases": [],
+        "relatedRuleIds": [
+          "data-attacks"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Data Spike",
+            "lineStart": 733,
+            "lineEnd": 735
+          }
+        ]
+      },
+      {
+        "id": "deployed",
+        "name": "Deployed",
+        "currentText": "If this Model Moved during its Reposition Step, it rolls only 1D10 when using this Weapon in its Activation. Reactions are not affected.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Deployed",
+            "lineStart": 737,
+            "lineEnd": 739
+          }
+        ]
+      },
+      {
+        "id": "drone",
+        "name": "Drone",
+        "currentText": "This Model cannot engage in CQC, use ladders, or Lean Out to gain Line of Sight. Note: Drones do not participate in CQC — if an enemy Model moves into Base-to-Base contact, no Close Quarters Combat occurs.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Drone",
+            "lineStart": 741,
+            "lineEnd": 745
+          }
+        ]
+      },
+      {
+        "id": "emp",
+        "name": "EMP",
+        "currentText": "This Weapon can only Damage Units with the AI Special Rule, and that Damage ignores Armor Checks.",
+        "aliases": [
+          "electromagnetic pulse"
+        ],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR EMP",
+            "lineStart": 747,
+            "lineEnd": 748
+          }
+        ]
+      },
+      {
+        "id": "heavy",
+        "name": "Heavy",
+        "currentText": "If this Model did not Move during its Reposition Step, it rolls an extra 1D10 when using this Weapon in its Activation. Reactions with this Weapon always roll an extra 1D10.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Heavy",
+            "lineStart": 750,
+            "lineEnd": 752
+          }
+        ]
+      },
+      {
+        "id": "indirect",
+        "name": "Indirect",
+        "currentText": "This Weapon may Target an enemy Model in Line of Sight to another Model in its Group, but Range is still measured from the firing Model.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Indirect",
+            "lineStart": 754,
+            "lineEnd": 755
+          }
+        ]
+      },
+      {
+        "id": "jammer",
+        "name": "Jammer",
+        "currentText": "Models within range of a Jammer ignore the effects of Pinned Markers on their Unit, though Models outside the Jammer’s range remain Pinned.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Jammer",
+            "lineStart": 757,
+            "lineEnd": 759
+          }
+        ]
+      },
+      {
+        "id": "lethal",
+        "name": "Lethal",
+        "currentText": "This Model rolls 3D10 for CQC Skill Checks.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Lethal",
+            "lineStart": 761,
+            "lineEnd": 761
+          }
+        ]
+      },
+      {
+        "id": "low-tech",
+        "name": "Low Tech",
+        "currentText": "This Unit cannot gain Pinned Markers from Data Attacks and cannot be targeted by Weapons with the Indirect special rule.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Low Tech",
+            "lineStart": 763,
+            "lineEnd": 764
+          }
+        ]
+      },
+      {
+        "id": "medium",
+        "name": "Medium",
+        "currentText": "This Weapon may re-roll one failed Shot when used in a Shoot Action.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Medium",
+            "lineStart": 766,
+            "lineEnd": 767
+          }
+        ]
+      },
+      {
+        "id": "melee",
+        "name": "Melee",
+        "currentText": "This Weapon ignores Cover penalties. When used in a Shoot Action, place the attacker Base-to-Base with its Target before resolving the Action and any Reactions. Targets may only Return Fire with a Melee Weapon or Juke.",
+        "aliases": [],
+        "relatedRuleIds": [
+          "combat"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Melee",
+            "lineStart": 769,
+            "lineEnd": 773
+          }
+        ]
+      },
+      {
+        "id": "outsourced",
+        "name": "Outsourced",
+        "currentText": "Models in this Unit cannot use Battle Drills, Armory Items, or the Force Rule. Note: Some Specialists may have exceptions to this rule — for example, the E4 Mafia in Hired Killers may explicitly use Battle Drills.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Outsourced",
+            "lineStart": 775,
+            "lineEnd": 779
+          }
+        ]
+      },
+      {
+        "id": "powered",
+        "name": "Powered",
+        "currentText": "This Model may be affected by Special Rules that affect Powered Models.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Powered",
+            "lineStart": 781,
+            "lineEnd": 782
+          }
+        ]
+      },
+      {
+        "id": "reinforcements",
+        "name": "Reinforcements",
+        "currentText": "At the end of this Unit’s Activation, mark one box to return a Destroyed Model from this Unit. Place the returned Model within 4” of another Model from this Unit and out of Line of Sight of all Enemy Models.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Reinforcements",
+            "lineStart": 784,
+            "lineEnd": 787
+          }
+        ]
+      },
+      {
+        "id": "seeking",
+        "name": "Seeking",
+        "currentText": "This Weapon ignores the -1D10 penalty for shooting a Target in Cover. Example: When firing a Seeking Weapon, you roll 2D10 against Targets in Cover, and 3D10 against Targets not in Cover.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Seeking",
+            "lineStart": 789,
+            "lineEnd": 793
+          }
+        ]
+      },
+      {
+        "id": "shield",
+        "name": "Shield",
+        "currentText": "This Model and one Friendly Infantry Model in Base-to-Base with it both gain Cover. Only one Friendly Model may be in Base-to-Base with this Model at a time.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Shield",
+            "lineStart": 795,
+            "lineEnd": 798
+          }
+        ]
+      },
+      {
+        "id": "smoke-grenade",
+        "name": "Smoke Grenade",
+        "currentText": "Before this Unit’s Reposition Phase, place a Smoke Token within X” of one of its Models. Note: See Rules [8.8] Smoke for more information about this core ability.",
+        "aliases": [],
+        "relatedRuleIds": [
+          "smoke"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Smoke Grenade",
+            "lineStart": 800,
+            "lineEnd": 803
+          }
+        ]
+      },
+      {
+        "id": "spotter",
+        "name": "Spotter",
+        "currentText": "If at least two Models in this Unit can draw Line of Sight to the same Enemy Model, Models in this Unit that target that Enemy gain Medium for that Action.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Spotter",
+            "lineStart": 805,
+            "lineEnd": 807
+          }
+        ]
+      },
+      {
+        "id": "sustained-x",
+        "name": "Sustained (X)",
+        "currentText": "When making an Armor Check against this Weapon, the Target must re-roll up to (X) successful Armor dice, continuing until that many have been re-rolled or all rolls fail. Example: A Model with Armor 1/6 is hit by a Sustained (2) Weapon. It rolls 1D10 for Armor. If it succeeds, it must reroll that die up to 2 times or until it fails. The final roll determines the result.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Sustained (X)",
+            "lineStart": 809,
+            "lineEnd": 815
+          }
+        ]
+      },
+      {
+        "id": "team-leader",
+        "name": "Team Leader",
+        "currentText": "When this Model gains a Ready Token, it may instead give that token to another Model in the same Unit that has already made an Action this round. The receiving Model is treated as if it gained the Ready Token normally. EXPLOSIVES FLOWCHART Based on the Explosives Flow Chart by WarLore MODEL MAKES A SHOOT ACTION WITH A BLAST WEAPON What are you trying to Damage? Weapons with the Blast[X] rule, have 2 firing modes depending on their intended Target. No matter which option is chosen, enemy Models can React normally. DAMAGE INFANTRY High Explosive (HE) Place a 25mm Blast Marker within Line of Sight and Range of the Shooting Model on a flat surface. (3.4) The Shooting Model makes a Skill Check (2D10), and may be modified by Special Rules but no Cover modifier. DAMAGE A VEHICLE OR DUSTER Armor Piercing (AP) Target the Duster or Vehicle specifically, as you would with non-Blast Shooting Action. Choose Damage Track. (8.2.2) RESOLVE ATTACK; USE LISTED WEAPON DAMAGE FOR BLAST WEAPON THE MODEL SHOOTING THE BLAST WEAPON ROLLS NO SUCCESSES. A MODEL MAKES THE RETURN FIRE REACTION THE MODEL SHOOTING THE BLAST WEAPON ROLLS AT LEAST ONE SUCCESS. The Reacting Model Shoots the Active Shooting Model. Both Models roll Skill Checks at the same time with the Model that rolls the most successes applying Damage first. If tied, the highest die result wins. Reroll all dice if still tied. Infantry Models within X” of the Blast Marker must make an Armor Check with the number of D10 rolled being equal to the number of successes in the Shooting Model’s Skill Check. SHOOTING DEALS NO DAMAGE FOR EVERY FAILED ARMOR CHECK ROLL, THE MODEL TAKES 1 DAMAGE.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "USR Team Leader",
+            "lineStart": 817,
+            "lineEnd": 889
+          }
+        ]
+      }
+    ]
+  }
+}

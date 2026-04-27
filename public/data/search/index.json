@@ -1,0 +1,2884 @@
+{
+  "meta": {
+    "kind": "search-index",
+    "version": "packet-2",
+    "generatedAt": "2026-04-27T07:37:24.333Z",
+    "sourceDocumentIds": [
+      "blkout-lore-primer",
+      "blkout-core-rulebook",
+      "blkout-supplemental",
+      "blkout-unit-cards-ocr",
+      "blkout-unit-cards-screenshots",
+      "blkout-quick-ref-md"
+    ],
+    "confidence": "curated"
+  },
+  "data": {
+    "aliasMap": {
+      "cqc": [
+        "close quarters combat",
+        "combat"
+      ],
+      "ai": [
+        "artificial intelligence",
+        "powered",
+        "data knife",
+        "data spike"
+      ],
+      "emp": [
+        "electromagnetic pulse"
+      ],
+      "ap": [
+        "armor piercing"
+      ],
+      "utg": [
+        "urban tactical groups",
+        "twin moons program"
+      ],
+      "return fire": [
+        "reactions",
+        "combat"
+      ],
+      "close quarters combat": [
+        "cqc",
+        "melee"
+      ]
+    },
+    "records": [
+      {
+        "id": "rule-movement",
+        "entityType": "rule",
+        "title": "MOVEMENT",
+        "summary": "To move a Model, measure the intended distance from its Base. Then, move the Model, ensuring it doesn’t exceed the measured distance or pass through enemy Models or Terrain.",
+        "keywords": [
+          "movement",
+          "movement",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "rule-combat",
+        "entityType": "rule",
+        "title": "COMBAT",
+        "summary": "[3.1] SHOOTING STEPS 1. Pick a Model that your Shooting Model has Line of Sight to and is within its Weapon’s Range. 1. Confirm if the Target Model is in Cover. 1. Roll a Skill Check (2D10), rolling an additional D10 if the Target is not in Cover and subtracting a D10 if the Target is in Cover. (D10 in a Shooting Skill Check are called Shots.) 1. For each Success, the Target suffers Damage equal to the Weapon’s Damage. (Yes! Shots that Ace by rolling a 10 apply double the Weapons Damage!) 1. The Target must make an Armor Check, rolling a number of D10 equal to the first number in their Armor, and preventing a point of Damage for each D10 that rolls equal to or higher than the second number. ARMOR If a Model suffers more Damage than it has Armor (D10), it cannot stop that Damage and must mark it. [3.2] MARKING DAMAGE When a Model fails to prevent Damage, it must mark a number of Damage on its Card equal to the Damage it suffered. When the Damage Track is filled, the Model is Destroyed and removed from the Game. Models without a Damage Track are Destroyed when they suffer at least one Damage. [3.3] CQC After making an Action, an Infantry Model in Base-to-Base with an Enemy Infantry Model will engage in Close Quarters Combat (CQC). Both Models will make a Skill Check. Each Success inflicts one Damage to the other Model in CQC, ignoring Armor Checks. The Model with more Successes applies their Damage first. If this would Destroy the other Model, the winning Model does not suffer any Damage. If Players roll an equal number of Successes, the Player with the highest roll on a D10 wins; If Players roll the same number, they will roll again. When a Model is Destroyed in CQC, the CQC ends, and Players proceed to the next CQC. [3.4] EXPLOSIVES Explosive Weapons, like grenades, include the Blast(X) Special Rule. Explosive Weapons may not be used to Target Infantry Models. Instead they will follow these rules: HOW TO SHOOT EXPLOSIVES: 1. Place a Blast Marker (25mm) where your Model has Line of Sight to it. This Marker must be flat and stable on the Table or Terrain, so it shouldn’t be hanging off an edge or floating. 2. After placing the Blast Marker the Shooting Model must make a Skill Check. 3. Infantry within X” of the Mark must make an Armor Check, rolling a number of D10 equal to the number of Successes the Shooting Model made. Models must mark a point of Damage for each D10 that rolls under their Armor. Damage caused by an Explosive Weapon is considered Blast Damage. THROWING GRENADES THROUGH WINDOWS? Players may agree that it would make sense for a Model to place the Marker for an Explosive Weapon outside of a Models Line of Sight.",
+        "keywords": [
+          "combat",
+          "combat",
+          "core"
+        ],
+        "aliases": [
+          "cqc",
+          "close quarters combat",
+          "combat",
+          "return fire",
+          "reactions"
+        ],
+        "route": "/rules/core",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "rule-game-rounds",
+        "entityType": "rule",
+        "title": "GAME ROUNDS",
+        "summary": "In BLKOUT, a game is made of Rounds, each with two parts: Operations and Execution. Players follow these steps in order, starting with the Operations.",
+        "keywords": [
+          "game-rounds",
+          "core",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "rule-reactions",
+        "entityType": "rule",
+        "title": "REACTIONS",
+        "summary": "[7.1] MAKING REACTIONS A Model in a Unit that has not Activated yet and Models with a Ready Token may make Reactions. When Models make a Reaction, they gain an Engaged Token, replacing any Ready Tokens they have. Models with an Engaged Token cannot make Reactions or Actions. [7.2] RETURN FIRE REACTION A single Model may Return Fire and Shoot an Enemy Model when it makes a Shooting Action. Both Models will roll their Skill Check at the same time, with the Model that rolls more Successes applying their Damage first. If a Model is Destroyed, its Shooting will not apply Damage. If Players roll an equal number of Successes, the Player that rolls the highest number on a D10 will win. If Players roll the same number, they will roll again. [7.3] OVERWATCH REACTION Any Model may make the Overwatch Reaction to Shoot an Enemy Model when it ends an Action, or ends a Movement that placed it farther than half its Movement Value in their Line of Sight. EXAMPLE A Model with a Movement Value of 4” Moves 3”. Enemies could React with Overwatch to this Movement since it is farther than half the Models Movement Value. REMEMBER! A D10 that rolls a 10 in a Skill Check is an Ace and counts as two Successes! COMBAT EXAMPLE 1. Model A begins a Shoot Action Targeting Model B. 2. Model C gains an Engaged Token to make the Return Fire Reaction and Shoot Model A. 1. Model A and C roll their Skill Check at the same time. 2. Model A rolls two Successes, while Model C rolls one. Since Model A rolled more Successes than Model C, they apply their Damage to Model B first. 3. Model B only has Armor 1/6, so it can only prevent one point of Damage total. With two Damage, it will be Destroyed. 1. After Destroying Model B, Model C’s Success now hits Model A. Causing them to make an Armor Check due to the one Damage. They have Armor 1/6 so must roll 1D10, being Destroyed on a five or less. [7.4] JUKE REACTION When Targeted by Shooting, an Infantry Model may gain an Engaged Token to gain Cover from the Shooting Model.",
+        "keywords": [
+          "reactions",
+          "reactions",
+          "core"
+        ],
+        "aliases": [
+          "return fire",
+          "reactions",
+          "combat"
+        ],
+        "route": "/rules/core",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "effective-reactions"
+        ]
+      },
+      {
+        "id": "rule-data-attacks",
+        "entityType": "rule",
+        "title": "DATA ATTACKS",
+        "summary": "Models equipped with a Data Spike can make a Data Attack Action. This Action requires a Skill Check. If Successful, the Player has the choice to either: Give an Enemy Unit on the Table a Pinned Marker. Remove a Pinned Marker from a Unit. PINNED MARKER A Unit with a Pinned Marker must remove their Pinned Marker instead of Moving any of their Models during the Reposition Step.",
+        "keywords": [
+          "data-attacks",
+          "data-attacks",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "effective-data-attacks"
+        ]
+      },
+      {
+        "id": "rule-control-points",
+        "entityType": "rule",
+        "title": "CONTROL POINTS",
+        "summary": "Before each Game, Players will gain three Control Points. They may spend one Control Point to: 1. Roll an additional D10 during Initiative. 2. Allow a Unit to benefit from a Battle Drill during its Activation. 3. Activate another Unit after finishing an Activation.",
+        "keywords": [
+          "control-points",
+          "control-points",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "effective-control-points"
+        ]
+      },
+      {
+        "id": "rule-smoke",
+        "entityType": "rule",
+        "title": "SMOKE",
+        "summary": "Smoke is represented by a Smoke, or a Light Smoke Token. Line of Sight and Smoke: Models cannot draw Line of Sight through the area within 3” of the Smoke Token. Models within 3” of the Smoke Token are considered in Cover and treat their Targets as in Cover. Smoke Dissipation: Before determining Initiative, a Player rolls one D10 for each Smoke Token on the Table. On a roll of 6 or higher, the respective Smoke Token is removed from the Game. Light Smoke: If the Smoke Token is not removed, the Player who originally placed it must replace it with a Light Smoke Token. This Light Smoke Token may be placed within 1” of the original Smoke Token’s location before the Smoke Token is removed. All Light Smoke Tokens are removed from the Game before determining Initiative with no roll required.",
+        "keywords": [
+          "smoke",
+          "smoke",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "effective-smoke"
+        ]
+      },
+      {
+        "id": "rule-subsection-2-1-obstacles",
+        "entityType": "rule-subsection",
+        "title": "2.1 OBSTACLES",
+        "summary": "Terrain that is 1” tall or shorter is called an Obstacle. An Infantry Model may Move over an Obstacle by reducing their total Movement by 2”.",
+        "keywords": [
+          "movement",
+          "movement",
+          "2.1",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core#rule-subsection-2-1-obstacles",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "movement"
+        ]
+      },
+      {
+        "id": "rule-subsection-2-2-going-up-or-down",
+        "entityType": "rule-subsection",
+        "title": "2.2 GOING UP OR DOWN",
+        "summary": "Infantry Models can Move up or down using things like stairs or ladders. The Model must end its Movement with their Base fully flat on a surface.",
+        "keywords": [
+          "movement",
+          "movement",
+          "2.2",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core#rule-subsection-2-2-going-up-or-down",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "movement"
+        ]
+      },
+      {
+        "id": "rule-subsection-2-3-leaning-out",
+        "entityType": "rule-subsection",
+        "title": "2.3 LEANING OUT",
+        "summary": "A Model may use half its Movement to Lean Out after a Move. If a Model only Leans Out instead of Moving, it does not count as Moving for Special Rules. Place a 25mm Lean Out Marker next to the Model’s Base. The Marker can be used for the Model’s Line of Sight and measurements. Enemy Models must treat the Marker as the Leaning Out Model if they do not have Line of Sight to the Model itself. Models that are Leaning Out have cover from any Model that can only see the Marker and not the actual Model. Remove the Marker before the Model moves. LEANING OUT • Model B chooses to Lean Out instead of Moving. • A Lean Out Marker is placed next to the Models Base. • Model A only has Line of Sight to the Lean Out Marker and not Model B. Model B will have Cover from Model A.",
+        "keywords": [
+          "movement",
+          "movement",
+          "2.3",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core#rule-subsection-2-3-leaning-out",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "movement"
+        ]
+      },
+      {
+        "id": "rule-subsection-2-4-jump-x",
+        "entityType": "rule-subsection",
+        "title": "2.4 JUMP (X)",
+        "summary": "Models with Jump(X) can Jump as a Movement. The Model may be placed anywhere within (X)” horizontally, and (X)” vertically without passing through Terrain. [3.0] COMBAT [3.1] SHOOTING STEPS 1. Pick a Model that your Shooting Model has Line of Sight to and is within its Weapon’s Range. 1. Confirm if the Target Model is in Cover. 1. Roll a Skill Check (2D10), rolling an additional D10 if the Target is not in Cover and subtracting a D10 if the Target is in Cover. (D10 in a Shooting Skill Check are called Shots.) 1. For each Success, the Target suffers Damage equal to the Weapon’s Damage. (Yes! Shots that Ace by rolling a 10 apply double the Weapons Damage!) 1. The Target must make an Armor Check, rolling a number of D10 equal to the first number in their Armor, and preventing a point of Damage for each D10 that rolls equal to or higher than the second number. ARMOR If a Model suffers more Damage than it has Armor (D10), it cannot stop that Damage and must mark it. [3.2] MARKING DAMAGE When a Model fails to prevent Damage, it must mark a number of Damage on its Card equal to the Damage it suffered. When the Damage Track is filled, the Model is Destroyed and removed from the Game. Models without a Damage Track are Destroyed when they suffer at least one Damage. [3.3] CQC After making an Action, an Infantry Model in Base-to-Base with an Enemy Infantry Model will engage in Close Quarters Combat (CQC). Both Models will make a Skill Check. Each Success inflicts one Damage to the other Model in CQC, ignoring Armor Checks. The Model with more Successes applies their Damage first. If this would Destroy the other Model, the winning Model does not suffer any Damage. If Players roll an equal number of Successes, the Player with the highest roll on a D10 wins; If Players roll the same number, they will roll again. When a Model is Destroyed in CQC, the CQC ends, and Players proceed to the next CQC.",
+        "keywords": [
+          "movement",
+          "movement",
+          "2.4",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core#rule-subsection-2-4-jump-x",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "movement"
+        ]
+      },
+      {
+        "id": "rule-subsection-3-1-shooting-steps",
+        "entityType": "rule-subsection",
+        "title": "3.1 SHOOTING STEPS",
+        "summary": "1. Pick a Model that your Shooting Model has Line of Sight to and is within its Weapon’s Range. 1. Confirm if the Target Model is in Cover. 1. Roll a Skill Check (2D10), rolling an additional D10 if the Target is not in Cover and subtracting a D10 if the Target is in Cover. (D10 in a Shooting Skill Check are called Shots.) 1. For each Success, the Target suffers Damage equal to the Weapon’s Damage. (Yes! Shots that Ace by rolling a 10 apply double the Weapons Damage!) 1. The Target must make an Armor Check, rolling a number of D10 equal to the first number in their Armor, and preventing a point of Damage for each D10 that rolls equal to or higher than the second number. ARMOR If a Model suffers more Damage than it has Armor (D10), it cannot stop that Damage and must mark it.",
+        "keywords": [
+          "combat",
+          "combat",
+          "3.1",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core#rule-subsection-3-1-shooting-steps",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "rule-subsection-3-2-marking-damage",
+        "entityType": "rule-subsection",
+        "title": "3.2 MARKING DAMAGE",
+        "summary": "When a Model fails to prevent Damage, it must mark a number of Damage on its Card equal to the Damage it suffered. When the Damage Track is filled, the Model is Destroyed and removed from the Game. Models without a Damage Track are Destroyed when they suffer at least one Damage.",
+        "keywords": [
+          "combat",
+          "combat",
+          "3.2",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core#rule-subsection-3-2-marking-damage",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "rule-subsection-3-3-cqc",
+        "entityType": "rule-subsection",
+        "title": "3.3 CQC",
+        "summary": "After making an Action, an Infantry Model in Base-to-Base with an Enemy Infantry Model will engage in Close Quarters Combat (CQC). Both Models will make a Skill Check. Each Success inflicts one Damage to the other Model in CQC, ignoring Armor Checks. The Model with more Successes applies their Damage first. If this would Destroy the other Model, the winning Model does not suffer any Damage. If Players roll an equal number of Successes, the Player with the highest roll on a D10 wins; If Players roll the same number, they will roll again. When a Model is Destroyed in CQC, the CQC ends, and Players proceed to the next CQC.",
+        "keywords": [
+          "combat",
+          "combat",
+          "3.3",
+          "core"
+        ],
+        "aliases": [
+          "cqc",
+          "close quarters combat",
+          "combat",
+          "melee"
+        ],
+        "route": "/rules/core#rule-subsection-3-3-cqc",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "rule-subsection-3-4-explosives",
+        "entityType": "rule-subsection",
+        "title": "3.4 EXPLOSIVES",
+        "summary": "Explosive Weapons, like grenades, include the Blast(X) Special Rule. Explosive Weapons may not be used to Target Infantry Models. Instead they will follow these rules: HOW TO SHOOT EXPLOSIVES: 1. Place a Blast Marker (25mm) where your Model has Line of Sight to it. This Marker must be flat and stable on the Table or Terrain, so it shouldn’t be hanging off an edge or floating. 2. After placing the Blast Marker the Shooting Model must make a Skill Check. 3. Infantry within X” of the Mark must make an Armor Check, rolling a number of D10 equal to the number of Successes the Shooting Model made. Models must mark a point of Damage for each D10 that rolls under their Armor. Damage caused by an Explosive Weapon is considered Blast Damage. THROWING GRENADES THROUGH WINDOWS? Players may agree that it would make sense for a Model to place the Marker for an Explosive Weapon outside of a Models Line of Sight.",
+        "keywords": [
+          "combat",
+          "combat",
+          "3.4",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core#rule-subsection-3-4-explosives",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "rule-subsection-5-1-operations",
+        "entityType": "rule-subsection",
+        "title": "5.1 OPERATIONS",
+        "summary": "1. Pick Up: Players will pick up all Activation Markers, Ready Tokens, and Engaged Tokens from their Models and Units. 2. Determine Initiative: To determine who will go first in a Round, both Players will roll a D10, rerolling if they roll the same number. The Player that rolls the higher number will Activate a Unit in the Execution first.",
+        "keywords": [
+          "game-rounds",
+          "core",
+          "5.1",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core#rule-subsection-5-1-operations",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "game-rounds"
+        ]
+      },
+      {
+        "id": "rule-subsection-5-3-execution",
+        "entityType": "rule-subsection",
+        "title": "5.3 EXECUTION",
+        "summary": "1. Activations: Players will take turns Activating Units, starting with the Player who won the Initiative. 2. Ending a Round: The Execution ends once both Players have Activated all of their Units. After the Execution ends, a new Round will begin. [6.0] ACTIVATING A UNIT Activating a Unit allows a Player to Move their Models and Destroy the Enemy! • Units with an Activation Marker cannot Activate. • Units with no remaining Models cannot Activate. Follow these steps to Activate a Unit: 1. Reposition: During the Reposition step every Model in the Unit may Move. 2. Actions: Once every Model has Moved, each Model must make one Action each. Resolve them one at a time. ENGAGED! Models with an Engaged Token cannot make an Action. [6.1] ACTIONS Shoot: The Model may Shoot a target. [3.1] Ready: The Model gets a Ready Token. (Ready Tokens allow the Model to make a Reaction [7.0]) Sprint: The Model may Move. When making Actions, Enemy Models may React! Reactions are covered under [7.0]. 1. Activation Marker: After all Active Models have finished their Actions, place an Activation Marker on the Unit to show it has Activated for this Round.",
+        "keywords": [
+          "game-rounds",
+          "core",
+          "5.3",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core#rule-subsection-5-3-execution",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "game-rounds"
+        ]
+      },
+      {
+        "id": "rule-subsection-7-1-making-reactions",
+        "entityType": "rule-subsection",
+        "title": "7.1 MAKING REACTIONS",
+        "summary": "A Model in a Unit that has not Activated yet and Models with a Ready Token may make Reactions. When Models make a Reaction, they gain an Engaged Token, replacing any Ready Tokens they have. Models with an Engaged Token cannot make Reactions or Actions.",
+        "keywords": [
+          "reactions",
+          "reactions",
+          "7.1",
+          "core"
+        ],
+        "aliases": [
+          "return fire",
+          "reactions",
+          "combat"
+        ],
+        "route": "/rules/core#rule-subsection-7-1-making-reactions",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "reactions"
+        ]
+      },
+      {
+        "id": "rule-subsection-7-2-return-fire-reaction",
+        "entityType": "rule-subsection",
+        "title": "7.2 RETURN FIRE REACTION",
+        "summary": "A single Model may Return Fire and Shoot an Enemy Model when it makes a Shooting Action. Both Models will roll their Skill Check at the same time, with the Model that rolls more Successes applying their Damage first. If a Model is Destroyed, its Shooting will not apply Damage. If Players roll an equal number of Successes, the Player that rolls the highest number on a D10 will win. If Players roll the same number, they will roll again.",
+        "keywords": [
+          "reactions",
+          "reactions",
+          "7.2",
+          "core"
+        ],
+        "aliases": [
+          "return fire",
+          "reactions",
+          "combat"
+        ],
+        "route": "/rules/core#rule-subsection-7-2-return-fire-reaction",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "reactions"
+        ]
+      },
+      {
+        "id": "rule-subsection-7-3-overwatch-reaction",
+        "entityType": "rule-subsection",
+        "title": "7.3 OVERWATCH REACTION",
+        "summary": "Any Model may make the Overwatch Reaction to Shoot an Enemy Model when it ends an Action, or ends a Movement that placed it farther than half its Movement Value in their Line of Sight. EXAMPLE A Model with a Movement Value of 4” Moves 3”. Enemies could React with Overwatch to this Movement since it is farther than half the Models Movement Value. REMEMBER! A D10 that rolls a 10 in a Skill Check is an Ace and counts as two Successes! COMBAT EXAMPLE 1. Model A begins a Shoot Action Targeting Model B. 2. Model C gains an Engaged Token to make the Return Fire Reaction and Shoot Model A. 1. Model A and C roll their Skill Check at the same time. 2. Model A rolls two Successes, while Model C rolls one. Since Model A rolled more Successes than Model C, they apply their Damage to Model B first. 3. Model B only has Armor 1/6, so it can only prevent one point of Damage total. With two Damage, it will be Destroyed. 1. After Destroying Model B, Model C’s Success now hits Model A. Causing them to make an Armor Check due to the one Damage. They have Armor 1/6 so must roll 1D10, being Destroyed on a five or less.",
+        "keywords": [
+          "reactions",
+          "reactions",
+          "7.3",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core#rule-subsection-7-3-overwatch-reaction",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "reactions"
+        ]
+      },
+      {
+        "id": "rule-subsection-7-4-juke-reaction",
+        "entityType": "rule-subsection",
+        "title": "7.4 JUKE REACTION",
+        "summary": "When Targeted by Shooting, an Infantry Model may gain an Engaged Token to gain Cover from the Shooting Model.",
+        "keywords": [
+          "reactions",
+          "reactions",
+          "7.4",
+          "core"
+        ],
+        "aliases": [],
+        "route": "/rules/core#rule-subsection-7-4-juke-reaction",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": [
+          "reactions"
+        ]
+      },
+      {
+        "id": "effective-reactions",
+        "entityType": "effective-rule",
+        "title": "REACTIONS (effective)",
+        "summary": "Core: [7.1] MAKING REACTIONS A Model in a Unit that has not Activated yet and Models with a Ready Token may make Reactions. When Models make a Reaction, they gain an Engaged Token, replacing any Ready Tokens they have. Models with an Engaged Token cannot make Reactions or Actions. [7.2] RETURN FIRE REACTION A single Model may Return Fire and Shoot an Enemy Model when it makes a Shooting Action. Both Models will roll their Skill Check at the same time, with the Model that rolls more Successes applying their Damage first. If a Model is Destroyed, its Shooting will not apply Damage. If Players roll an equal number of Successes, the Player that rolls the highest number on a D10 will win. If Players roll the same number, they will roll again. [7.3] OVERWATCH REACTION Any Model may make the Overwatch Reaction to Shoot an Enemy Model when it ends an Action, or ends a Movement that placed it farther than half its Movement Value in their Line of Sight. EXAMPLE A Model with a Movement Value of 4” Moves 3”. Enemies could React with Overwatch to this Movement since it is farther than half the Models Movement Value. REMEMBER! A D10 that rolls a 10 in a Skill Check is an Ace and counts as two Successes! COMBAT EXAMPLE 1. Model A begins a Shoot Action Targeting Model B. 2. Model C gains an Engaged Token to make the Return Fire Reaction and Shoot Model A. 1. Model A and C roll their Skill Check at the same time. 2. Model A rolls two Successes, while Model C rolls one. Since Model A rolled more Successes than Model C, they apply their Damage to Model B first. 3. Model B only has Armor 1/6, so it can only prevent one point of Damage total. With two Damage, it will be Destroyed. 1. After Destroying Model B, Model C’s Success now hits Model A. Causing them to make an Armor Check due to the one Damage. They have Armor 1/6 so must roll 1D10, being Destroyed on a five or less. [7.4] JUKE REACTION When Targeted by Shooting, an Infantry Model may gain an Engaged Token to gain Cover from the Shooting Model. Override 1: Q: Can Blast [X] weapons be used in Reactions? A: Only against vehicles and Dusters, as Blast Weapons cannot Target Infantry Models. Q: Can Blast weapons trigger the Return Fire Reaction? A: Yes, as using Blast weapons is still making a Shoot Action. Q: Does Cyclic work on Reaction Shooting? A: No, Cyclic only triggers on a Shoot Action, which can only be done by an active Unit. Q: What happens when you get an Ace on the backside of a duster? Is it double Damage+1 or does it double the bonus Damage as well? A: The weapon gaining +1 Damage occurs before dice are rolled in the Shooting action or Reaction.",
+        "keywords": [
+          "reactions",
+          "effective",
+          "override"
+        ],
+        "aliases": [
+          "return fire",
+          "reactions",
+          "combat"
+        ],
+        "route": "/rules/core",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook",
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "reactions"
+        ]
+      },
+      {
+        "id": "effective-data-attacks",
+        "entityType": "effective-rule",
+        "title": "DATA ATTACKS (effective)",
+        "summary": "Core: Models equipped with a Data Spike can make a Data Attack Action. This Action requires a Skill Check. If Successful, the Player has the choice to either: Give an Enemy Unit on the Table a Pinned Marker. Remove a Pinned Marker from a Unit. PINNED MARKER A Unit with a Pinned Marker must remove their Pinned Marker instead of Moving any of their Models during the Reposition Step. Override 1: AP - Targeting Dusters and Vehicles (As per normal Shooting rules). • Pick a Duster or Vehicle Model that your Shooting Model has line of sight to, and is within the Weapon’s Range. • Determine Cover. • Make Skill Check (2D10), +1D10 if the Target is not in Cover or Data Attacks don’t require Line of Sight to their Target. -1D10 if they are. Q: Do Data Attacks have a maximum range or require Line of sight? A: If a Range is listed on the Data weapon, that is its maximum range. If no Range is listed, it has unlimited Range. Q: Can Data Knives give Units a Pinned Token? A: No, Data Knives and Data Spikes cause different results when they succeed a Data Attack Action:",
+        "keywords": [
+          "data-attacks",
+          "effective",
+          "override"
+        ],
+        "aliases": [],
+        "route": "/rules/core",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook",
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "data-attacks"
+        ]
+      },
+      {
+        "id": "effective-control-points",
+        "entityType": "effective-rule",
+        "title": "CONTROL POINTS (effective)",
+        "summary": "Core: Before each Game, Players will gain three Control Points. They may spend one Control Point to: 1. Roll an additional D10 during Initiative. 2. Allow a Unit to benefit from a Battle Drill during its Activation. 3. Activate another Unit after finishing an Activation. Override 1: Players will begin each game with 3 Control Points. They may never regain these Control Points. Players may spend a Control Point to: Battle Drills | Spend a Control Point before Activating a Force Unit to allow it to benefit from a Battle Drill during its Activation. A Unit may only benefit from one Battle Drill per Activation. Handler Activation | Once per Round, spend a Control Point to remove an Activation Marker, and any Ready or Engaged Tokens from a Handler after it has finished its Activation. Chained Activation | Once per Round you may spend a Control Point to Activate a Unit after finishing an Activation with a different Unit.",
+        "keywords": [
+          "control-points",
+          "effective",
+          "override"
+        ],
+        "aliases": [],
+        "route": "/rules/core",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook",
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "control-points"
+        ]
+      },
+      {
+        "id": "effective-smoke",
+        "entityType": "effective-rule",
+        "title": "SMOKE (effective)",
+        "summary": "Core: Smoke is represented by a Smoke, or a Light Smoke Token. Line of Sight and Smoke: Models cannot draw Line of Sight through the area within 3” of the Smoke Token. Models within 3” of the Smoke Token are considered in Cover and treat their Targets as in Cover. Smoke Dissipation: Before determining Initiative, a Player rolls one D10 for each Smoke Token on the Table. On a roll of 6 or higher, the respective Smoke Token is removed from the Game. Light Smoke: If the Smoke Token is not removed, the Player who originally placed it must replace it with a Light Smoke Token. This Light Smoke Token may be placed within 1” of the original Smoke Token’s location before the Smoke Token is removed. All Light Smoke Tokens are removed from the Game before determining Initiative with no roll required. Override 1: Models with only part of their base inside Smoke gain Partial Cover and treat their Targets as in Partial Cover. Models with their entire base inside Smoke gain Full Cover and treat their Targets as in Full Cover. Line of Sight may not be drawn through a 3” area around a Smoke Token to Models or Markers outside of the area around the Token.",
+        "keywords": [
+          "smoke",
+          "effective",
+          "override"
+        ],
+        "aliases": [],
+        "route": "/rules/core",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook",
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "smoke"
+        ]
+      },
+      {
+        "id": "faq-general-1",
+        "entityType": "faq",
+        "title": "Does a Unit keep its Armory Item?",
+        "summary": "No. A Model benefits from the Armory or uses the Weapon only during the Activation in which it marked its Combat Load. Imagine the Armory as limited use or one time abilities.",
+        "keywords": [
+          "general"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "faq-general-2",
+        "entityType": "faq",
+        "title": "Can I activate more than one Battle Drill on a Unit?",
+        "summary": "No. You can only choose one Battle Drill for the Unit to benefit from during its Activation.",
+        "keywords": [
+          "general"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "faq-general-3",
+        "entityType": "faq",
+        "title": "Does the Impisi Force Rule Apply to the whole Force or just the Impisi Insurgents Unit?",
+        "summary": "The Impisi Force Rule applies to the entire Force, not just the Unit.",
+        "keywords": [
+          "general"
+        ],
+        "aliases": [
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "faq-movement-4",
+        "entityType": "faq",
+        "title": "Is there Unit coherency?",
+        "summary": "No.",
+        "keywords": [
+          "movement"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "movement"
+        ]
+      },
+      {
+        "id": "faq-movement-5",
+        "entityType": "faq",
+        "title": "Can a Lean Out Move be Reacted to by Overwatch?",
+        "summary": "Only if the Model is leaning out during a sprint action. The Model is spending its Movement not Moving that distance when Leaning Out.",
+        "keywords": [
+          "movement"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "movement"
+        ]
+      },
+      {
+        "id": "faq-movement-6",
+        "entityType": "faq",
+        "title": "When Jumping do I have to have Line of Sight to the final point?",
+        "summary": "No, as long as Terrain doesn’t prevent the Model from “moving” from its original point to the new point. IE: Jumping through a wall of a totally enclosed structure.",
+        "keywords": [
+          "movement"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "movement"
+        ]
+      },
+      {
+        "id": "faq-movement-7",
+        "entityType": "faq",
+        "title": "Can a Unit with Jump (4) jump over an obstacle that is 4 inches high and end up on ground level on the other side? (Or would they only be allowed to jump up onto the obstacle?) The Model is allowed to be placed on the other side of the obstacle if there is no intervening Terrain in the way, such as a roof. Can a Model come down from a height if they do not have the Jump (X) rule?",
+        "summary": "No. The Model must find a safer way down, such as stairs or a ladder.",
+        "keywords": [
+          "movement"
+        ],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "movement"
+        ]
+      },
+      {
+        "id": "faq-movement-8",
+        "entityType": "faq",
+        "title": "Can a Model climb a surface, or does a Model wishing to move vertically require an obvious means to do so (e.g., ladder, stack of crates, etc.)?",
+        "summary": "The Model requires an obvious means to move vertically.",
+        "keywords": [
+          "movement"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "movement"
+        ]
+      },
+      {
+        "id": "faq-movement-9",
+        "entityType": "faq",
+        "title": "Does the use of an ability or battle drill that gives a Unit/Model “+X” movement increase the half movement distance a Model can make to avoid Overwatch?",
+        "summary": "Yes, increase the movement value before determining the half movement value.",
+        "keywords": [
+          "movement"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "movement"
+        ]
+      },
+      {
+        "id": "faq-combat-10",
+        "entityType": "faq",
+        "title": "Can you Ace Armor Checks?",
+        "summary": "No, you can only Ace Skill Checks.",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-combat-11",
+        "entityType": "faq",
+        "title": "Do Units with multiple primary weapons (i.e. Peacemakers or Razorbacks) get to fire all of them as a single Action or just one?",
+        "summary": "Non-vehicle Models can only use one weapon profile per Shoot action or Reaction, not all of their listed weapons.",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-combat-12",
+        "entityType": "faq",
+        "title": "Can you Target additional Models with Auto, if said Models are within your minimum range, but within 4” of the original Target Model?",
+        "summary": "No, you cannot Target Models within a weapons minimum range.",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-combat-13",
+        "entityType": "faq",
+        "title": "How does Seeking work with the matched play Cover rules?",
+        "summary": "Weapons with the Seeking special rule will only ignore the -1D10 (Shot) penalty of Models benefiting from Full Cover.",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-combat-14",
+        "entityType": "faq",
+        "title": "When using a weapon that says it ignores Cover, do I roll 2D10 or 3D10 for the attack?",
+        "summary": "If the Target is in Cover you will roll 2D10 as you ignore the -1D10 to your Skill Check of your Target being in Cover, but you do not gain the +1D10 of your Target being in the open.",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-combat-15",
+        "entityType": "faq",
+        "title": "How does Auto interact with Cyclic?",
+        "summary": "When an active Model makes a Shoot action with a weapon that has both Auto and Cyclic special rules, the sequence of actions goes like;",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-combat-16",
+        "entityType": "faq",
+        "title": "1. Make the first attack for the weapon, return fire Reaction is applicable here. 2. Overwatch Reactions to the Shoot action occur. 3. The Model makes additional Auto Shoot actions, these cannot be Reacted to. 4. The Model then chooses to either gain a Ready Token, or repeat steps 1-3. UN Raid Force Alpha Specialists, if the sniper moves with the deployed weapon, do they still roll 2D10 from the faction rule?",
+        "summary": "No, the Deployed USR only allows from 1D10 to be rolled if the Model moved, thus stopping the Force Rule from triggering.",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike",
+          "ap",
+          "armor piercing",
+          "return fire",
+          "reactions",
+          "combat"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-cqc-17",
+        "entityType": "faq",
+        "title": "What is the difference between Melee and CQC?",
+        "summary": "-Melee is a special rule for certain weapons, and is resolved as a modified Shoot Action. -CQC occurs after a Model has completed its action and it is still in Base-to-Base with an enemy infantry Model and is a skill check roll off [3.3]. CQC continues until one Model is destroyed.",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [
+          "cqc",
+          "close quarters combat",
+          "combat",
+          "melee"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-cqc-18",
+        "entityType": "faq",
+        "title": "Does the Drone auto lose CQC or does a CQC not occur?",
+        "summary": "As Drones cannot participate in CQC, no CQC would occur, even if an enemy Model is in Base-to-Base contact.",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [
+          "cqc",
+          "close quarters combat",
+          "combat",
+          "melee"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-cqc-19",
+        "entityType": "faq",
+        "title": "Can Models in CQC range still Shoot?",
+        "summary": "Yes, Models in CQC can still perform Actions and Reactions.",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [
+          "cqc",
+          "close quarters combat",
+          "combat",
+          "melee"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-cqc-20",
+        "entityType": "faq",
+        "title": "When does CQC happen?",
+        "summary": "CQC occurs after the Model has completed its Action and after Overwatch Reactions have been resolved. So a Model can Reposition into Base-to-Base, be Reacted to, perform an Action, be Reacted to, and then resolve CQC.",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [
+          "cqc",
+          "close quarters combat",
+          "combat",
+          "ap",
+          "armor piercing",
+          "melee"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-cqc-21",
+        "entityType": "faq",
+        "title": "When does CQC occur, after a melee action?",
+        "summary": "After the Model using the melee weapon has finished its action and any Models have finished their Reactions.",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [
+          "cqc",
+          "close quarters combat",
+          "combat",
+          "melee"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-cqc-22",
+        "entityType": "faq",
+        "title": "When does a CQC finish?",
+        "summary": "When a Model is Destroyed. If both Models survive the initial CQC, roll the Models’ Skill Checks again (keeping the Damage applied by the previous rolls) until a Model is Destroyed.",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [
+          "cqc",
+          "close quarters combat",
+          "combat",
+          "melee"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-explosives and blast-23",
+        "entityType": "faq",
+        "title": "When placing a Blast Token, do I have to see the center of the Token, or do I only need to see part of it?",
+        "summary": "You only need to be able to draw line of sight to part of the Blast Token when placing it.",
+        "keywords": [
+          "explosives and blast"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-explosives and blast-24",
+        "entityType": "faq",
+        "title": "What special rules apply to Blast attacks? AP and HE versions -For AP, the following USR’s would apply: AP, Auto, CQB, Cyclic, Deployed, EMP, Heavy, Indirect, Medium, Seeking, Sustained. -For HE, the following USR’s would apply: Cyclic, Deployed, EMP, Heavy, Medium. Do keywords that provide ‘+1 Shot’ apply to Blast rolls when using them against Infantry?",
+        "summary": "Eg. Heavy Yes.",
+        "keywords": [
+          "explosives and blast"
+        ],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike",
+          "emp",
+          "electromagnetic pulse",
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-explosives and blast-25",
+        "entityType": "faq",
+        "title": "Do Blast Markers require Line of Sight to the Models within their Blast radius?",
+        "summary": "No, Blast affects all Models within X” of it, regardless of Line of Sight or Cover. Always agree with your opponent on if this is realistic.",
+        "keywords": [
+          "explosives and blast"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-explosives and blast-26",
+        "entityType": "faq",
+        "title": "What is the Damage of Blast Weapons?",
+        "summary": "When Targeting Dusters or Vehicles, use the Damage number printed on the card for the Weapon. When using Blast [X], it is essentially Damage 1 with the Target rolling 1D10 for each success of the Skill Check.",
+        "keywords": [
+          "explosives and blast"
+        ],
+        "aliases": [
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-explosives and blast-27",
+        "entityType": "faq",
+        "title": "Can I place a Blast Marker outside of Line of Sight?",
+        "summary": "Only if your opponent agrees. We like to eyeball it and say if it’s a thrown weapon like a hand grenade, then you can simply halve the Range of the Weapon to simulate the arc.",
+        "keywords": [
+          "explosives and blast"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-explosives and blast-28",
+        "entityType": "faq",
+        "title": "When you roll the same amount of successes when making a Return Fire Reaction, who wins?",
+        "summary": "Whichever Model rolled the highest result on a D10 in their Skill Check. If both Models tie, reroll the Skill Check and any Special Rules.",
+        "keywords": [
+          "explosives and blast"
+        ],
+        "aliases": [
+          "return fire",
+          "reactions",
+          "combat"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-explosives and blast-29",
+        "entityType": "faq",
+        "title": "How does Indirect work with the Blast special rule?",
+        "summary": "When Targeting Vehicles and Dusters, the Unit Shooting the weapon may use another Model’s line of sight.",
+        "keywords": [
+          "explosives and blast"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "faq-reactions-30",
+        "entityType": "faq",
+        "title": "Can Blast [X] weapons be used in Reactions?",
+        "summary": "Only against vehicles and Dusters, as Blast Weapons cannot Target Infantry Models.",
+        "keywords": [
+          "reactions"
+        ],
+        "aliases": [
+          "ap",
+          "armor piercing",
+          "return fire",
+          "reactions",
+          "combat"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "reactions"
+        ]
+      },
+      {
+        "id": "faq-reactions-31",
+        "entityType": "faq",
+        "title": "Can Blast weapons trigger the Return Fire Reaction?",
+        "summary": "Yes, as using Blast weapons is still making a Shoot Action.",
+        "keywords": [
+          "reactions"
+        ],
+        "aliases": [
+          "ap",
+          "armor piercing",
+          "return fire",
+          "reactions",
+          "combat"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "reactions"
+        ]
+      },
+      {
+        "id": "faq-reactions-32",
+        "entityType": "faq",
+        "title": "Does Cyclic work on Reaction Shooting?",
+        "summary": "No, Cyclic only triggers on a Shoot Action, which can only be done by an active Unit.",
+        "keywords": [
+          "reactions"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "reactions"
+        ]
+      },
+      {
+        "id": "faq-data attacks-33",
+        "entityType": "faq",
+        "title": "Do Data Attacks have a maximum range or require Line of sight?",
+        "summary": "If a Range is listed on the Data weapon, that is its maximum range. If no Range is listed, it has unlimited Range.",
+        "keywords": [
+          "data attacks"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "data-attacks"
+        ]
+      },
+      {
+        "id": "faq-data attacks-34",
+        "entityType": "faq",
+        "title": "Can Data Knives give Units a Pinned Token?",
+        "summary": "No, Data Knives and Data Spikes cause different results when they succeed a Data Attack Action:",
+        "keywords": [
+          "data attacks"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "data-attacks"
+        ]
+      },
+      {
+        "id": "faq-dusters-35",
+        "entityType": "faq",
+        "title": "What happens when you get an Ace on the backside of a duster? Is it double Damage+1 or does it double the bonus Damage as well?",
+        "summary": "The weapon gaining +1 Damage occurs before dice are rolled in the Shooting action or Reaction.",
+        "keywords": [
+          "dusters"
+        ],
+        "aliases": [
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "reactions"
+        ]
+      },
+      {
+        "id": "faq-smoke-36",
+        "entityType": "faq",
+        "title": "Does a Smoke Token have a certain height?",
+        "summary": "For blocking Line of Sight, no. For counting as in Smoke, yes. Models within 3” of the Token, measured vertically, are in Smoke. Imagine it as having infinite height for drawing Line of Sight through it, but not for counting Models as in Smoke.",
+        "keywords": [
+          "smoke"
+        ],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "smoke"
+        ]
+      },
+      {
+        "id": "faq-smoke-37",
+        "entityType": "faq",
+        "title": "Are Models considered to be in Smoke if any part of their base is within Smoke, or if their whole base is?",
+        "summary": "Models are considered in Smoke if any part of their base is within the Smoke effect.",
+        "keywords": [
+          "smoke"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "smoke"
+        ]
+      },
+      {
+        "id": "errata-1",
+        "entityType": "errata",
+        "title": "[1.7] LINE OF SIGHT Add the following paragraph;",
+        "summary": "[1.7.3] Intervening Models Line of Sight cannot be made if it would pass fully through an infantry Model, if the Target is also an infantry Model.",
+        "keywords": [
+          "errata",
+          "clarification"
+        ],
+        "aliases": [
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "errata-2",
+        "entityType": "errata",
+        "title": "[1.9] FORCE DOCUMENT Add the following paragraph;",
+        "summary": "[1.9.1] Combat Loads and Armory",
+        "keywords": [
+          "errata",
+          "clarification"
+        ],
+        "aliases": [
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "errata-3",
+        "entityType": "errata",
+        "title": "AP - Targeting Dusters and Vehicles (As per normal Shooting rules).",
+        "summary": "• Pick a Duster or Vehicle Model that your Shooting Model has line of sight to, and is within the Weapon’s Range. • Determine Cover. • Make Skill Check (2D10), +1D10 if the Target is not in Cover or Data Attacks don’t require Line of Sight to their Target. -1D10 if they are.",
+        "keywords": [
+          "errata",
+          "clarification"
+        ],
+        "aliases": [
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "data-attacks"
+        ]
+      },
+      {
+        "id": "errata-4",
+        "entityType": "errata",
+        "title": "HE - AOE and affecting Infantry.",
+        "summary": "• Place a 25mm Blast Marker within line of sight and range of the Shooting Model. • This Marker must be flat and stable on the table or terrain. Eg. Shouldn’t be overhanging off an edge, or floating, nor overlapping a model’s base. • The Shooting Model makes a Skill Check (2D10), and may be modified by special rules. Determine successes. • Infantry Models within X” of the Blast Marker must make an Armor Check, with the number of D10’s rolled being equal to the number of successes in the Shooting Models Skill Check. • For every failed Armor Check roll, the Model takes 1 Damage. • Using this mode does not count as Targeting a Model for the purposes of interacting with Special Rules, eg; Indirect, Seeking etc.",
+        "keywords": [
+          "errata",
+          "clarification"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "errata-5",
+        "entityType": "errata",
+        "title": "Boone Recon Force - Small Unit Tactics Your Models get to Shoot during the reposition step instead of moving, then you don’t get to take an action or movement in the action step with those Models.",
+        "summary": "Dusters You will require the Impact Expansion to find the core Front Line Duster Rules.",
+        "keywords": [
+          "errata",
+          "clarification"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "errata-6",
+        "entityType": "errata",
+        "title": "UN Raid Force Alpha and Black Pact - Close Assault Replace with the following paragraph;",
+        "summary": "Models in this Unit may Move 2” after completing their Action, only if this Move would bring them into CQC with an Enemy Model.",
+        "keywords": [
+          "errata",
+          "clarification"
+        ],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike",
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "errata-7",
+        "entityType": "errata",
+        "title": "UN 3rd Battalion - Switchback You cannot use the Jump Special Rule during the Pre-Activation 2” Move.",
+        "summary": "• Dusters do not have to spend Movement to rotate, and they do not need to Move in straight lines.",
+        "keywords": [
+          "errata",
+          "clarification"
+        ],
+        "aliases": [],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "errata-8",
+        "entityType": "errata",
+        "title": "Impisi Insurgents - Force Rule Replace with the following paragraph;",
+        "summary": "• Dusters do not provide Cover to Models behind them. • The first paragraph of the Front Line Duster Combat rules replaces the core rule: RUN THEM OVER!. • Dusters may only fire 1 weapon listed on their profile when making a Shoot Action and Overwatch and Return Fire Reactions. • Enemy Models may choose to Target the Dusters Mobility or Chassis. - Models must be able to see the Duster’s entire base to Target its Mobility. Destroying the Duster if its Mobility Damage Track is filled. - When determining if a Model can see the Duster’s entire base, if that Model’s line of sight must pass through Smoke to see, the Model cannot Target the Duster’s Mobility. Note: This is if the Smoke is between the two Models, if one of the Models are in range of the Smoke Token, then the Attacker only has their dice modified, but can still Target the Mobility of the Duster. When using a Combat Load weapon, the Duster will use the Combat Load Weapon profile in its Shooting Action, instead of the Weapon Profile listed on its card. After completing an Activation with any Impisi Insurgent Unit, spend one Control Point to return a Grunt Model to the Unit. Place the Model within 2” of another Model in the Unit (not in Line of Sight or within 8” of an enemy). You may never exceed the number of Grunts on the Unit Card. Note: This rule applies to any Unit in the Impisi Insurgents Force, not only the Impisi Insurgents Unit Card.",
+        "keywords": [
+          "errata",
+          "clarification"
+        ],
+        "aliases": [
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/rules/matched-play",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "reactions"
+        ]
+      },
+      {
+        "id": "ai",
+        "entityType": "usr",
+        "title": "AI",
+        "summary": "This Model may be affected by Special Rules that only affect AI Models.",
+        "keywords": [],
+        "aliases": [
+          "artificial intelligence",
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike"
+        ],
+        "route": "/rules/usr/ai",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "ap-x",
+        "entityType": "usr",
+        "title": "AP (X)",
+        "summary": "When a weapon with AP(X) inflicts damage, increase the Target’s Armor Check by +X for that attack. This makes their armor less effective—they must roll higher numbers to block damage. Example: A Model with Armor 2/4 hit by an AP(2) Weapon would now have Armor 2/6 for that attack.",
+        "keywords": [],
+        "aliases": [
+          "armor piercing",
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/rules/usr/ap-x",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "auto-x",
+        "entityType": "usr",
+        "title": "Auto (X)",
+        "summary": "After making a Shoot Action with this Weapon, this Model may make up to X additional Shoot Actions with that Weapon, that cannot be Reacted to. Each additional attack must target a different Model within 4” of the original Target. Synergies: If the Weapon also has the Cyclic special rule, the Model may chain multiple Auto(X) attacks, benefiting from the extra Shoot Action granted by Cyclic. Limitations: The original Target and all additional Targets must still fall within the Weapon’s minimum and maximum Range.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/auto-x",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "controller",
+        "entityType": "usr",
+        "title": "Controller",
+        "summary": "This Unit may activate a friendly Unit after completing its Activation, without spending a Control Point. If Controller is granted by a Specialist, the ability is lost when that Model is removed from play.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/controller",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "cqb",
+        "entityType": "usr",
+        "title": "CQB",
+        "summary": "This Weapon may re-roll all failed Shots against a Target within half of its maximum range. Example: A Weapon with a 24” Range may re-roll failed Shots against a Target within 12”.",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [
+          "close quarters battle"
+        ],
+        "route": "/rules/usr/cqb",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "cyclic",
+        "entityType": "usr",
+        "title": "Cyclic",
+        "summary": "After making a Shoot Action with this Weapon, this Model may immediately make one additional Shoot or Ready Action. The extra Shoot Action is treated the same as any regular Shoot Action, subject to Weapon’s special rules. Limitations: Additional Shoot Action must be made with the Weapon that triggered Cyclic. Cyclic cannot be used in Reactions.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/cyclic",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "data-knife",
+        "entityType": "usr",
+        "title": "Data Knife",
+        "summary": "This Model may make a Data Attack Action targeting an AI or Powered Model within Range. On a successful Skill Check, deal 1 Damage with no Armor Check allowed.",
+        "keywords": [
+          "data-attacks"
+        ],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike"
+        ],
+        "route": "/rules/usr/data-knife",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "data-attacks"
+        ]
+      },
+      {
+        "id": "data-spike",
+        "entityType": "usr",
+        "title": "Data Spike",
+        "summary": "This Model may make a Data Attack Action to either apply a Pinned Marker to an enemy Unit or remove a Pinned Marker from a friendly Unit, on a successful Skill Check.",
+        "keywords": [
+          "data-attacks"
+        ],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike"
+        ],
+        "route": "/rules/usr/data-spike",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "data-attacks"
+        ]
+      },
+      {
+        "id": "deployed",
+        "entityType": "usr",
+        "title": "Deployed",
+        "summary": "If this Model Moved during its Reposition Step, it rolls only 1D10 when using this Weapon in its Activation. Reactions are not affected.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/deployed",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "drone",
+        "entityType": "usr",
+        "title": "Drone",
+        "summary": "This Model cannot engage in CQC, use ladders, or Lean Out to gain Line of Sight. Note: Drones do not participate in CQC — if an enemy Model moves into Base-to-Base contact, no Close Quarters Combat occurs.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/drone",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "emp",
+        "entityType": "usr",
+        "title": "EMP",
+        "summary": "This Weapon can only Damage Units with the AI Special Rule, and that Damage ignores Armor Checks.",
+        "keywords": [],
+        "aliases": [
+          "electromagnetic pulse",
+          "emp",
+          "electromagnetic pulse"
+        ],
+        "route": "/rules/usr/emp",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "heavy",
+        "entityType": "usr",
+        "title": "Heavy",
+        "summary": "If this Model did not Move during its Reposition Step, it rolls an extra 1D10 when using this Weapon in its Activation. Reactions with this Weapon always roll an extra 1D10.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/heavy",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "indirect",
+        "entityType": "usr",
+        "title": "Indirect",
+        "summary": "This Weapon may Target an enemy Model in Line of Sight to another Model in its Group, but Range is still measured from the firing Model.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/indirect",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "jammer",
+        "entityType": "usr",
+        "title": "Jammer",
+        "summary": "Models within range of a Jammer ignore the effects of Pinned Markers on their Unit, though Models outside the Jammer’s range remain Pinned.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/jammer",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "lethal",
+        "entityType": "usr",
+        "title": "Lethal",
+        "summary": "This Model rolls 3D10 for CQC Skill Checks.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/lethal",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "low-tech",
+        "entityType": "usr",
+        "title": "Low Tech",
+        "summary": "This Unit cannot gain Pinned Markers from Data Attacks and cannot be targeted by Weapons with the Indirect special rule.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/low-tech",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "medium",
+        "entityType": "usr",
+        "title": "Medium",
+        "summary": "This Weapon may re-roll one failed Shot when used in a Shoot Action.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/medium",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "melee",
+        "entityType": "usr",
+        "title": "Melee",
+        "summary": "This Weapon ignores Cover penalties. When used in a Shoot Action, place the attacker Base-to-Base with its Target before resolving the Action and any Reactions. Targets may only Return Fire with a Melee Weapon or Juke.",
+        "keywords": [
+          "combat"
+        ],
+        "aliases": [
+          "close quarters combat",
+          "cqc",
+          "melee"
+        ],
+        "route": "/rules/usr/melee",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "combat"
+        ]
+      },
+      {
+        "id": "outsourced",
+        "entityType": "usr",
+        "title": "Outsourced",
+        "summary": "Models in this Unit cannot use Battle Drills, Armory Items, or the Force Rule. Note: Some Specialists may have exceptions to this rule — for example, the E4 Mafia in Hired Killers may explicitly use Battle Drills.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/outsourced",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "powered",
+        "entityType": "usr",
+        "title": "Powered",
+        "summary": "This Model may be affected by Special Rules that affect Powered Models.",
+        "keywords": [],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike"
+        ],
+        "route": "/rules/usr/powered",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "reinforcements",
+        "entityType": "usr",
+        "title": "Reinforcements",
+        "summary": "At the end of this Unit’s Activation, mark one box to return a Destroyed Model from this Unit. Place the returned Model within 4” of another Model from this Unit and out of Line of Sight of all Enemy Models.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/reinforcements",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "seeking",
+        "entityType": "usr",
+        "title": "Seeking",
+        "summary": "This Weapon ignores the -1D10 penalty for shooting a Target in Cover. Example: When firing a Seeking Weapon, you roll 2D10 against Targets in Cover, and 3D10 against Targets not in Cover.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/seeking",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "shield",
+        "entityType": "usr",
+        "title": "Shield",
+        "summary": "This Model and one Friendly Infantry Model in Base-to-Base with it both gain Cover. Only one Friendly Model may be in Base-to-Base with this Model at a time.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/shield",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "smoke-grenade",
+        "entityType": "usr",
+        "title": "Smoke Grenade",
+        "summary": "Before this Unit’s Reposition Phase, place a Smoke Token within X” of one of its Models. Note: See Rules [8.8] Smoke for more information about this core ability.",
+        "keywords": [
+          "smoke"
+        ],
+        "aliases": [],
+        "route": "/rules/usr/smoke-grenade",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": [
+          "smoke"
+        ]
+      },
+      {
+        "id": "spotter",
+        "entityType": "usr",
+        "title": "Spotter",
+        "summary": "If at least two Models in this Unit can draw Line of Sight to the same Enemy Model, Models in this Unit that target that Enemy gain Medium for that Action.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/spotter",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "sustained-x",
+        "entityType": "usr",
+        "title": "Sustained (X)",
+        "summary": "When making an Armor Check against this Weapon, the Target must re-roll up to (X) successful Armor dice, continuing until that many have been re-rolled or all rolls fail. Example: A Model with Armor 1/6 is hit by a Sustained (2) Weapon. It rolls 1D10 for Armor. If it succeeds, it must reroll that die up to 2 times or until it fails. The final roll determines the result.",
+        "keywords": [],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike"
+        ],
+        "route": "/rules/usr/sustained-x",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "team-leader",
+        "entityType": "usr",
+        "title": "Team Leader",
+        "summary": "When this Model gains a Ready Token, it may instead give that token to another Model in the same Unit that has already made an Action this round. The receiving Model is treated as if it gained the Ready Token normally. EXPLOSIVES FLOWCHART Based on the Explosives Flow Chart by WarLore MODEL MAKES A SHOOT ACTION WITH A BLAST WEAPON What are you trying to Damage? Weapons with the Blast[X] rule, have 2 firing modes depending on their intended Target. No matter which option is chosen, enemy Models can React normally. DAMAGE INFANTRY High Explosive (HE) Place a 25mm Blast Marker within Line of Sight and Range of the Shooting Model on a flat surface. (3.4) The Shooting Model makes a Skill Check (2D10), and may be modified by Special Rules but no Cover modifier. DAMAGE A VEHICLE OR DUSTER Armor Piercing (AP) Target the Duster or Vehicle specifically, as you would with non-Blast Shooting Action. Choose Damage Track. (8.2.2) RESOLVE ATTACK; USE LISTED WEAPON DAMAGE FOR BLAST WEAPON THE MODEL SHOOTING THE BLAST WEAPON ROLLS NO SUCCESSES. A MODEL MAKES THE RETURN FIRE REACTION THE MODEL SHOOTING THE BLAST WEAPON ROLLS AT LEAST ONE SUCCESS. The Reacting Model Shoots the Active Shooting Model. Both Models roll Skill Checks at the same time with the Model that rolls the most successes applying Damage first. If tied, the highest die result wins. Reroll all dice if still tied. Infantry Models within X” of the Blast Marker must make an Armor Check with the number of D10 rolled being equal to the number of successes in the Shooting Model’s Skill Check. SHOOTING DEALS NO DAMAGE FOR EVERY FAILED ARMOR CHECK ROLL, THE MODEL TAKES 1 DAMAGE.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/rules/usr/team-leader",
+        "sourceDocumentIds": [
+          "blkout-supplemental"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "the-authority",
+        "entityType": "lore-faction",
+        "title": "The Authority",
+        "summary": "Originally the United Nations ABOL, the Authority evolved into a socialized oligarchy by 2085. Formed amid global crises in 2029, the Republic of United Nations united countries like Germany, France, and Italy to stabilize Europe, eventually becoming a global superpower. The Authority faced challenges from falling debris, ash storms, and insurgent groups like the Impisi and Sabra Cartel. Attempts to control resources led to the Service, Settlement, and Security Act (SSSA) of 2074, igniting the “Yellow Revolution” and a major firefight in Ethron. In 2030, the US discovered ABOL and proposed the LEAP (Leaving Earth Program) to the UN, launching the “Hope” PR campaign for colonization. The LEAP Act, passed in 2032, allowed the UN and the Pan Arab Oil Corporation (PAOC) to land on ABOL with a two-year buffer for follow-up ships, while others needed UN approval. Upon arrival in 2070, the UN fleet, led by the flagship Hope, aggressively enforced the LEAP Act, leading to conflicts with Russian vessels. The UN and PAOC established the capital city of Ethron in the Cenriv I crater. However, in 2072, the UN betrayed other national ships by launching a nuclear strike in space, leaving fewer than 100,000 survivors on ABOL. In response to rising insurgency, the UN and PAOC’s Ibragim pursued counterinsurgency efforts. The arrival of the Second Wave in 2080 sparked the Second Landing War, allowing the UN to seize key cities like New Damascus and San Christo. By 2085, the Authority of Humanity was established under the Great Authority Act, promising unity and galaxy-wide colonization at the cost of extreme government control. The Authority maintains a tense peace with the Headless and focuses on expanding its military capabilities.",
+        "keywords": [
+          "Ethron",
+          "Cenriv",
+          "San Christo",
+          "Abol"
+        ],
+        "aliases": [],
+        "route": "/lore/factions/the-authority",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "the-twin-moons-program",
+        "entityType": "lore-faction",
+        "title": "The Twin Moons Program",
+        "summary": "The Twin Moons Program, a UN super-soldier initiative, developed enhanced soldiers known as Urban Tactical Groups (UTGs). These elite units operate in pairs, specializing in high-risk missions and intelligence operations, overseen by Authority Intelligence Agency (AIA) Director David Hackett. Inspired by the 1990s “Dolly” sheep cloning research, UTGs are formed from clones trained together, consisting of “Athena” (mothers) as officers and “Artemis” (daughters) as NCOs. UTGs are capable of self-replication, allowing for force expansion over time. Initially led by UTG-003 “Hera,” the first successful UTG soldier fit for combat, they play a key role in Authority propaganda and recruitment.",
+        "keywords": [],
+        "aliases": [
+          "utg",
+          "urban tactical groups",
+          "twin moons program"
+        ],
+        "route": "/lore/factions/the-twin-moons-program",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "un-raid-force-alpha",
+        "entityType": "lore-faction",
+        "title": "Un Raid Force Alpha",
+        "summary": "UN Raid Force Alpha represents the pinnacle of military prowess on ABOL. These elite female warriors, trained from birth to be lethal, work in pairs for synchronized battlefield support. Enhanced by gene therapy and cutting-edge technology, they are more experienced than any three mercenaries combined. Supported by ‘Golem’ Combat Units — drones with the consciousness and experience of fallen combatants—this team is the Authority’s most formidable force.",
+        "keywords": [
+          "Abol",
+          "un-raid-force-alpha"
+        ],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike"
+        ],
+        "route": "/lore/factions/un-raid-force-alpha",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": [
+          "un-raid-force-alpha"
+        ]
+      },
+      {
+        "id": "harlow-1st-assault-battalion",
+        "entityType": "lore-faction",
+        "title": "Harlow 1st Assault Battalion",
+        "summary": "Harlow Kinetic Solutions, the primary enforcement arm of the Authority, replaced the initial UN Peacekeepers. Known for efficiency and brutality, Harlow combines top-tier technology with rigorous training, drawing many members from Western Tier 1 Forces. Despite public discontent over their methods, Harlow’s effectiveness has led to continual contract renewals.",
+        "keywords": [
+          "harlow-1st-reaction-force"
+        ],
+        "aliases": [],
+        "route": "/lore/factions/harlow-1st-assault-battalion",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": [
+          "harlow-1st-reaction-force"
+        ]
+      },
+      {
+        "id": "ork",
+        "entityType": "lore-faction",
+        "title": "Ork",
+        "summary": "Rozwiązania Konfliktów Orłów (ORK), the military arm of Polskie Przedsiębiorstwa Państwowe (P3), is composed mainly of former Polish Special Forces. Initially focusing on securing mining sites on ABOL, ORK’s role expanded during the Yellow Revolution to include patrols and Quick Reaction Force duties. Tensions between P3 and the PAOC led to a covert Shadow War, with ORK’s elite “Strzyga” Covert Teams engaging Ibrahim’s units. ORK has become the second largest Private Military Contractor on ABOL, working closely with local recruits and maintaining advanced weaponry, including the T3 ‘Czaska’ Kinetic Suite and the AM-190 Linear Gauss Rifle.",
+        "keywords": [
+          "Abol"
+        ],
+        "aliases": [],
+        "route": "/lore/factions/ork",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "chimera",
+        "entityType": "lore-faction",
+        "title": "Chimera",
+        "summary": "Chimera emerged from extremist factions of the Ibragim civil war, seeking refuge with Manticor. These zealots, who advocate for a fusion of technology and biology, integrated advanced tech and enhanced musculature with Manticor’s strength. Their technology significantly boosted Manticor’s capabilities, allowing for efficient bionic augmentations. Chimera members often replace damaged limbs with mechanical substitutes crafted in Ibragim’s labs. The most heavily augmented members, known as Disciples, frequently operate advanced equipment like Cyka suites, finding synchronization easier due to their enhancements.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/lore/factions/chimera",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "manticor-borz",
+        "entityType": "lore-faction",
+        "title": "Manticor Borz",
+        "summary": "Manticor Borz acts as the formidable right arm of Chimera. Known for exceptional physical strength and resilient combat tactics, these warriors wear heavy ballistic armor, allowing them to withstand impacts that would incapacitate most. When equipped with heavy machine guns, Manticor Borz soldiers are a terrifying presence on the battlefield.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/lore/factions/manticor-borz",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "banak",
+        "entityType": "lore-faction",
+        "title": "Banak",
+        "summary": "Banak Strategic, founded by Hakob Dharbinyan in 2084, became a leading extraction team in the Badlands, known for advanced bionics and Kinetic Suits. Evolving from the now-defunct Ibragim Strategic, Banak emerged after internal conflicts over the direction of a secret project led to a rift with the PAOC. Following the PAOC’s collapse, Banak found itself in conflict with The Authority after rumors surfaced that a SOC-SAR team recovered old- world technology from a quarantine zone.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/lore/factions/banak",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "the-headless",
+        "entityType": "lore-faction",
+        "title": "The Headless",
+        "summary": "In ABOL’s early colonization, rapid development left many unemployed and with inadequate housing. As the UN’s focus shifted to elite security, many were conscripted into military service or turned to illegal work for survival. By 2073, ash storms severed UN supply lines, leading to reliance on cartels like Sabra. The rise of the Killwager, a high-stakes betting game on mercenary job outcomes, fueled anti-UN sentiment. The Battle of Ethron in 2077 exposed the UN’s fragile control and inspired the IRAFEL to declare an end to UN tyranny. In 2084, remnants of IRAFEL, Impisi, Sabra, Jackal Team, and others formed The Headless, a mutual security coalition led by James Vasquez, offering an alternative to the UN’s oppressive rule. They govern a confederation of independent cities and factions, maintain an uneasy stalemate with the UN, and prevent abuse by regional powers.",
+        "keywords": [
+          "Ethron",
+          "Abol"
+        ],
+        "aliases": [],
+        "route": "/lore/factions/the-headless",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2022-1",
+        "entityType": "lore-event",
+        "title": "2022: The VLA detects mysterious radio activity from deep space",
+        "summary": "The VLA detects mysterious radio activity from deep space. NASA and the U.S. government covertly dispatch space telescopes for data while launching a PR campaign advocating space exploration to gain public support and funding.",
+        "keywords": [
+          "2022"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2029-2",
+        "entityType": "lore-event",
+        "title": "2029: Russia and China withdraw from Europe, leaving the EU in chaos",
+        "summary": "Russia and China withdraw from Europe, leaving the EU in chaos. A UN vote creates a new centralized republic uniting Europe, India, and other countries, establishing the UN as a global superpower.",
+        "keywords": [
+          "2029"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2023-3",
+        "entityType": "lore-event",
+        "title": "2023: Israel launches an offensive into Palestine, Lebanon, and Syria in respo",
+        "summary": "Israel launches an offensive into Palestine, Lebanon, and Syria in response to terrorist attacks by Hamas and Hezbollah. Iran supports the opposition, turning the tide against Israel. Qatar joins the Palestinian side, causing further tensions.",
+        "keywords": [
+          "2023"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2030-4",
+        "entityType": "lore-event",
+        "title": "2030: NASA announces the discovery of planet ABOL, potentially habitable",
+        "summary": "NASA announces the discovery of planet ABOL, potentially habitable. The U.S. pitches the LEAP (Leaving Earth Program) to lead a colony mission. The UN agrees to a 10-year timeline.",
+        "keywords": [
+          "2030"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2024-5",
+        "entityType": "lore-event",
+        "title": "2024: The Pan-Arabic Coalition (PAC) pushes Israel to the brink",
+        "summary": "The Pan-Arabic Coalition (PAC) pushes Israel to the brink. The U.S. forms a coalition with the UK, France, Turkey, Egypt, Jordan, and Iraq, sparking the Great Middle Eastern War of 2024.",
+        "keywords": [
+          "2024"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2031-6",
+        "entityType": "lore-event",
+        "title": "2031: The global “Hope” PR campaign begins, promoting the LEAP mission",
+        "summary": "The global “Hope” PR campaign begins, promoting the LEAP mission. Billionaire Oliver Espidoza promises cryosleep technology for the journey to ABOL.",
+        "keywords": [
+          "2031"
+        ],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike",
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2025-7",
+        "entityType": "lore-event",
+        "title": "2025: The U.S",
+        "summary": "The U.S. diverts resources to NASA, focusing on space stations and terraforming. Photos of grass on Mars go viral, boosting global support for space travel. Kyiv falls to Russia after a prolonged conflict.",
+        "keywords": [
+          "2025"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2032-8",
+        "entityType": "lore-event",
+        "title": "2032: The UN insists on governing ABOL",
+        "summary": "The UN insists on governing ABOL. After private negotiations, the LEAP Act is passed, giving the UN and private corporations the first wave of landings, while national ships must wait two years.",
+        "keywords": [
+          "2032"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2026-9",
+        "entityType": "lore-event",
+        "title": "2026: The U.S",
+        "summary": "The U.S. invades Tehran during the final push of the war. Iran detonates a nuclear weapon, killing two U.S. divisions and countless civilians. The Pan-Arab Oil Coalition (PAOC) forms, controlling oil prices and forcing the U.S. to negotiate peace.",
+        "keywords": [
+          "2026"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2035-10",
+        "entityType": "lore-event",
+        "title": "2035: Research ships from the UN, U.S., PAOC, and Russia confirm ABOL’s viabil",
+        "summary": "Research ships from the UN, U.S., PAOC, and Russia confirm ABOL’s viability. Covert missions with national goals are undertaken by 1,000 explorers.",
+        "keywords": [
+          "2035"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2027-11",
+        "entityType": "lore-event",
+        "title": "2027: Europe faces a massive refugee crisis after the Middle Eastern war and t",
+        "summary": "Europe faces a massive refugee crisis after the Middle Eastern war and the fall of Ukraine. The U.S. refuses to send troops, while Russia, China, and India deploy forces for leverage against the EU.",
+        "keywords": [
+          "2027"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2040-12",
+        "entityType": "lore-event",
+        "title": "2040: The first wave of 250,000 people departs Earth for the 30-year journey t",
+        "summary": "The first wave of 250,000 people departs Earth for the 30-year journey to ABOL.",
+        "keywords": [
+          "2040"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2044-13",
+        "entityType": "lore-event",
+        "title": "2044: During the journey, the UN prepares to enforce control of ABOL with mili",
+        "summary": "During the journey, the UN prepares to enforce control of ABOL with military and scientific projects, including the Twin Moons Project.",
+        "keywords": [
+          "2044"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2065-14",
+        "entityType": "lore-event",
+        "title": "2065: The First Wave receives beacon transponder signals from terraforming sta",
+        "summary": "The First Wave receives beacon transponder signals from terraforming stations and habitable landing zones but no other communication or signs of life from the recon and research teams. The beacon data reveals strong radioactive signals from the planet’s north pole.",
+        "keywords": [
+          "2065"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2045-15",
+        "entityType": "lore-event",
+        "title": "2045: A whistleblower reveals that PAOC supports insurgents to manipulate oil ",
+        "summary": "A whistleblower reveals that PAOC supports insurgents to manipulate oil prices. India and Pakistan declare war, culminating in a nuclear exchange. Peace is quickly negotiated, and the UN and PAOC make an energy deal.",
+        "keywords": [
+          "2045"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2069-16",
+        "entityType": "lore-event",
+        "title": "2069: The UN informs the First Wave that the Hope and its fleet are equipped w",
+        "summary": "The UN informs the First Wave that the Hope and its fleet are equipped with experimental missiles and guns to enforce the LEAP Act. It also holds surface-to-orbit missiles and long-range artillery for sustained compliance.",
+        "keywords": [
+          "2069"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2046-17",
+        "entityType": "lore-event",
+        "title": "2046: Rogue nukes strike Israel, and the aftermath of the war leads to global ",
+        "summary": "Rogue nukes strike Israel, and the aftermath of the war leads to global flooding predictions.",
+        "keywords": [
+          "2046"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2048-18",
+        "entityType": "lore-event",
+        "title": "2048: The refugee crisis worsens as PAOC and UN close their borders",
+        "summary": "The refugee crisis worsens as PAOC and UN close their borders. India invades China, supported by the U.S., escalating into a global conflict.",
+        "keywords": [
+          "2048"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2049-19",
+        "entityType": "lore-event",
+        "title": "2049: The “Second Wave” spaceflights to ABOL begin, carrying 1 million people",
+        "summary": "The “Second Wave” spaceflights to ABOL begin, carrying 1 million people. Many ships are corporate, promising passage in exchange for work.",
+        "keywords": [
+          "2049",
+          "ork"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": [
+          "ork"
+        ]
+      },
+      {
+        "id": "timeline-2050-20",
+        "entityType": "lore-event",
+        "title": "2050: The Second Wave departs for ABOL",
+        "summary": "The Second Wave departs for ABOL.",
+        "keywords": [
+          "2050"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2073-21",
+        "entityType": "lore-event",
+        "title": "2073: As the First Wave approaches ABOL, Russian vessels fire on the Hope in p",
+        "summary": "As the First Wave approaches ABOL, Russian vessels fire on the Hope in protest of the LEAP Act but are quickly overwhelmed by the combined UN and PAOC fleets. Surviving Russian ships retreat. The UN lands the Hope in the Cenriv I crater, begins construction of a space elevator, and establishes the capital city of Ethron. About two- thirds of the ships from Earth make it to ABOL’s orbit, with no sign of the original recon teams.",
+        "keywords": [
+          "2073"
+        ],
+        "aliases": [
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2074-22",
+        "entityType": "lore-event",
+        "title": "2074: Terraforming efforts progress",
+        "summary": "Terraforming efforts progress. The UN introduces the Service, Settlement, and Security Act (SSSA), redistributing land based on a meritocracy. Aristocrats live in protected reserves, while most citizens remain in crowded, polluted urban sprawl. Weapons are seized from civilians as part of the new law.",
+        "keywords": [
+          "2074"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2082-23",
+        "entityType": "lore-event",
+        "title": "2082: A coalition uncovers the PAOC’s secret project: a geo-storm superweapon ",
+        "summary": "A coalition uncovers the PAOC’s secret project: a geo-storm superweapon called “Breath of God.” Gaia sacrifices herself to destroy the weapon, though its premature activation kills thousands before being neutralized.",
+        "keywords": [
+          "2082"
+        ],
+        "aliases": [
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2077-24",
+        "entityType": "lore-event",
+        "title": "2077: The SSSA grace period ends",
+        "summary": "The SSSA grace period ends. The UN attempts a two-front assault on Ethron, but a massive protest halts the attack. In the confusion, a UN warning shot injures a girl in the crowd, sparking the “Yellow Revolution.” Thousands flee to the crater’s rim, creating shanty towns known as the Scatter. The IRAFEL movement rises in response, vowing to overthrow the UN.",
+        "keywords": [
+          "2077"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2083-25",
+        "entityType": "lore-event",
+        "title": "2083: Factions scramble to seize PAOC assets",
+        "summary": "Factions scramble to seize PAOC assets. The UN capitalizes on the power vacuum, taking control of Sabra’s base of operations. They also secretly house PAOC leadership on a space station.",
+        "keywords": [
+          "2083"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2078-26",
+        "entityType": "lore-event",
+        "title": "2078: The UN hires Ibragim, a PAOC security wing, to hunt IRAFEL cells",
+        "summary": "The UN hires Ibragim, a PAOC security wing, to hunt IRAFEL cells. IMPISI militiamen are killed, and the UN forges body counts to maintain fear of IRAFEL. Martial law continues.",
+        "keywords": [
+          "2078"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2084-27",
+        "entityType": "lore-event",
+        "title": "2084: A new alliance, The Headless, forms under James Vasquez and others, gove",
+        "summary": "A new alliance, The Headless, forms under James Vasquez and others, governing a confederation of independent cities and factions. A cold war begins between The Headless and the UN.",
+        "keywords": [
+          "2084",
+          "headless"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": [
+          "headless"
+        ]
+      },
+      {
+        "id": "timeline-2079-28",
+        "entityType": "lore-event",
+        "title": "2079: Anti-UN sentiment peaks as pop star Gaia gains popularity with songs con",
+        "summary": "Anti-UN sentiment peaks as pop star Gaia gains popularity with songs condemning the UN. Her shows are outlawed, but this only fuels her rise.",
+        "keywords": [
+          "2079"
+        ],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike"
+        ],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2085-29",
+        "entityType": "lore-event",
+        "title": "2085: The UN consolidates power and rebrands its allied factions as The Author",
+        "summary": "The UN consolidates power and rebrands its allied factions as The Authority, imposing martial law on newly acquired territories.",
+        "keywords": [
+          "2085",
+          "authority"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": [
+          "authority"
+        ]
+      },
+      {
+        "id": "timeline-2080-30",
+        "entityType": "lore-event",
+        "title": "2080: The Second Wave reaches ABOL",
+        "summary": "The Second Wave reaches ABOL. Corporate ships negotiate with the UN, while others are destroyed trying to bypass the blockade. Piracy runs rampant in orbit. Harlow Kinetic Solutions lands to support the UN’s counterinsurgency. The UN headquarters in Ethron is bombed, igniting the Second Landing War.",
+        "keywords": [
+          "2080"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "timeline-2103-31",
+        "entityType": "lore-event",
+        "title": "2103: The Chimera, a fanatical faction, descends from ABOL’s moon and assaults",
+        "summary": "The Chimera, a fanatical faction, descends from ABOL’s moon and assaults Fort Hope at the space elevator base.",
+        "keywords": [
+          "2103",
+          "chimera"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": [
+          "chimera"
+        ]
+      },
+      {
+        "id": "timeline-2081-32",
+        "entityType": "lore-event",
+        "title": "2081: Oliver Espidoza, the eccentric technologist, is assassinated",
+        "summary": "Oliver Espidoza, the eccentric technologist, is assassinated. A covert investigation reveals the PAOC was behind the murder to seize northern mining sites. Betrayed by the state, the surviving investigators form an underground network and compete in the Killwager to fund their operations.",
+        "keywords": [
+          "2081",
+          "ork"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": [
+          "ork"
+        ]
+      },
+      {
+        "id": "timeline-2104-33",
+        "entityType": "lore-event",
+        "title": "2104: Taskforce Boone arrives in system and begins their Assault on ABOL, depl",
+        "summary": "Taskforce Boone arrives in system and begins their Assault on ABOL, deploying multiple nuclear devices in a planet wide EMP attack.",
+        "keywords": [
+          "2104"
+        ],
+        "aliases": [],
+        "route": "/lore/timeline",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "cenriv-crater-complex",
+        "entityType": "lore-location",
+        "title": "Cenriv Crater Complex",
+        "summary": "ABOL, with its hostile environment and political unrest, is a world of stark contrasts—a new home for humanity fraught with danger and mystery. Despite 40 years of terraforming, it remains a planet of extremes. Its low-oxygen atmosphere resembles Earth’s high altitudes, making survival above the plains without supplemental oxygen perilous. Most habitation has shifted underground, where natural caves and craters provide breathable air and shelter. Water is scarce, with ABOL’s surface dominated by deserts and arid savannas. Five massive rivers, sustained by glaciers and terraforming efforts, snake across the land, much of their water disappearing underground into vast cave systems. The planet’s climate is volatile, shaped by its twin moons, Castor and Pollux, which drive its two seasonal cycles: the milder Castor Phase and the severe Pollux Phase, during which superstorms ravage the landscape. These storms stir up vast amounts of dust and ash, blocking sunlight for months in some regions and plunging much of ABOL into darkness. ABOL’s Southern Hemisphere, particularly the sprawling Cenriv Crater Complex, serves as the heart of human settlement. Here, the city of Ethron stands as a testament to human ambition, with prefabricated megastructures stretching across the plains. Further north lies the Frontier Desert, an unforgiving wasteland that was once a vast ocean. This desolate expanse is dotted with outposts, but rumors persist of a rebel stronghold within The Thorn, a massive peak towering 17 miles above the planet’s surface, located at the center of this harsh desert. In the Northern Hemisphere lies ABOL Secundus, a jagged, ash-covered wasteland where few dare to venture. The Mokhri Pat mountain range and the corrosive ash from a supervolcano make this region nearly uninhabitable, though its rich deposits of Abolite, a rare energy-dense mineral, continue to attract dangerous mining operations. Despite numerous expeditions, the area remains treacherous, and the discovery of large Abolite reserves in the desert foothills may mark the end of human aspirations for ABOL Secundus.",
+        "keywords": [
+          "Southern Hemisphere"
+        ],
+        "aliases": [],
+        "route": "/lore",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "ethron",
+        "entityType": "lore-location",
+        "title": "Ethron",
+        "summary": "Major cities such as Ethron, San Christo, New Damascus, and Hades Point have developed advanced infrastructure to support life in harsh conditions.",
+        "keywords": [
+          "Cenriv Crater Complex"
+        ],
+        "aliases": [],
+        "route": "/lore",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "frontier-desert",
+        "entityType": "lore-location",
+        "title": "Frontier Desert",
+        "summary": "In the Grass Sea and Frontier Desert, homesteaders and settlers have established communities, relying on innovative farming techniques and resource management to survive.",
+        "keywords": [
+          "Northern frontier"
+        ],
+        "aliases": [],
+        "route": "/lore",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "crimson-ferns",
+        "entityType": "lore-species",
+        "title": "Crimson Ferns",
+        "summary": "These plants grow in the lower elevations of the Gran Taźon Mountains. They are adapted to low-oxygen environments and have developed a reddish hue to absorb more sunlight during the short, intense periods of daylight. GLOW MOSS Found in the subterranean cave systems, Glow Moss emits a bioluminescent glow, providing light in the dark environments of ABOL’s underground habitats. TITAN’S CACTUS Resilient to both high temperatures and low water levels, this cactus is common in the Grass Sea. Its large, water-storing pads can survive long periods of drought. RAZOR GRASS Dominating its environment, this tall grass is the linchpin of the Grass Sea’s ecosystem. It gets its name from its razor-sharp blades that can easily draw blood from uncovered skin. BONS BUSH Thick, stout scrub trees found throughout the Sea of Grass. Their wood makes poor building material due to its almost rubber-like consistency, hence the nickname “Bons” or Bounce Bushes.",
+        "keywords": [
+          "flora",
+          "These plants grow in the lower elevations of the Gran Taźon Mountains."
+        ],
+        "aliases": [],
+        "route": "/lore",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "ash-drakes",
+        "entityType": "lore-species",
+        "title": "Ash Drakes",
+        "summary": "Small, bat-like reptiles that thrive in the ash-filled environments of Mokhri Pat. They have developed thick, heat-resistant scales and can survive in the highly acidic atmosphere. GLIMMER FISH These bioluminescent fish are found in ABOL’s underground water systems. Their glow helps attract prey and provides light in the otherwise dark aquatic environments. SAND STRIDERS Inhabiting the Frontier Desert, these large, insect-like creatures have adapted to extreme temperatures and scarce water. They are known for their ability to travel long distances across the arid landscape. CAVE PYTHONS These large snakes are found in ABOL’s subterranean environments. They have adapted to low-oxygen conditions by developing a slower metabolism and a keen sense of echolocation to navigate dark cave systems, only exerting energy to strike at potential meals. POOL SHRIMP These small crustaceans can be found wherever water pools for long periods, creating a vast tree of subspecies, including bioluminescent shrimp in ABOL’s cave systems and even MEGA shrimp that comb the shallows of the Great Rivers. ASH COBRAS Among the Earth animal species brought to ABOL were Ash Cobras — massive snakes evolved from cobras and pit vipers. Exposure to intense radiation transformed these creature. GRASS RACERS Small, snake-like lizards native to the Sea of Grass. These foot-long reptiles use their limbs and bodies to slide and glide through the massive grass fields, almost as if they’re swimming.",
+        "keywords": [
+          "fauna",
+          "Small, bat-like reptiles that thrive in the ash-filled environments of Mokhri Pat."
+        ],
+        "aliases": [],
+        "route": "/lore",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "abol",
+        "entityType": "glossary",
+        "title": "ABOL",
+        "summary": "Humanity’s colony planet and the setting of BLKOUT.",
+        "keywords": [
+          "the-authority",
+          "un-raid-force-alpha",
+          "ork",
+          "the-headless"
+        ],
+        "aliases": [],
+        "route": "/glossary",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": [
+          "the-authority",
+          "un-raid-force-alpha",
+          "ork",
+          "the-headless"
+        ]
+      },
+      {
+        "id": "leap",
+        "entityType": "glossary",
+        "title": "LEAP",
+        "summary": "Leaving Earth Program, the colonization program used to reach ABOL.",
+        "keywords": [
+          "the-authority"
+        ],
+        "aliases": [
+          "ap",
+          "armor piercing"
+        ],
+        "route": "/glossary",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": [
+          "the-authority"
+        ]
+      },
+      {
+        "id": "sssa",
+        "entityType": "glossary",
+        "title": "SSSA",
+        "summary": "Service, Settlement, and Security Act, a core Authority control law.",
+        "keywords": [
+          "the-authority"
+        ],
+        "aliases": [],
+        "route": "/glossary",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": [
+          "the-authority"
+        ]
+      },
+      {
+        "id": "utg",
+        "entityType": "glossary",
+        "title": "UTG",
+        "summary": "Urban Tactical Group, the paired elite soldiers of the Twin Moons Program.",
+        "keywords": [
+          "the-twin-moons-program"
+        ],
+        "aliases": [
+          "utg",
+          "urban tactical groups",
+          "twin moons program"
+        ],
+        "route": "/glossary",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": [
+          "the-twin-moons-program"
+        ]
+      },
+      {
+        "id": "killwager",
+        "entityType": "glossary",
+        "title": "Killwager",
+        "summary": "Underground betting culture built around mercenary operations on ABOL.",
+        "keywords": [
+          "the-headless"
+        ],
+        "aliases": [],
+        "route": "/glossary",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": [
+          "the-headless"
+        ]
+      },
+      {
+        "id": "abolite",
+        "entityType": "glossary",
+        "title": "Abolite",
+        "summary": "A rare energy-dense mineral mined in dangerous regions of ABOL.",
+        "keywords": [],
+        "aliases": [],
+        "route": "/glossary",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "dockyard-assault",
+        "entityType": "scenario",
+        "title": "Dockyard Assault",
+        "summary": "Before playing the Game, Players will roll a D10 each, re-rolling ties. The Player who rolls the higher number may choose a Deployment Edge first and becomes the Attacker. Their opponent gets the opposite Deployment Edge and becomes the Defender. The Attacker may place their Models up to 2” onto the Table from their Deployment Edge. Afterward, the Defender may do so. The Attacker will always Activate First in the first Round. Place 2x Points of Interest 6” from the non Deployment Edge Table edges, and 12” from a Deployment Edge. If playing on a Table larger than 2x2ft add 6” for each additional foot past 2x2ft. Players will alternate placing one Hardpoint each. They must be at least 6” from a Point of Interest, Table Edge, and the other Hardpoint. Hardpoints: 2 Points of Interest: 2 Players gain an Overrun Point for: • Destroying an Enemy Unit • Locking Down more Points of Interest than their opponent. * A Player has a Point of Interest Locked Down when a Model under their Control has Line of Sight to it and is within 4” of it with no Enemy Models within 6” of it. After rolling for Initiative in a Round, Players should check their number of Overrun Points. If a Player has 2 or more Overrun Points than their opponent they immediately win and the Game ends. The Game will end after five Rounds. The Player with the most Overrun Points wins. KEY TERRAIN: Models may Secure a Hardpoint by spending their Action while in Base-to- Base with it. The Player should remove it from the Game. A Player with one or more Hardpoints Secured may roll an additional D10 for Initiative. INSIDE JOB: The Attacker may choose to spend a Control Point when placing a Unit to place the Unit up to 4” onto the Table. A shipment of military hardware and luxury goods is being transported from high orbit, and opposition forces have decided they’re taking it for themselves. A bundle of cash and veiled threats mean that not every supply container has what the manifest claims. When the shipment arrives, hidden forces strike, throwing the dockyards into disarray, moving quickly to secure their prize. Authority forces scramble to engage, but will they react in time to stop the hijacking of the delivery?",
+        "keywords": [
+          "core",
+          "2",
+          "2"
+        ],
+        "aliases": [],
+        "route": "/scenarios/dockyard-assault",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "server-defense",
+        "entityType": "scenario",
+        "title": "Server Defense",
+        "summary": "Before playing the Game, Players will roll a D10 each, re-rolling ties. The Player who rolls the higher number may choose a Deployment Edge first and becomes the Attacker. Their opponent gets the opposite Deployment Edge and becomes the Defender. The Attacker may place their Models up to 2” onto the Table from their Deployment Edge. Afterward, the Defender may do so. The Attacker will always Activate First in the first Round. Place 3x Points of Interest 6” from the non Deployment Edge Table edge, and each other, and 12” from a Deployment Edge. If playing on a Table larger than 2x2ft add 6” for each additional foot past 2x2ft. Players will alternate placing one Hardpoint each. They must be at least 6” from a Point of Interest, Table Edge, and the other Hardpoint. Hardpoints: 2 Points of Interest: 3 Players gain an Overrun Point for: • Destroying an Enemy Unit • A Player will gain an Overrun Point per Round they have a Point of Interest Locked Down. Players will keep Overrun Points earned this way between Rounds. * A Player has a Point of Interest Locked Down when a Model under their Control has Line of Sight to it and is within 4” of it with no Enemy Models within 6” of it. * Players may Destroy a Point of Interest by applying 3 Successes to it in one Shoot Action. Destroyed Points of Interest cannot be Locked Down. After rolling for Initiative in a Round, Players should check their number of Overrun Points. If a Player has 3 or more Overrun Points than their opponent they immediately win and the Game ends. The Game will end after five Rounds. The Player with the most Overrun Points wins. KEY TERRAIN: Models may Secure a Hardpoint by spending their Action while in Base-to- Base with it. The Player should remove it from the Game. A Player with one or more Hardpoints Secured may roll an additional D10 for Initiative, or spend the Hardpoint to ignore one Enemy Model that would be preventing them from Locking Down a Point of Interest when measuring Overrun Points. ALERTED: The Defender may choose to spend a Control Point when placing a Unit to place the Unit up to 4” onto the Table before. Data Warfare has become a staple on Abol, with combat hackers and infiltration protocols becoming valuable assets for any force to have. Inexperienced cyber warriors often run afoul of the advanced security systems set up by major powers, and even veteran hackers sometimes find themselves alerting an enemy before the assault begins. Unfortunately for these assaulters, their specialist isn’t as talented as they claimed, making this smash and grab a bit more difficult.",
+        "keywords": [
+          "core",
+          "2",
+          "3"
+        ],
+        "aliases": [],
+        "route": "/scenarios/server-defense",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "hvt-evac",
+        "entityType": "scenario",
+        "title": "Hvt Evac",
+        "summary": "Before playing the Game, Players will roll a D10 each, re-rolling ties. The Player who rolls the higher number may choose a Deployment Edge first and place their Models within 2” of it. Afterwards the other Player may do so. Hardpoints: 2 Points of Interest: 4 Players gain an Overrun Point for: • Destroying an Enemy Unit • Locking down more Points of Interest than their opponent * A Player has a Point of Interest Locked Down when a Model under their Control has Line of Sight to it and is within 4” of it with no Enemy Models within 6” of it. After rolling for Initiative in a Round, Players should check their number of Overrun Points. If a Player has 2 or more Overrun Points than their opponent they immediately win and the Game ends. The Game will end after five Rounds. The Player with the most Overrun Points wins. The winner will always Activate First in the first Round. COME WITH ME!: Place 4x Points of Interest, one in the center of each quadrant of the Table. Players will alternate placing one Hardpoint each. They must be at least 6” from a Point of Interest, Table Edge, and the other Hardpoint. After measuring Overrun Points an Infantry Model in Base-to-Base with a Point of Interest may gain an Engaged Token to move both the Model and the Point of Interest up to 2”. A Point of Interest may only be Moved once per Operations. DRONE SWARMS: Models may Secure a Hardpoint by spending their Action while in Base-to- Base with it. The Player should remove it from the Game. A Player may spend a Secured Hardpoint to place a 25mm Token anywhere on the Table. All Infantry within 2” must make an Armor Check, suffering a point of Damage per D10 that rolls under their Armor. A group of executives decided to go planetside to see local assets in person, with grave consequences. The locals, fed up with the authoritarian boot on their necks, took out the luxury aircar and now there is a scramble to recover them before opposing forces capture them and extract any useful data they can. The circling drones overhead promise that someone, somewhere, is watching, though whether the drones are just for reconnaissance remains to be seen.",
+        "keywords": [
+          "core",
+          "2",
+          "4"
+        ],
+        "aliases": [],
+        "route": "/scenarios/hvt-evac",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "zero-day",
+        "entityType": "scenario",
+        "title": "Zero Day",
+        "summary": "Before playing the Game, Players will roll a D10 each, re-rolling ties. The Player who rolls the higher number may choose a Deployment Edge first and place their Models within 2” of it. Afterwards the other Player may do so. The winner will always Activate First in the first Round. Place 4x Points of Interest, one in the center of each quadrant of the Table. Hardpoints: 0 Points of Interest: 4 Players gain an Overrun Point for: • Destroying an Enemy Unit • Securing more Points of Interest * Models may secure a Point of Interest by spending their Action while in Base-to-Base with it. * A Player may Secure a Point of Interest another Player has already Secured. This will cause it to become unsecured for the other Player. After rolling for Initiative in a Round, Players should check their number of Overrun Points. If a Player has 2 or more Overrun Points than their opponent they immediately win and the Game ends. The Game will end after five Rounds. The Player with the most Overrun Points wins. JACKED IN: Only a Model with a Data Spike may Secure a Point of Interest. A Grunt may Secure a Point of Interest but must use one of their Units Combat Loads. DROP IN: A Player who has Secured two Points of Interest may, instead of Activating, spend 3 Control Points to place a Duster Unit of their choice within 4 inches of their Deployment Edge. This Duster Unit will receive an Activation Marker, be added to their Group, and come under their control. Some more enterprising individuals have realized that data attacks and remote breaching is a real threat to the security of their assets. These operatives keep their information and security protocols analog, requiring an operator to physically jack into a hardpoint to access the files. While this deters many of the low level gangs, sometimes it’s worth the effort to physically obtain the information, and a ‘Data Recovery’ team has been dispatched to extract the information their patron desires.",
+        "keywords": [
+          "core",
+          "0",
+          "4"
+        ],
+        "aliases": [],
+        "route": "/scenarios/zero-day",
+        "sourceDocumentIds": [
+          "blkout-core-rulebook"
+        ],
+        "relatedIds": []
+      },
+      {
+        "id": "harlow-1st-reaction-force",
+        "entityType": "force",
+        "title": "Harlow 1st Reaction Force",
+        "summary": "Assaulters: Models in this Unit cannot be Targeted by Overwatch when Repositioning. Chaff: Place a Smoke Token (Chaff) within 6” of a Model in this Unit before Activating. Chaff Smoke Tokens Dissipate on a 10+. Stims: Models in this Unit gain +2 Movement for their Activation. Harlow First Reaction Force: Harlow First Reaction Force Units gain +2 Movement when Sprinting.",
+        "keywords": [
+          "HFR-6770",
+          "authority",
+          "boost jump",
+          "frag launcher",
+          "head",
+          "micro launcher"
+        ],
+        "aliases": [
+          "hfr-6770"
+        ],
+        "route": "/forces/harlow-1st-reaction-force",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "harlow-control-team",
+          "harlow-assault-team",
+          "harlow-springbok-ai"
+        ]
+      },
+      {
+        "id": "harlow-control-team",
+        "entityType": "unit",
+        "title": "Harlow Control Team",
+        "summary": "Activation Control: One Unit may be Activated after this Unit without spending a Control Point. Specialist 1: Data Spike Specialist 2: Grenade Launcher",
+        "keywords": [
+          "HFR-6771",
+          "fal-32c",
+          "grenade launcher"
+        ],
+        "aliases": [
+          "hfr-6771"
+        ],
+        "route": "/units/harlow-control-team",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "harlow-1st-reaction-force"
+        ]
+      },
+      {
+        "id": "harlow-assault-team",
+        "entityType": "unit",
+        "title": "Harlow Assault Team",
+        "summary": "Team Leader: When this Model gains a Ready Token it may give it to a Model in this Unit that has already made an Action. Specialist 1: Machine Gunner Specialist 2: Team Leader",
+        "keywords": [
+          "HFR-6772",
+          "fal-32c",
+          "p34"
+        ],
+        "aliases": [
+          "hfr-6772"
+        ],
+        "route": "/units/harlow-assault-team",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "harlow-1st-reaction-force"
+        ]
+      },
+      {
+        "id": "harlow-springbok-ai",
+        "entityType": "unit",
+        "title": "Harlow Springbok AI",
+        "summary": "Chaff Discharge: Mark a box to prevent a single Overwatch Reaction from Targeting this Model during its Activation. Traits: AI, Jump(4)",
+        "keywords": [
+          "HFR-6773",
+          "fal-32d"
+        ],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike",
+          "hfr-6773"
+        ],
+        "route": "/units/harlow-springbok-ai",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "harlow-1st-reaction-force"
+        ]
+      }
+    ]
+  }
+}

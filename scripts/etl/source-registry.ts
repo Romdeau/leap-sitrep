@@ -1,0 +1,85 @@
+import path from "node:path";
+
+import type { SourceDocument } from "../../src/lib/types/domain";
+import type { SourceRegistryFile } from "../../src/lib/types/generated";
+
+const SOURCE_DOCUMENTS: SourceDocument[] = [
+  {
+    id: "blkout-lore-primer",
+    title: "BLKOUT Year Two Lore Primer",
+    fileName: "markdown/BLKOUT-Year-Two-Lore-Primer.md",
+    documentType: "lore",
+    version: "year-two",
+    isCanonical: true,
+    notes: "Primary lore source for timeline, factions, locations, flora, fauna, and glossary terms.",
+  },
+  {
+    id: "blkout-core-rulebook",
+    title: "BLKOUT Print-at-Home Rulebook",
+    fileName: "markdown/BLKOUT-PRINT-AT-HOME-RULEBOOK.md",
+    documentType: "rules",
+    version: "print-at-home",
+    isCanonical: true,
+    precedenceRank: 4,
+    notes: "Primary structured core-rules and scenario source.",
+  },
+  {
+    id: "blkout-supplemental",
+    title: "BLKOUT Supplemental 4-26",
+    fileName: "markdown/BLKOUT_Supplemental_4-26.md",
+    documentType: "supplemental",
+    version: "april-2026",
+    isCanonical: true,
+    precedenceRank: 1,
+    notes: "Primary matched-play, FAQ, errata, clarification, and universal special rules source.",
+  },
+  {
+    id: "blkout-unit-cards-ocr",
+    title: "Unit Cards Printable 2026 OCR",
+    fileName: "markdown/Unit-Cards-Printable-2026.md",
+    documentType: "unit-cards",
+    version: "2026-ocr",
+    isCanonical: false,
+    precedenceRank: 3,
+    notes: "OCR assistance only. Packet 3 requires manual curation against the PDF source before trust increases.",
+  },
+  {
+    id: "blkout-unit-cards-screenshots",
+    title: "Unit Card Screenshot Verification Set",
+    fileName: "screenshots/",
+    documentType: "unit-card-screenshots",
+    version: "packet-3-manual-verify",
+    isCanonical: true,
+    precedenceRank: 3,
+    notes: "Packet 3 primary verification source for the Harlow force card and three Harlow unit cards.",
+  },
+  {
+    id: "blkout-quick-ref-md",
+    title: "BLKOUT Quick Reference Markdown",
+    fileName: "markdown/BLKOUT-Quick-Ref-PAH.md",
+    documentType: "quick-reference",
+    version: "print-at-home",
+    isCanonical: false,
+    precedenceRank: 5,
+    notes: "Reference-only input pending manual verification against the PDF.",
+  },
+];
+
+export function buildSourceRegistry(generatedAt: string): SourceRegistryFile {
+  return {
+    meta: {
+      kind: "source-registry",
+      version: "packet-1",
+      generatedAt,
+      sourceDocumentIds: SOURCE_DOCUMENTS.map((document) => document.id),
+      confidence: "verified",
+    },
+    data: {
+      documents: SOURCE_DOCUMENTS,
+    },
+  };
+}
+
+export function resolveSourceFile(rootDir: string, relativePath: string) {
+  return path.join(rootDir, relativePath);
+}

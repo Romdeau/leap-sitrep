@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "kind": "app-bootstrap",
+    "version": "packet-0-sample",
+    "generatedAt": "2026-04-27T00:00:00.000Z",
+    "sourceDocumentIds": [
+      "blkout-app-plan",
+      "blkout-implementation-workflow",
+      "blkout-tech-stack"
+    ],
+    "confidence": "sample"
+  },
+  "data": {
+    "seedSlice": {
+      "lorePages": [
+        {
+          "id": "authority-overview",
+          "title": "Authority overview",
+          "route": "/lore/factions/authority"
+        },
+        {
+          "id": "abol-timeline",
+          "title": "Timeline",
+          "route": "/lore/timeline"
+        }
+      ],
+      "ruleTopics": [
+        "movement",
+        "shooting",
+        "reactions",
+        "smoke",
+        "control points",
+        "data attacks"
+      ],
+      "force": {
+        "id": "harlow-1st-reaction-force",
+        "name": "Harlow 1st Reaction Force",
+        "route": "/forces/harlow-1st-reaction-force"
+      },
+      "units": [
+        {
+          "id": "harlow-control-team",
+          "name": "Harlow Control Team",
+          "route": "/units/harlow-control-team"
+        },
+        {
+          "id": "harlow-assault-team",
+          "name": "Harlow Assault Team",
+          "route": "/units/harlow-assault-team"
+        },
+        {
+          "id": "harlow-springbok-ai",
+          "name": "Harlow Springbok AI",
+          "route": "/units/harlow-springbok-ai"
+        }
+      ],
+      "scenario": {
+        "id": "dockyard-assault",
+        "title": "Dockyard Assault",
+        "route": "/scenarios/dockyard-assault"
+      }
+    },
+    "contracts": [
+      {
+        "name": "SourceDocument",
+        "status": "stable",
+        "notes": "Source registry shape is fixed so Packet 1 ETL can emit canonical document metadata."
+      },
+      {
+        "name": "RuleSection and EffectiveRuleRecord",
+        "status": "stable",
+        "notes": "Core and effective rule records can evolve without changing Packet 0 route APIs."
+      },
+      {
+        "name": "Force and UnitCard",
+        "status": "stable",
+        "notes": "Packet 3 can add curated force and unit data without reworking route params."
+      },
+      {
+        "name": "Roster and Match",
+        "status": "stable",
+        "notes": "Builder and match routes are reserved for Packets 5 and 6."
+      }
+    ],
+    "validationTargets": [
+      "bun run build",
+      "bun run lint",
+      "bun test",
+      "bun run typecheck"
+    ]
+  }
+}

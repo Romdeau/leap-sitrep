@@ -1,0 +1,1028 @@
+{
+  "meta": {
+    "kind": "lore",
+    "version": "packet-1",
+    "generatedAt": "2026-04-27T07:37:24.333Z",
+    "sourceDocumentIds": [
+      "blkout-lore-primer"
+    ],
+    "confidence": "extracted"
+  },
+  "data": {
+    "factions": [
+      {
+        "id": "the-authority",
+        "name": "The Authority",
+        "summary": "Originally the United Nations ABOL, the Authority evolved into a socialized oligarchy by 2085. Formed amid global crises in 2029, the Republic of United Nations united countries like Germany, France, and Italy to stabilize Europe, eventually becoming a global superpower. The Authority faced challenges from falling debris, ash storms, and insurgent groups like the Impisi and Sabra Cartel. Attempts to control resources led to the Service, Settlement, and Security Act (SSSA) of 2074, igniting the “Yellow Revolution” and a major firefight in Ethron. In 2030, the US discovered ABOL and proposed the LEAP (Leaving Earth Program) to the UN, launching the “Hope” PR campaign for colonization. The LEAP Act, passed in 2032, allowed the UN and the Pan Arab Oil Corporation (PAOC) to land on ABOL with a two-year buffer for follow-up ships, while others needed UN approval. Upon arrival in 2070, the UN fleet, led by the flagship Hope, aggressively enforced the LEAP Act, leading to conflicts with Russian vessels. The UN and PAOC established the capital city of Ethron in the Cenriv I crater. However, in 2072, the UN betrayed other national ships by launching a nuclear strike in space, leaving fewer than 100,000 survivors on ABOL. In response to rising insurgency, the UN and PAOC’s Ibragim pursued counterinsurgency efforts. The arrival of the Second Wave in 2080 sparked the Second Landing War, allowing the UN to seize key cities like New Damascus and San Christo. By 2085, the Authority of Humanity was established under the Great Authority Act, promising unity and galaxy-wide colonization at the cost of extreme government control. The Authority maintains a tense peace with the Headless and focuses on expanding its military capabilities.",
+        "ideology": "Originally the United Nations ABOL, the Authority evolved into a socialized oligarchy by 2085.",
+        "regions": [
+          "Ethron",
+          "Cenriv",
+          "San Christo",
+          "Abol"
+        ],
+        "relatedForceIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: The Authority",
+            "lineStart": 597,
+            "lineEnd": 652
+          }
+        ]
+      },
+      {
+        "id": "the-twin-moons-program",
+        "name": "The Twin Moons Program",
+        "summary": "The Twin Moons Program, a UN super-soldier initiative, developed enhanced soldiers known as Urban Tactical Groups (UTGs). These elite units operate in pairs, specializing in high-risk missions and intelligence operations, overseen by Authority Intelligence Agency (AIA) Director David Hackett. Inspired by the 1990s “Dolly” sheep cloning research, UTGs are formed from clones trained together, consisting of “Athena” (mothers) as officers and “Artemis” (daughters) as NCOs. UTGs are capable of self-replication, allowing for force expansion over time. Initially led by UTG-003 “Hera,” the first successful UTG soldier fit for combat, they play a key role in Authority propaganda and recruitment.",
+        "ideology": "The Twin Moons Program, a UN super-soldier initiative, developed enhanced soldiers known as Urban Tactical Groups (UTGs).",
+        "regions": [],
+        "relatedForceIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: The Twin Moons Program",
+            "lineStart": 654,
+            "lineEnd": 668
+          }
+        ]
+      },
+      {
+        "id": "un-raid-force-alpha",
+        "name": "Un Raid Force Alpha",
+        "summary": "UN Raid Force Alpha represents the pinnacle of military prowess on ABOL. These elite female warriors, trained from birth to be lethal, work in pairs for synchronized battlefield support. Enhanced by gene therapy and cutting-edge technology, they are more experienced than any three mercenaries combined. Supported by ‘Golem’ Combat Units — drones with the consciousness and experience of fallen combatants—this team is the Authority’s most formidable force.",
+        "ideology": "UN Raid Force Alpha represents the pinnacle of military prowess on ABOL.",
+        "regions": [
+          "Abol"
+        ],
+        "relatedForceIds": [
+          "un-raid-force-alpha"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: Un Raid Force Alpha",
+            "lineStart": 670,
+            "lineEnd": 679
+          }
+        ]
+      },
+      {
+        "id": "harlow-1st-assault-battalion",
+        "name": "Harlow 1st Assault Battalion",
+        "summary": "Harlow Kinetic Solutions, the primary enforcement arm of the Authority, replaced the initial UN Peacekeepers. Known for efficiency and brutality, Harlow combines top-tier technology with rigorous training, drawing many members from Western Tier 1 Forces. Despite public discontent over their methods, Harlow’s effectiveness has led to continual contract renewals.",
+        "ideology": "Harlow Kinetic Solutions, the primary enforcement arm of the Authority, replaced the initial UN Peacekeepers.",
+        "regions": [],
+        "relatedForceIds": [
+          "harlow-1st-reaction-force"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: Harlow 1st Assault Battalion",
+            "lineStart": 681,
+            "lineEnd": 691
+          }
+        ]
+      },
+      {
+        "id": "ork",
+        "name": "Ork",
+        "summary": "Rozwiązania Konfliktów Orłów (ORK), the military arm of Polskie Przedsiębiorstwa Państwowe (P3), is composed mainly of former Polish Special Forces. Initially focusing on securing mining sites on ABOL, ORK’s role expanded during the Yellow Revolution to include patrols and Quick Reaction Force duties. Tensions between P3 and the PAOC led to a covert Shadow War, with ORK’s elite “Strzyga” Covert Teams engaging Ibrahim’s units. ORK has become the second largest Private Military Contractor on ABOL, working closely with local recruits and maintaining advanced weaponry, including the T3 ‘Czaska’ Kinetic Suite and the AM-190 Linear Gauss Rifle.",
+        "ideology": "Rozwiązania Konfliktów Orłów (ORK), the military arm of Polskie Przedsiębiorstwa Państwowe (P3), is composed mainly of former Polish Special Forces.",
+        "regions": [
+          "Abol"
+        ],
+        "relatedForceIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: Ork",
+            "lineStart": 693,
+            "lineEnd": 709
+          }
+        ]
+      },
+      {
+        "id": "chimera",
+        "name": "Chimera",
+        "summary": "Chimera emerged from extremist factions of the Ibragim civil war, seeking refuge with Manticor. These zealots, who advocate for a fusion of technology and biology, integrated advanced tech and enhanced musculature with Manticor’s strength. Their technology significantly boosted Manticor’s capabilities, allowing for efficient bionic augmentations. Chimera members often replace damaged limbs with mechanical substitutes crafted in Ibragim’s labs. The most heavily augmented members, known as Disciples, frequently operate advanced equipment like Cyka suites, finding synchronization easier due to their enhancements.",
+        "ideology": "Chimera emerged from extremist factions of the Ibragim civil war, seeking refuge with Manticor.",
+        "regions": [],
+        "relatedForceIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: Chimera",
+            "lineStart": 711,
+            "lineEnd": 722
+          }
+        ]
+      },
+      {
+        "id": "manticor-borz",
+        "name": "Manticor Borz",
+        "summary": "Manticor Borz acts as the formidable right arm of Chimera. Known for exceptional physical strength and resilient combat tactics, these warriors wear heavy ballistic armor, allowing them to withstand impacts that would incapacitate most. When equipped with heavy machine guns, Manticor Borz soldiers are a terrifying presence on the battlefield.",
+        "ideology": "Manticor Borz acts as the formidable right arm of Chimera.",
+        "regions": [],
+        "relatedForceIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: Manticor Borz",
+            "lineStart": 724,
+            "lineEnd": 733
+          }
+        ]
+      },
+      {
+        "id": "banak",
+        "name": "Banak",
+        "summary": "Banak Strategic, founded by Hakob Dharbinyan in 2084, became a leading extraction team in the Badlands, known for advanced bionics and Kinetic Suits. Evolving from the now-defunct Ibragim Strategic, Banak emerged after internal conflicts over the direction of a secret project led to a rift with the PAOC. Following the PAOC’s collapse, Banak found itself in conflict with The Authority after rumors surfaced that a SOC-SAR team recovered old- world technology from a quarantine zone.",
+        "ideology": "Banak Strategic, founded by Hakob Dharbinyan in 2084, became a leading extraction team in the Badlands, known for advanced bionics and Kinetic Suits.",
+        "regions": [],
+        "relatedForceIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: Banak",
+            "lineStart": 735,
+            "lineEnd": 745
+          }
+        ]
+      },
+      {
+        "id": "the-headless",
+        "name": "The Headless",
+        "summary": "In ABOL’s early colonization, rapid development left many unemployed and with inadequate housing. As the UN’s focus shifted to elite security, many were conscripted into military service or turned to illegal work for survival. By 2073, ash storms severed UN supply lines, leading to reliance on cartels like Sabra. The rise of the Killwager, a high-stakes betting game on mercenary job outcomes, fueled anti-UN sentiment. The Battle of Ethron in 2077 exposed the UN’s fragile control and inspired the IRAFEL to declare an end to UN tyranny. In 2084, remnants of IRAFEL, Impisi, Sabra, Jackal Team, and others formed The Headless, a mutual security coalition led by James Vasquez, offering an alternative to the UN’s oppressive rule. They govern a confederation of independent cities and factions, maintain an uneasy stalemate with the UN, and prevent abuse by regional powers.",
+        "ideology": "In ABOL’s early colonization, rapid development left many unemployed and with inadequate housing.",
+        "regions": [
+          "Ethron",
+          "Abol"
+        ],
+        "relatedForceIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: The Headless",
+            "lineStart": 747,
+            "lineEnd": 773
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "timeline-2022-1",
+        "year": "2022",
+        "title": "2022: The VLA detects mysterious radio activity from deep space",
+        "summary": "The VLA detects mysterious radio activity from deep space. NASA and the U.S. government covertly dispatch space telescopes for data while launching a PR campaign advocating space exploration to gain public support and funding.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2022",
+            "lineStart": 3,
+            "lineEnd": 8
+          }
+        ]
+      },
+      {
+        "id": "timeline-2029-2",
+        "year": "2029",
+        "title": "2029: Russia and China withdraw from Europe, leaving the EU in chaos",
+        "summary": "Russia and China withdraw from Europe, leaving the EU in chaos. A UN vote creates a new centralized republic uniting Europe, India, and other countries, establishing the UN as a global superpower.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2029",
+            "lineStart": 10,
+            "lineEnd": 14
+          }
+        ]
+      },
+      {
+        "id": "timeline-2023-3",
+        "year": "2023",
+        "title": "2023: Israel launches an offensive into Palestine, Lebanon, and Syria in respo",
+        "summary": "Israel launches an offensive into Palestine, Lebanon, and Syria in response to terrorist attacks by Hamas and Hezbollah. Iran supports the opposition, turning the tide against Israel. Qatar joins the Palestinian side, causing further tensions.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2023",
+            "lineStart": 16,
+            "lineEnd": 21
+          }
+        ]
+      },
+      {
+        "id": "timeline-2030-4",
+        "year": "2030",
+        "title": "2030: NASA announces the discovery of planet ABOL, potentially habitable",
+        "summary": "NASA announces the discovery of planet ABOL, potentially habitable. The U.S. pitches the LEAP (Leaving Earth Program) to lead a colony mission. The UN agrees to a 10-year timeline.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2030",
+            "lineStart": 23,
+            "lineEnd": 27
+          }
+        ]
+      },
+      {
+        "id": "timeline-2024-5",
+        "year": "2024",
+        "title": "2024: The Pan-Arabic Coalition (PAC) pushes Israel to the brink",
+        "summary": "The Pan-Arabic Coalition (PAC) pushes Israel to the brink. The U.S. forms a coalition with the UK, France, Turkey, Egypt, Jordan, and Iraq, sparking the Great Middle Eastern War of 2024.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2024",
+            "lineStart": 29,
+            "lineEnd": 33
+          }
+        ]
+      },
+      {
+        "id": "timeline-2031-6",
+        "year": "2031",
+        "title": "2031: The global “Hope” PR campaign begins, promoting the LEAP mission",
+        "summary": "The global “Hope” PR campaign begins, promoting the LEAP mission. Billionaire Oliver Espidoza promises cryosleep technology for the journey to ABOL.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2031",
+            "lineStart": 35,
+            "lineEnd": 39
+          }
+        ]
+      },
+      {
+        "id": "timeline-2025-7",
+        "year": "2025",
+        "title": "2025: The U.S",
+        "summary": "The U.S. diverts resources to NASA, focusing on space stations and terraforming. Photos of grass on Mars go viral, boosting global support for space travel. Kyiv falls to Russia after a prolonged conflict.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2025",
+            "lineStart": 41,
+            "lineEnd": 45
+          }
+        ]
+      },
+      {
+        "id": "timeline-2032-8",
+        "year": "2032",
+        "title": "2032: The UN insists on governing ABOL",
+        "summary": "The UN insists on governing ABOL. After private negotiations, the LEAP Act is passed, giving the UN and private corporations the first wave of landings, while national ships must wait two years.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2032",
+            "lineStart": 47,
+            "lineEnd": 51
+          }
+        ]
+      },
+      {
+        "id": "timeline-2026-9",
+        "year": "2026",
+        "title": "2026: The U.S",
+        "summary": "The U.S. invades Tehran during the final push of the war. Iran detonates a nuclear weapon, killing two U.S. divisions and countless civilians. The Pan-Arab Oil Coalition (PAOC) forms, controlling oil prices and forcing the U.S. to negotiate peace.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2026",
+            "lineStart": 53,
+            "lineEnd": 58
+          }
+        ]
+      },
+      {
+        "id": "timeline-2035-10",
+        "year": "2035",
+        "title": "2035: Research ships from the UN, U.S., PAOC, and Russia confirm ABOL’s viabil",
+        "summary": "Research ships from the UN, U.S., PAOC, and Russia confirm ABOL’s viability. Covert missions with national goals are undertaken by 1,000 explorers.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2035",
+            "lineStart": 60,
+            "lineEnd": 64
+          }
+        ]
+      },
+      {
+        "id": "timeline-2027-11",
+        "year": "2027",
+        "title": "2027: Europe faces a massive refugee crisis after the Middle Eastern war and t",
+        "summary": "Europe faces a massive refugee crisis after the Middle Eastern war and the fall of Ukraine. The U.S. refuses to send troops, while Russia, China, and India deploy forces for leverage against the EU.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2027",
+            "lineStart": 66,
+            "lineEnd": 70
+          }
+        ]
+      },
+      {
+        "id": "timeline-2040-12",
+        "year": "2040",
+        "title": "2040: The first wave of 250,000 people departs Earth for the 30-year journey t",
+        "summary": "The first wave of 250,000 people departs Earth for the 30-year journey to ABOL.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2040",
+            "lineStart": 72,
+            "lineEnd": 75
+          }
+        ]
+      },
+      {
+        "id": "timeline-2044-13",
+        "year": "2044",
+        "title": "2044: During the journey, the UN prepares to enforce control of ABOL with mili",
+        "summary": "During the journey, the UN prepares to enforce control of ABOL with military and scientific projects, including the Twin Moons Project.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2044",
+            "lineStart": 77,
+            "lineEnd": 80
+          }
+        ]
+      },
+      {
+        "id": "timeline-2065-14",
+        "year": "2065",
+        "title": "2065: The First Wave receives beacon transponder signals from terraforming sta",
+        "summary": "The First Wave receives beacon transponder signals from terraforming stations and habitable landing zones but no other communication or signs of life from the recon and research teams. The beacon data reveals strong radioactive signals from the planet’s north pole.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2065",
+            "lineStart": 82,
+            "lineEnd": 88
+          }
+        ]
+      },
+      {
+        "id": "timeline-2045-15",
+        "year": "2045",
+        "title": "2045: A whistleblower reveals that PAOC supports insurgents to manipulate oil ",
+        "summary": "A whistleblower reveals that PAOC supports insurgents to manipulate oil prices. India and Pakistan declare war, culminating in a nuclear exchange. Peace is quickly negotiated, and the UN and PAOC make an energy deal.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2045",
+            "lineStart": 90,
+            "lineEnd": 95
+          }
+        ]
+      },
+      {
+        "id": "timeline-2069-16",
+        "year": "2069",
+        "title": "2069: The UN informs the First Wave that the Hope and its fleet are equipped w",
+        "summary": "The UN informs the First Wave that the Hope and its fleet are equipped with experimental missiles and guns to enforce the LEAP Act. It also holds surface-to-orbit missiles and long-range artillery for sustained compliance.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2069",
+            "lineStart": 97,
+            "lineEnd": 102
+          }
+        ]
+      },
+      {
+        "id": "timeline-2046-17",
+        "year": "2046",
+        "title": "2046: Rogue nukes strike Israel, and the aftermath of the war leads to global ",
+        "summary": "Rogue nukes strike Israel, and the aftermath of the war leads to global flooding predictions.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2046",
+            "lineStart": 104,
+            "lineEnd": 107
+          }
+        ]
+      },
+      {
+        "id": "timeline-2048-18",
+        "year": "2048",
+        "title": "2048: The refugee crisis worsens as PAOC and UN close their borders",
+        "summary": "The refugee crisis worsens as PAOC and UN close their borders. India invades China, supported by the U.S., escalating into a global conflict.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2048",
+            "lineStart": 111,
+            "lineEnd": 114
+          }
+        ]
+      },
+      {
+        "id": "timeline-2049-19",
+        "year": "2049",
+        "title": "2049: The “Second Wave” spaceflights to ABOL begin, carrying 1 million people",
+        "summary": "The “Second Wave” spaceflights to ABOL begin, carrying 1 million people. Many ships are corporate, promising passage in exchange for work.",
+        "involvedFactionIds": [
+          "ork"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2049",
+            "lineStart": 118,
+            "lineEnd": 121
+          }
+        ]
+      },
+      {
+        "id": "timeline-2050-20",
+        "year": "2050",
+        "title": "2050: The Second Wave departs for ABOL",
+        "summary": "The Second Wave departs for ABOL.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2050",
+            "lineStart": 125,
+            "lineEnd": 127
+          }
+        ]
+      },
+      {
+        "id": "timeline-2073-21",
+        "year": "2073",
+        "title": "2073: As the First Wave approaches ABOL, Russian vessels fire on the Hope in p",
+        "summary": "As the First Wave approaches ABOL, Russian vessels fire on the Hope in protest of the LEAP Act but are quickly overwhelmed by the combined UN and PAOC fleets. Surviving Russian ships retreat. The UN lands the Hope in the Cenriv I crater, begins construction of a space elevator, and establishes the capital city of Ethron. About two- thirds of the ships from Earth make it to ABOL’s orbit, with no sign of the original recon teams.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2073",
+            "lineStart": 129,
+            "lineEnd": 137
+          }
+        ]
+      },
+      {
+        "id": "timeline-2074-22",
+        "year": "2074",
+        "title": "2074: Terraforming efforts progress",
+        "summary": "Terraforming efforts progress. The UN introduces the Service, Settlement, and Security Act (SSSA), redistributing land based on a meritocracy. Aristocrats live in protected reserves, while most citizens remain in crowded, polluted urban sprawl. Weapons are seized from civilians as part of the new law.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2074",
+            "lineStart": 159,
+            "lineEnd": 165
+          }
+        ]
+      },
+      {
+        "id": "timeline-2082-23",
+        "year": "2082",
+        "title": "2082: A coalition uncovers the PAOC’s secret project: a geo-storm superweapon ",
+        "summary": "A coalition uncovers the PAOC’s secret project: a geo-storm superweapon called “Breath of God.” Gaia sacrifices herself to destroy the weapon, though its premature activation kills thousands before being neutralized.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2082",
+            "lineStart": 167,
+            "lineEnd": 172
+          }
+        ]
+      },
+      {
+        "id": "timeline-2077-24",
+        "year": "2077",
+        "title": "2077: The SSSA grace period ends",
+        "summary": "The SSSA grace period ends. The UN attempts a two-front assault on Ethron, but a massive protest halts the attack. In the confusion, a UN warning shot injures a girl in the crowd, sparking the “Yellow Revolution.” Thousands flee to the crater’s rim, creating shanty towns known as the Scatter. The IRAFEL movement rises in response, vowing to overthrow the UN.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2077",
+            "lineStart": 174,
+            "lineEnd": 181
+          }
+        ]
+      },
+      {
+        "id": "timeline-2083-25",
+        "year": "2083",
+        "title": "2083: Factions scramble to seize PAOC assets",
+        "summary": "Factions scramble to seize PAOC assets. The UN capitalizes on the power vacuum, taking control of Sabra’s base of operations. They also secretly house PAOC leadership on a space station.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2083",
+            "lineStart": 183,
+            "lineEnd": 187
+          }
+        ]
+      },
+      {
+        "id": "timeline-2078-26",
+        "year": "2078",
+        "title": "2078: The UN hires Ibragim, a PAOC security wing, to hunt IRAFEL cells",
+        "summary": "The UN hires Ibragim, a PAOC security wing, to hunt IRAFEL cells. IMPISI militiamen are killed, and the UN forges body counts to maintain fear of IRAFEL. Martial law continues.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2078",
+            "lineStart": 189,
+            "lineEnd": 193
+          }
+        ]
+      },
+      {
+        "id": "timeline-2084-27",
+        "year": "2084",
+        "title": "2084: A new alliance, The Headless, forms under James Vasquez and others, gove",
+        "summary": "A new alliance, The Headless, forms under James Vasquez and others, governing a confederation of independent cities and factions. A cold war begins between The Headless and the UN.",
+        "involvedFactionIds": [
+          "headless"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2084",
+            "lineStart": 195,
+            "lineEnd": 199
+          }
+        ]
+      },
+      {
+        "id": "timeline-2079-28",
+        "year": "2079",
+        "title": "2079: Anti-UN sentiment peaks as pop star Gaia gains popularity with songs con",
+        "summary": "Anti-UN sentiment peaks as pop star Gaia gains popularity with songs condemning the UN. Her shows are outlawed, but this only fuels her rise.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2079",
+            "lineStart": 201,
+            "lineEnd": 205
+          }
+        ]
+      },
+      {
+        "id": "timeline-2085-29",
+        "year": "2085",
+        "title": "2085: The UN consolidates power and rebrands its allied factions as The Author",
+        "summary": "The UN consolidates power and rebrands its allied factions as The Authority, imposing martial law on newly acquired territories.",
+        "involvedFactionIds": [
+          "authority"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2085",
+            "lineStart": 207,
+            "lineEnd": 210
+          }
+        ]
+      },
+      {
+        "id": "timeline-2080-30",
+        "year": "2080",
+        "title": "2080: The Second Wave reaches ABOL",
+        "summary": "The Second Wave reaches ABOL. Corporate ships negotiate with the UN, while others are destroyed trying to bypass the blockade. Piracy runs rampant in orbit. Harlow Kinetic Solutions lands to support the UN’s counterinsurgency. The UN headquarters in Ethron is bombed, igniting the Second Landing War.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2080",
+            "lineStart": 212,
+            "lineEnd": 218
+          }
+        ]
+      },
+      {
+        "id": "timeline-2103-31",
+        "year": "2103",
+        "title": "2103: The Chimera, a fanatical faction, descends from ABOL’s moon and assaults",
+        "summary": "The Chimera, a fanatical faction, descends from ABOL’s moon and assaults Fort Hope at the space elevator base.",
+        "involvedFactionIds": [
+          "chimera"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2103",
+            "lineStart": 220,
+            "lineEnd": 223
+          }
+        ]
+      },
+      {
+        "id": "timeline-2081-32",
+        "year": "2081",
+        "title": "2081: Oliver Espidoza, the eccentric technologist, is assassinated",
+        "summary": "Oliver Espidoza, the eccentric technologist, is assassinated. A covert investigation reveals the PAOC was behind the murder to seize northern mining sites. Betrayed by the state, the surviving investigators form an underground network and compete in the Killwager to fund their operations.",
+        "involvedFactionIds": [
+          "ork"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2081",
+            "lineStart": 225,
+            "lineEnd": 231
+          }
+        ]
+      },
+      {
+        "id": "timeline-2104-33",
+        "year": "2104",
+        "title": "2104: Taskforce Boone arrives in system and begins their Assault on ABOL, depl",
+        "summary": "Taskforce Boone arrives in system and begins their Assault on ABOL, deploying multiple nuclear devices in a planet wide EMP attack.",
+        "involvedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2104",
+            "lineStart": 233,
+            "lineEnd": 236
+          }
+        ]
+      }
+    ],
+    "locations": [
+      {
+        "id": "cenriv-crater-complex",
+        "name": "Cenriv Crater Complex",
+        "region": "Southern Hemisphere",
+        "description": "ABOL, with its hostile environment and political unrest, is a world of stark contrasts—a new home for humanity fraught with danger and mystery. Despite 40 years of terraforming, it remains a planet of extremes. Its low-oxygen atmosphere resembles Earth’s high altitudes, making survival above the plains without supplemental oxygen perilous. Most habitation has shifted underground, where natural caves and craters provide breathable air and shelter. Water is scarce, with ABOL’s surface dominated by deserts and arid savannas. Five massive rivers, sustained by glaciers and terraforming efforts, snake across the land, much of their water disappearing underground into vast cave systems. The planet’s climate is volatile, shaped by its twin moons, Castor and Pollux, which drive its two seasonal cycles: the milder Castor Phase and the severe Pollux Phase, during which superstorms ravage the landscape. These storms stir up vast amounts of dust and ash, blocking sunlight for months in some regions and plunging much of ABOL into darkness. ABOL’s Southern Hemisphere, particularly the sprawling Cenriv Crater Complex, serves as the heart of human settlement. Here, the city of Ethron stands as a testament to human ambition, with prefabricated megastructures stretching across the plains. Further north lies the Frontier Desert, an unforgiving wasteland that was once a vast ocean. This desolate expanse is dotted with outposts, but rumors persist of a rebel stronghold within The Thorn, a massive peak towering 17 miles above the planet’s surface, located at the center of this harsh desert. In the Northern Hemisphere lies ABOL Secundus, a jagged, ash-covered wasteland where few dare to venture. The Mokhri Pat mountain range and the corrosive ash from a supervolcano make this region nearly uninhabitable, though its rich deposits of Abolite, a rare energy-dense mineral, continue to attract dangerous mining operations. Despite numerous expeditions, the area remains treacherous, and the discovery of large Abolite reserves in the desert foothills may mark the end of human aspirations for ABOL Secundus.",
+        "relatedEventIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Life on ABOL",
+            "lineStart": 374,
+            "lineEnd": 427
+          }
+        ]
+      },
+      {
+        "id": "ethron",
+        "name": "Ethron",
+        "region": "Cenriv Crater Complex",
+        "description": "Major cities such as Ethron, San Christo, New Damascus, and Hades Point have developed advanced infrastructure to support life in harsh conditions.",
+        "relatedEventIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Cities",
+            "lineStart": 569,
+            "lineEnd": 572
+          }
+        ]
+      },
+      {
+        "id": "frontier-desert",
+        "name": "Frontier Desert",
+        "region": "Northern frontier",
+        "description": "In the Grass Sea and Frontier Desert, homesteaders and settlers have established communities, relying on innovative farming techniques and resource management to survive.",
+        "relatedEventIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Homesteads and frontier towns",
+            "lineStart": 577,
+            "lineEnd": 581
+          }
+        ]
+      }
+    ],
+    "species": [
+      {
+        "id": "crimson-ferns",
+        "name": "Crimson Ferns",
+        "classification": "flora",
+        "habitat": "These plants grow in the lower elevations of the Gran Taźon Mountains.",
+        "description": "These plants grow in the lower elevations of the Gran Taźon Mountains. They are adapted to low-oxygen environments and have developed a reddish hue to absorb more sunlight during the short, intense periods of daylight. GLOW MOSS Found in the subterranean cave systems, Glow Moss emits a bioluminescent glow, providing light in the dark environments of ABOL’s underground habitats. TITAN’S CACTUS Resilient to both high temperatures and low water levels, this cactus is common in the Grass Sea. Its large, water-storing pads can survive long periods of drought. RAZOR GRASS Dominating its environment, this tall grass is the linchpin of the Grass Sea’s ecosystem. It gets its name from its razor-sharp blades that can easily draw blood from uncovered skin. BONS BUSH Thick, stout scrub trees found throughout the Sea of Grass. Their wood makes poor building material due to its almost rubber-like consistency, hence the nickname “Bons” or Bounce Bushes.",
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "flora entry: Crimson Ferns",
+            "lineStart": 446,
+            "lineEnd": 473
+          }
+        ]
+      },
+      {
+        "id": "ash-drakes",
+        "name": "Ash Drakes",
+        "classification": "fauna",
+        "habitat": "Small, bat-like reptiles that thrive in the ash-filled environments of Mokhri Pat.",
+        "description": "Small, bat-like reptiles that thrive in the ash-filled environments of Mokhri Pat. They have developed thick, heat-resistant scales and can survive in the highly acidic atmosphere. GLIMMER FISH These bioluminescent fish are found in ABOL’s underground water systems. Their glow helps attract prey and provides light in the otherwise dark aquatic environments. SAND STRIDERS Inhabiting the Frontier Desert, these large, insect-like creatures have adapted to extreme temperatures and scarce water. They are known for their ability to travel long distances across the arid landscape. CAVE PYTHONS These large snakes are found in ABOL’s subterranean environments. They have adapted to low-oxygen conditions by developing a slower metabolism and a keen sense of echolocation to navigate dark cave systems, only exerting energy to strike at potential meals. POOL SHRIMP These small crustaceans can be found wherever water pools for long periods, creating a vast tree of subspecies, including bioluminescent shrimp in ABOL’s cave systems and even MEGA shrimp that comb the shallows of the Great Rivers. ASH COBRAS Among the Earth animal species brought to ABOL were Ash Cobras — massive snakes evolved from cobras and pit vipers. Exposure to intense radiation transformed these creature. GRASS RACERS Small, snake-like lizards native to the Sea of Grass. These foot-long reptiles use their limbs and bodies to slide and glide through the massive grass fields, almost as if they’re swimming.",
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "fauna entry: Ash Drakes",
+            "lineStart": 489,
+            "lineEnd": 530
+          }
+        ]
+      }
+    ],
+    "glossary": [
+      {
+        "id": "abol",
+        "term": "ABOL",
+        "meaning": "Humanity’s colony planet and the setting of BLKOUT.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "relatedFactionIds": [
+          "the-authority",
+          "un-raid-force-alpha",
+          "ork",
+          "the-headless"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2030",
+            "lineStart": 23,
+            "lineEnd": 27
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2031",
+            "lineStart": 35,
+            "lineEnd": 39
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2032",
+            "lineStart": 47,
+            "lineEnd": 51
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2035",
+            "lineStart": 60,
+            "lineEnd": 64
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2040",
+            "lineStart": 72,
+            "lineEnd": 75
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2044",
+            "lineStart": 77,
+            "lineEnd": 80
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2049",
+            "lineStart": 118,
+            "lineEnd": 121
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2050",
+            "lineStart": 125,
+            "lineEnd": 127
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2073",
+            "lineStart": 129,
+            "lineEnd": 137
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2080",
+            "lineStart": 212,
+            "lineEnd": 218
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2103",
+            "lineStart": 220,
+            "lineEnd": 223
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2104",
+            "lineStart": 233,
+            "lineEnd": 236
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: The Authority",
+            "lineStart": 597,
+            "lineEnd": 652
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: Un Raid Force Alpha",
+            "lineStart": 670,
+            "lineEnd": 679
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: Ork",
+            "lineStart": 693,
+            "lineEnd": 709
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: The Headless",
+            "lineStart": 747,
+            "lineEnd": 773
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Life on ABOL",
+            "lineStart": 374,
+            "lineEnd": 427
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "flora entry: Crimson Ferns",
+            "lineStart": 446,
+            "lineEnd": 473
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "fauna entry: Ash Drakes",
+            "lineStart": 489,
+            "lineEnd": 530
+          }
+        ]
+      },
+      {
+        "id": "leap",
+        "term": "LEAP",
+        "meaning": "Leaving Earth Program, the colonization program used to reach ABOL.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "relatedFactionIds": [
+          "the-authority"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2030",
+            "lineStart": 23,
+            "lineEnd": 27
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2031",
+            "lineStart": 35,
+            "lineEnd": 39
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2032",
+            "lineStart": 47,
+            "lineEnd": 51
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2069",
+            "lineStart": 97,
+            "lineEnd": 102
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2073",
+            "lineStart": 129,
+            "lineEnd": 137
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: The Authority",
+            "lineStart": 597,
+            "lineEnd": 652
+          }
+        ]
+      },
+      {
+        "id": "sssa",
+        "term": "SSSA",
+        "meaning": "Service, Settlement, and Security Act, a core Authority control law.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "relatedFactionIds": [
+          "the-authority"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2074",
+            "lineStart": 159,
+            "lineEnd": 165
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2077",
+            "lineStart": 174,
+            "lineEnd": 181
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: The Authority",
+            "lineStart": 597,
+            "lineEnd": 652
+          }
+        ]
+      },
+      {
+        "id": "utg",
+        "term": "UTG",
+        "meaning": "Urban Tactical Group, the paired elite soldiers of the Twin Moons Program.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "relatedFactionIds": [
+          "the-twin-moons-program"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: The Twin Moons Program",
+            "lineStart": 654,
+            "lineEnd": 668
+          }
+        ]
+      },
+      {
+        "id": "killwager",
+        "term": "Killwager",
+        "meaning": "Underground betting culture built around mercenary operations on ABOL.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "relatedFactionIds": [
+          "the-headless"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Lore timeline 2081",
+            "lineStart": 225,
+            "lineEnd": 231
+          },
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Faction section: The Headless",
+            "lineStart": 747,
+            "lineEnd": 773
+          }
+        ]
+      },
+      {
+        "id": "abolite",
+        "term": "Abolite",
+        "meaning": "A rare energy-dense mineral mined in dangerous regions of ABOL.",
+        "aliases": [],
+        "relatedRuleIds": [],
+        "relatedFactionIds": [],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Life on ABOL",
+            "lineStart": 374,
+            "lineEnd": 427
+          }
+        ]
+      }
+    ]
+  }
+}
