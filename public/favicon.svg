@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="100%" height="100%">
+  <!-- 
+    Favicon Design for BLKOUT Rules App
+    Subject: G36 Rifle - ZOOMED & SIMPLIFIED
+    Focus: Iconic Carry Handle / Optic Bridge & Barrel
+    Style: High Contrast, Near-Future Operator HUD
+  -->
+
+  <defs>
+    <!-- Favicon rounded corners clip -->
+    <clipPath id="appClip">
+      <rect width="256" height="256" rx="48" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#appClip)">
+
+    <!-- BACKGROUND: Dark Slate (Unit Card Vibe) -->
+    <rect width="256" height="256" fill="#0D1017" />
+
+    <!-- LEFT CYAN STRIP: Essential BLKOUT Card Branding -->
+    <rect x="0" y="0" width="24" height="256" fill="#00AEEF" />
+    <rect x="0" y="48" width="24" height="12" fill="#0D1017" />
+    <rect x="0" y="190" width="24" height="8" fill="#0D1017" />
+
+    <!-- TACTICAL HUD FRAMING: Keeps it feeling like an operator interface -->
+    <g stroke="#00AEEF" stroke-width="4" fill="none" stroke-linecap="square">
+      <!-- Top Right Bracket -->
+      <path d="M 210 24 H 232 V 46" />
+      <!-- Subtle Data Blocks Bottom Right -->
+      <path d="M 170 230 H 180 M 188 230 H 220" stroke-width="6" />
+    </g>
+
+    <!-- HORIZONTAL AXIS LINE (Sci-Fi Targeting HUD detail) -->
+    <line x1="24" y1="120" x2="256" y2="120" stroke="#00AEEF" stroke-width="2" opacity="0.3"
+      stroke-dasharray="8 4" />
+
+    <!-- 
+      ZOOMED G36 SILHOUETTE (Stark White)
+      Massive, chunky forms for 16x16 px readability.
+      Cleaned of any internal XML comments to ensure strict validity.
+    -->
+    <path fill="#FFFFFF" fill-rule="evenodd"
+      d="M 32 40 H 65 V 48 H 155 L 185 100 H 220 V 116 H 236 V 108 H 256 V 136 H 236 V 128 H 205 L 185 168 H 105 L 92 220 H 32 Z M 60 76 H 140 L 158 100 H 60 Z" />
+
+    <!-- 
+      CUTOUTS & DETAILS (Using Background Color)
+    -->
+    <!-- Handguard Vents (Classic large circles) -->
+    <circle cx="125" cy="134" r="11" fill="#0D1017" />
+    <circle cx="155" cy="134" r="11" fill="#0D1017" />
+    <circle cx="185" cy="134" r="11" fill="#0D1017" />
+
+    <!-- Ejection Port / Bolt Receiver Detail -->
+    <rect x="60" y="112" width="36" height="14" rx="4" fill="#0D1017" />
+    <rect x="64" y="115" width="10" height="8" rx="2" fill="#FFFFFF" />
+
+    <!-- Trigger Guard Cutout (Carved out of the left block) -->
+    <path d="M 32 165 H 55 Q 65 165 65 175 V 190 Q 65 200 55 200 H 32 Z" fill="#0D1017" />
+    <!-- Abstract Trigger -->
+    <rect x="45" y="165" width="6" height="12" fill="#FFFFFF" rx="2" />
+
+    <!-- 
+      ACCENT COLORS (Red & Cyan Highlights)
+    -->
+    <!-- Rear Optic Lens Glow -->
+    <rect x="28" y="44" width="8" height="16" fill="#F24822" rx="2" />
+
+    <!-- HUD Target Dot near the Optic -->
+    <circle cx="85" cy="88" r="4" fill="#F24822" />
+
+    <!-- Front Gas Block Tech Accent -->
+    <rect x="165" y="104" width="12" height="4" fill="#00AEEF" />
+
+  </g>
+</svg>
