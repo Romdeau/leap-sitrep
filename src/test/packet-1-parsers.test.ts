@@ -40,12 +40,17 @@ describe("Packet 1 ETL parsers", () => {
     const movement = rulesDataset.data.rules.find((rule) => rule.id === "movement");
     const controlPoints = rulesDataset.data.rules.find((rule) => rule.id === "control-points");
     const movementSubsectionNumbers = movement?.subsections.map((subsection) => subsection.number);
+    const jump = movement?.subsections.find((subsection) => subsection.number === "2.4");
 
     expect(movement?.body.length).toBeGreaterThan(50);
     expect(movement?.overview).toContain("measure the intended distance");
     expect(movementSubsectionNumbers).toEqual(["2.1", "2.2", "2.3", "2.4"]);
     expect(movement?.subsections[0]?.title).toBe("OBSTACLES");
     expect(movement?.subsections[2]?.body).toContain("Lean Out Marker");
+    expect(movement?.body).not.toContain("[3.0] COMBAT");
+    expect(jump?.body).toContain("Models with Jump(X) can Jump as a Movement");
+    expect(jump?.body).not.toContain("[3.0] COMBAT");
+    expect(jump?.body).not.toContain("SHOOTING STEPS");
     expect(controlPoints?.body).toContain("Before each Game");
     expect(controlPoints?.body).toContain("Battle Drill");
 

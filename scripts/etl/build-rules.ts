@@ -13,7 +13,7 @@ import {
 const RULEBOOK_DOCUMENT_ID = "blkout-core-rulebook";
 
 const RULE_SECTION_RANGES = [
-  { heading: "[2.0] MOVEMENT", endMarker: "[3.4] EXPLOSIVES" },
+  { heading: "[2.0] MOVEMENT", endMarker: "[3.0] COMBAT" },
   { heading: "[3.0] COMBAT", endMarker: "[4.0] GAME SETUP" },
   { heading: "[5.0] GAME ROUNDS", endMarker: "[7.0] REACTIONS" },
   { heading: "[7.0] REACTIONS", endMarker: "[8.0] ADDITIONAL RULES" },

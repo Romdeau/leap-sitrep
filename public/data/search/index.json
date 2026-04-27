@@ -2,7 +2,7 @@
   "meta": {
     "kind": "search-index",
     "version": "packet-2",
-    "generatedAt": "2026-04-27T07:37:24.333Z",
+    "generatedAt": "2026-04-27T08:32:45.506Z",
     "sourceDocumentIds": [
       "blkout-lore-primer",
       "blkout-core-rulebook",
@@ -246,7 +246,7 @@
         "id": "rule-subsection-2-4-jump-x",
         "entityType": "rule-subsection",
         "title": "2.4 JUMP (X)",
-        "summary": "Models with Jump(X) can Jump as a Movement. The Model may be placed anywhere within (X)” horizontally, and (X)” vertically without passing through Terrain. [3.0] COMBAT [3.1] SHOOTING STEPS 1. Pick a Model that your Shooting Model has Line of Sight to and is within its Weapon’s Range. 1. Confirm if the Target Model is in Cover. 1. Roll a Skill Check (2D10), rolling an additional D10 if the Target is not in Cover and subtracting a D10 if the Target is in Cover. (D10 in a Shooting Skill Check are called Shots.) 1. For each Success, the Target suffers Damage equal to the Weapon’s Damage. (Yes! Shots that Ace by rolling a 10 apply double the Weapons Damage!) 1. The Target must make an Armor Check, rolling a number of D10 equal to the first number in their Armor, and preventing a point of Damage for each D10 that rolls equal to or higher than the second number. ARMOR If a Model suffers more Damage than it has Armor (D10), it cannot stop that Damage and must mark it. [3.2] MARKING DAMAGE When a Model fails to prevent Damage, it must mark a number of Damage on its Card equal to the Damage it suffered. When the Damage Track is filled, the Model is Destroyed and removed from the Game. Models without a Damage Track are Destroyed when they suffer at least one Damage. [3.3] CQC After making an Action, an Infantry Model in Base-to-Base with an Enemy Infantry Model will engage in Close Quarters Combat (CQC). Both Models will make a Skill Check. Each Success inflicts one Damage to the other Model in CQC, ignoring Armor Checks. The Model with more Successes applies their Damage first. If this would Destroy the other Model, the winning Model does not suffer any Damage. If Players roll an equal number of Successes, the Player with the highest roll on a D10 wins; If Players roll the same number, they will roll again. When a Model is Destroyed in CQC, the CQC ends, and Players proceed to the next CQC.",
+        "summary": "Models with Jump(X) can Jump as a Movement. The Model may be placed anywhere within (X)” horizontally, and (X)” vertically without passing through Terrain.",
         "keywords": [
           "movement",
           "movement",
