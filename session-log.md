@@ -133,3 +133,27 @@ This section seeds the log with the major project milestones that were already c
 - Validation: `bun run build:data`, `bun run test -- src/test/packet-1-parsers.test.ts src/test/packet-2-data.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, `bun run lint`, and `bun run build` passed.
 - Manual QA: checked `Smoke Grenade | X"` appears in generated rules data with `blkout-special-rules` citations and is covered by the rules-page/search smoke test.
 - Follow-up: Packet 4 still needs the dedicated browser-based mobile/desktop QA pass before Review B.
+
+## 2026-04-29 - Packet 4 Mobile Search Access
+
+- Scope: tighten the remaining Packet 4 mobile/table-side reference UX by keeping search available from the fixed bottom navigation.
+- Outcome: added a reusable mobile Search action that opens the existing generated-data search overlay from the bottom nav while keeping later builder/match flows deferred.
+- Validation: `bun run build:data`, `bun run test -- src/test/app.smoke.test.tsx`, `bun run typecheck`, `bun run lint`, and `bun run build` passed. An initial smoke-test assertion failed because `Harlow 1st Reaction Force` appears both on the home page and in search results; the assertion was corrected to expect multiple matches.
+- Manual QA: recorded in `docs/qa/packet-4.md`; automated mobile-navigation coverage opens search from the bottom nav and finds the verified Harlow force result.
+- Follow-up: Packet 4 still needs a browser/device visual QA pass at phone and desktop sizes before Review B.
+
+## 2026-04-29 - Packet 4 Completed And Packet 5 Started
+
+- Scope: close Packet 4 after user direction to defer final mobile visual validation until the broader app is complete and move into the builder packet.
+- Outcome: marked Packet 4 complete and Packet 5 in progress in `blkout-progress.md`.
+- Validation: documentation/status update only; no code validation required.
+- Manual QA: user accepted deferring final mobile visual QA.
+- Follow-up: implement the smallest Harlow core roster builder slice with local persistence and validation.
+
+## 2026-04-29 - Packet 5 Harlow Core Builder Slice
+
+- Scope: implement the first Packet 5 core builder sub-slice for the verified Harlow seed force.
+- Outcome: activated `/builder`, added pure roster validation and local-storage persistence helpers, built a Harlow core roster form with 3 unit slots, legal-state messaging, source links, saved roster summaries, and delete support.
+- Validation: `bun run test -- src/features/builder/roster-builder.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, `bun run lint`, and `bun run build` passed. Initial lint found two new TypeScript issues in builder files; both were fixed and lint was rerun successfully.
+- Manual QA: recorded in `docs/qa/packet-5.md`; confirmed the slice uses only verified Harlow force/unit data and does not invent points, handlers, BLKLIST options, or matched play content.
+- Follow-up: Packet 5 still needs duplication, fuller saved-roster reload/round-trip UX, richer illegal-state checks, and final manual roster QA before completion.

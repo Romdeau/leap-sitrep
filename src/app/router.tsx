@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import { AppShell } from "@/app/app-shell";
+import { BuilderRoute } from "@/features/builder/builder-route";
 import {
   ForceDetailRoute,
   ForcesRoute,
@@ -36,7 +37,7 @@ export function AppRouter() {
         <Route element={<UsrDetailRoute />} path="rules/usr/:slug" />
         <Route element={<ScenariosRoute />} path="scenarios" />
         <Route element={<ScenarioDetailRoute />} path="scenarios/:scenarioId" />
-        <Route element={<ReservedRouteNotice />} path="builder" />
+        <Route element={<BuilderRoute />} path="builder" />
         <Route element={<ReservedRouteNotice />} path="matches" />
         <Route element={<ReservedRouteNotice />} path="matches/:matchId" />
         <Route element={<GlossaryRoute />} path="glossary" />

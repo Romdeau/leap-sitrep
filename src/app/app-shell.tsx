@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTheme } from "@/app/providers/use-theme";
 import type { AppearanceMode, ClayVariant, DashboardTheme } from "@/app/providers/theme-types";
-import { SearchOverlay } from "@/features/reference/reference-ui";
+import { MobileSearchButton, SearchOverlay } from "@/features/reference/reference-ui";
 import { useReferenceDataState } from "@/features/reference/use-reference-data";
 import { primaryNavigation } from "@/lib/routes/manifest";
 import { cn } from "@/lib/utils";
@@ -81,6 +81,7 @@ export function AppShell() {
     ) : (
       <Outlet />
     );
+  const mobileNavigation = primaryNavigation.slice(0, referenceDataState.status === "ready" ? 7 : 8);
 
   return (
     <div className="min-h-screen text-[color:var(--foreground)]">
@@ -95,8 +96,8 @@ export function AppShell() {
               <div className="space-y-2">
                 <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">LEAP Sitrep</h1>
                 <p className="max-w-3xl text-sm leading-6 text-[color:var(--muted-foreground)] sm:text-base">
-                  Local-first BLKOUT reference experience now reading generated lore, rules, force, and scenario datasets,
-                  while builder and match flows remain reserved for later packets.
+                  Local-first BLKOUT reference experience now reading generated lore, rules, force, scenario, and builder data,
+                  while match flows remain reserved for later packets.
                 </p>
               </div>
             </div>
@@ -151,7 +152,7 @@ export function AppShell() {
 
       <nav className="fixed inset-x-0 bottom-0 border-t border-[color:var(--border)] bg-[color:var(--surface)] px-3 py-3 md:hidden">
         <div className="mx-auto grid max-w-3xl grid-cols-4 gap-2">
-          {primaryNavigation.slice(0, 8).map((route) => (
+          {mobileNavigation.map((route) => (
             <NavLink
               key={route.id}
               className={({ isActive }) => cn(navClassName(isActive), "text-center text-xs")}
@@ -161,6 +162,7 @@ export function AppShell() {
               {route.shortLabel}
             </NavLink>
           ))}
+          {referenceDataState.status === "ready" ? <MobileSearchButton /> : null}
         </div>
       </nav>
     </div>

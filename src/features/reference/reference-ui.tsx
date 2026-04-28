@@ -238,7 +238,7 @@ function ReferenceStatusCard() {
   );
 }
 
-export function SearchOverlay() {
+export function SearchOverlay({ buttonClassName, buttonLabel = "Search" }: { buttonClassName?: string; buttonLabel?: string } = {}) {
   const navigate = useNavigate();
   const { searchIndex } = useReferenceData();
   const [isOpen, setIsOpen] = useState(false);
@@ -312,9 +312,9 @@ export function SearchOverlay() {
 
   return (
     <>
-      <Button className="gap-2" variant="outline" onClick={() => setIsOpen(true)}>
+      <Button className={buttonClassName ?? "gap-2"} variant="outline" onClick={() => setIsOpen(true)}>
         <Search className="size-4" />
-        Search
+        {buttonLabel}
       </Button>
 
       {isOpen ? (
@@ -368,6 +368,10 @@ export function SearchOverlay() {
       ) : null}
     </>
   );
+}
+
+export function MobileSearchButton() {
+  return <SearchOverlay buttonClassName="w-full gap-1 px-2 py-2 text-xs" buttonLabel="Search" />;
 }
 
 function SectionIntro({

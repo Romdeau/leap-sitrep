@@ -891,6 +891,19 @@ describe("App smoke test", () => {
     expect(screen.getByText("Rule Section")).toBeInTheDocument();
   });
 
+  it("keeps search available from mobile navigation", async () => {
+    const user = userEvent.setup();
+
+    render(<App />);
+
+    await screen.findByText("Reference hub");
+    await user.click(screen.getAllByRole("button", { name: "Search" }).at(-1)!);
+    await user.type(screen.getByPlaceholderText("Search rules, lore, forces, units, scenarios, or glossary terms"), "harlow");
+
+    expect((await screen.findAllByText("Harlow 1st Reaction Force")).length).toBeGreaterThan(1);
+    expect(screen.getByText("Force")).toBeInTheDocument();
+  });
+
   it("navigates to a subsection anchor from search results", async () => {
     const user = userEvent.setup();
 
@@ -931,5 +944,24 @@ describe("App smoke test", () => {
     await user.type(screen.getByPlaceholderText("Search rules, lore, forces, units, scenarios, or glossary terms"), "smoke grenade");
 
     expect(await screen.findByText("USR")).toBeInTheDocument();
+  });
+
+  it("builds and saves a legal Harlow core roster", async () => {
+    const user = userEvent.setup();
+
+    window.history.pushState({}, "", "/builder");
+    localStorage.clear();
+
+    render(<App />);
+
+    expect(await screen.findByText("Harlow core roster builder")).toBeInTheDocument();
+    expect(screen.getByText("Legal core roster: 1 verified force card and 3 unit cards from that force.")).toBeInTheDocument();
+
+    await user.type(screen.getByPlaceholderText("Optional table notes, deployment reminders, or source-check notes."), "Seed roster");
+    await user.click(screen.getByRole("button", { name: "Save roster" }));
+
+    expect(await screen.findByText("Seed roster")).toBeInTheDocument();
+    expect(screen.getAllByText("Harlow 1st Reaction Force").length).toBeGreaterThan(0);
+    expect(localStorage.getItem("leap-sitrep.rosters.v1")).toContain("harlow-control-team");
   });
 });

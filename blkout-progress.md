@@ -4,9 +4,9 @@ Last updated: 2026-04-29
 
 ## Overall Status
 
-- Highest fully completed packet: Packet 3 `Curated First Force Slice`
-- First incomplete packet: Packet 4 `Reference UI Vertical Slice`
-- Current state: core ETL, effective rules/search, dedicated special-rules ingestion, and the first trusted Harlow force slice are in place; the first Packet 4 read-only reference UI sub-slice is now live and validated, the Harlow-to-Authority cross-dataset id mismatch is normalized, and builder/match tracker work remain unstarted.
+- Highest fully completed packet: Packet 4 `Reference UI Vertical Slice`
+- First incomplete packet: Packet 5 `Core Builder Vertical Slice`
+- Current state: core ETL, effective rules/search, dedicated special-rules ingestion, the first trusted Harlow force slice, and the Packet 4 read-only reference UI are complete. The Harlow-to-Authority cross-dataset id mismatch is normalized. The first Packet 5 builder sub-slice is live for legal Harlow core roster creation and local saves; match tracker work remains unstarted.
 
 ## Important Project Info
 
@@ -42,8 +42,8 @@ When sources conflict, apply this order:
 | 1 | Source Ingestion Foundation | Complete | ETL added for source registry, lore, core rules, supplemental rules, and scenarios. Generated JSON is emitted under `public/data/`. Parser tests and QA notes exist. Scenario boundary parsing was later tightened after the cleaned rulebook QA pass. |
 | 2 | Effective Rules And Search | Complete | Effective rules merge, FAQ/errata linkage, alias mapping, universal special rule search records, and search indexing were added. Effective rules currently cover at least `reactions`, `control-points`, and `smoke`. Dedicated `markdown/special-rules.md` ingestion now improves USR text while preserving citations. |
 | 3 | Curated First Force Slice | Complete | Curated Harlow force data was added and manually verified against the real card screenshots. Includes `HFR-6770` Harlow 1st Reaction Force, `HFR-6771` Harlow Control Team, `HFR-6772` Harlow Assault Team, and `HFR-6773` Harlow Springbok AI. Force audit output, type updates, search indexing, tests, and QA notes were added. |
-| 4 | Reference UI Vertical Slice | In progress | The seed read-only reference routes are now live for Authority lore, the timeline, seed rules topics, universal special rules, the verified Harlow force and units, `Dockyard Assault`, glossary, and search. Harlow force data now links to the canonical `the-authority` lore id without a UI workaround. Builder and match routes remain intentionally reserved. Packet 4 is not yet fully complete because broader interaction coverage and a dedicated mobile/manual QA pass still need to be recorded. |
-| 5 | Core Builder Vertical Slice | Not started | Blocked on Packet 4. |
+| 4 | Reference UI Vertical Slice | Complete | The seed read-only reference routes are live for Authority lore, the timeline, seed rules topics, universal special rules, the verified Harlow force and units, `Dockyard Assault`, glossary, and search. Harlow force data links to the canonical `the-authority` lore id without a UI workaround, and mobile bottom navigation exposes search for table-side lookup. User deferred final browser/device visual QA until the broader app is complete. |
+| 5 | Core Builder Vertical Slice | In progress | The first Harlow core builder sub-slice is live at `/builder`: it validates 1 verified Harlow force plus 3 verified Harlow units, saves rosters to local storage, displays saved roster summaries, and links back to source-backed force/unit pages. Packet 5 is not complete yet because duplication, fuller persistence round-trip UX, richer illegal-state handling, and final manual roster QA remain. |
 | 6 | Core Match Tracker Vertical Slice | Not started | Blocked on Packet 5. |
 | 7 | Catalog And Matched Play Expansion | Not started | Blocked on Packet 6 and user Review D. |
 | 8 | Polish And Optional Expansion | Not started | Blocked on Packet 7. |
@@ -65,7 +65,7 @@ Current completion against that slice:
 - Force and unit data for the Harlow slice are complete and manually verified.
 - Rule/scenario ETL exists for the seed slice.
 - The read-only reference UI is now active for the seed slice.
-- The builder workflow and tracker workflow for the seed slice are still pending.
+- The builder workflow for the seed slice is now in progress; the tracker workflow is still pending.
 
 ## Key Outputs In Place
 
@@ -90,6 +90,7 @@ Current completion against that slice:
   - `docs/qa/packet-2.md`
   - `docs/qa/packet-3.md`
   - `docs/qa/packet-4.md`
+  - `docs/qa/packet-5.md`
 
 ## Validation Snapshot
 
@@ -117,6 +118,21 @@ Most recent targeted validation passed for the Packet 4 reference data-contract 
 - `bun run lint`
 - `bun run build`
 
+Most recent targeted validation passed for the Packet 4 mobile search QA slice:
+
+- `bun run build:data`
+- `bun run test -- src/test/app.smoke.test.tsx`
+- `bun run typecheck`
+- `bun run lint`
+- `bun run build`
+
+Most recent targeted validation passed for the first Packet 5 builder sub-slice:
+
+- `bun run test -- src/features/builder/roster-builder.test.ts src/test/app.smoke.test.tsx`
+- `bun run typecheck`
+- `bun run lint`
+- `bun run build`
+
 ## Important Findings And Open Issues
 
 - The user performed a major cleanup pass on `markdown/BLKOUT-PRINT-AT-HOME-RULEBOOK.md`, including removing the table of contents, removing acknowledgements, and fixing section ordering. The parsers were then simplified and scenario extraction improved.
@@ -126,19 +142,19 @@ Most recent targeted validation passed for the Packet 4 reference data-contract 
 - The out-of-order `[4.7] DATA ATTACKS` material in `markdown/BLKOUT_Supplemental_4-26.md` is now handled by the supplemental parser. Packet 2 now recovers those FAQ/errata records and links them into the `data-attacks` effective rule.
 - Packet 4 now reads the generated datasets directly through a shared reference-data provider and exposes citations across lore, rules, force, unit, scenario, and glossary routes.
 - Core rule ETL now emits structured rule subsections (`overview` plus numbered `subsections`) instead of relying only on a flat `body` blob, and the Packet 4 rules UI renders those subsections directly.
-- The global search overlay is live for the seed slice and returns Packet 4 routes for Authority, Harlow, `return fire`, `Dockyard Assault`, and glossary terms.
+- The global search overlay is live for the seed slice, is available from both header controls and the mobile bottom navigation, and returns Packet 4 routes for Authority, Harlow, `return fire`, `Dockyard Assault`, and glossary terms.
 - The previous cross-dataset id mismatch between lore id `the-authority` and force parent id `authority` has been normalized in `scripts/etl/build-forces.ts`; generated force/search data and sample fixtures now use `the-authority`.
 - The added `markdown/special-rules.md` source is registered as `blkout-special-rules`, merged into `public/data/rules/core.json` universal special rules, indexed for search, and surfaced on `/rules` plus `/rules/usr/:slug`.
+- The `/builder` route is now active for the seed Harlow core-play group and persists rosters locally under `leap-sitrep.rosters.v1`.
 
 ## Review Checkpoints
 
 - Review A: reached, because Packet 2 is complete. This should be treated as the next explicit plan checkpoint if we want a formal user review on data contracts, citations, and precedence behavior.
-- Review B: partially approached because Packet 4 is in progress and the first reference UI direction is now visible, but Packet 4 is not yet complete.
+- Review B: reached because Packet 4 is complete. The user deferred final mobile visual validation until the broader app is complete and explicitly directed work to continue into Packet 5.
 - Review C: not reached.
 - Review D: not reached.
 - Review E: not reached.
 
 ## Recommended Next Work
 
-1. Finish Packet 4 `Reference UI Vertical Slice` by doing a manual mobile/desktop QA pass on the active reference routes and tightening any obvious UX gaps found there.
-2. After the remaining Packet 4 QA work is done, use Review B to confirm the reference UI direction before starting the builder slice.
+1. Continue Packet 5 by adding roster duplication/deletion polish, stronger saved-roster reload/round-trip UX, richer illegal-state checks, and a manual QA pass for one legal Harlow roster against the core group assumptions.
