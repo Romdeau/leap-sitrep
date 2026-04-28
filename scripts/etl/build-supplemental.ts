@@ -269,6 +269,7 @@ function extractUniversalSpecialRules(lines: Awaited<ReturnType<typeof readSourc
       currentText: normalizeWhitespace(descriptionBlocks.join(" ")),
       aliases: buildUsrAliases(namePart),
       relatedRuleIds: inferRelatedRuleIds(namePart),
+      notes: [],
       citations: [createCitation(`USR ${namePart}`, block.lineStart, lineEnd)],
     });
 

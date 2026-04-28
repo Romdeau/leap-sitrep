@@ -2,11 +2,12 @@
   "meta": {
     "kind": "source-registry",
     "version": "packet-1",
-    "generatedAt": "2026-04-27T07:37:24.333Z",
+    "generatedAt": "2026-04-28T00:50:49.213Z",
     "sourceDocumentIds": [
       "blkout-lore-primer",
       "blkout-core-rulebook",
       "blkout-supplemental",
+      "blkout-special-rules",
       "blkout-unit-cards-ocr",
       "blkout-unit-cards-screenshots",
       "blkout-quick-ref-md"
@@ -43,6 +44,16 @@
         "isCanonical": true,
         "precedenceRank": 1,
         "notes": "Primary matched-play, FAQ, errata, clarification, and universal special rules source."
+      },
+      {
+        "id": "blkout-special-rules",
+        "title": "BLKOUT Special Rules Reference",
+        "fileName": "markdown/special-rules.md",
+        "documentType": "special-rules",
+        "version": "website-reference",
+        "isCanonical": true,
+        "precedenceRank": 2,
+        "notes": "Concise keyword-rule reference captured from the live BLKOUT rules and definitions page, used to improve USR readability while preserving citations."
       },
       {
         "id": "blkout-unit-cards-ocr",

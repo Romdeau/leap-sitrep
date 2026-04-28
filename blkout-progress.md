@@ -1,12 +1,12 @@
 # BLKOUT Progress
 
-Last updated: 2026-04-27
+Last updated: 2026-04-29
 
 ## Overall Status
 
 - Highest fully completed packet: Packet 3 `Curated First Force Slice`
 - First incomplete packet: Packet 4 `Reference UI Vertical Slice`
-- Current state: core ETL, effective rules/search, and the first trusted Harlow force slice are in place; the first Packet 4 read-only reference UI sub-slice is now live and validated, while builder flow and match tracker work remain unstarted.
+- Current state: core ETL, effective rules/search, dedicated special-rules ingestion, and the first trusted Harlow force slice are in place; the first Packet 4 read-only reference UI sub-slice is now live and validated, the Harlow-to-Authority cross-dataset id mismatch is normalized, and builder/match tracker work remain unstarted.
 
 ## Important Project Info
 
@@ -40,9 +40,9 @@ When sources conflict, apply this order:
 | --- | --- | --- | --- |
 | 0 | Bootstrap And Contracts | Complete | Project scaffolded with Bun, TypeScript, React 19, Vite, Tailwind, ESLint, and Vitest. Route shell, theme provider, shared domain/generated types, sample generated data, and smoke coverage were added. |
 | 1 | Source Ingestion Foundation | Complete | ETL added for source registry, lore, core rules, supplemental rules, and scenarios. Generated JSON is emitted under `public/data/`. Parser tests and QA notes exist. Scenario boundary parsing was later tightened after the cleaned rulebook QA pass. |
-| 2 | Effective Rules And Search | Complete | Effective rules merge, FAQ/errata linkage, alias mapping, and search indexing were added. Effective rules currently cover at least `reactions`, `control-points`, and `smoke`. A small cleanup pass simplified `build-effective-rules.ts` without changing current behavior. |
+| 2 | Effective Rules And Search | Complete | Effective rules merge, FAQ/errata linkage, alias mapping, universal special rule search records, and search indexing were added. Effective rules currently cover at least `reactions`, `control-points`, and `smoke`. Dedicated `markdown/special-rules.md` ingestion now improves USR text while preserving citations. |
 | 3 | Curated First Force Slice | Complete | Curated Harlow force data was added and manually verified against the real card screenshots. Includes `HFR-6770` Harlow 1st Reaction Force, `HFR-6771` Harlow Control Team, `HFR-6772` Harlow Assault Team, and `HFR-6773` Harlow Springbok AI. Force audit output, type updates, search indexing, tests, and QA notes were added. |
-| 4 | Reference UI Vertical Slice | In progress | The seed read-only reference routes are now live for Authority lore, the timeline, seed rules topics, the verified Harlow force and units, `Dockyard Assault`, glossary, and search. Builder and match routes remain intentionally reserved. Packet 4 is not yet fully complete because broader interaction coverage and a dedicated mobile/manual QA pass still need to be recorded. |
+| 4 | Reference UI Vertical Slice | In progress | The seed read-only reference routes are now live for Authority lore, the timeline, seed rules topics, universal special rules, the verified Harlow force and units, `Dockyard Assault`, glossary, and search. Harlow force data now links to the canonical `the-authority` lore id without a UI workaround. Builder and match routes remain intentionally reserved. Packet 4 is not yet fully complete because broader interaction coverage and a dedicated mobile/manual QA pass still need to be recorded. |
 | 5 | Core Builder Vertical Slice | Not started | Blocked on Packet 4. |
 | 6 | Core Match Tracker Vertical Slice | Not started | Blocked on Packet 5. |
 | 7 | Catalog And Matched Play Expansion | Not started | Blocked on Packet 6 and user Review D. |
@@ -101,10 +101,21 @@ Full validation passed after the Packet 4 reference UI slice:
 - `bun run lint`
 - `bun run build`
 
-Most recent targeted validation passed for the Packet 4 reference routes and search overlay:
+Most recent full validation passed after special-rules rules-module integration:
 
-- `bun run test -- src/test/app.smoke.test.tsx`
+- `bun run build:data`
+- `bun run test -- src/test/packet-1-parsers.test.ts src/test/packet-2-data.test.ts src/test/app.smoke.test.tsx`
+- `bun run typecheck`
 - `bun run lint`
+- `bun run build`
+
+Most recent targeted validation passed for the Packet 4 reference data-contract cleanup:
+
+- `bun run build:data`
+- `bun run test -- src/test/packet-3-forces.test.ts src/test/app.smoke.test.tsx`
+- `bun run typecheck`
+- `bun run lint`
+- `bun run build`
 
 ## Important Findings And Open Issues
 
@@ -116,7 +127,8 @@ Most recent targeted validation passed for the Packet 4 reference routes and sea
 - Packet 4 now reads the generated datasets directly through a shared reference-data provider and exposes citations across lore, rules, force, unit, scenario, and glossary routes.
 - Core rule ETL now emits structured rule subsections (`overview` plus numbered `subsections`) instead of relying only on a flat `body` blob, and the Packet 4 rules UI renders those subsections directly.
 - The global search overlay is live for the seed slice and returns Packet 4 routes for Authority, Harlow, `return fire`, `Dockyard Assault`, and glossary terms.
-- There is still a cross-dataset id mismatch between the lore id `the-authority` and the force parent id `authority`; the Packet 4 UI currently tolerates this instead of rewriting Packet 3 data in the same pass.
+- The previous cross-dataset id mismatch between lore id `the-authority` and force parent id `authority` has been normalized in `scripts/etl/build-forces.ts`; generated force/search data and sample fixtures now use `the-authority`.
+- The added `markdown/special-rules.md` source is registered as `blkout-special-rules`, merged into `public/data/rules/core.json` universal special rules, indexed for search, and surfaced on `/rules` plus `/rules/usr/:slug`.
 
 ## Review Checkpoints
 
@@ -129,5 +141,4 @@ Most recent targeted validation passed for the Packet 4 reference routes and sea
 ## Recommended Next Work
 
 1. Finish Packet 4 `Reference UI Vertical Slice` by doing a manual mobile/desktop QA pass on the active reference routes and tightening any obvious UX gaps found there.
-2. Decide whether to normalize the `authority` versus `the-authority` cross-dataset id mismatch as a small data-contract cleanup before moving deeper into Packet 4 or Packet 5.
-3. After the remaining Packet 4 QA work is done, use Review B to confirm the reference UI direction before starting the builder slice.
+2. After the remaining Packet 4 QA work is done, use Review B to confirm the reference UI direction before starting the builder slice.

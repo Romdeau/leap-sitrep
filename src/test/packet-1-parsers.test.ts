@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 
 import { buildLoreDataset } from "../../scripts/etl/build-lore";
 import { buildRulesDataset } from "../../scripts/etl/build-rules";
+import { buildSpecialRulesIndex } from "../../scripts/etl/build-special-rules";
 import { buildSupplementalDataset } from "../../scripts/etl/build-supplemental";
 
 const projectRoot = process.cwd();
@@ -108,5 +109,22 @@ describe("Packet 1 ETL parsers", () => {
     expect(dataKnifeFaq?.answer).toContain("Data Spikes");
     expect(dataAttackErrata?.oldTextSummary).toBe("DATA ATTACKS");
     expect(dataAttackErrata?.newTextSummary).toContain("Data Attacks don’t require Line of Sight");
+  });
+
+  it("extracts concise special rules markdown with examples and notes", async () => {
+    const rules = await buildSpecialRulesIndex({
+      filePath: path.join(projectRoot, "markdown/special-rules.md"),
+    });
+
+    const ap = rules.find((rule) => rule.name === "AP (X)");
+    const smokeGrenade = rules.find((rule) => rule.name === 'Smoke Grenade | X"');
+    const drone = rules.find((rule) => rule.name === "Drone");
+
+    expect(ap?.currentText).toContain("increase the Target’s Armor Check by +X");
+    expect(ap?.notes[0]?.label).toContain("Example");
+    expect(ap?.notes[0]?.text).toContain("Armor 2/4");
+    expect(smokeGrenade?.relatedRuleIds).toContain("smoke");
+    expect(drone?.notes[0]?.label).toContain("Note");
+    expect(drone?.notes[0]?.text).toContain("Close Quarters Combat");
   });
 });

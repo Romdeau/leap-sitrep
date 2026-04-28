@@ -443,7 +443,38 @@ const rulesFixture = {
       },
     ],
     errata: [],
-    universalSpecialRules: [],
+    universalSpecialRules: [
+      {
+        id: "smoke-grenade-x",
+        name: "Smoke Grenade | X\"",
+        currentText: "Before this Unit's Reposition Phase, place a Smoke Token within X inches of one of its Models.",
+        aliases: ["smoke grenade"],
+        relatedRuleIds: ["smoke"],
+        notes: [
+          {
+            id: "smoke-grenade-x-note-1",
+            label: "Note: See Rules [8.8] Smoke for more information about this core ability",
+            text: "Note: See Rules [8.8] Smoke for more information about this core ability",
+            citations: [
+              {
+                documentId: "blkout-special-rules",
+                label: "USR Smoke Grenade note",
+                lineStart: 120,
+                lineEnd: 120,
+              },
+            ],
+          },
+        ],
+        citations: [
+          {
+            documentId: "blkout-special-rules",
+            label: "USR Smoke Grenade | X\"",
+            lineStart: 116,
+            lineEnd: 120,
+          },
+        ],
+      },
+    ],
   },
 };
 
@@ -461,7 +492,7 @@ const forcesFixture = {
         id: "harlow-1st-reaction-force",
         cardId: "HFR-6770",
         name: "Harlow 1st Reaction Force",
-        parentLoreFactionId: "authority",
+        parentLoreFactionId: "the-authority",
         battleDrills: [
           {
             id: "hfr-6770-battle-drill-chaff",
@@ -778,6 +809,17 @@ const searchFixture = {
         relatedIds: ["harlow-1st-reaction-force"],
       },
       {
+        id: "smoke-grenade-x",
+        entityType: "usr",
+        title: "Smoke Grenade | X\"",
+        summary: "Before this Unit's Reposition Phase, place a Smoke Token within X inches of one of its Models.",
+        keywords: ["smoke"],
+        aliases: ["smoke grenade"],
+        route: "/rules/usr/smoke-grenade-x",
+        sourceDocumentIds: ["blkout-special-rules"],
+        relatedIds: ["smoke"],
+      },
+      {
         id: "utg",
         entityType: "glossary",
         title: "UTG",
@@ -861,5 +903,33 @@ describe("App smoke test", () => {
 
     expect(await screen.findByText("RETURN FIRE REACTION")).toBeInTheDocument();
     expect(window.location.hash).toBe("#rule-subsection-7-2-return-fire-reaction");
+  });
+
+  it("marks effective rule changes as baseline versus changed content", async () => {
+    window.history.pushState({}, "", "/rules/core");
+
+    render(<App />);
+
+    expect((await screen.findAllByText("Effective ruling")).length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Core rulebook baseline").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Changed or added").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Baseline").length).toBeGreaterThan(0);
+  });
+
+  it("surfaces special rules in the rules module and search", async () => {
+    const user = userEvent.setup();
+
+    window.history.pushState({}, "", "/rules");
+
+    render(<App />);
+
+    expect(await screen.findByText("Universal special rules")).toBeInTheDocument();
+    expect(screen.getByText("Smoke Grenade | X\"")).toBeInTheDocument();
+    expect(screen.getByText("Special rules source")).toBeInTheDocument();
+
+    await user.click(screen.getAllByRole("button", { name: "Search" })[0]);
+    await user.type(screen.getByPlaceholderText("Search rules, lore, forces, units, scenarios, or glossary terms"), "smoke grenade");
+
+    expect(await screen.findByText("USR")).toBeInTheDocument();
   });
 });

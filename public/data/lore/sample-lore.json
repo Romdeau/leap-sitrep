@@ -12,7 +12,7 @@
   "data": {
     "factions": [
       {
-        "id": "authority",
+        "id": "the-authority",
         "name": "Authority",
         "summary": "Seed lore faction placeholder carried forward from the preferred first vertical slice.",
         "regions": [],
@@ -34,7 +34,7 @@
         "year": "Packet 0",
         "title": "Authority overview route reserved",
         "summary": "Route and contract placeholder proving the lore timeline/faction slice can attach to stable paths later.",
-        "involvedFactionIds": ["authority"],
+        "involvedFactionIds": ["the-authority"],
         "citations": [
           {
             "documentId": "blkout-app-plan",

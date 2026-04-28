@@ -2,7 +2,7 @@
   "meta": {
     "kind": "rules",
     "version": "packet-1",
-    "generatedAt": "2026-04-27T07:37:24.333Z",
+    "generatedAt": "2026-04-28T00:50:49.213Z",
     "sourceDocumentIds": [
       "blkout-supplemental"
     ],
@@ -672,6 +672,7 @@
           "artificial intelligence"
         ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -689,6 +690,7 @@
           "armor piercing"
         ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -704,6 +706,7 @@
         "currentText": "After making a Shoot Action with this Weapon, this Model may make up to X additional Shoot Actions with that Weapon, that cannot be Reacted to. Each additional attack must target a different Model within 4” of the original Target. Synergies: If the Weapon also has the Cyclic special rule, the Model may chain multiple Auto(X) attacks, benefiting from the extra Shoot Action granted by Cyclic. Limitations: The original Target and all additional Targets must still fall within the Weapon’s minimum and maximum Range.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -719,6 +722,7 @@
         "currentText": "This Unit may activate a friendly Unit after completing its Activation, without spending a Control Point. If Controller is granted by a Specialist, the ability is lost when that Model is removed from play.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -738,6 +742,7 @@
         "relatedRuleIds": [
           "combat"
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -753,6 +758,7 @@
         "currentText": "After making a Shoot Action with this Weapon, this Model may immediately make one additional Shoot or Ready Action. The extra Shoot Action is treated the same as any regular Shoot Action, subject to Weapon’s special rules. Limitations: Additional Shoot Action must be made with the Weapon that triggered Cyclic. Cyclic cannot be used in Reactions.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -770,6 +776,7 @@
         "relatedRuleIds": [
           "data-attacks"
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -787,6 +794,7 @@
         "relatedRuleIds": [
           "data-attacks"
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -802,6 +810,7 @@
         "currentText": "If this Model Moved during its Reposition Step, it rolls only 1D10 when using this Weapon in its Activation. Reactions are not affected.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -817,6 +826,7 @@
         "currentText": "This Model cannot engage in CQC, use ladders, or Lean Out to gain Line of Sight. Note: Drones do not participate in CQC — if an enemy Model moves into Base-to-Base contact, no Close Quarters Combat occurs.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -834,6 +844,7 @@
           "electromagnetic pulse"
         ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -849,6 +860,7 @@
         "currentText": "If this Model did not Move during its Reposition Step, it rolls an extra 1D10 when using this Weapon in its Activation. Reactions with this Weapon always roll an extra 1D10.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -864,6 +876,7 @@
         "currentText": "This Weapon may Target an enemy Model in Line of Sight to another Model in its Group, but Range is still measured from the firing Model.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -879,6 +892,7 @@
         "currentText": "Models within range of a Jammer ignore the effects of Pinned Markers on their Unit, though Models outside the Jammer’s range remain Pinned.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -894,6 +908,7 @@
         "currentText": "This Model rolls 3D10 for CQC Skill Checks.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -909,6 +924,7 @@
         "currentText": "This Unit cannot gain Pinned Markers from Data Attacks and cannot be targeted by Weapons with the Indirect special rule.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -924,6 +940,7 @@
         "currentText": "This Weapon may re-roll one failed Shot when used in a Shoot Action.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -941,6 +958,7 @@
         "relatedRuleIds": [
           "combat"
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -956,6 +974,7 @@
         "currentText": "Models in this Unit cannot use Battle Drills, Armory Items, or the Force Rule. Note: Some Specialists may have exceptions to this rule — for example, the E4 Mafia in Hired Killers may explicitly use Battle Drills.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -971,6 +990,7 @@
         "currentText": "This Model may be affected by Special Rules that affect Powered Models.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -986,6 +1006,7 @@
         "currentText": "At the end of this Unit’s Activation, mark one box to return a Destroyed Model from this Unit. Place the returned Model within 4” of another Model from this Unit and out of Line of Sight of all Enemy Models.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -1001,6 +1022,7 @@
         "currentText": "This Weapon ignores the -1D10 penalty for shooting a Target in Cover. Example: When firing a Seeking Weapon, you roll 2D10 against Targets in Cover, and 3D10 against Targets not in Cover.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -1016,6 +1038,7 @@
         "currentText": "This Model and one Friendly Infantry Model in Base-to-Base with it both gain Cover. Only one Friendly Model may be in Base-to-Base with this Model at a time.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -1033,6 +1056,7 @@
         "relatedRuleIds": [
           "smoke"
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -1048,6 +1072,7 @@
         "currentText": "If at least two Models in this Unit can draw Line of Sight to the same Enemy Model, Models in this Unit that target that Enemy gain Medium for that Action.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -1063,6 +1088,7 @@
         "currentText": "When making an Armor Check against this Weapon, the Target must re-roll up to (X) successful Armor dice, continuing until that many have been re-rolled or all rolls fail. Example: A Model with Armor 1/6 is hit by a Sustained (2) Weapon. It rolls 1D10 for Armor. If it succeeds, it must reroll that die up to 2 times or until it fails. The final roll determines the result.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -1078,6 +1104,7 @@
         "currentText": "When this Model gains a Ready Token, it may instead give that token to another Model in the same Unit that has already made an Action this round. The receiving Model is treated as if it gained the Ready Token normally. EXPLOSIVES FLOWCHART Based on the Explosives Flow Chart by WarLore MODEL MAKES A SHOOT ACTION WITH A BLAST WEAPON What are you trying to Damage? Weapons with the Blast[X] rule, have 2 firing modes depending on their intended Target. No matter which option is chosen, enemy Models can React normally. DAMAGE INFANTRY High Explosive (HE) Place a 25mm Blast Marker within Line of Sight and Range of the Shooting Model on a flat surface. (3.4) The Shooting Model makes a Skill Check (2D10), and may be modified by Special Rules but no Cover modifier. DAMAGE A VEHICLE OR DUSTER Armor Piercing (AP) Target the Duster or Vehicle specifically, as you would with non-Blast Shooting Action. Choose Damage Track. (8.2.2) RESOLVE ATTACK; USE LISTED WEAPON DAMAGE FOR BLAST WEAPON THE MODEL SHOOTING THE BLAST WEAPON ROLLS NO SUCCESSES. A MODEL MAKES THE RETURN FIRE REACTION THE MODEL SHOOTING THE BLAST WEAPON ROLLS AT LEAST ONE SUCCESS. The Reacting Model Shoots the Active Shooting Model. Both Models roll Skill Checks at the same time with the Model that rolls the most successes applying Damage first. If tied, the highest die result wins. Reroll all dice if still tied. Infantry Models within X” of the Blast Marker must make an Armor Check with the number of D10 rolled being equal to the number of successes in the Shooting Model’s Skill Check. SHOOTING DEALS NO DAMAGE FOR EVERY FAILED ARMOR CHECK ROLL, THE MODEL TAKES 1 DAMAGE.",
         "aliases": [],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",

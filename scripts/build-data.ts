@@ -6,9 +6,11 @@ import { buildForceDataset } from "./etl/build-forces";
 import { buildLoreDataset } from "./etl/build-lore";
 import { buildRulesDataset } from "./etl/build-rules";
 import { buildSearchIndex } from "./etl/build-search-index";
+import { buildSpecialRulesIndex } from "./etl/build-special-rules";
 import { buildSourceRegistry, resolveSourceFile } from "./etl/source-registry";
 import { buildSupplementalDataset } from "./etl/build-supplemental";
 import { writeJsonFile } from "./lib/output";
+import type { UniversalSpecialRule } from "../src/lib/types/domain";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const publicDataDir = path.join(rootDir, "public", "data");
@@ -28,6 +30,9 @@ async function main() {
     filePath: resolveSourceFile(rootDir, "markdown/BLKOUT_Supplemental_4-26.md"),
     generatedAt,
   });
+  const specialRules = await buildSpecialRulesIndex({
+    filePath: resolveSourceFile(rootDir, "markdown/special-rules.md"),
+  });
   const { forceDataset, auditDataset } = await buildForceDataset({
     filePath: resolveSourceFile(rootDir, "markdown/Unit-Cards-Printable-2026.md"),
     generatedAt,
@@ -41,7 +46,10 @@ async function main() {
     effectiveRules: effectiveRules.effectiveRules,
     faq: effectiveRules.linkedFaq,
     errata: effectiveRules.linkedErrata,
-    universalSpecialRules: supplementalDataset.data.universalSpecialRules,
+    universalSpecialRules: mergeUniversalSpecialRules({
+      supplemental: supplementalDataset.data.universalSpecialRules,
+      specialRules,
+    }),
     generatedAt,
   });
   const searchIndex = buildSearchIndex({
@@ -67,3 +75,30 @@ async function main() {
 }
 
 void main();
+
+function mergeUniversalSpecialRules(options: {
+  supplemental: UniversalSpecialRule[];
+  specialRules: Awaited<ReturnType<typeof buildSpecialRulesIndex>>;
+}) {
+  const byId = new Map(options.supplemental.map((rule) => [rule.id, rule]));
+
+  for (const specialRule of options.specialRules) {
+    const existing = byId.get(specialRule.id);
+
+    if (existing === undefined) {
+      byId.set(specialRule.id, specialRule);
+      continue;
+    }
+
+    byId.set(specialRule.id, {
+      ...existing,
+      currentText: specialRule.currentText || existing.currentText,
+      aliases: Array.from(new Set([...existing.aliases, ...specialRule.aliases])),
+      relatedRuleIds: Array.from(new Set([...existing.relatedRuleIds, ...specialRule.relatedRuleIds])),
+      notes: specialRule.notes,
+      citations: [...existing.citations, ...specialRule.citations],
+    });
+  }
+
+  return [...byId.values()].sort((left, right) => left.name.localeCompare(right.name));
+}

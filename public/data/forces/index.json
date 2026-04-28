@@ -2,7 +2,7 @@
   "meta": {
     "kind": "forces",
     "version": "packet-3",
-    "generatedAt": "2026-04-27T07:37:24.333Z",
+    "generatedAt": "2026-04-28T14:04:29.659Z",
     "sourceDocumentIds": [
       "blkout-unit-cards-ocr",
       "blkout-unit-cards-screenshots"
@@ -15,7 +15,7 @@
         "id": "harlow-1st-reaction-force",
         "cardId": "HFR-6770",
         "name": "Harlow 1st Reaction Force",
-        "parentLoreFactionId": "authority",
+        "parentLoreFactionId": "the-authority",
         "battleDrills": [
           {
             "id": "hfr-6770-battle-drill-assaulters",

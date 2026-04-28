@@ -2,7 +2,7 @@
   "meta": {
     "kind": "rules",
     "version": "packet-2",
-    "generatedAt": "2026-04-27T08:32:45.506Z",
+    "generatedAt": "2026-04-28T00:50:49.213Z",
     "sourceDocumentIds": [
       "blkout-core-rulebook",
       "blkout-supplemental"
@@ -1149,32 +1149,63 @@
         "name": "AI",
         "currentText": "This Model may be affected by Special Rules that only affect AI Models.",
         "aliases": [
-          "artificial intelligence"
+          "artificial intelligence",
+          "ai"
         ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR AI",
             "lineStart": 685,
             "lineEnd": 685
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR AI",
+            "lineStart": 1,
+            "lineEnd": 3
           }
         ]
       },
       {
         "id": "ap-x",
         "name": "AP (X)",
-        "currentText": "When a weapon with AP(X) inflicts damage, increase the Target’s Armor Check by +X for that attack. This makes their armor less effective—they must roll higher numbers to block damage. Example: A Model with Armor 2/4 hit by an AP(2) Weapon would now have Armor 2/6 for that attack.",
+        "currentText": "When a weapon with AP(X) inflicts damage, increase the Target’s Armor Check by +X for that attack. This makes their armor less effective—they must roll higher numbers to block damage.",
         "aliases": [
-          "armor piercing"
+          "armor piercing",
+          "ap (x)",
+          "ap"
         ],
         "relatedRuleIds": [],
+        "notes": [
+          {
+            "id": "ap-x-note-1",
+            "label": "Example: A Model with Armor 2/4 hit by an AP(2) Weapon would now have Armor 2/6 for that attack",
+            "text": "Example: A Model with Armor 2/4 hit by an AP(2) Weapon would now have Armor 2/6 for that attack",
+            "citations": [
+              {
+                "documentId": "blkout-special-rules",
+                "label": "USR AP (X) Example: A Model with Armor 2/4 hit by an AP(2) Weapon would now have Armor 2/6 for that attack",
+                "lineStart": 9,
+                "lineEnd": 9
+              }
+            ]
+          }
+        ],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR AP (X)",
             "lineStart": 687,
             "lineEnd": 692
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR AP (X)",
+            "lineStart": 5,
+            "lineEnd": 9
           }
         ]
       },
@@ -1182,14 +1213,23 @@
         "id": "auto-x",
         "name": "Auto (X)",
         "currentText": "After making a Shoot Action with this Weapon, this Model may make up to X additional Shoot Actions with that Weapon, that cannot be Reacted to. Each additional attack must target a different Model within 4” of the original Target. Synergies: If the Weapon also has the Cyclic special rule, the Model may chain multiple Auto(X) attacks, benefiting from the extra Shoot Action granted by Cyclic. Limitations: The original Target and all additional Targets must still fall within the Weapon’s minimum and maximum Range.",
-        "aliases": [],
+        "aliases": [
+          "auto (x)"
+        ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Auto (X)",
             "lineStart": 694,
             "lineEnd": 706
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Auto (X)",
+            "lineStart": 11,
+            "lineEnd": 18
           }
         ]
       },
@@ -1197,26 +1237,53 @@
         "id": "controller",
         "name": "Controller",
         "currentText": "This Unit may activate a friendly Unit after completing its Activation, without spending a Control Point. If Controller is granted by a Specialist, the ability is lost when that Model is removed from play.",
-        "aliases": [],
-        "relatedRuleIds": [],
+        "aliases": [
+          "controller"
+        ],
+        "relatedRuleIds": [
+          "control-points"
+        ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Controller",
             "lineStart": 708,
             "lineEnd": 712
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Controller",
+            "lineStart": 20,
+            "lineEnd": 24
           }
         ]
       },
       {
         "id": "cqb",
         "name": "CQB",
-        "currentText": "This Weapon may re-roll all failed Shots against a Target within half of its maximum range. Example: A Weapon with a 24” Range may re-roll failed Shots against a Target within 12”.",
+        "currentText": "This Weapon may re-roll all failed Shots against a Target within half of its maximum range.",
         "aliases": [
-          "close quarters battle"
+          "close quarters battle",
+          "cqb"
         ],
         "relatedRuleIds": [
           "combat"
+        ],
+        "notes": [
+          {
+            "id": "cqb-note-1",
+            "label": "Example: A Weapon with a 24″ Range may re-roll failed Shots against a Target within 12″",
+            "text": "Example: A Weapon with a 24″ Range may re-roll failed Shots against a Target within 12″",
+            "citations": [
+              {
+                "documentId": "blkout-special-rules",
+                "label": "USR CQB Example: A Weapon with a 24″ Range may re-roll failed Shots against a Target within 12″",
+                "lineStart": 30,
+                "lineEnd": 30
+              }
+            ]
+          }
         ],
         "citations": [
           {
@@ -1224,21 +1291,36 @@
             "label": "USR CQB",
             "lineStart": 714,
             "lineEnd": 718
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR CQB",
+            "lineStart": 26,
+            "lineEnd": 30
           }
         ]
       },
       {
         "id": "cyclic",
         "name": "Cyclic",
-        "currentText": "After making a Shoot Action with this Weapon, this Model may immediately make one additional Shoot or Ready Action. The extra Shoot Action is treated the same as any regular Shoot Action, subject to Weapon’s special rules. Limitations: Additional Shoot Action must be made with the Weapon that triggered Cyclic. Cyclic cannot be used in Reactions.",
-        "aliases": [],
+        "currentText": "After making a Shoot Action with this Weapon, this Model may immediately make one additional Shoot or Ready Action. The extra Shoot Action is treated the same as any regular Shoot Action, subject to Weapon's special rules. Limitations: Additional Shoot Action must be made with the Weapon that triggered Cyclic. Cyclic cannot be used in Reactions.",
+        "aliases": [
+          "cyclic"
+        ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Cyclic",
             "lineStart": 720,
             "lineEnd": 727
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Cyclic",
+            "lineStart": 32,
+            "lineEnd": 37
           }
         ]
       },
@@ -1246,16 +1328,25 @@
         "id": "data-knife",
         "name": "Data Knife",
         "currentText": "This Model may make a Data Attack Action targeting an AI or Powered Model within Range. On a successful Skill Check, deal 1 Damage with no Armor Check allowed.",
-        "aliases": [],
+        "aliases": [
+          "data knife"
+        ],
         "relatedRuleIds": [
           "data-attacks"
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Data Knife",
             "lineStart": 729,
             "lineEnd": 731
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Data Knife",
+            "lineStart": 39,
+            "lineEnd": 41
           }
         ]
       },
@@ -1263,16 +1354,25 @@
         "id": "data-spike",
         "name": "Data Spike",
         "currentText": "This Model may make a Data Attack Action to either apply a Pinned Marker to an enemy Unit or remove a Pinned Marker from a friendly Unit, on a successful Skill Check.",
-        "aliases": [],
+        "aliases": [
+          "data spike"
+        ],
         "relatedRuleIds": [
           "data-attacks"
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Data Spike",
             "lineStart": 733,
             "lineEnd": 735
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Data Spike",
+            "lineStart": 43,
+            "lineEnd": 45
           }
         ]
       },
@@ -1280,29 +1380,65 @@
         "id": "deployed",
         "name": "Deployed",
         "currentText": "If this Model Moved during its Reposition Step, it rolls only 1D10 when using this Weapon in its Activation. Reactions are not affected.",
-        "aliases": [],
-        "relatedRuleIds": [],
+        "aliases": [
+          "deployed"
+        ],
+        "relatedRuleIds": [
+          "combat"
+        ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Deployed",
             "lineStart": 737,
             "lineEnd": 739
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Deployed",
+            "lineStart": 47,
+            "lineEnd": 50
           }
         ]
       },
       {
         "id": "drone",
         "name": "Drone",
-        "currentText": "This Model cannot engage in CQC, use ladders, or Lean Out to gain Line of Sight. Note: Drones do not participate in CQC — if an enemy Model moves into Base-to-Base contact, no Close Quarters Combat occurs.",
-        "aliases": [],
-        "relatedRuleIds": [],
+        "currentText": "This Model cannot engage in CQC, use ladders, or Lean Out to gain Line of Sight.",
+        "aliases": [
+          "drone"
+        ],
+        "relatedRuleIds": [
+          "movement"
+        ],
+        "notes": [
+          {
+            "id": "drone-note-1",
+            "label": "Note: Drones do not participate in CQC — if an enemy Model moves into Base-to-Base contact, no Close Quarters Combat occurs",
+            "text": "Note: Drones do not participate in CQC — if an enemy Model moves into Base-to-Base contact, no Close Quarters Combat occurs",
+            "citations": [
+              {
+                "documentId": "blkout-special-rules",
+                "label": "USR Drone Note: Drones do not participate in CQC — if an enemy Model moves into Base-to-Base contact, no Close Quarters Combat occurs",
+                "lineStart": 56,
+                "lineEnd": 56
+              }
+            ]
+          }
+        ],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Drone",
             "lineStart": 741,
             "lineEnd": 745
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Drone",
+            "lineStart": 52,
+            "lineEnd": 56
           }
         ]
       },
@@ -1311,15 +1447,23 @@
         "name": "EMP",
         "currentText": "This Weapon can only Damage Units with the AI Special Rule, and that Damage ignores Armor Checks.",
         "aliases": [
-          "electromagnetic pulse"
+          "electromagnetic pulse",
+          "emp"
         ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR EMP",
             "lineStart": 747,
             "lineEnd": 748
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR EMP",
+            "lineStart": 58,
+            "lineEnd": 60
           }
         ]
       },
@@ -1327,14 +1471,25 @@
         "id": "heavy",
         "name": "Heavy",
         "currentText": "If this Model did not Move during its Reposition Step, it rolls an extra 1D10 when using this Weapon in its Activation. Reactions with this Weapon always roll an extra 1D10.",
-        "aliases": [],
-        "relatedRuleIds": [],
+        "aliases": [
+          "heavy"
+        ],
+        "relatedRuleIds": [
+          "combat"
+        ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Heavy",
             "lineStart": 750,
             "lineEnd": 752
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Heavy",
+            "lineStart": 62,
+            "lineEnd": 64
           }
         ]
       },
@@ -1342,29 +1497,47 @@
         "id": "indirect",
         "name": "Indirect",
         "currentText": "This Weapon may Target an enemy Model in Line of Sight to another Model in its Group, but Range is still measured from the firing Model.",
-        "aliases": [],
+        "aliases": [
+          "indirect"
+        ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Indirect",
             "lineStart": 754,
             "lineEnd": 755
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Indirect",
+            "lineStart": 66,
+            "lineEnd": 68
           }
         ]
       },
       {
         "id": "jammer",
         "name": "Jammer",
-        "currentText": "Models within range of a Jammer ignore the effects of Pinned Markers on their Unit, though Models outside the Jammer’s range remain Pinned.",
-        "aliases": [],
+        "currentText": "Models within range of a Jammer ignore the effects of Pinned Markers on their Unit, though Models outside the Jammer's range remain Pinned.",
+        "aliases": [
+          "jammer"
+        ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Jammer",
             "lineStart": 757,
             "lineEnd": 759
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Jammer",
+            "lineStart": 70,
+            "lineEnd": 72
           }
         ]
       },
@@ -1372,14 +1545,23 @@
         "id": "lethal",
         "name": "Lethal",
         "currentText": "This Model rolls 3D10 for CQC Skill Checks.",
-        "aliases": [],
+        "aliases": [
+          "lethal"
+        ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Lethal",
             "lineStart": 761,
             "lineEnd": 761
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Lethal",
+            "lineStart": 74,
+            "lineEnd": 76
           }
         ]
       },
@@ -1387,14 +1569,23 @@
         "id": "low-tech",
         "name": "Low Tech",
         "currentText": "This Unit cannot gain Pinned Markers from Data Attacks and cannot be targeted by Weapons with the Indirect special rule.",
-        "aliases": [],
+        "aliases": [
+          "low tech"
+        ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Low Tech",
             "lineStart": 763,
             "lineEnd": 764
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Low Tech",
+            "lineStart": 78,
+            "lineEnd": 80
           }
         ]
       },
@@ -1402,14 +1593,25 @@
         "id": "medium",
         "name": "Medium",
         "currentText": "This Weapon may re-roll one failed Shot when used in a Shoot Action.",
-        "aliases": [],
-        "relatedRuleIds": [],
+        "aliases": [
+          "medium"
+        ],
+        "relatedRuleIds": [
+          "combat"
+        ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Medium",
             "lineStart": 766,
             "lineEnd": 767
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Medium",
+            "lineStart": 82,
+            "lineEnd": 84
           }
         ]
       },
@@ -1417,31 +1619,63 @@
         "id": "melee",
         "name": "Melee",
         "currentText": "This Weapon ignores Cover penalties. When used in a Shoot Action, place the attacker Base-to-Base with its Target before resolving the Action and any Reactions. Targets may only Return Fire with a Melee Weapon or Juke.",
-        "aliases": [],
+        "aliases": [
+          "melee"
+        ],
         "relatedRuleIds": [
           "combat"
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Melee",
             "lineStart": 769,
             "lineEnd": 773
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Melee",
+            "lineStart": 86,
+            "lineEnd": 89
           }
         ]
       },
       {
         "id": "outsourced",
         "name": "Outsourced",
-        "currentText": "Models in this Unit cannot use Battle Drills, Armory Items, or the Force Rule. Note: Some Specialists may have exceptions to this rule — for example, the E4 Mafia in Hired Killers may explicitly use Battle Drills.",
-        "aliases": [],
+        "currentText": "Models in this Unit cannot use Battle Drills, Armory Items, or the Force Rule.",
+        "aliases": [
+          "outsourced"
+        ],
         "relatedRuleIds": [],
+        "notes": [
+          {
+            "id": "outsourced-note-1",
+            "label": "Note: Some Specialists may have exceptions to this rule — for example, the E4 Mafia in Hired Killers may explicitly use Battle Drills",
+            "text": "Note: Some Specialists may have exceptions to this rule — for example, the E4 Mafia in Hired Killers may explicitly use Battle Drills",
+            "citations": [
+              {
+                "documentId": "blkout-special-rules",
+                "label": "USR Outsourced Note: Some Specialists may have exceptions to this rule — for example, the E4 Mafia in Hired Killers may explicitly use Battle Drills",
+                "lineStart": 95,
+                "lineEnd": 95
+              }
+            ]
+          }
+        ],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Outsourced",
             "lineStart": 775,
             "lineEnd": 779
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Outsourced",
+            "lineStart": 91,
+            "lineEnd": 95
           }
         ]
       },
@@ -1449,14 +1683,23 @@
         "id": "powered",
         "name": "Powered",
         "currentText": "This Model may be affected by Special Rules that affect Powered Models.",
-        "aliases": [],
+        "aliases": [
+          "powered"
+        ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Powered",
             "lineStart": 781,
             "lineEnd": 782
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Powered",
+            "lineStart": 97,
+            "lineEnd": 99
           }
         ]
       },
@@ -1464,29 +1707,63 @@
         "id": "reinforcements",
         "name": "Reinforcements",
         "currentText": "At the end of this Unit’s Activation, mark one box to return a Destroyed Model from this Unit. Place the returned Model within 4” of another Model from this Unit and out of Line of Sight of all Enemy Models.",
-        "aliases": [],
+        "aliases": [
+          "reinforcements"
+        ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Reinforcements",
             "lineStart": 784,
             "lineEnd": 787
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Reinforcements",
+            "lineStart": 101,
+            "lineEnd": 103
           }
         ]
       },
       {
         "id": "seeking",
         "name": "Seeking",
-        "currentText": "This Weapon ignores the -1D10 penalty for shooting a Target in Cover. Example: When firing a Seeking Weapon, you roll 2D10 against Targets in Cover, and 3D10 against Targets not in Cover.",
-        "aliases": [],
-        "relatedRuleIds": [],
+        "currentText": "This Weapon ignores the -1D10 penalty for shooting a Target in Cover.",
+        "aliases": [
+          "seeking"
+        ],
+        "relatedRuleIds": [
+          "combat"
+        ],
+        "notes": [
+          {
+            "id": "seeking-note-1",
+            "label": "Example: When firing a Seeking Weapon, you roll 2D10 against Targets in Cover, and 3D10 against Targets not in Cover",
+            "text": "Example: When firing a Seeking Weapon, you roll 2D10 against Targets in Cover, and 3D10 against Targets not in Cover",
+            "citations": [
+              {
+                "documentId": "blkout-special-rules",
+                "label": "USR Seeking Example: When firing a Seeking Weapon, you roll 2D10 against Targets in Cover, and 3D10 against Targets not in Cover",
+                "lineStart": 109,
+                "lineEnd": 109
+              }
+            ]
+          }
+        ],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Seeking",
             "lineStart": 789,
             "lineEnd": 793
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Seeking",
+            "lineStart": 105,
+            "lineEnd": 109
           }
         ]
       },
@@ -1494,14 +1771,23 @@
         "id": "shield",
         "name": "Shield",
         "currentText": "This Model and one Friendly Infantry Model in Base-to-Base with it both gain Cover. Only one Friendly Model may be in Base-to-Base with this Model at a time.",
-        "aliases": [],
+        "aliases": [
+          "shield"
+        ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Shield",
             "lineStart": 795,
             "lineEnd": 798
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Shield",
+            "lineStart": 111,
+            "lineEnd": 114
           }
         ]
       },
@@ -1513,6 +1799,7 @@
         "relatedRuleIds": [
           "smoke"
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
@@ -1523,47 +1810,124 @@
         ]
       },
       {
+        "id": "smoke-grenade-x",
+        "name": "Smoke Grenade | X\"",
+        "currentText": "Before this Unit's Reposition Phase, place a Smoke Token within X” of one of its Models.",
+        "aliases": [
+          "smoke grenade | x\""
+        ],
+        "relatedRuleIds": [
+          "smoke"
+        ],
+        "notes": [
+          {
+            "id": "smoke-grenade-x-note-1",
+            "label": "Note: See Rules [8.8] Smoke for more information about this core ability",
+            "text": "Note: See Rules [8.8] Smoke for more information about this core ability",
+            "citations": [
+              {
+                "documentId": "blkout-special-rules",
+                "label": "USR Smoke Grenade | X\" Note: See Rules [8.8] Smoke for more information about this core ability",
+                "lineStart": 120,
+                "lineEnd": 120
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Smoke Grenade | X\"",
+            "lineStart": 116,
+            "lineEnd": 120
+          }
+        ]
+      },
+      {
         "id": "spotter",
         "name": "Spotter",
         "currentText": "If at least two Models in this Unit can draw Line of Sight to the same Enemy Model, Models in this Unit that target that Enemy gain Medium for that Action.",
-        "aliases": [],
+        "aliases": [
+          "spotter"
+        ],
         "relatedRuleIds": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Spotter",
             "lineStart": 805,
             "lineEnd": 807
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Spotter",
+            "lineStart": 122,
+            "lineEnd": 124
           }
         ]
       },
       {
         "id": "sustained-x",
         "name": "Sustained (X)",
-        "currentText": "When making an Armor Check against this Weapon, the Target must re-roll up to (X) successful Armor dice, continuing until that many have been re-rolled or all rolls fail. Example: A Model with Armor 1/6 is hit by a Sustained (2) Weapon. It rolls 1D10 for Armor. If it succeeds, it must reroll that die up to 2 times or until it fails. The final roll determines the result.",
-        "aliases": [],
+        "currentText": "When making an Armor Check against this Weapon, the Target must re-roll up to (X) successful Armor dice, continuing until that many have been re-rolled or all rolls fail.",
+        "aliases": [
+          "sustained (x)"
+        ],
         "relatedRuleIds": [],
+        "notes": [
+          {
+            "id": "sustained-x-note-1",
+            "label": "Example: A Model with Armor 1/6 is hit by a Sustained (2) Weapon. It rolls 1D10 for Armor. If it succeeds, it must reroll that die up to 2 times or until it fails. The final roll determines the result",
+            "text": "Example: A Model with Armor 1/6 is hit by a Sustained (2) Weapon. It rolls 1D10 for Armor. If it succeeds, it must reroll that die up to 2 times or until it fails. The final roll determines the result",
+            "citations": [
+              {
+                "documentId": "blkout-special-rules",
+                "label": "USR Sustained (X) Example: A Model with Armor 1/6 is hit by a Sustained (2) Weapon. It rolls 1D10 for Armor. If it succeeds, it must reroll that die up to 2 times or until it fails. The final roll determines the result",
+                "lineStart": 130,
+                "lineEnd": 130
+              }
+            ]
+          }
+        ],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Sustained (X)",
             "lineStart": 809,
             "lineEnd": 815
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Sustained (X)",
+            "lineStart": 126,
+            "lineEnd": 130
           }
         ]
       },
       {
         "id": "team-leader",
         "name": "Team Leader",
-        "currentText": "When this Model gains a Ready Token, it may instead give that token to another Model in the same Unit that has already made an Action this round. The receiving Model is treated as if it gained the Ready Token normally. EXPLOSIVES FLOWCHART Based on the Explosives Flow Chart by WarLore MODEL MAKES A SHOOT ACTION WITH A BLAST WEAPON What are you trying to Damage? Weapons with the Blast[X] rule, have 2 firing modes depending on their intended Target. No matter which option is chosen, enemy Models can React normally. DAMAGE INFANTRY High Explosive (HE) Place a 25mm Blast Marker within Line of Sight and Range of the Shooting Model on a flat surface. (3.4) The Shooting Model makes a Skill Check (2D10), and may be modified by Special Rules but no Cover modifier. DAMAGE A VEHICLE OR DUSTER Armor Piercing (AP) Target the Duster or Vehicle specifically, as you would with non-Blast Shooting Action. Choose Damage Track. (8.2.2) RESOLVE ATTACK; USE LISTED WEAPON DAMAGE FOR BLAST WEAPON THE MODEL SHOOTING THE BLAST WEAPON ROLLS NO SUCCESSES. A MODEL MAKES THE RETURN FIRE REACTION THE MODEL SHOOTING THE BLAST WEAPON ROLLS AT LEAST ONE SUCCESS. The Reacting Model Shoots the Active Shooting Model. Both Models roll Skill Checks at the same time with the Model that rolls the most successes applying Damage first. If tied, the highest die result wins. Reroll all dice if still tied. Infantry Models within X” of the Blast Marker must make an Armor Check with the number of D10 rolled being equal to the number of successes in the Shooting Model’s Skill Check. SHOOTING DEALS NO DAMAGE FOR EVERY FAILED ARMOR CHECK ROLL, THE MODEL TAKES 1 DAMAGE.",
-        "aliases": [],
-        "relatedRuleIds": [],
+        "currentText": "When this Model gains a Ready Token, it may instead give that token to another Model in the same Unit that has already made an Action this round. The receiving Model is treated as if it gained the Ready Token normally.",
+        "aliases": [
+          "team leader"
+        ],
+        "relatedRuleIds": [
+          "control-points"
+        ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-supplemental",
             "label": "USR Team Leader",
             "lineStart": 817,
             "lineEnd": 889
+          },
+          {
+            "documentId": "blkout-special-rules",
+            "label": "USR Team Leader",
+            "lineStart": 132,
+            "lineEnd": 135
           }
         ]
       }

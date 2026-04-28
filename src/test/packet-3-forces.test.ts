@@ -23,6 +23,7 @@ describe("Packet 3 curated force slice", () => {
     expect(forceDataset.meta.confidence).toBe("verified");
     expect(forceDataset.data.forces).toHaveLength(1);
     expect(forceDataset.data.forces[0]?.cardId).toBe("HFR-6770");
+    expect(forceDataset.data.forces[0]?.parentLoreFactionId).toBe("the-authority");
     expect(forceDataset.data.units.map((unit) => unit.cardId)).toEqual(["HFR-6771", "HFR-6772", "HFR-6773"]);
     expect(auditDataset.meta.confidence).toBe("raw");
     expect(auditDataset.data.rawCards).toHaveLength(4);

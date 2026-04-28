@@ -34,6 +34,16 @@ const SOURCE_DOCUMENTS: SourceDocument[] = [
     notes: "Primary matched-play, FAQ, errata, clarification, and universal special rules source.",
   },
   {
+    id: "blkout-special-rules",
+    title: "BLKOUT Special Rules Reference",
+    fileName: "markdown/special-rules.md",
+    documentType: "special-rules",
+    version: "website-reference",
+    isCanonical: true,
+    precedenceRank: 2,
+    notes: "Concise keyword-rule reference captured from the live BLKOUT rules and definitions page, used to improve USR readability while preserving citations.",
+  },
+  {
     id: "blkout-unit-cards-ocr",
     title: "Unit Cards Printable 2026 OCR",
     fileName: "markdown/Unit-Cards-Printable-2026.md",

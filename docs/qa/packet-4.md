@@ -9,8 +9,9 @@
   - scenario: `/scenarios/dockyard-assault`
   - glossary: `/glossary`
 - Confirmed the rules UI renders effective Packet 2 overlays for `reactions`, `data-attacks`, `control-points`, and `smoke`, and keeps citations visible beside the displayed text.
+- Confirmed the `/rules` module now surfaces the merged universal special rules from `markdown/special-rules.md`, including `Smoke Grenade | X"`, and search can return USR records from that source.
 - Confirmed the force and unit routes display Packet 3 verified Harlow content from `public/data/forces/index.json`, including card ids and card-backed citations.
 - Confirmed the scenario detail route renders `Dockyard Assault` setup, scoring, special rules, and source citation from `public/data/scenarios/core.json`.
 - Confirmed the search overlay returns seed-slice results for queries such as `return fire`, with routes resolving to the Packet 4 reference pages instead of placeholders.
-- Known limitation: `public/data/forces/index.json` currently uses `parentLoreFactionId: "authority"` while the lore dataset uses the canonical faction id `the-authority`. Packet 4 works around this mismatch in the UI so the slice remains usable, but the underlying cross-dataset id mismatch should be normalized in a follow-up.
+- Confirmed `public/data/forces/index.json` now uses the canonical lore id `parentLoreFactionId: "the-authority"`, matching `public/data/lore/index.json` without a Packet 4 UI compatibility workaround.
 - Known limitation: this session included automated route/search coverage and a production build, but not a browser-based manual phone-size QA pass yet.

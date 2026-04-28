@@ -4,6 +4,7 @@ export type DocumentType =
   | "lore"
   | "rules"
   | "supplemental"
+  | "special-rules"
   | "unit-cards"
   | "unit-card-screenshots"
   | "quick-reference"
@@ -133,6 +134,7 @@ export interface UniversalSpecialRule {
   currentText: string;
   aliases: string[];
   relatedRuleIds: string[];
+  notes: CitationBackedText[];
   citations: SourceCitation[];
 }
 

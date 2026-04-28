@@ -117,3 +117,19 @@ This section seeds the log with the major project milestones that were already c
 - Validation: `bun run build:data`, `bun run typecheck`, `bun run lint`, `bun run test`, and `bun run build` passed.
 - Manual QA: confirmed the movement rule now renders its numbered subsections in order after the stray duplicate heading was removed from `markdown/BLKOUT-PRINT-AT-HOME-RULEBOOK.md`.
 - Follow-up: if we later want richer rule navigation, subsection-specific anchors and citations are now available in the data model without another parser rewrite.
+
+## 2026-04-29 - Packet 4 Authority Id Cleanup
+
+- Scope: normalize the documented cross-dataset id mismatch between the Harlow force parent id and the Authority lore faction id.
+- Outcome: updated the curated force generator and sample fixtures to use `the-authority`, regenerated public data, and removed the Packet 4 UI compatibility workaround for `authority`.
+- Validation: `bun run build:data`, `bun run test -- src/test/packet-3-forces.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, `bun run lint`, and `bun run build` passed. A direct `bun test ...` attempt failed because it bypassed the repo Vitest alias config and could not resolve `@/App`; the same affected tests passed through the repository script.
+- Manual QA: checked generated `public/data/forces/index.json` and `public/data/search/index.json` now reference `the-authority`, matching `public/data/lore/index.json`.
+- Follow-up: Packet 4 still needs the dedicated browser-based mobile/desktop QA pass before Review B.
+
+## 2026-04-29 - Special Rules Rules-Module Integration
+
+- Scope: ensure the added `markdown/special-rules.md` source is ingested into the overall rules module rather than only existing as generated data.
+- Outcome: confirmed special rules are parsed, source-registered, merged into `public/data/rules/core.json` universal special rules, and indexed for search; updated `/rules` to list universal special rules with source badges and included USR records in the search overlay.
+- Validation: `bun run build:data`, `bun run test -- src/test/packet-1-parsers.test.ts src/test/packet-2-data.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, `bun run lint`, and `bun run build` passed.
+- Manual QA: checked `Smoke Grenade | X"` appears in generated rules data with `blkout-special-rules` citations and is covered by the rules-page/search smoke test.
+- Follow-up: Packet 4 still needs the dedicated browser-based mobile/desktop QA pass before Review B.

@@ -30,7 +30,7 @@ export async function buildForceDataset(options: {
     id: "harlow-1st-reaction-force",
     cardId: "HFR-6770",
     name: "Harlow 1st Reaction Force",
-    parentLoreFactionId: "authority",
+    parentLoreFactionId: "the-authority",
     battleDrills: [
       createTextRecord(
         "hfr-6770-battle-drill-assaulters",

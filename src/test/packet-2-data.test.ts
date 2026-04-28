@@ -6,8 +6,10 @@ import { buildEffectiveRules, mergeRulesDataset } from "../../scripts/etl/build-
 import { buildLoreDataset } from "../../scripts/etl/build-lore";
 import { buildRulesDataset } from "../../scripts/etl/build-rules";
 import { buildSearchIndex } from "../../scripts/etl/build-search-index";
+import { buildSpecialRulesIndex } from "../../scripts/etl/build-special-rules";
 import { buildSourceRegistry } from "../../scripts/etl/source-registry";
 import { buildSupplementalDataset } from "../../scripts/etl/build-supplemental";
+import type { UniversalSpecialRule } from "../../src/lib/types/domain";
 
 const projectRoot = process.cwd();
 const generatedAt = "2026-04-27T00:00:00.000Z";
@@ -85,6 +87,9 @@ describe("Packet 2 effective rules and search", () => {
       filePath: path.join(projectRoot, "markdown/BLKOUT_Supplemental_4-26.md"),
       generatedAt,
     });
+    const specialRules = await buildSpecialRulesIndex({
+      filePath: path.join(projectRoot, "markdown/special-rules.md"),
+    });
     const effective = buildEffectiveRules({
       coreRules: rulesDataset,
       supplementalRules: supplementalDataset,
@@ -94,7 +99,10 @@ describe("Packet 2 effective rules and search", () => {
       effectiveRules: effective.effectiveRules,
       faq: effective.linkedFaq,
       errata: effective.linkedErrata,
-      universalSpecialRules: supplementalDataset.data.universalSpecialRules,
+      universalSpecialRules: mergeUniversalSpecialRules({
+        supplemental: supplementalDataset.data.universalSpecialRules,
+        specialRules,
+      }),
       generatedAt,
     });
 
@@ -120,5 +128,38 @@ describe("Packet 2 effective rules and search", () => {
           entry.route.includes("#rule-subsection-2-3-leaning-out"),
       ),
     ).toBe(true);
+    expect(searchIndex.data.records.some((entry) => entry.entityType === "usr" && entry.title === "Smoke Grenade | X\"" )).toBe(true);
+    expect(searchIndex.data.records.some((entry) => entry.entityType === "usr" && entry.sourceDocumentIds.includes("blkout-special-rules"))).toBe(true);
+    expect(mergedRules.data.universalSpecialRules.find((rule) => rule.name === "Drone")?.notes[0]?.text).toContain("Close Quarters Combat");
+    expect(mergedRules.data.universalSpecialRules.find((rule) => rule.name === "Smoke Grenade | X\"")?.citations[0]?.documentId).toBe(
+      "blkout-special-rules",
+    );
   });
 });
+
+function mergeUniversalSpecialRules(options: {
+  supplemental: UniversalSpecialRule[];
+  specialRules: UniversalSpecialRule[];
+}) {
+  const byId = new Map(options.supplemental.map((rule) => [rule.id, rule]));
+
+  for (const specialRule of options.specialRules) {
+    const existing = byId.get(specialRule.id);
+
+    if (existing === undefined) {
+      byId.set(specialRule.id, specialRule);
+      continue;
+    }
+
+    byId.set(specialRule.id, {
+      ...existing,
+      currentText: specialRule.currentText || existing.currentText,
+      aliases: Array.from(new Set([...existing.aliases, ...specialRule.aliases])),
+      relatedRuleIds: Array.from(new Set([...existing.relatedRuleIds, ...specialRule.relatedRuleIds])),
+      notes: specialRule.notes,
+      citations: [...existing.citations, ...specialRule.citations],
+    });
+  }
+
+  return [...byId.values()].sort((left, right) => left.name.localeCompare(right.name));
+}

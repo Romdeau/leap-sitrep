@@ -43,6 +43,10 @@ function splitClauses(text: string) {
     .filter(Boolean);
 }
 
+function normalizeInlineWhitespace(text: string) {
+  return text.replace(/\s+/g, " ").trim();
+}
+
 function summarizeText(text: string, limit = 220) {
   const normalized = text.replace(/\s+/g, " ").trim();
 
@@ -70,6 +74,38 @@ function uniqueCitations(citations: SourceCitation[]) {
     seen.add(key);
     return true;
   });
+}
+
+function parseEffectiveRuleText(effectiveRule: EffectiveRuleRecord) {
+  const sections = effectiveRule.effectiveText.match(/Core:\s*([\s\S]*?)(?=\s+Override\s+\d+:|$)|Override\s+(\d+):\s*([\s\S]*?)(?=\s+Override\s+\d+:|$)/g) ?? [];
+
+  const coreSection = sections.find((section) => section.startsWith("Core:")) ?? null;
+  const overrideSections = sections.filter((section) => section.startsWith("Override"));
+
+  return {
+    coreText: coreSection ? normalizeInlineWhitespace(coreSection.replace(/^Core:\s*/, "")) : effectiveRule.originalText,
+    overrides: overrideSections.map((section, index) => ({
+      id: `${effectiveRule.id}-override-${index + 1}`,
+      title: `Override ${index + 1}`,
+      text: normalizeInlineWhitespace(section.replace(/^Override\s+\d+:\s*/, "")),
+    })),
+  };
+}
+
+function splitDiffSegments(text: string) {
+  return text
+    .split(/(?<=[.!?])\s+|\s*[|•]\s*/)
+    .map((segment) => normalizeInlineWhitespace(segment))
+    .filter(Boolean);
+}
+
+function getInlineAddedSegments(coreText: string, overrideText: string) {
+  const coreSegments = new Set(splitDiffSegments(coreText).map((segment) => segment.toLowerCase()));
+
+  return splitDiffSegments(overrideText).map((segment) => ({
+    text: segment,
+    isAdded: !coreSegments.has(segment.toLowerCase()),
+  }));
 }
 
 function displayEntityType(entityType: SearchIndexRecord["entityType"]) {
@@ -240,6 +276,7 @@ export function SearchOverlay() {
           "rule",
           "rule-subsection",
           "effective-rule",
+          "usr",
         ].includes(record.entityType),
       ),
     [searchIndex.data.records],
@@ -431,6 +468,55 @@ function RuleSubsectionList({ subsections }: { subsections: RuleSubsection[] }) 
           <div className="mt-3 space-y-2 text-sm leading-6 text-[color:var(--muted-foreground)]">
             {splitClauses(subsection.body).map((clause, index) => (
               <p key={`${subsection.id}-${index}`}>{clause}</p>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function EffectiveRuleDiff({ effectiveRule }: { effectiveRule: EffectiveRuleRecord }) {
+  const parsed = parseEffectiveRuleText(effectiveRule);
+
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-2 text-xs text-[color:var(--muted-foreground)]">
+        <Badge variant="outline">Baseline</Badge>
+        <Badge variant="accent">Changed or added</Badge>
+      </div>
+
+      <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4">
+        <div className="text-sm font-semibold">Core rulebook baseline</div>
+        <div className="mt-3 space-y-2 text-sm leading-6 text-[color:var(--muted-foreground)]">
+          {splitClauses(parsed.coreText).map((clause, index) => (
+            <p key={`${effectiveRule.id}-baseline-${index}`}>{clause}</p>
+          ))}
+        </div>
+      </div>
+
+      {parsed.overrides.map((override) => (
+        <div
+          key={override.id}
+          className="rounded-2xl border border-[color:var(--accent)] bg-[color:color-mix(in_srgb,var(--accent)_10%,var(--surface))] p-4"
+        >
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge variant="accent">Changed or added</Badge>
+            <div className="text-sm font-semibold">{override.title}</div>
+          </div>
+          <div className="mt-3 space-y-2 text-sm leading-6">
+            {getInlineAddedSegments(parsed.coreText, override.text).map((segment, index) => (
+              <p key={`${override.id}-${index}`}>
+                <span
+                  className={
+                    segment.isAdded
+                      ? "rounded-md bg-[color:color-mix(in_srgb,var(--accent)_22%,transparent)] px-1.5 py-0.5 font-medium text-[color:var(--foreground)]"
+                      : "text-[color:var(--muted-foreground)]"
+                  }
+                >
+                  {segment.text}
+                </span>
+              </p>
             ))}
           </div>
         </div>
@@ -703,9 +789,7 @@ export function LoreFactionDetailRoute() {
   const { forces, lore } = useReferenceData();
 
   const faction = lore.data.factions.find((candidate) => candidate.id === slug);
-  const relatedForces = forces.data.forces.filter((force) =>
-    [faction?.id, faction?.id === "the-authority" ? "authority" : undefined].includes(force.parentLoreFactionId),
-  );
+  const relatedForces = forces.data.forces.filter((force) => force.parentLoreFactionId === faction?.id);
 
   if (faction === undefined) {
     return <EmptyState description="No lore faction matched this route parameter." title="Faction not found" />;
@@ -836,6 +920,7 @@ function RuleTopicCard({ rule, effectiveRule }: { rule: RuleSection; effectiveRu
 export function RulesLandingRoute() {
   const { rules } = useReferenceData();
   const topics = getRuleTopicRecords(rules.data);
+  const universalSpecialRules = [...rules.data.universalSpecialRules].sort((left, right) => left.name.localeCompare(right.name));
 
   return (
     <div className="space-y-6">
@@ -863,6 +948,32 @@ export function RulesLandingRoute() {
         <CardContent className="grid gap-4 lg:grid-cols-2">
           {topics.map(({ rule, effectiveRule }) => (
             <RuleTopicCard key={rule.id} effectiveRule={effectiveRule} rule={rule} />
+          ))}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Universal special rules</CardTitle>
+          <CardDescription>
+            Special rules from the dedicated reference source are merged into the generated rules dataset and retain their own citations.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {universalSpecialRules.map((rule) => (
+            <Link
+              key={rule.id}
+              className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
+              to={`/rules/usr/${rule.id}`}
+            >
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-medium">{rule.name}</span>
+                {rule.citations.some((citation) => citation.documentId === "blkout-special-rules") ? (
+                  <Badge variant="accent">Special rules source</Badge>
+                ) : null}
+              </div>
+              <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{summarizeText(rule.currentText, 180)}</p>
+            </Link>
           ))}
         </CardContent>
       </Card>
@@ -954,11 +1065,9 @@ export function RulesCoreRoute() {
 
                 {effectiveRule ? (
                   <div>
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">Effective text</h3>
-                    <div className="mt-3 space-y-2 text-sm leading-6 text-[color:var(--muted-foreground)]">
-                      {splitClauses(effectiveRule.effectiveText).map((clause, index) => (
-                        <p key={`${rule.id}-effective-${index}`}>{clause}</p>
-                      ))}
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">Effective ruling</h3>
+                    <div className="mt-3">
+                      <EffectiveRuleDiff effectiveRule={effectiveRule} />
                     </div>
                   </div>
                 ) : null}
@@ -1037,6 +1146,22 @@ export function UsrDetailRoute() {
         </CardContent>
       </Card>
 
+      {usr.notes.length > 0 ? (
+        <Card>
+          <CardHeader>
+            <CardTitle>Examples and notes</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {usr.notes.map((note) => (
+              <div key={note.id} className="rounded-2xl border border-[color:var(--border)] p-4">
+                <div className="font-medium">{note.label}</div>
+                <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{note.text}</p>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      ) : null}
+
       <Card>
         <CardHeader>
           <CardTitle>Citations</CardTitle>
@@ -1101,7 +1226,7 @@ export function ForceDetailRoute() {
   }
 
   const units = forces.data.units.filter((unit) => unit.forceId === force.id);
-  const parentFaction = lore.data.factions.find((faction) => [faction.id, faction.id.replace(/^the-/, "")].includes(force.parentLoreFactionId));
+  const parentFaction = lore.data.factions.find((faction) => faction.id === force.parentLoreFactionId);
 
   return (
     <div className="space-y-6">
