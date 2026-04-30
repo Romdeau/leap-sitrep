@@ -280,7 +280,6 @@ export function MatchDetailRoute() {
         matrixSource={match.id}
         actions={
           <>
-            <Button onClick={() => updateMatch(advanceRound)}>Advance round</Button>
             <Button asChild variant="outline">
               <Link to={`/scenarios/${SEED_SCENARIO_ID}`}>Scenario source</Link>
             </Button>
@@ -291,26 +290,48 @@ export function MatchDetailRoute() {
         }
       />
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Table export</CardTitle>
-          <CardDescription>Copy the current manual match state for notes, reports, or handoff.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <details className="rounded-sm border border-[color:var(--border)] bg-[color:var(--surface-sunken)] p-4">
-            <summary className="cursor-pointer font-display text-sm font-semibold uppercase tracking-wide">Match export preview</summary>
-            <div className="mt-3 flex flex-wrap items-center gap-3">
-              <Button variant="outline" onClick={() => void copyMatchExport(matchExport)}>
-                Copy match export
-              </Button>
-              {copiedMatchExport ? <span className="text-sm text-[color:var(--muted-foreground)]">Copied match export to clipboard.</span> : null}
-            </div>
-            <pre className="mt-3 whitespace-pre-wrap font-mono text-xs leading-5 text-[color:var(--muted-foreground)]">{matchExport}</pre>
-          </details>
-        </CardContent>
-      </Card>
+      {/* Sticky table snapshot — compact metric strip stays visible during play. */}
+      <div className="sticky top-0 z-10 -mx-4 border-y border-[color:var(--border)] bg-[color:var(--surface)]/95 px-4 py-3 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+        <div className="flex flex-wrap items-center gap-3">
+          <EyebrowLabel className="text-[color:var(--accent)]">Snapshot</EyebrowLabel>
+          <span className="text-sm font-semibold uppercase tracking-[0.16em]">Round {match.round}</span>
+          <span className="text-xs text-[color:var(--muted-foreground)]">
+            Score {match.scores.player ?? 0}-{match.scores.opponent ?? 0}
+          </span>
+          <span className="text-xs text-[color:var(--muted-foreground)]">
+            CP {match.controlPoints.player ?? 0}-{match.controlPoints.opponent ?? 0}
+          </span>
+          <span className="text-xs text-[color:var(--muted-foreground)]">
+            Ready {match.unitStates.filter((unitState) => unitState.activationStatus === "ready").length}/{match.unitStates.length}
+          </span>
+          <div className="ml-auto flex flex-wrap items-center gap-2">
+            <Button size="sm" onClick={() => updateMatch(advanceRound)}>
+              Advance round
+            </Button>
+          </div>
+        </div>
+      </div>
 
-      <Card>
+      {/* Anchor segmented control — jumps to the section without hiding others. */}
+      <nav aria-label="Tracker sections" className="flex flex-wrap gap-1 border-b border-[color:var(--border)]">
+        {[
+          { id: "tracker-units", label: "Units" },
+          { id: "tracker-score", label: "Score & CP" },
+          { id: "tracker-tokens", label: "Tokens" },
+          { id: "tracker-initiative", label: "Initiative" },
+          { id: "tracker-export", label: "Export" },
+        ].map((entry) => (
+          <a
+            key={entry.id}
+            className="-mb-px border-b-2 border-transparent px-3 py-2 text-sm font-medium text-[color:var(--subtle-foreground)] transition-colors hover:border-[color:var(--foreground)] hover:text-[color:var(--foreground)]"
+            href={`#${entry.id}`}
+          >
+            {entry.label}
+          </a>
+        ))}
+      </nav>
+
+      <Card id="tracker-snapshot">
         <CardHeader>
           <CardTitle>Table snapshot</CardTitle>
           <CardDescription>Compact match state for quick mobile checks between activations.</CardDescription>
@@ -328,7 +349,7 @@ export function MatchDetailRoute() {
       </Card>
 
       <div className="grid gap-6 xl:grid-cols-[1fr_0.75fr]">
-        <Card>
+        <Card id="tracker-units">
           <CardHeader>
             <CardTitle>Units</CardTitle>
             <CardDescription>Activation, damage, pinned, and destroyed state for the saved roster.</CardDescription>
@@ -376,7 +397,7 @@ export function MatchDetailRoute() {
         </Card>
 
         <div className="space-y-6">
-          <Card>
+          <Card id="tracker-score">
             <CardHeader>
               <CardTitle>Overrun score</CardTitle>
               <CardDescription>Manual scoring helper for Dockyard Assault.</CardDescription>
@@ -398,7 +419,7 @@ export function MatchDetailRoute() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card id="tracker-tokens">
             <CardHeader>
               <CardTitle>Scenario tokens</CardTitle>
               <CardDescription>Hardpoints, points of interest, and smoke markers are manual toggles.</CardDescription>
@@ -412,7 +433,7 @@ export function MatchDetailRoute() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card id="tracker-initiative">
             <CardHeader>
               <CardTitle>Initiative log</CardTitle>
               <CardDescription>Record initiative and control-point notes without interpreting ambiguous table state.</CardDescription>
@@ -437,6 +458,25 @@ export function MatchDetailRoute() {
           </Card>
         </div>
       </div>
+
+      <Card id="tracker-export">
+        <CardHeader>
+          <CardTitle>Table export</CardTitle>
+          <CardDescription>Copy the current manual match state for notes, reports, or handoff.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <details className="rounded-sm border border-[color:var(--border)] bg-[color:var(--surface-sunken)] p-4">
+            <summary className="cursor-pointer font-display text-sm font-semibold uppercase tracking-wide">Match export preview</summary>
+            <div className="mt-3 flex flex-wrap items-center gap-3">
+              <Button variant="outline" onClick={() => void copyMatchExport(matchExport)}>
+                Copy match export
+              </Button>
+              {copiedMatchExport ? <span className="text-sm text-[color:var(--muted-foreground)]">Copied match export to clipboard.</span> : null}
+            </div>
+            <pre className="mt-3 whitespace-pre-wrap font-mono text-xs leading-5 text-[color:var(--muted-foreground)]">{matchExport}</pre>
+          </details>
+        </CardContent>
+      </Card>
     </div>
   );
 }

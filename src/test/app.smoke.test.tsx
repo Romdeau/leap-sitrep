@@ -1218,7 +1218,7 @@ describe("App smoke test", () => {
     await user.click(screen.getByRole("button", { name: "Start match" }));
 
     expect(await screen.findByText("Live match tracker")).toBeInTheDocument();
-    expect(screen.getByText("Round 1")).toBeInTheDocument();
+    expect(screen.getAllByText("Round 1").length).toBeGreaterThan(0);
 
     await user.click(screen.getAllByRole("button", { name: "activated" })[0]);
     await user.type(screen.getAllByRole("spinbutton")[0], "2");
@@ -1230,7 +1230,7 @@ describe("App smoke test", () => {
     await user.click(screen.getByRole("button", { name: "Add" }));
     await user.click(screen.getByRole("button", { name: "Advance round" }));
 
-    expect(await screen.findByText("Round 2")).toBeInTheDocument();
+    expect((await screen.findAllByText("Round 2")).length).toBeGreaterThan(0);
     expect(screen.getByText("Table snapshot")).toBeInTheDocument();
     expect(screen.getByText("Units ready")).toBeInTheDocument();
     expect(screen.getAllByText("Control points").length).toBeGreaterThan(1);
@@ -1317,7 +1317,7 @@ describe("App smoke test", () => {
 
     render(<App />);
 
-    expect(await screen.findByText("Round 2")).toBeInTheDocument();
+    expect((await screen.findAllByText("Round 2")).length).toBeGreaterThan(0);
     await user.click(screen.getByRole("button", { name: "Delete" }));
 
     expect(await screen.findByText("No saved matches yet.")).toBeInTheDocument();
