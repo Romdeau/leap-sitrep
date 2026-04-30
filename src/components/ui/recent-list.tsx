@@ -66,7 +66,7 @@ export function RecentList({ className, description, emptyState, headerAction, i
 
 function RecentListRow({ item }: { item: RecentListItem }) {
   const baseClasses =
-    "flex w-full items-center gap-3 rounded-md border border-[color:var(--border)] p-3 text-left transition hover:bg-[color:var(--surface-muted)]";
+    "flex w-full items-center gap-3 sub-frame rounded-md border border-[color:var(--border)] p-3 text-left transition hover:bg-[color:var(--surface-muted)]";
   const body = (
     <>
       <div className="min-w-0 flex-1">

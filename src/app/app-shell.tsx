@@ -213,7 +213,7 @@ function MobileSheet({
           {items.map((item) => (
             <li key={item.id}>
               <NavLink
-                className="block rounded-md border border-[color:var(--border)] p-3 text-sm font-semibold uppercase tracking-[0.12em] text-[color:var(--foreground)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]"
+                className="block sub-frame rounded-md border border-[color:var(--border)] p-3 text-sm font-semibold uppercase tracking-[0.12em] text-[color:var(--foreground)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]"
                 onClick={onClose}
                 to={item.path}
               >

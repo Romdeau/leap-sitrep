@@ -355,3 +355,30 @@ a {
   background: var(--accent-edge);
   box-shadow: 0 0 0 2px var(--surface);
 }
+
+/* ---------- Sub-frame accent ----------
+   Quieter accent for inner sub-cards inside a top-level reg-frame.
+   A 2px accent stripe on the left edge that deepens on hover. */
+.sub-frame {
+  position: relative;
+}
+.sub-frame::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  width: 2px;
+  background: var(--border-strong);
+  pointer-events: none;
+  transition: background-color 120ms ease;
+}
+.sub-frame:hover::before,
+a.sub-frame:hover::before,
+button.sub-frame:hover::before {
+  background: var(--accent-edge);
+}
+.sub-frame--accent::before {
+  background: var(--accent-edge);
+}
+

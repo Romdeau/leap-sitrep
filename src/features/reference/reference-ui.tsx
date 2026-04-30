@@ -174,7 +174,7 @@ function CitationList({ citations }: { citations: SourceCitation[] }) {
         const lines = citation.lineStart !== undefined ? `Lines ${citation.lineStart}-${citation.lineEnd ?? citation.lineStart}` : null;
 
         return (
-          <div key={citationKey(citation)} className="rounded-md border border-[color:var(--border)] p-4">
+          <div key={citationKey(citation)} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
             <div className="flex flex-wrap items-center gap-2">
               <Badge variant="outline">{document?.title ?? citation.documentId}</Badge>
               {citation.sectionId ? <Badge variant="outline">{citation.sectionId}</Badge> : null}
@@ -303,7 +303,7 @@ export function SearchOverlay({ buttonClassName, buttonLabel = "Search" }: { but
                 {results.map((record) => (
                   <button
                     key={`${record.entityType}-${record.id}`}
-                    className="block w-full rounded-md border border-[color:var(--border)] p-4 text-left transition hover:bg-[color:var(--surface-muted)]"
+                    className="block w-full sub-frame rounded-md border border-[color:var(--border)] p-4 text-left transition hover:bg-[color:var(--surface-muted)]"
                     onClick={() => navigateToRecord(record)}
                     type="button"
                   >
@@ -337,7 +337,7 @@ function KeyValueGrid({ items }: { items: Array<{ label: string; value: string |
   return (
     <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
       {items.map((item) => (
-        <div key={item.label} className="rounded-md border border-[color:var(--border)] p-4">
+        <div key={item.label} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
           <div className="text-xs uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">{item.label}</div>
           <div className="mt-2 text-lg font-semibold">{item.value ?? "-"}</div>
         </div>
@@ -364,7 +364,7 @@ function TextListCard({
       <CardContent>
         <div className="space-y-3">
           {items.map((item, index) => (
-            <div key={`${title}-${index}`} className="rounded-md border border-[color:var(--border)] p-4 text-sm leading-6">
+            <div key={`${title}-${index}`} className="sub-frame rounded-md border border-[color:var(--border)] p-4 text-sm leading-6">
               {item}
             </div>
           ))}
@@ -382,7 +382,7 @@ function CitationBackedCard({ title, items }: { title: string; items: CitationBa
       </CardHeader>
       <CardContent className="space-y-4">
         {items.map((item) => (
-          <div key={item.id} className="rounded-md border border-[color:var(--border)] p-4">
+          <div key={item.id} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
             <div className="font-medium">{item.label}</div>
             <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{item.text}</p>
           </div>
@@ -396,7 +396,7 @@ function RuleSubsectionList({ subsections }: { subsections: RuleSubsection[] }) 
   return (
     <div className="space-y-4">
       {subsections.map((subsection) => (
-        <div id={getRuleSubsectionAnchorId(subsection)} key={subsection.id} className="scroll-mt-24 rounded-md border border-[color:var(--border)] p-4">
+        <div id={getRuleSubsectionAnchorId(subsection)} key={subsection.id} className="scroll-mt-24 sub-frame rounded-md border border-[color:var(--border)] p-4">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="outline">{subsection.number}</Badge>
             <h4 className="text-base font-semibold">{subsection.title}</h4>
@@ -434,7 +434,7 @@ function EffectiveRuleDiff({ effectiveRule }: { effectiveRule: EffectiveRuleReco
       {parsed.overrides.map((override) => (
         <div
           key={override.id}
-          className="rounded-md border border-[color:var(--accent)] bg-[color:color-mix(in_srgb,var(--accent)_10%,var(--surface))] p-4"
+          className="sub-frame sub-frame--accent rounded-md border border-[color:var(--accent)] bg-[color:color-mix(in_srgb,var(--accent)_10%,var(--surface))] p-4"
         >
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="accent">Changed or added</Badge>
@@ -465,7 +465,7 @@ function WeaponList({ weapons }: { weapons: WeaponProfile[] }) {
   return (
     <div className="space-y-3">
       {weapons.map((weapon) => (
-        <div key={weapon.id} className="rounded-md border border-[color:var(--border)] p-4">
+        <div key={weapon.id} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
           <div className="flex flex-wrap items-center gap-2">
             <span className="font-medium">{weapon.name}</span>
             {weapon.carrier ? <Badge variant="outline">{weapon.carrier}</Badge> : null}
@@ -489,7 +489,7 @@ function ArmoryList({ items }: { items: ArmoryItem[] }) {
   return (
     <div className="space-y-3">
       {items.map((item) => (
-        <div key={item.id} className="rounded-md border border-[color:var(--border)] p-4">
+        <div key={item.id} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
           <div className="font-medium">{item.name}</div>
           <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{item.text}</p>
           {item.profile ? (
@@ -655,17 +655,17 @@ export function ReferenceHomeRoute() {
           <CardDescription>The verified seed slice — Authority lore, Harlow force, Dockyard Assault scenario.</CardDescription>
         </CardHeader>
         <CardContent className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          <Link className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/lore/factions/the-authority">
+          <Link className="sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/lore/factions/the-authority">
             <div className="font-medium">Authority overview</div>
             <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">
               {authority ? summarizeText(authority.summary, 120) : "The main political and military power on ABOL."}
             </p>
           </Link>
-          <Link className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/forces/harlow-1st-reaction-force">
+          <Link className="sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/forces/harlow-1st-reaction-force">
             <div className="font-medium">{harlow?.name ?? "Harlow 1st Reaction Force"}</div>
             <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Verified force card and unit links.</p>
           </Link>
-          <Link className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/scenarios/dockyard-assault">
+          <Link className="sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/scenarios/dockyard-assault">
             <div className="font-medium">{dockyardAssault?.title ?? "Dockyard Assault"}</div>
             <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Core scenario setup, special rules, and overrun scoring.</p>
           </Link>
@@ -678,27 +678,27 @@ export function ReferenceHomeRoute() {
           <CardDescription>Top-level destinations across reference and play.</CardDescription>
         </CardHeader>
         <CardContent className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          <Link className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/lore">
+          <Link className="sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/lore">
             <div className="font-medium">Lore</div>
             <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Factions, timeline, glossary anchors.</p>
           </Link>
-          <Link className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/forces">
+          <Link className="sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/forces">
             <div className="font-medium">Forces</div>
             <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Playable force browser and unit cards.</p>
           </Link>
-          <Link className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/rules">
+          <Link className="sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/rules">
             <div className="font-medium">Rules</div>
             <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Core, matched play, USRs.</p>
           </Link>
-          <Link className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/scenarios">
+          <Link className="sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/scenarios">
             <div className="font-medium">Scenarios</div>
             <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Setup, scoring, special rules.</p>
           </Link>
-          <Link className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/builder">
+          <Link className="sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/builder">
             <div className="font-medium">Builder</div>
             <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Roster builder and legality checks.</p>
           </Link>
-          <Link className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/matches">
+          <Link className="sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/matches">
             <div className="font-medium">Matches</div>
             <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Saved matches and live tracker.</p>
           </Link>
@@ -745,7 +745,7 @@ export function LoreHubRoute() {
           {factions.map((faction) => (
             <Link
               key={faction.id}
-              className="block rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
+              className="block sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
               to={`/lore/factions/${faction.id}`}
             >
               <div className="font-medium">{faction.name}</div>
@@ -764,7 +764,7 @@ export function LoreHubRoute() {
           {glossaryHighlights.map((term) => (
             <Link
               key={term.id}
-              className="block rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
+              className="block sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
               to="/glossary"
             >
               <div className="font-medium">{term.term}</div>
@@ -799,7 +799,7 @@ export function TimelineRoute() {
         </CardHeader>
         <CardContent className="space-y-4">
           {events.map((event) => (
-            <article key={event.id} className="rounded-md border border-[color:var(--border)] p-4">
+            <article key={event.id} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
               <div className="flex flex-wrap items-center gap-3">
                 <Badge variant="accent">{event.year}</Badge>
                 <h3 className="text-base font-semibold">{event.title}</h3>
@@ -879,7 +879,7 @@ export function LoreFactionDetailRoute() {
                 {relatedForces.map((force) => (
                   <Link
                     key={force.id}
-                    className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
+                    className="sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
                     to={`/forces/${force.id}`}
                   >
                     <div className="font-medium">{force.name}</div>
@@ -918,7 +918,7 @@ export function LoreFactionDetailRoute() {
                     {relatedForces.map((force) => (
                       <li key={force.id}>
                         <Link
-                          className="block rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
+                          className="block sub-frame rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
                           to={`/forces/${force.id}`}
                         >
                           <div className="font-medium">{force.name}</div>
@@ -962,7 +962,7 @@ function RuleTopicCard({ rule, effectiveRule }: { rule: RuleSection; effectiveRu
   const effectiveSummary = effectiveRule ? summarizeText(effectiveRule.effectiveText, 300) : null;
 
   return (
-    <div className="rounded-md border border-[color:var(--border)] p-4">
+    <div className="sub-frame rounded-md border border-[color:var(--border)] p-4">
       <div className="flex flex-wrap items-center gap-2">
         <h3 className="text-base font-semibold">{rule.title}</h3>
         <Badge variant="outline">{rule.category}</Badge>
@@ -1048,7 +1048,7 @@ export function RulesLandingRoute() {
           {universalSpecialRules.map((rule) => (
             <Link
               key={rule.id}
-              className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
+              className="sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
               to={`/rules/usr/${rule.id}`}
             >
               <div className="flex flex-wrap items-center gap-2">
@@ -1172,7 +1172,7 @@ export function RulesCoreRoute() {
                       <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">Linked FAQ</h3>
                       <div className="mt-3 space-y-3">
                         {faqEntries.slice(0, 4).map((entry) => (
-                          <div key={entry.id} className="rounded-md border border-[color:var(--border)] p-4">
+                          <div key={entry.id} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
                             <div className="font-medium">{entry.question}</div>
                             <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{entry.answer}</p>
                           </div>
@@ -1267,7 +1267,7 @@ export function RulesMatchedPlayRoute() {
         </CardHeader>
         <CardContent className="space-y-4">
           {matchedPlayRules.map((rule) => (
-            <div key={rule.id} className="rounded-md border border-[color:var(--border)] p-4">
+            <div key={rule.id} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="font-medium">{rule.title}</span>
                 <Badge variant="outline">{rule.category}</Badge>
@@ -1336,7 +1336,7 @@ export function UsrDetailRoute() {
               </CardHeader>
               <CardContent className="space-y-4">
                 {usr.notes.map((note) => (
-                  <div key={note.id} className="rounded-md border border-[color:var(--border)] p-4">
+                  <div key={note.id} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
                     <div className="font-medium">{note.label}</div>
                     <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{note.text}</p>
                   </div>
@@ -1373,7 +1373,7 @@ export function UsrDetailRoute() {
                     {relatedRules.map((rule) => (
                       <li key={rule.id}>
                         <Link
-                          className="block rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
+                          className="block sub-frame rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
                           to={`/rules/core#${rule.id}`}
                         >
                           <div className="font-medium">{rule.title}</div>
@@ -1477,7 +1477,7 @@ export function ForcesRoute() {
               {bucketForces.map((force) => (
                 <Link
                   key={force.id}
-                  className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
+                  className="sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
                   to={`/forces/${force.id}`}
                 >
                   <div className="flex flex-wrap items-center gap-2">
@@ -1553,7 +1553,7 @@ export function ForceDetailRoute() {
               {units.map((unit) => (
                 <Link
                   key={unit.id}
-                  className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
+                  className="sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
                   to={`/units/${unit.id}`}
                 >
                   <div className="font-medium">{unit.name}</div>
@@ -1576,7 +1576,7 @@ export function ForceDetailRoute() {
               title: "Lore alignment",
               children: parentFaction ? (
                 <Link
-                  className="block rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
+                  className="block sub-frame rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
                   to={`/lore/${parentFaction.id}`}
                 >
                   <div className="font-medium">{parentFaction.name}</div>
@@ -1595,7 +1595,7 @@ export function ForceDetailRoute() {
                     {units.map((unit) => (
                       <li key={unit.id}>
                         <Link
-                          className="block rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
+                          className="block sub-frame rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
                           to={`/units/${unit.id}`}
                         >
                           <div className="font-medium">{unit.name}</div>
@@ -1613,7 +1613,7 @@ export function ForceDetailRoute() {
               title: "Armory",
               children: (
                 <a
-                  className="block rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
+                  className="block sub-frame rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
                   href="#armory"
                 >
                   <div className="font-medium">Jump to armory</div>
@@ -1700,7 +1700,7 @@ export function UnitDetailRoute() {
               <CardContent className="space-y-3">
                 {unit.specialists.length > 0 ? (
                   unit.specialists.map((specialist) => (
-                    <div key={specialist.id} className="rounded-md border border-[color:var(--border)] p-4">
+                    <div key={specialist.id} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
                       <div className="flex flex-wrap items-center gap-2">
                         <span className="font-medium">Slot {specialist.slot}</span>
                         <Badge variant="outline">{specialist.name}</Badge>
@@ -1727,7 +1727,7 @@ export function UnitDetailRoute() {
               title: "Parent force",
               children: force ? (
                 <Link
-                  className="block rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
+                  className="block sub-frame rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
                   to={`/forces/${force.id}`}
                 >
                   <div className="font-medium">{force.name}</div>
@@ -1811,7 +1811,7 @@ export function ScenariosRoute() {
           {filteredScenarios.map((scenario) => (
             <Link
               key={scenario.id}
-              className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
+              className="sub-frame rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
               to={`/scenarios/${scenario.id}`}
             >
               <div className="flex flex-wrap items-center gap-2">
@@ -1957,7 +1957,7 @@ export function GlossaryRoute() {
         </CardHeader>
         <CardContent className="space-y-3">
           {lore.data.glossary.map((term: GlossaryTerm) => (
-            <div key={term.id} className="rounded-md border border-[color:var(--border)] p-4">
+            <div key={term.id} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="font-medium">{term.term}</span>
                 {term.aliases.map((alias) => (
