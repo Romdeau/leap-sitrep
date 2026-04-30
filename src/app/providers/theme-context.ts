@@ -1,19 +1,17 @@
 import { createContext } from "react";
 
-import type { AppearanceMode, ClayVariant, DashboardTheme } from "@/app/providers/theme-types";
+import type { AppearanceMode, Faction } from "@/app/providers/theme-types";
 
 export interface ThemeState {
   appearance: AppearanceMode;
-  dashboardTheme: DashboardTheme;
-  clayVariant: ClayVariant;
+  faction: Faction;
 }
 
 export interface ThemeContextValue {
   theme: ThemeState;
   resolvedAppearance: "light" | "dark";
   setAppearance: (appearance: AppearanceMode) => void;
-  setDashboardTheme: (theme: DashboardTheme) => void;
-  setClayVariant: (variant: ClayVariant) => void;
+  setFaction: (faction: Faction) => void;
   resetTheme: () => void;
 }
 
@@ -21,8 +19,7 @@ export const THEME_STORAGE_KEY = "leap-sitrep.theme";
 
 export const defaultTheme: ThemeState = {
   appearance: "system",
-  dashboardTheme: "readable",
-  clayVariant: "weathered",
+  faction: "blkout",
 };
 
 export const ThemeContext = createContext<ThemeContextValue | null>(null);

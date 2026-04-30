@@ -5,7 +5,18 @@ import {
   type ReactNode,
 } from "react";
 
-import { THEME_STORAGE_KEY, ThemeContext, defaultTheme, type ThemeContextValue, type ThemeState } from "@/app/providers/theme-context";
+import {
+  THEME_STORAGE_KEY,
+  ThemeContext,
+  defaultTheme,
+  type ThemeContextValue,
+  type ThemeState,
+} from "@/app/providers/theme-context";
+import { FACTION_VALUES, type Faction } from "@/app/providers/theme-types";
+
+function isFaction(value: unknown): value is Faction {
+  return typeof value === "string" && (FACTION_VALUES as readonly string[]).includes(value);
+}
 
 function readStoredTheme(): ThemeState {
   if (typeof window === "undefined") {
@@ -19,10 +30,14 @@ function readStoredTheme(): ThemeState {
   }
 
   try {
-    return {
-      ...defaultTheme,
-      ...(JSON.parse(storedValue) as Partial<ThemeState>),
-    };
+    const parsed = JSON.parse(storedValue) as Partial<ThemeState> & Record<string, unknown>;
+    const appearance =
+      parsed.appearance === "light" || parsed.appearance === "dark" || parsed.appearance === "system"
+        ? parsed.appearance
+        : defaultTheme.appearance;
+    const faction = isFaction(parsed.faction) ? parsed.faction : defaultTheme.faction;
+
+    return { appearance, faction };
   } catch {
     return defaultTheme;
   }
@@ -34,7 +49,7 @@ function resolveAppearance(theme: ThemeState): "light" | "dark" {
   }
 
   if (typeof window === "undefined") {
-    return "light";
+    return "dark";
   }
 
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
@@ -53,9 +68,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setResolvedAppearance(nextResolvedAppearance);
 
     html.classList.toggle("dark", nextResolvedAppearance === "dark");
+    html.dataset.mode = nextResolvedAppearance;
     html.dataset.appearance = nextTheme.appearance;
-    html.dataset.dashboardTheme = nextTheme.dashboardTheme;
-    html.dataset.clayVariant = nextTheme.clayVariant;
+    html.dataset.faction = nextTheme.faction;
+
+    // Clean up legacy attributes from older versions
+    delete html.dataset.dashboardTheme;
+    delete html.dataset.clayVariant;
   });
 
   useEffect(() => {
@@ -83,11 +102,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setAppearance: (appearance) => {
       setTheme((current) => ({ ...current, appearance }));
     },
-    setDashboardTheme: (dashboardTheme) => {
-      setTheme((current) => ({ ...current, dashboardTheme }));
-    },
-    setClayVariant: (clayVariant) => {
-      setTheme((current) => ({ ...current, clayVariant }));
+    setFaction: (faction) => {
+      setTheme((current) => ({ ...current, faction }));
     },
     resetTheme: () => {
       setTheme(defaultTheme);

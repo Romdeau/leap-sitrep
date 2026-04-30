@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { appRouteManifest, primaryNavigation } from "@/lib/routes/manifest";
+import { primaryNavigation } from "@/lib/routes/manifest";
 import type {
   ArmoryItem,
   CitationBackedText,
@@ -139,17 +139,6 @@ function displayEntityType(entityType: SearchIndexRecord["entityType"]) {
     case "unit":
       return "Unit";
   }
-}
-
-function routeMatches(pathname: string, routePath: string) {
-  const routeSegments = routePath.split("/").filter(Boolean);
-  const pathSegments = pathname.split("/").filter(Boolean);
-
-  if (routeSegments.length !== pathSegments.length) {
-    return false;
-  }
-
-  return routeSegments.every((segment, index) => segment.startsWith(":") || segment === pathSegments[index]);
 }
 
 function getRuleSubsectionAnchorId(subsection: RuleSubsection) {
@@ -574,11 +563,6 @@ function ArmoryList({ items }: { items: ArmoryItem[] }) {
       ))}
     </div>
   );
-}
-
-function routeLabelForPath(pathname: string) {
-  const route = appRouteManifest.find((candidate) => routeMatches(pathname, candidate.path));
-  return route?.label ?? "Reference";
 }
 
 function EmptyState({ title, description }: { title: string; description: string }) {
@@ -1109,11 +1093,73 @@ export function RulesCoreRoute() {
 }
 
 export function RulesMatchedPlayRoute() {
+  const { supplemental } = useReferenceData();
+  const matchedPlayRules = supplemental.data.rules.filter((rule) => rule.mode === "matched-play");
+  const groupBuilding = matchedPlayRules.find((rule) => rule.id === "matched-play-group-building");
+
   return (
-    <EmptyState
-      description="Matched play reference pages are scheduled for Packet 7 after the seed slice is complete. The effective rule overlays shown in core routes already surface the current matched-play overrides where they affect this slice."
-      title="Matched play browser reserved"
-    />
+    <div className="space-y-6">
+      <SectionIntro
+        badges={
+          <>
+            <Badge variant="accent">Packet 7</Badge>
+            <Badge variant="outline">Matched Play Supplemental</Badge>
+          </>
+        }
+        description="Source-backed matched play rules from the supplemental are available for reference. Builder support remains limited until handler and BLKLIST data are verified."
+        title="Matched play"
+      />
+
+      {groupBuilding ? (
+        <Card>
+          <CardHeader>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="accent">Builder Gate</Badge>
+              <Badge variant="outline">Source-backed structure</Badge>
+            </div>
+            <CardTitle>{groupBuilding.title}</CardTitle>
+            <CardDescription>
+              The app can display the sourced matched-play group structure, but it does not create matched-play rosters until handlers and replacement-unit data are verified.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-6 xl:grid-cols-[1fr_0.85fr]">
+            <div className="space-y-2 text-sm leading-6 text-[color:var(--muted-foreground)]">
+              {splitClauses(groupBuilding.body).map((clause, index) => (
+                <p key={`${groupBuilding.id}-${index}`}>{clause}</p>
+              ))}
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">Citations</h3>
+              <div className="mt-3">
+                <CitationList citations={groupBuilding.citations} />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      ) : null}
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Matched play rules</CardTitle>
+          <CardDescription>Extracted supplemental sections with citations preserved.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {matchedPlayRules.map((rule) => (
+            <div key={rule.id} className="rounded-2xl border border-[color:var(--border)] p-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-medium">{rule.title}</span>
+                <Badge variant="outline">{rule.category}</Badge>
+              </div>
+              <div className="mt-3 space-y-2 text-sm leading-6 text-[color:var(--muted-foreground)]">
+                {splitClauses(rule.body).slice(0, rule.id === "matched-play-group-building" ? 6 : 10).map((clause, index) => (
+                  <p key={`${rule.id}-summary-${index}`}>{clause}</p>
+                ))}
+              </div>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+    </div>
   );
 }
 
@@ -1517,14 +1563,3 @@ export function GlossaryRoute() {
   );
 }
 
-export function ReservedRouteNotice() {
-  const location = useLocation();
-  const label = routeLabelForPath(location.pathname);
-
-  return (
-    <EmptyState
-      description={`${label} is still reserved for a later packet in the implementation plan. Packet 4 only activates the read-only reference slice; builder and match workflows remain intentionally deferred.`}
-      title="Route reserved for later work"
-    />
-  );
-}

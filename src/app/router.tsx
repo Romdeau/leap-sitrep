@@ -2,6 +2,8 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import { AppShell } from "@/app/app-shell";
 import { BuilderRoute } from "@/features/builder/builder-route";
+import { DevComponentsRoute } from "@/features/dev/components-route";
+import { MatchDetailRoute, MatchesRoute } from "@/features/matches/matches-route";
 import {
   ForceDetailRoute,
   ForcesRoute,
@@ -9,7 +11,6 @@ import {
   LoreFactionDetailRoute,
   LoreHubRoute,
   ReferenceHomeRoute,
-  ReservedRouteNotice,
   RulesCoreRoute,
   RulesLandingRoute,
   RulesMatchedPlayRoute,
@@ -38,9 +39,10 @@ export function AppRouter() {
         <Route element={<ScenariosRoute />} path="scenarios" />
         <Route element={<ScenarioDetailRoute />} path="scenarios/:scenarioId" />
         <Route element={<BuilderRoute />} path="builder" />
-        <Route element={<ReservedRouteNotice />} path="matches" />
-        <Route element={<ReservedRouteNotice />} path="matches/:matchId" />
+        <Route element={<MatchesRoute />} path="matches" />
+        <Route element={<MatchDetailRoute />} path="matches/:matchId" />
         <Route element={<GlossaryRoute />} path="glossary" />
+        <Route element={<DevComponentsRoute />} path="dev/components" />
         <Route element={<Navigate replace to="/" />} path="*" />
       </Route>
     </Routes>

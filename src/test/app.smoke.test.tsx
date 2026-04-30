@@ -544,6 +544,36 @@ const forcesFixture = {
         ],
         confidence: "verified",
       },
+      {
+        id: "un-raid-force-alpha",
+        cardId: "RFA-4390",
+        name: "UN Raid Force Alpha",
+        parentLoreFactionId: "un-raid-force-alpha",
+        battleDrills: [],
+        forceRules: [
+          {
+            id: "rfa-4390-force-rule",
+            label: "UN Raid Team Alpha",
+            text: "All UN Raid Team Alpha UTG Assaulter and Specialist Units gain an additional D10 roll in all Skill Checks.",
+            citations: [
+              {
+                documentId: "blkout-unit-cards-screenshots",
+                label: "UN Raid Force Alpha force back",
+                sectionId: "screenshot-14",
+              },
+            ],
+          },
+        ],
+        armory: [],
+        citations: [
+          {
+            documentId: "blkout-unit-cards-screenshots",
+            label: "UN Raid Force Alpha force front",
+            sectionId: "screenshot-13",
+          },
+        ],
+        confidence: "verified",
+      },
     ],
     units: [
       {
@@ -688,6 +718,63 @@ const forcesFixture = {
         ],
         confidence: "verified",
       },
+      {
+        id: "un-utg-assaulters",
+        cardId: "RFA-4391",
+        forceId: "un-raid-force-alpha",
+        name: "UN UTG Assaulters",
+        modelCount: 1,
+        stats: {
+          move: "6",
+          shoot: "5",
+          armor: "1/5",
+          hack: null,
+          wounds: null,
+        },
+        specialists: [],
+        weapons: [],
+        abilities: [],
+        citations: [],
+        confidence: "verified",
+      },
+      {
+        id: "un-utg-specialists",
+        cardId: "RFA-4392",
+        forceId: "un-raid-force-alpha",
+        name: "UN UTG Specialists",
+        modelCount: 1,
+        stats: {
+          move: "6",
+          shoot: "5",
+          armor: "1/5",
+          hack: null,
+          wounds: null,
+        },
+        specialists: [],
+        weapons: [],
+        abilities: [],
+        citations: [],
+        confidence: "verified",
+      },
+      {
+        id: "golem-unit",
+        cardId: "RFA-4393",
+        forceId: "un-raid-force-alpha",
+        name: "Golem Unit",
+        modelCount: 1,
+        stats: {
+          move: "4",
+          shoot: "5",
+          armor: "3/5",
+          hack: null,
+          wounds: null,
+        },
+        specialists: [],
+        weapons: [],
+        abilities: [],
+        citations: [],
+        confidence: "verified",
+      },
     ],
   },
 };
@@ -725,6 +812,58 @@ const scenariosFixture = {
         ],
       },
     ],
+  },
+};
+
+const supplementalFixture = {
+  meta: {
+    kind: "rules",
+    version: "packet-7-test",
+    generatedAt: "2026-04-29T00:00:00.000Z",
+    sourceDocumentIds: ["blkout-supplemental"],
+    confidence: "extracted",
+  },
+  data: {
+    rules: [
+      {
+        id: "matched-play-rules",
+        title: "Matched Play Rules",
+        category: "matched-play",
+        mode: "matched-play",
+        overview: "Matched play cover, structures, control points, counter EWAR, dusters, height, Juke, and smoke rules.",
+        subsections: [],
+        body: "CONTROL POINTS Players begin each game with 3 Control Points and may never regain them. SMOKE Models with part of their base inside Smoke gain Partial Cover.",
+        citations: [
+          {
+            documentId: "blkout-supplemental",
+            label: "Matched play rules",
+            lineStart: 25,
+            lineEnd: 133,
+          },
+        ],
+      },
+      {
+        id: "matched-play-group-building",
+        title: "Matched Play Group Building",
+        category: "matched-play",
+        mode: "matched-play",
+        overview: "1x Handler. 1x Force Card. 3x Different Units from the chosen Force. 1x Force Unit may be replaced with a BLKLIST Unit.",
+        subsections: [],
+        body: "1x Handler | Options: Agent Handler, Assault Handler, Covert Handler, Cyber Handler, Keres Handler, Marksman Handler, Melee Handler, Siege Handler | 1x Force Card | 3x Different Units from the chosen Force | 1x Force Unit (does not include Handlers) may be replaced with a BLKLIST Unit | These Units cannot use Battle Drills, Armory Items and Force Special Rules.",
+        citations: [
+          {
+            documentId: "blkout-supplemental",
+            label: "Matched play group building",
+            lineStart: 134,
+            lineEnd: 158,
+          },
+        ],
+      },
+    ],
+    effectiveRules: [],
+    faq: [],
+    errata: [],
+    universalSpecialRules: [],
   },
 };
 
@@ -838,6 +977,7 @@ const fixtureMap = new Map<string, object>([
   ["data/source-registry.json", sourceRegistryFixture],
   ["data/lore/index.json", loreFixture],
   ["data/rules/core.json", rulesFixture],
+  ["data/rules/supplemental.json", supplementalFixture],
   ["data/forces/index.json", forcesFixture],
   ["data/scenarios/core.json", scenariosFixture],
   ["data/search/index.json", searchFixture],
@@ -946,7 +1086,90 @@ describe("App smoke test", () => {
     expect(await screen.findByText("USR")).toBeInTheDocument();
   });
 
-  it("builds and saves a legal Harlow core roster", async () => {
+  it("surfaces sourced matched play group building rules", async () => {
+    window.history.pushState({}, "", "/rules/matched-play");
+
+    render(<App />);
+
+    expect(await screen.findByText("Matched play")).toBeInTheDocument();
+    expect(screen.getAllByText("Matched Play Group Building").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("1x Handler").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("3x Different Units from the chosen Force").length).toBeGreaterThan(0);
+    expect(screen.getByText(/Builder support remains limited until handler and BLKLIST data are verified/)).toBeInTheDocument();
+    expect(screen.getByText("Lines 134-158")).toBeInTheDocument();
+  });
+
+  it("builds and saves a legal core roster from verified forces", async () => {
+    const user = userEvent.setup();
+    const writeText = vi.fn(() => Promise.resolve());
+
+    window.history.pushState({}, "", "/builder");
+    localStorage.clear();
+    Object.defineProperty(navigator, "clipboard", {
+      configurable: true,
+      value: { writeText },
+    });
+
+    render(<App />);
+
+    expect(await screen.findByText("Verified core roster builder")).toBeInTheDocument();
+    expect(screen.getByText("Legal core roster: 1 verified force card and 3 unit cards from that force.")).toBeInTheDocument();
+
+    await user.selectOptions(screen.getAllByRole("combobox").find((combobox) => combobox.textContent?.includes("UN Raid Force Alpha"))!, "un-raid-force-alpha");
+
+    expect(await screen.findByText("UN Raid Force Alpha")).toBeInTheDocument();
+    expect(screen.getByText("3 verified units")).toBeInTheDocument();
+    expect(screen.getByText("UN UTG Assaulters")).toBeInTheDocument();
+
+    await user.type(screen.getByPlaceholderText("Optional table notes, deployment reminders, or source-check notes."), "Seed roster");
+    await user.click(screen.getByRole("button", { name: "Save roster" }));
+
+    expect(await screen.findByText("Seed roster")).toBeInTheDocument();
+    expect(screen.getAllByText("UN Raid Force Alpha").length).toBeGreaterThan(0);
+    expect(screen.getByText("Table export preview")).toBeInTheDocument();
+    expect(screen.getByText(/Force: UN Raid Force Alpha \(RFA-4390\)/)).toBeInTheDocument();
+    expect(screen.getByText(/1\. UN UTG Assaulters \(RFA-4391\)/)).toBeInTheDocument();
+    expect(screen.getByText(/Source gate: verified force\/unit data only/)).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Copy export" }));
+
+    expect(writeText).toHaveBeenCalledWith(expect.stringContaining("Force: UN Raid Force Alpha (RFA-4390)"));
+    expect(await screen.findByText("Copied export to clipboard.")).toBeInTheDocument();
+    expect(localStorage.getItem("leap-sitrep.rosters.v1")).toContain("un-utg-assaulters");
+  });
+
+  it("loads and duplicates saved Harlow rosters", async () => {
+    const user = userEvent.setup();
+
+    window.history.pushState({}, "", "/builder");
+    localStorage.setItem(
+      "leap-sitrep.rosters.v1",
+      JSON.stringify([
+        {
+          id: "saved-roster-1",
+          mode: "core",
+          forceId: "harlow-1st-reaction-force",
+          unitIds: ["harlow-springbok-ai", "harlow-assault-team", "harlow-control-team"],
+          notes: "Stored roster",
+          createdAt: "2026-04-29T00:00:00.000Z",
+          updatedAt: "2026-04-29T00:00:00.000Z",
+        },
+      ]),
+    );
+
+    render(<App />);
+
+    expect(await screen.findByText("Stored roster")).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Load" }));
+
+    expect(screen.getByPlaceholderText("Optional table notes, deployment reminders, or source-check notes.")).toHaveValue("Stored roster");
+
+    await user.click(screen.getByRole("button", { name: "Duplicate" }));
+
+    expect(await screen.findByText("Stored roster Copy")).toBeInTheDocument();
+    expect(localStorage.getItem("leap-sitrep.rosters.v1")).toContain("Stored roster Copy");
+  });
+
+  it("flags duplicate unit selections as illegal in the builder draft", async () => {
     const user = userEvent.setup();
 
     window.history.pushState({}, "", "/builder");
@@ -954,14 +1177,177 @@ describe("App smoke test", () => {
 
     render(<App />);
 
-    expect(await screen.findByText("Harlow core roster builder")).toBeInTheDocument();
-    expect(screen.getByText("Legal core roster: 1 verified force card and 3 unit cards from that force.")).toBeInTheDocument();
+    expect(await screen.findByText("Verified core roster builder")).toBeInTheDocument();
 
-    await user.type(screen.getByPlaceholderText("Optional table notes, deployment reminders, or source-check notes."), "Seed roster");
-    await user.click(screen.getByRole("button", { name: "Save roster" }));
+    const unitSlots = screen.getAllByRole("combobox").slice(-3);
+    await user.selectOptions(unitSlots[1], "harlow-control-team");
 
-    expect(await screen.findByText("Seed roster")).toBeInTheDocument();
-    expect(screen.getAllByText("Harlow 1st Reaction Force").length).toBeGreaterThan(0);
-    expect(localStorage.getItem("leap-sitrep.rosters.v1")).toContain("harlow-control-team");
+    expect(screen.getByText("Each selected unit slot must reference a distinct unit card.")).toBeInTheDocument();
+    expect(screen.getAllByText("Choose a different verified unit card for this slot.")).toHaveLength(2);
+    expect(screen.getByRole("button", { name: "Save roster" })).toBeDisabled();
+  });
+
+  it("starts and updates a Dockyard Assault match from a saved roster", async () => {
+    const user = userEvent.setup();
+    const writeText = vi.fn(() => Promise.resolve());
+
+    window.history.pushState({}, "", "/matches");
+    Object.defineProperty(navigator, "clipboard", {
+      configurable: true,
+      value: { writeText },
+    });
+    localStorage.setItem(
+      "leap-sitrep.rosters.v1",
+      JSON.stringify([
+        {
+          id: "saved-roster-1",
+          mode: "core",
+          forceId: "harlow-1st-reaction-force",
+          unitIds: ["harlow-control-team", "harlow-assault-team", "harlow-springbok-ai"],
+          notes: "Tracker roster",
+          createdAt: "2026-04-29T00:00:00.000Z",
+          updatedAt: "2026-04-29T00:00:00.000Z",
+        },
+      ]),
+    );
+    localStorage.removeItem("leap-sitrep.matches.v1");
+
+    render(<App />);
+
+    expect(await screen.findByText("Match setup")).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Start match" }));
+
+    expect(await screen.findByText("Live match tracker")).toBeInTheDocument();
+    expect(screen.getByText("Round 1")).toBeInTheDocument();
+
+    await user.click(screen.getAllByRole("button", { name: "activated" })[0]);
+    await user.type(screen.getAllByRole("spinbutton")[0], "2");
+    await user.click(screen.getAllByRole("button", { name: "Pin" })[0]);
+    await user.click(screen.getByRole("button", { name: "Hardpoint 1" }));
+    await user.clear(screen.getByLabelText("Player CP"));
+    await user.type(screen.getByLabelText("Player CP"), "1");
+    await user.type(screen.getByPlaceholderText("Round 1: player won initiative"), "Round 1: player won initiative");
+    await user.click(screen.getByRole("button", { name: "Add" }));
+    await user.click(screen.getByRole("button", { name: "Advance round" }));
+
+    expect(await screen.findByText("Round 2")).toBeInTheDocument();
+    expect(screen.getByText("Table snapshot")).toBeInTheDocument();
+    expect(screen.getByText("Units ready")).toBeInTheDocument();
+    expect(screen.getAllByText("Control points").length).toBeGreaterThan(1);
+    expect(screen.getByText("Active tokens")).toBeInTheDocument();
+    expect(screen.getAllByText("Pinned").length).toBeGreaterThan(1);
+    expect(screen.getByText("Damage 2")).toBeInTheDocument();
+    expect(screen.getAllByText("Round 1: player won initiative").length).toBeGreaterThan(1);
+    expect(screen.getByText("Match export preview")).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Copy match export" }));
+
+    expect(writeText).toHaveBeenCalledWith(expect.stringContaining("# LEAP Sitrep Match State"));
+    expect(writeText).toHaveBeenCalledWith(expect.stringContaining("Active Tokens: Hardpoint 1"));
+    expect(await screen.findByText("Copied match export to clipboard.")).toBeInTheDocument();
+    expect(localStorage.getItem("leap-sitrep.matches.v1")).toContain("harlow-control-team");
+  });
+
+  it("starts a Dockyard Assault match from a saved UN Raid Force Alpha roster", async () => {
+    const user = userEvent.setup();
+
+    window.history.pushState({}, "", "/matches");
+    localStorage.setItem(
+      "leap-sitrep.rosters.v1",
+      JSON.stringify([
+        {
+          id: "saved-un-roster-1",
+          mode: "core",
+          forceId: "un-raid-force-alpha",
+          unitIds: ["un-utg-assaulters", "un-utg-specialists", "golem-unit"],
+          notes: "UN tracker roster",
+          createdAt: "2026-05-01T00:00:00.000Z",
+          updatedAt: "2026-05-01T00:00:00.000Z",
+        },
+      ]),
+    );
+    localStorage.removeItem("leap-sitrep.matches.v1");
+
+    render(<App />);
+
+    expect(await screen.findByText("Match setup")).toBeInTheDocument();
+    expect(screen.getByRole("combobox", { name: "Saved roster" })).toHaveValue("saved-un-roster-1");
+    await user.click(screen.getByRole("button", { name: "Start match" }));
+
+    expect(await screen.findByText("Live match tracker")).toBeInTheDocument();
+    expect(screen.getByText("UN UTG Assaulters")).toBeInTheDocument();
+    expect(screen.getByText("Golem Unit")).toBeInTheDocument();
+    expect(localStorage.getItem("leap-sitrep.matches.v1")).toContain("un-utg-assaulters");
+  });
+
+  it("surfaces and deletes saved matches from match setup", async () => {
+    const user = userEvent.setup();
+
+    window.history.pushState({}, "", "/matches");
+    localStorage.setItem(
+      "leap-sitrep.rosters.v1",
+      JSON.stringify([
+        {
+          id: "saved-roster-1",
+          mode: "core",
+          forceId: "harlow-1st-reaction-force",
+          unitIds: ["harlow-control-team", "harlow-assault-team", "harlow-springbok-ai"],
+          notes: "Tracker roster",
+          createdAt: "2026-04-29T00:00:00.000Z",
+          updatedAt: "2026-04-29T00:00:00.000Z",
+        },
+      ]),
+    );
+    localStorage.setItem(
+      "leap-sitrep.matches.v1",
+      JSON.stringify([
+        {
+          id: "match-1",
+          playerRosterIds: ["saved-roster-1"],
+          scenarioId: "dockyard-assault",
+          round: 2,
+          initiativeHistory: [],
+          scores: { player: 1, opponent: 0 },
+          controlPoints: { player: 1, opponent: 3 },
+          unitStates: [],
+          tokenStates: [],
+          savedAt: "2026-04-29T00:00:00.000Z",
+        },
+      ]),
+    );
+
+    render(<App />);
+
+    expect(await screen.findByText("Round 2")).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Delete" }));
+
+    expect(await screen.findByText("No saved matches yet.")).toBeInTheDocument();
+    expect(localStorage.getItem("leap-sitrep.matches.v1")).toBe("[]");
+  });
+
+  it("warns when a saved match references a missing roster", async () => {
+    window.history.pushState({}, "", "/matches/match-missing-roster");
+    localStorage.setItem("leap-sitrep.rosters.v1", JSON.stringify([]));
+    localStorage.setItem(
+      "leap-sitrep.matches.v1",
+      JSON.stringify([
+        {
+          id: "match-missing-roster",
+          playerRosterIds: ["missing-roster"],
+          scenarioId: "dockyard-assault",
+          round: 1,
+          initiativeHistory: [],
+          scores: { player: 0, opponent: 0 },
+          controlPoints: { player: 3, opponent: 3 },
+          unitStates: [],
+          tokenStates: [],
+          savedAt: "2026-04-29T00:00:00.000Z",
+        },
+      ]),
+    );
+
+    render(<App />);
+
+    expect(await screen.findByText("Roster unavailable")).toBeInTheDocument();
+    expect(screen.getByText("This match still exists locally, but its saved roster is missing. Recreate or restore the roster before using unit-level tracking.")).toBeInTheDocument();
   });
 });
