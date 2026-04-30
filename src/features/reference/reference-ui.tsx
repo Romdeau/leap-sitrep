@@ -1,10 +1,11 @@
 import { Search, X } from "lucide-react";
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageHero } from "@/components/ui/page-hero";
 import type {
   ArmoryItem,
   CitationBackedText,
@@ -323,33 +324,6 @@ export function MobileSearchButton() {
   return <SearchOverlay buttonClassName="w-full gap-1 px-2 py-2 text-xs" buttonLabel="Search" />;
 }
 
-function SectionIntro({
-  badges,
-  title,
-  description,
-  actions,
-}: {
-  badges?: ReactNode;
-  title: string;
-  description: string;
-  actions?: ReactNode;
-}) {
-  return (
-    <Card>
-      <CardHeader>
-        {badges ? <div className="flex flex-wrap gap-2">{badges}</div> : null}
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-          <div className="space-y-2">
-            <CardTitle>{title}</CardTitle>
-            <CardDescription>{description}</CardDescription>
-          </div>
-          {actions ? <div className="flex flex-wrap gap-3">{actions}</div> : null}
-        </div>
-      </CardHeader>
-    </Card>
-  );
-}
-
 function KeyValueGrid({ items }: { items: Array<{ label: string; value: string | null | undefined }> }) {
   return (
     <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
@@ -544,9 +518,13 @@ export function ReferenceHomeRoute() {
 
   return (
     <div className="space-y-6">
-      <SectionIntro
-        description="Authority lore, Harlow force data, effective rules, and Dockyard Assault now connect through the same generated datasets."
+      <PageHero
+        eyebrow="Reference"
         title="Reference hub"
+        description="Authority lore, Harlow force data, effective rules, and Dockyard Assault are all reachable from here, with citations attached throughout."
+        assetCode="REF-HUB-00"
+        assetCodeSecondary="SEED"
+        matrixSource="reference-hub"
       />
 
       <ReferenceStatusCard />
@@ -568,7 +546,7 @@ export function ReferenceHomeRoute() {
             </Link>
             <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/forces/harlow-1st-reaction-force">
               <div className="font-medium">Harlow 1st Reaction Force</div>
-              <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Verified Packet 3 force card and unit links.</p>
+              <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Verified force card and unit links.</p>
             </Link>
             <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/scenarios/dockyard-assault">
               <div className="font-medium">Dockyard Assault</div>
@@ -634,15 +612,13 @@ export function LoreHubRoute() {
 
   return (
     <div className="space-y-6">
-      <SectionIntro
-        badges={
-          <>
-            <Badge variant="accent">Lore Slice</Badge>
-            <Badge variant="outline">Authority Focus</Badge>
-          </>
-        }
-        description="World guide coverage starts with the Authority thread and the timeline that explains how ABOL got here."
+      <PageHero
+        eyebrow="Reference / Lore"
         title="Lore"
+        description="World guide coverage starts with the Authority thread and the timeline that explains how ABOL got here."
+        assetCode="LORE-00"
+        assetCodeSecondary="WORLD"
+        matrixSource="lore-hub"
         actions={
           <>
             <Button asChild variant="outline">
@@ -704,15 +680,13 @@ export function TimelineRoute() {
 
   return (
     <div className="space-y-6">
-      <SectionIntro
-        badges={
-          <>
-            <Badge variant="accent">Timeline</Badge>
-            <Badge variant="outline">Lore Dataset</Badge>
-          </>
-        }
-        description="A chronological reading surface for ABOL history, starting with the discovery signal and moving into the landing wars."
+      <PageHero
+        eyebrow="Reference / Lore / Timeline"
         title="ABOL timeline"
+        description="A chronological reading surface for ABOL history, starting with the discovery signal and moving into the landing wars."
+        assetCode="LORE-TML-00"
+        assetCodeSecondary="CHRONOLOGY"
+        matrixSource="lore-timeline"
       />
 
       <Card>
@@ -749,15 +723,13 @@ export function LoreFactionDetailRoute() {
 
   return (
     <div className="space-y-6">
-      <SectionIntro
-        badges={
-          <>
-            <Badge variant="accent">Lore Faction</Badge>
-            <Badge variant="outline">{faction.id}</Badge>
-          </>
-        }
-        description={faction.ideology}
+      <PageHero
+        eyebrow="Reference / Lore / Faction"
         title={faction.name}
+        description={faction.ideology}
+        assetCode={`LORE-FAC-${faction.id.slice(0, 8).toUpperCase()}`}
+        assetCodeSecondary={faction.id}
+        matrixSource={`lore-${faction.id}`}
         actions={
           relatedForces.length > 0 ? (
             <Button asChild variant="outline">
@@ -876,15 +848,13 @@ export function RulesLandingRoute() {
 
   return (
     <div className="space-y-6">
-      <SectionIntro
-        badges={
-          <>
-            <Badge variant="accent">Rules Slice</Badge>
-            <Badge variant="outline">Effective Overlays</Badge>
-          </>
-        }
-        description="The first practical rules browser centers on movement, shooting, reactions, smoke, control points, and data attacks."
+      <PageHero
+        eyebrow="Reference / Rules"
         title="Rules"
+        description="The first practical rules browser centers on movement, shooting, reactions, smoke, control points, and data attacks."
+        assetCode="RUL-00"
+        assetCodeSecondary="EFFECTIVE"
+        matrixSource="rules-landing"
         actions={
           <Button asChild variant="outline">
             <Link to="/rules/core">Open core rules browser</Link>
@@ -895,7 +865,7 @@ export function RulesLandingRoute() {
       <Card>
         <CardHeader>
           <CardTitle>Seed topics</CardTitle>
-          <CardDescription>These are the exact topic areas called out in the Packet 4 seed slice.</CardDescription>
+          <CardDescription>The topic areas covered by the seed reference slice.</CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4 lg:grid-cols-2">
           {topics.map(({ rule, effectiveRule }) => (
@@ -964,15 +934,13 @@ export function RulesCoreRoute() {
 
   return (
     <div className="space-y-6">
-      <SectionIntro
-        badges={
-          <>
-            <Badge variant="accent">Core Rules Browser</Badge>
-            <Badge variant="outline">Packet 2 Merge Layer</Badge>
-          </>
-        }
-        description="Each topic surfaces the extracted core rule, the current effective overlay when present, and the linked citations."
+      <PageHero
+        eyebrow="Reference / Rules / Core"
         title="Core rules"
+        description="Each topic surfaces the extracted core rule, the current effective overlay when present, and the linked citations."
+        assetCode="RUL-COR-00"
+        assetCodeSecondary="MERGED"
+        matrixSource="rules-core"
       />
 
       {topics.map(({ rule, effectiveRule }) => {
@@ -1063,15 +1031,13 @@ export function RulesMatchedPlayRoute() {
 
   return (
     <div className="space-y-6">
-      <SectionIntro
-        badges={
-          <>
-            <Badge variant="accent">Packet 7</Badge>
-            <Badge variant="outline">Matched Play Supplemental</Badge>
-          </>
-        }
-        description="Source-backed matched play rules from the supplemental are available for reference. Builder support remains limited until handler and BLKLIST data are verified."
+      <PageHero
+        eyebrow="Reference / Rules / Matched Play"
         title="Matched play"
+        description="Source-backed matched play rules from the supplemental are available for reference. Builder support remains limited until handler and BLKLIST data are verified."
+        assetCode="RUL-MTC-00"
+        assetCodeSecondary="SUPPLEMENTAL"
+        matrixSource="rules-matched-play"
       />
 
       {groupBuilding ? (
@@ -1138,15 +1104,13 @@ export function UsrDetailRoute() {
 
   return (
     <div className="space-y-6">
-      <SectionIntro
-        badges={
-          <>
-            <Badge variant="accent">Universal Special Rule</Badge>
-            <Badge variant="outline">{usr.id}</Badge>
-          </>
-        }
-        description={summarizeText(usr.currentText, 180)}
+      <PageHero
+        eyebrow="Reference / Rules / USR"
         title={usr.name}
+        description={summarizeText(usr.currentText, 180)}
+        assetCode={`USR-${usr.id.slice(0, 8).toUpperCase()}`}
+        assetCodeSecondary={usr.id}
+        matrixSource={`usr-${usr.id}`}
       />
 
       <Card>
@@ -1193,21 +1157,19 @@ export function ForcesRoute() {
 
   return (
     <div className="space-y-6">
-      <SectionIntro
-        badges={
-          <>
-            <Badge variant="accent">Force Browser</Badge>
-            <Badge variant="outline">Verified Packet 3 Data</Badge>
-          </>
-        }
-        description="The first trusted tabletop slice is Harlow 1st Reaction Force and its three verified unit cards."
+      <PageHero
+        eyebrow="Reference / Forces"
         title="Forces"
+        description="The first trusted tabletop slice is Harlow 1st Reaction Force and its three verified unit cards."
+        assetCode="FOR-00"
+        assetCodeSecondary="VERIFIED"
+        matrixSource="forces-hub"
       />
 
       <Card>
         <CardHeader>
           <CardTitle>Verified forces</CardTitle>
-          <CardDescription>Packet 3 output remains the authoritative tabletop seed slice for Packet 4.</CardDescription>
+          <CardDescription>The seed slice is the authoritative tabletop reference set today.</CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {forces.data.forces.map((force) => (
@@ -1244,15 +1206,13 @@ export function ForceDetailRoute() {
 
   return (
     <div className="space-y-6">
-      <SectionIntro
-        badges={
-          <>
-            <Badge variant="accent">Verified force</Badge>
-            <Badge variant="outline">{force.cardId}</Badge>
-          </>
-        }
-        description={parentFaction ? `Lore alignment: ${parentFaction.name}` : "Curated force card verified in Packet 3."}
+      <PageHero
+        eyebrow="Reference / Forces / Detail"
         title={force.name}
+        description={parentFaction ? `Lore alignment: ${parentFaction.name}` : "Curated, citation-backed force card."}
+        assetCode={force.cardId}
+        assetCodeSecondary={force.id}
+        matrixSource={`force-${force.id}`}
       />
 
       <div className="grid gap-6 xl:grid-cols-[1fr_0.9fr]">
@@ -1319,15 +1279,13 @@ export function UnitDetailRoute() {
 
   return (
     <div className="space-y-6">
-      <SectionIntro
-        badges={
-          <>
-            <Badge variant="accent">Verified unit</Badge>
-            <Badge variant="outline">{unit.cardId}</Badge>
-          </>
-        }
-        description={force ? `Force: ${force.name}` : "Curated Packet 3 unit record."}
+      <PageHero
+        eyebrow="Reference / Forces / Unit"
         title={unit.name}
+        description={force ? `Force: ${force.name}` : "Curated, citation-backed unit record."}
+        assetCode={unit.cardId}
+        assetCodeSecondary={unit.id}
+        matrixSource={`unit-${unit.id}`}
         actions={
           force ? (
             <Button asChild variant="outline">
@@ -1400,15 +1358,13 @@ export function ScenariosRoute() {
 
   return (
     <div className="space-y-6">
-      <SectionIntro
-        badges={
-          <>
-            <Badge variant="accent">Scenario Browser</Badge>
-            <Badge variant="outline">Core Scenarios</Badge>
-          </>
-        }
-        description="The seed slice starts with Dockyard Assault, but the browser also exposes the other extracted core scenarios for comparison."
+      <PageHero
+        eyebrow="Reference / Scenarios"
         title="Scenarios"
+        description="The seed slice starts with Dockyard Assault, but the browser also exposes the other extracted core scenarios for comparison."
+        assetCode="SCN-00"
+        assetCodeSecondary="CORE"
+        matrixSource="scenarios-hub"
       />
 
       <Card>
@@ -1447,15 +1403,13 @@ export function ScenarioDetailRoute() {
 
   return (
     <div className="space-y-6">
-      <SectionIntro
-        badges={
-          <>
-            <Badge variant={scenario.id === "dockyard-assault" ? "accent" : "outline"}>Scenario detail</Badge>
-            <Badge variant="outline">{scenario.tableSize}</Badge>
-          </>
-        }
-        description="Scenario setup, scoring, and special rules are displayed from the generated rulebook extraction with citations attached."
+      <PageHero
+        eyebrow="Reference / Scenarios / Detail"
         title={scenario.title}
+        description="Scenario setup, scoring, and special rules are displayed from the generated rulebook extraction with citations attached."
+        assetCode={`SCN-${scenario.id.slice(0, 8).toUpperCase()}`}
+        assetCodeSecondary={scenario.tableSize}
+        matrixSource={`scenario-${scenario.id}`}
       />
 
       <KeyValueGrid
@@ -1491,15 +1445,13 @@ export function GlossaryRoute() {
 
   return (
     <div className="space-y-6">
-      <SectionIntro
-        badges={
-          <>
-            <Badge variant="accent">Glossary</Badge>
-            <Badge variant="outline">Search Support</Badge>
-          </>
-        }
-        description="Acronyms and key BLKOUT vocabulary stay visible as first-class reference data, not hidden inside search only."
+      <PageHero
+        eyebrow="Reference / Glossary"
         title="Glossary"
+        description="Acronyms and key BLKOUT vocabulary stay visible as first-class reference data, not hidden inside search only."
+        assetCode="GLS-00"
+        assetCodeSecondary="VOCAB"
+        matrixSource="glossary"
       />
 
       <Card>
