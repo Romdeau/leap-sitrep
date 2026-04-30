@@ -45,7 +45,7 @@ export function FilterChips({
         aria-pressed={active}
         onClick={() => onChange(id)}
         className={cn(
-          "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] transition",
+          "inline-flex items-center gap-1.5 rounded-md border px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] transition",
           active
             ? "border-[color:var(--foreground)] bg-[color:var(--foreground)] text-[color:var(--background)]"
             : "border-[color:var(--border)] text-[color:var(--muted-foreground)] hover:text-[color:var(--foreground)]",
@@ -55,7 +55,7 @@ export function FilterChips({
         {typeof count === "number" ? (
           <span
             className={cn(
-              "rounded-full px-1.5 py-0.5 text-[10px] tabular-nums",
+              "rounded-md px-1.5 py-0.5 text-[10px] tabular-nums",
               active
                 ? "bg-[color:var(--background)]/20 text-[color:var(--background)]"
                 : "bg-[color:var(--surface-muted)] text-[color:var(--muted-foreground)]",

@@ -37,25 +37,25 @@ export function DevStatusRoute() {
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          <div className="rounded-2xl border border-[color:var(--border)] p-4">
+          <div className="rounded-md border border-[color:var(--border)] p-4">
             <div className="text-sm font-semibold">Lore dataset</div>
             <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">
               {lore.data.factions.length} factions and {lore.data.events.length} timeline events.
             </p>
           </div>
-          <div className="rounded-2xl border border-[color:var(--border)] p-4">
+          <div className="rounded-md border border-[color:var(--border)] p-4">
             <div className="text-sm font-semibold">Rules dataset</div>
             <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">
               {rules.data.rules.length} rules and {rules.data.effectiveRules.length} effective overlays.
             </p>
           </div>
-          <div className="rounded-2xl border border-[color:var(--border)] p-4">
+          <div className="rounded-md border border-[color:var(--border)] p-4">
             <div className="text-sm font-semibold">Force slice</div>
             <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">
               {forces.data.forces.length} verified force and {forces.data.units.length} verified units.
             </p>
           </div>
-          <div className="rounded-2xl border border-[color:var(--border)] p-4">
+          <div className="rounded-md border border-[color:var(--border)] p-4">
             <div className="text-sm font-semibold">Scenario coverage</div>
             <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">
               {scenarios.data.scenarios.length} extracted core scenarios with citations.
@@ -75,7 +75,7 @@ export function DevStatusRoute() {
           {primaryNavigation.map((route) => (
             <Link
               key={route.id}
-              className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
+              className="rounded-md border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
               to={route.path}
             >
               <div className="flex items-center justify-between gap-3">

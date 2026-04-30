@@ -59,7 +59,7 @@ export function WizardStepper({ ariaLabel = "Wizard progress", className, steps 
             <span
               aria-hidden
               className={cn(
-                "flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-[0.625rem] font-semibold",
+                "flex h-6 w-6 shrink-0 items-center justify-center rounded-md border text-[0.625rem] font-semibold",
                 status === "complete" &&
                   "border-[color:var(--accent)] bg-[color:var(--accent)] text-[color:var(--accent-foreground)]",
                 status === "active" &&

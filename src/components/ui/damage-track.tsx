@@ -65,7 +65,7 @@ export function DamageTrack({
               aria-label={`${label} ${index + 1}`}
               aria-pressed={filled}
               className={cn(
-                "size-4 rounded-full border-2 transition-colors",
+                "size-4 rounded-md border-2 transition-colors",
                 filled
                   ? "border-[color:var(--accent)] bg-[color:var(--accent)]"
                   : "border-[color:var(--border-strong)] bg-transparent hover:border-[color:var(--accent)]",
