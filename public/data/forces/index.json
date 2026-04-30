@@ -1,8 +1,8 @@
 {
   "meta": {
     "kind": "forces",
-    "version": "packet-3",
-    "generatedAt": "2026-04-28T14:04:29.659Z",
+    "version": "packet-7",
+    "generatedAt": "2026-04-29T03:51:09.528Z",
     "sourceDocumentIds": [
       "blkout-unit-cards-ocr",
       "blkout-unit-cards-screenshots"
@@ -247,6 +247,189 @@
             "label": "Force card back",
             "sectionId": "screenshot-2",
             "excerpt": "Verified against Packet 3 screenshot 2"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "un-raid-force-alpha",
+        "cardId": "RFA-4390",
+        "name": "UN Raid Force Alpha",
+        "parentLoreFactionId": "un-raid-force-alpha",
+        "battleDrills": [
+          {
+            "id": "rfa-4390-battle-drill-close-assault",
+            "label": "Close Assault",
+            "text": "Models in this Unit may Move 2” after their Activation ends, only if it would bring them into CQC with an Enemy Model.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Raid Force Alpha force back",
+                "sectionId": "screenshot-14",
+                "excerpt": "Verified against Packet 3 screenshot 14"
+              }
+            ]
+          },
+          {
+            "id": "rfa-4390-battle-drill-cross-fire",
+            "label": "Cross Fire",
+            "text": "If more than one Model in this Unit Targets the same Enemy Model, their Weapons gain +1 Damage.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Raid Force Alpha force back",
+                "sectionId": "screenshot-14",
+                "excerpt": "Verified against Packet 3 screenshot 14"
+              }
+            ]
+          },
+          {
+            "id": "rfa-4390-battle-drill-switchback",
+            "label": "Switchback",
+            "text": "Place a Smoke Token within 4” of a Model in this Unit before Activating. All Models may be Moved up to 2” before Activating.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Raid Force Alpha force back",
+                "sectionId": "screenshot-14",
+                "excerpt": "Verified against Packet 3 screenshot 14"
+              }
+            ]
+          }
+        ],
+        "forceRules": [
+          {
+            "id": "rfa-4390-force-rule",
+            "label": "UN Raid Team Alpha",
+            "text": "All UN Raid Team Alpha UTG Assaulter and Specialist Units gain an additional D10 roll in all Skill Checks, including Shooting and Close Quarters Combat (CQC).",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Raid Force Alpha force back",
+                "sectionId": "screenshot-14",
+                "excerpt": "Verified against Packet 3 screenshot 14"
+              }
+            ]
+          }
+        ],
+        "armory": [
+          {
+            "id": "rfa-4390-armory-boost-jump",
+            "name": "BOOST JUMP",
+            "text": "Model gains Jump (6)",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Raid Force Alpha force back",
+                "sectionId": "screenshot-14",
+                "excerpt": "Verified against Packet 3 screenshot 14"
+              }
+            ]
+          },
+          {
+            "id": "rfa-4390-armory-lance",
+            "name": "LANCE",
+            "text": "AP (3)",
+            "profile": {
+              "id": "rfa-4390-armory-lance-profile",
+              "name": "Lance",
+              "range": "12”/1",
+              "damage": null,
+              "keywords": [
+                "AP (3)"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "UN Raid Force Alpha force back",
+                  "sectionId": "screenshot-14",
+                  "excerpt": "Verified against Packet 3 screenshot 14"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Raid Force Alpha force back",
+                "sectionId": "screenshot-14",
+                "excerpt": "Verified against Packet 3 screenshot 14"
+              }
+            ]
+          },
+          {
+            "id": "rfa-4390-armory-micro-launcher",
+            "name": "MICRO LAUNCHER",
+            "text": "Blast (1), Heavy",
+            "profile": {
+              "id": "rfa-4390-armory-micro-launcher-profile",
+              "name": "Micro Launcher",
+              "range": "4-16”/2",
+              "damage": null,
+              "keywords": [
+                "Blast (1)",
+                "Heavy"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "UN Raid Force Alpha force back",
+                  "sectionId": "screenshot-14",
+                  "excerpt": "Verified against Packet 3 screenshot 14"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Raid Force Alpha force back",
+                "sectionId": "screenshot-14",
+                "excerpt": "Verified against Packet 3 screenshot 14"
+              }
+            ]
+          },
+          {
+            "id": "rfa-4390-armory-surge",
+            "name": "SURGE",
+            "text": "EMP Only",
+            "profile": {
+              "id": "rfa-4390-armory-surge-profile",
+              "name": "Surge",
+              "range": "16”/2",
+              "damage": null,
+              "keywords": [
+                "EMP Only"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "UN Raid Force Alpha force back",
+                  "sectionId": "screenshot-14",
+                  "excerpt": "Verified against Packet 3 screenshot 14"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Raid Force Alpha force back",
+                "sectionId": "screenshot-14",
+                "excerpt": "Verified against Packet 3 screenshot 14"
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UN Raid Force Alpha force front",
+            "sectionId": "screenshot-13",
+            "excerpt": "Verified against Packet 3 screenshot 13"
+          },
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UN Raid Force Alpha force back",
+            "sectionId": "screenshot-14",
+            "excerpt": "Verified against Packet 3 screenshot 14"
           }
         ],
         "confidence": "verified"
@@ -579,6 +762,577 @@
             "label": "HFR-6773 back",
             "sectionId": "screenshot-8",
             "excerpt": "Verified against Packet 3 screenshot 8"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "harlow-engineers",
+        "cardId": "HFR-6774",
+        "forceId": "harlow-1st-reaction-force",
+        "name": "Harlow Engineers",
+        "modelCount": 1,
+        "stats": {
+          "move": "4",
+          "shoot": "6",
+          "armor": "1/6",
+          "hack": null,
+          "wounds": null
+        },
+        "specialists": [
+          {
+            "id": "hfr-6774-specialist-1",
+            "slot": 1,
+            "name": "Engineer",
+            "description": "AT Launcher | 8-32”/3 AP (2), Blast (1)",
+            "weaponId": "hfr-6774-weapon-at-launcher",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6774 back",
+                "sectionId": "screenshot-10",
+                "excerpt": "Verified against Packet 3 screenshot 10"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "hfr-6774-weapon-carbine",
+            "name": "Carbine",
+            "range": "18”/1",
+            "damage": null,
+            "keywords": [
+              "CQB"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6774 front",
+                "sectionId": "screenshot-9",
+                "excerpt": "Verified against Packet 3 screenshot 9"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6774-weapon-at-launcher",
+            "name": "AT Launcher",
+            "range": "8-32”/3",
+            "damage": null,
+            "keywords": [
+              "AP (2)",
+              "Blast (1)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6774 back",
+                "sectionId": "screenshot-10",
+                "excerpt": "Verified against Packet 3 screenshot 10"
+              }
+            ],
+            "carrier": "Engineer"
+          }
+        ],
+        "abilities": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6774 front",
+            "sectionId": "screenshot-9",
+            "excerpt": "Verified against Packet 3 screenshot 9"
+          },
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6774 back",
+            "sectionId": "screenshot-10",
+            "excerpt": "Verified against Packet 3 screenshot 10"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "harlow-veterans",
+        "cardId": "HFR-6775",
+        "forceId": "harlow-1st-reaction-force",
+        "name": "Harlow Veterans",
+        "modelCount": 3,
+        "stats": {
+          "move": "6",
+          "shoot": "5",
+          "armor": "1/6",
+          "hack": null,
+          "wounds": null
+        },
+        "specialists": [],
+        "weapons": [
+          {
+            "id": "hfr-6775-weapon-carbine",
+            "name": "Carbine",
+            "range": "18”/1",
+            "damage": null,
+            "keywords": [
+              "CQB"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6775 front",
+                "sectionId": "screenshot-11",
+                "excerpt": "Verified against Packet 3 screenshot 11"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6775-weapon-machetes",
+            "name": "Machetes",
+            "range": "2”/1",
+            "damage": null,
+            "keywords": [
+              "AP (1)",
+              "Melee"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6775 front",
+                "sectionId": "screenshot-11",
+                "excerpt": "Verified against Packet 3 screenshot 11"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6775-weapon-pulse-grenades",
+            "name": "Pulse Grenades",
+            "range": "6”/1",
+            "damage": null,
+            "keywords": [
+              "Blast (1)",
+              "EMP"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6775 front",
+                "sectionId": "screenshot-11",
+                "excerpt": "Verified against Packet 3 screenshot 11"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "id": "hfr-6775-traits",
+            "label": "Traits",
+            "text": "Jump (4), Low Tech",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6775 back",
+                "sectionId": "screenshot-12",
+                "excerpt": "Verified against Packet 3 screenshot 12"
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6775 front",
+            "sectionId": "screenshot-11",
+            "excerpt": "Verified against Packet 3 screenshot 11"
+          },
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6775 back",
+            "sectionId": "screenshot-12",
+            "excerpt": "Verified against Packet 3 screenshot 12"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "harlow-crickets",
+        "cardId": "HFR-6776",
+        "forceId": "harlow-1st-reaction-force",
+        "name": "Harlow Crickets",
+        "modelCount": 2,
+        "stats": {
+          "move": "6",
+          "shoot": "7",
+          "armor": "1/8",
+          "hack": null,
+          "wounds": null
+        },
+        "specialists": [],
+        "weapons": [
+          {
+            "id": "hfr-6776-weapon-self-destruct",
+            "name": "Self Destruct",
+            "range": "4”/1",
+            "damage": null,
+            "keywords": [
+              "AP (4)",
+              "CQB"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6776 front",
+                "sectionId": "screenshot-13",
+                "excerpt": "Verified against Packet 3 screenshot 13"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "id": "hfr-6776-traits",
+            "label": "Traits",
+            "text": "AI, Drone",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6776 back",
+                "sectionId": "screenshot-14",
+                "excerpt": "Verified against Packet 3 screenshot 14"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6776-engineer-grouping",
+            "label": "Engineer Grouping",
+            "text": "This unit does not count toward the Unit limit when grouped with Harlow engineers, and it cannot benefit from Force Cards.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6776 back",
+                "sectionId": "screenshot-14",
+                "excerpt": "Verified against Packet 3 screenshot 14"
+              }
+            ]
+          },
+          {
+            "id": "hfr-6776-self-destruct",
+            "label": "Self Destruct",
+            "text": "Remove this model after using this weapon.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "HFR-6776 front",
+                "sectionId": "screenshot-13",
+                "excerpt": "Verified against Packet 3 screenshot 13"
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6776 front",
+            "sectionId": "screenshot-13",
+            "excerpt": "Verified against Packet 3 screenshot 13"
+          },
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6776 back",
+            "sectionId": "screenshot-14",
+            "excerpt": "Verified against Packet 3 screenshot 14"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "un-utg-assaulters",
+        "cardId": "RFA-4391",
+        "forceId": "un-raid-force-alpha",
+        "name": "UN UTG Assaulters",
+        "modelCount": 1,
+        "stats": {
+          "move": "6",
+          "shoot": "5",
+          "armor": "1/5",
+          "hack": null,
+          "wounds": null
+        },
+        "specialists": [
+          {
+            "id": "rfa-4391-specialist-1",
+            "slot": 1,
+            "name": "Grenadier",
+            "description": "Grenade Launcher | 24”/2 Blast (1)",
+            "weaponId": "rfa-4391-weapon-grenade-launcher",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "RFA-4391 back",
+                "sectionId": "screenshot-16",
+                "excerpt": "Verified against Packet 3 screenshot 16"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "rfa-4391-weapon-m7-carbine",
+            "name": "M7 Carbine",
+            "range": "18”/1",
+            "damage": null,
+            "keywords": [
+              "CQB"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "RFA-4391 front",
+                "sectionId": "screenshot-15",
+                "excerpt": "Verified against Packet 3 screenshot 15"
+              }
+            ]
+          },
+          {
+            "id": "rfa-4391-weapon-grenade-launcher",
+            "name": "Grenade Launcher",
+            "range": "24”/2",
+            "damage": null,
+            "keywords": [
+              "Blast (1)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "RFA-4391 back",
+                "sectionId": "screenshot-16",
+                "excerpt": "Verified against Packet 3 screenshot 16"
+              }
+            ],
+            "carrier": "Grenadier"
+          }
+        ],
+        "abilities": [
+          {
+            "id": "rfa-4391-traits",
+            "label": "Traits",
+            "text": "Jump(4)",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "RFA-4391 back",
+                "sectionId": "screenshot-16",
+                "excerpt": "Verified against Packet 3 screenshot 16"
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "RFA-4391 front",
+            "sectionId": "screenshot-15",
+            "excerpt": "Verified against Packet 3 screenshot 15"
+          },
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "RFA-4391 back",
+            "sectionId": "screenshot-16",
+            "excerpt": "Verified against Packet 3 screenshot 16"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "un-utg-specialists",
+        "cardId": "RFA-4392",
+        "forceId": "un-raid-force-alpha",
+        "name": "UN UTG Specialists",
+        "modelCount": 1,
+        "stats": {
+          "move": "6",
+          "shoot": "5",
+          "armor": "1/5",
+          "hack": null,
+          "wounds": null
+        },
+        "specialists": [
+          {
+            "id": "rfa-4392-specialist-1",
+            "slot": 1,
+            "name": "Marksman",
+            "description": "Anti-Material Rifle | 32”/2 AP (2), Deployed",
+            "weaponId": "rfa-4392-weapon-anti-material-rifle",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "RFA-4392 back",
+                "sectionId": "screenshot-18",
+                "excerpt": "Verified against Packet 3 screenshot 18"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "rfa-4392-weapon-m7-carbine",
+            "name": "M7 Carbine",
+            "range": "18”/1",
+            "damage": null,
+            "keywords": [
+              "CQB"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "RFA-4392 front",
+                "sectionId": "screenshot-17",
+                "excerpt": "Verified against Packet 3 screenshot 17"
+              }
+            ]
+          },
+          {
+            "id": "rfa-4392-weapon-anti-material-rifle",
+            "name": "Anti-Material Rifle",
+            "range": "32”/2",
+            "damage": null,
+            "keywords": [
+              "AP (2)",
+              "Deployed"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "RFA-4392 back",
+                "sectionId": "screenshot-18",
+                "excerpt": "Verified against Packet 3 screenshot 18"
+              }
+            ],
+            "carrier": "Marksman"
+          }
+        ],
+        "abilities": [
+          {
+            "id": "rfa-4392-traits",
+            "label": "Traits",
+            "text": "Jump(4)",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "RFA-4392 back",
+                "sectionId": "screenshot-18",
+                "excerpt": "Verified against Packet 3 screenshot 18"
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "RFA-4392 front",
+            "sectionId": "screenshot-17",
+            "excerpt": "Verified against Packet 3 screenshot 17"
+          },
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "RFA-4392 back",
+            "sectionId": "screenshot-18",
+            "excerpt": "Verified against Packet 3 screenshot 18"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "golem-unit",
+        "cardId": "RFA-4393",
+        "forceId": "un-raid-force-alpha",
+        "name": "Golem Unit",
+        "modelCount": 1,
+        "stats": {
+          "move": "4",
+          "shoot": "5",
+          "armor": "3/5",
+          "hack": null,
+          "wounds": null
+        },
+        "specialists": [
+          {
+            "id": "rfa-4393-specialist-1",
+            "slot": 1,
+            "name": "Fire Support",
+            "description": "Scorcher | 18”/2 Seeking",
+            "weaponId": "rfa-4393-weapon-scorcher",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "RFA-4393 back",
+                "sectionId": "screenshot-20",
+                "excerpt": "Verified against Packet 3 screenshot 20"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "rfa-4393-weapon-fpr-auto",
+            "name": "FPR Auto",
+            "range": "24”/1",
+            "damage": null,
+            "keywords": [
+              "Sustained (1)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "RFA-4393 front",
+                "sectionId": "screenshot-19",
+                "excerpt": "Verified against Packet 3 screenshot 19"
+              }
+            ]
+          },
+          {
+            "id": "rfa-4393-weapon-scorcher",
+            "name": "Scorcher",
+            "range": "18”/2",
+            "damage": null,
+            "keywords": [
+              "Seeking"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "RFA-4393 back",
+                "sectionId": "screenshot-20",
+                "excerpt": "Verified against Packet 3 screenshot 20"
+              }
+            ],
+            "carrier": "Fire Support"
+          }
+        ],
+        "abilities": [
+          {
+            "id": "rfa-4393-traits",
+            "label": "Traits",
+            "text": "Jump(4)",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "RFA-4393 back",
+                "sectionId": "screenshot-20",
+                "excerpt": "Verified against Packet 3 screenshot 20"
+              }
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "RFA-4393 front",
+            "sectionId": "screenshot-19",
+            "excerpt": "Verified against Packet 3 screenshot 19"
+          },
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "RFA-4393 back",
+            "sectionId": "screenshot-20",
+            "excerpt": "Verified against Packet 3 screenshot 20"
           }
         ],
         "confidence": "verified"

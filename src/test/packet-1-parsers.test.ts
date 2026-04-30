@@ -92,6 +92,7 @@ describe("Packet 1 ETL parsers", () => {
     expect(dataset.data.universalSpecialRules.some((rule) => rule.name === "AI")).toBe(true);
     expect(dataset.data.universalSpecialRules.some((rule) => rule.name === "Data Spike")).toBe(true);
 
+    const groupBuilding = dataset.data.rules.find((rule) => rule.id === "matched-play-group-building");
     const movementFaq = dataset.data.faq.find((entry) => entry.topic === "movement");
     const dataAttackFaq = dataset.data.faq.find((entry) =>
       entry.question === "Do Data Attacks have a maximum range or require Line of sight?",
@@ -103,6 +104,11 @@ describe("Packet 1 ETL parsers", () => {
       entry.target === "AP - Targeting Dusters and Vehicles (As per normal Shooting rules).",
     );
 
+    expect(groupBuilding?.body).toContain("1x Handler");
+    expect(groupBuilding?.body).toContain("3x Different Units from the chosen Force");
+    expect(groupBuilding?.body).toContain("1x Force Unit (does not include Handlers) may be replaced with a BLKLIST Unit");
+    expect(groupBuilding?.citations[0]?.lineStart).toBe(134);
+    expect(groupBuilding?.citations[0]?.lineEnd).toBe(158);
     expect(movementFaq?.citations[0]?.lineStart).toBeGreaterThan(0);
     expect(dataAttackFaq?.topic).toBe("data attacks");
     expect(dataAttackFaq?.answer).toContain("unlimited Range");

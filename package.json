@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "@fontsource-variable/inter": "latest",
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "@fontsource-variable/oswald": "^5.2.8",
     "@radix-ui/react-slot": "latest",
     "class-variance-authority": "latest",
     "clsx": "latest",

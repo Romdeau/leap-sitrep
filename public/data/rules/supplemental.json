@@ -2,7 +2,7 @@
   "meta": {
     "kind": "rules",
     "version": "packet-1",
-    "generatedAt": "2026-04-28T00:50:49.213Z",
+    "generatedAt": "2026-04-29T03:27:22.282Z",
     "sourceDocumentIds": [
       "blkout-supplemental"
     ],
@@ -24,6 +24,23 @@
             "label": "Matched play rules",
             "lineStart": 25,
             "lineEnd": 133
+          }
+        ]
+      },
+      {
+        "id": "matched-play-group-building",
+        "title": "Matched Play Group Building",
+        "category": "matched-play",
+        "mode": "matched-play",
+        "overview": "A MATCHED PLAY GROUP WILL CONSIST OF: 1x Handler Options: Agent Handler, Assault Handler, Covert Handler, Cyber Handler, Keres Handler, Marksman Handler, Melee Handler, Siege Handler Handlers cannot use Battle Drills, Armory Items, or Force Rule. 1x Force Card 3x Different Units from the chosen Force These 3x Units are the only Units that may benefit from Battle Drills, Armory Items and Force Special Rules. 1x Force Unit (does not include Handlers) may be replaced with a BLKLIST Unit Options: Banak Dust Element, Exterminator Drone, Gull Drones, Hired Killers, Nomads, Rebel Miners, Szabla Element, Whistler Drone. These Units cannot use Battle Drills, Armory Items and Force Special Rules.",
+        "subsections": [],
+        "body": "A MATCHED PLAY GROUP WILL CONSIST OF: 1x Handler Options: Agent Handler, Assault Handler, Covert Handler, Cyber Handler, Keres Handler, Marksman Handler, Melee Handler, Siege Handler Handlers cannot use Battle Drills, Armory Items, or Force Rule. 1x Force Card 3x Different Units from the chosen Force These 3x Units are the only Units that may benefit from Battle Drills, Armory Items and Force Special Rules. 1x Force Unit (does not include Handlers) may be replaced with a BLKLIST Unit Options: Banak Dust Element, Exterminator Drone, Gull Drones, Hired Killers, Nomads, Rebel Miners, Szabla Element, Whistler Drone. These Units cannot use Battle Drills, Armory Items and Force Special Rules.",
+        "citations": [
+          {
+            "documentId": "blkout-supplemental",
+            "label": "Matched play group building",
+            "lineStart": 134,
+            "lineEnd": 158
           }
         ]
       }

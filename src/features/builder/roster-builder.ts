@@ -7,6 +7,13 @@ export interface RosterValidationResult {
   messages: string[];
 }
 
+export interface RosterExportInput {
+  force: Force | undefined;
+  roster: Pick<Roster, "forceId" | "mode" | "notes" | "unitIds">;
+  units: UnitCard[];
+  validation: RosterValidationResult;
+}
+
 export function createRosterId() {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
     return crypto.randomUUID();
@@ -24,6 +31,18 @@ export function createCoreRoster({ forceId, notes, unitIds }: { forceId: string;
     forceId,
     unitIds,
     notes: notes?.trim() || undefined,
+    createdAt: now,
+    updatedAt: now,
+  };
+}
+
+export function duplicateRoster(roster: Roster): Roster {
+  const now = new Date().toISOString();
+
+  return {
+    ...roster,
+    id: createRosterId(),
+    notes: roster.notes === undefined ? "Copy" : `${roster.notes} Copy`,
     createdAt: now,
     updatedAt: now,
   };
@@ -66,6 +85,41 @@ export function validateCoreRoster(roster: Pick<Roster, "forceId" | "mode" | "un
     isLegal: messages.length === 1 && messages[0].startsWith("Legal core roster"),
     messages,
   };
+}
+
+export function formatCoreRosterExport({ force, roster, units, validation }: RosterExportInput) {
+  const forceLabel = force === undefined ? roster.forceId : `${force.name} (${force.cardId})`;
+  const lines = [
+    "# LEAP Sitrep Core Roster",
+    "",
+    `Mode: ${roster.mode}`,
+    `Force: ${forceLabel}`,
+    `Legality: ${validation.isLegal ? "Legal" : "Needs attention"}`,
+    "",
+    "Units:",
+    ...roster.unitIds.map((unitId, index) => {
+      const unit = units.find((candidate) => candidate.id === unitId);
+
+      if (unit === undefined) {
+        return `${index + 1}. MISSING UNIT (${unitId})`;
+      }
+
+      return `${index + 1}. ${unit.name} (${unit.cardId}) - Move ${unit.stats.move ?? "-"}, Shoot ${unit.stats.shoot ?? "-"}, Armor ${unit.stats.armor ?? "-"}`;
+    }),
+    "",
+  ];
+
+  if (roster.notes !== undefined && roster.notes.trim().length > 0) {
+    lines.push("Notes:", roster.notes.trim(), "");
+  }
+
+  if (!validation.isLegal) {
+    lines.push("Validation:", ...validation.messages.map((message) => `- ${message}`), "");
+  }
+
+  lines.push("Source gate: verified force/unit data only; matched-play handlers, BLKLIST, points, dusters, and inferred validation are not included.");
+
+  return lines.join("\n");
 }
 
 export function loadStoredRosters(storage: Pick<Storage, "getItem"> = window.localStorage): Roster[] {

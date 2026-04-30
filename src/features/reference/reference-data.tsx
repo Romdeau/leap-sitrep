@@ -14,6 +14,7 @@ import { ReferenceDataContext, type ReferenceDataState } from "./reference-data-
 const SOURCE_REGISTRY_PATH = "data/source-registry.json";
 const LORE_DATA_PATH = "data/lore/index.json";
 const RULES_DATA_PATH = "data/rules/core.json";
+const SUPPLEMENTAL_RULES_DATA_PATH = "data/rules/supplemental.json";
 const FORCE_DATA_PATH = "data/forces/index.json";
 const SCENARIO_DATA_PATH = "data/scenarios/core.json";
 const SEARCH_DATA_PATH = "data/search/index.json";
@@ -32,11 +33,12 @@ export function ReferenceDataProvider({ children }: ReferenceDataProviderProps) 
       loadPublicJson<SourceRegistryFile>(SOURCE_REGISTRY_PATH),
       loadPublicJson<LoreDatasetFile>(LORE_DATA_PATH),
       loadPublicJson<RulesDatasetFile>(RULES_DATA_PATH),
+      loadPublicJson<RulesDatasetFile>(SUPPLEMENTAL_RULES_DATA_PATH),
       loadPublicJson<ForceDatasetFile>(FORCE_DATA_PATH),
       loadPublicJson<ScenarioDatasetFile>(SCENARIO_DATA_PATH),
       loadPublicJson<SearchIndexFile>(SEARCH_DATA_PATH),
     ])
-      .then(([sourceRegistry, lore, rules, forces, scenarios, searchIndex]) => {
+      .then(([sourceRegistry, lore, rules, supplemental, forces, scenarios, searchIndex]) => {
         if (!isMounted) {
           return;
         }
@@ -47,6 +49,7 @@ export function ReferenceDataProvider({ children }: ReferenceDataProviderProps) 
             sourceRegistry,
             lore,
             rules,
+            supplemental,
             forces,
             scenarios,
             searchIndex,

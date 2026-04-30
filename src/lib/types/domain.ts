@@ -262,6 +262,7 @@ export interface Match {
   round: number;
   initiativeHistory: string[];
   scores: Record<string, number>;
+  controlPoints: Record<string, number>;
   unitStates: UnitState[];
   tokenStates: TokenState[];
   savedAt: string;

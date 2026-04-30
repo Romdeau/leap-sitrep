@@ -21,12 +21,12 @@ describe("Packet 3 curated force slice", () => {
     });
 
     expect(forceDataset.meta.confidence).toBe("verified");
-    expect(forceDataset.data.forces).toHaveLength(1);
+    expect(forceDataset.data.forces).toHaveLength(2);
     expect(forceDataset.data.forces[0]?.cardId).toBe("HFR-6770");
     expect(forceDataset.data.forces[0]?.parentLoreFactionId).toBe("the-authority");
-    expect(forceDataset.data.units.map((unit) => unit.cardId)).toEqual(["HFR-6771", "HFR-6772", "HFR-6773"]);
+    expect(forceDataset.data.units.map((unit) => unit.cardId)).toEqual(["HFR-6771", "HFR-6772", "HFR-6773", "HFR-6774", "HFR-6775", "HFR-6776", "RFA-4391", "RFA-4392", "RFA-4393"]);
     expect(auditDataset.meta.confidence).toBe("raw");
-    expect(auditDataset.data.rawCards).toHaveLength(4);
+    expect(auditDataset.data.rawCards).toHaveLength(11);
   });
 
   it("captures weapon structure and specialist linkage for the verified units", async () => {
@@ -52,6 +52,36 @@ describe("Packet 3 curated force slice", () => {
     expect(force?.battleDrills.map((entry) => entry.label)).toEqual(["Assaulters", "Chaff", "Stims"]);
     expect(force?.armory.map((entry) => entry.name)).toEqual(["BOOST JUMP", "FRAG LAUNCHER", "HEAD", "MICRO LAUNCHER"]);
     expect(force?.forceRules[0]?.text).toContain("+2 Movement when Sprinting");
+  });
+
+  it("adds verified Harlow strike-team units and UN Raid Force Alpha cards", async () => {
+    const { forceDataset } = await buildForceDataset({
+      filePath: path.join(projectRoot, "markdown/Unit-Cards-Printable-2026.md"),
+      generatedAt,
+    });
+
+    const harlowUnits = forceDataset.data.units.filter((unit) => unit.forceId === "harlow-1st-reaction-force");
+    const raidForce = forceDataset.data.forces.find((force) => force.id === "un-raid-force-alpha");
+    const assaulters = forceDataset.data.units.find((unit) => unit.id === "un-utg-assaulters");
+    const specialists = forceDataset.data.units.find((unit) => unit.id === "un-utg-specialists");
+    const golem = forceDataset.data.units.find((unit) => unit.id === "golem-unit");
+    const engineers = forceDataset.data.units.find((unit) => unit.id === "harlow-engineers");
+    const veterans = forceDataset.data.units.find((unit) => unit.id === "harlow-veterans");
+    const crickets = forceDataset.data.units.find((unit) => unit.id === "harlow-crickets");
+
+    expect(harlowUnits.map((unit) => unit.cardId)).toEqual(["HFR-6771", "HFR-6772", "HFR-6773", "HFR-6774", "HFR-6775", "HFR-6776"]);
+    expect(engineers?.specialists[0]?.name).toBe("Engineer");
+    expect(engineers?.weapons.find((weapon) => weapon.name === "AT Launcher")?.keywords).toEqual(["AP (2)", "Blast (1)"]);
+    expect(veterans?.weapons.map((weapon) => weapon.name)).toEqual(["Carbine", "Machetes", "Pulse Grenades"]);
+    expect(crickets?.abilities.map((ability) => ability.label)).toEqual(["Traits", "Engineer Grouping", "Self Destruct"]);
+
+    expect(raidForce?.cardId).toBe("RFA-4390");
+    expect(raidForce?.parentLoreFactionId).toBe("un-raid-force-alpha");
+    expect(raidForce?.battleDrills.map((entry) => entry.label)).toEqual(["Close Assault", "Cross Fire", "Switchback"]);
+    expect(raidForce?.armory.map((entry) => entry.name)).toEqual(["BOOST JUMP", "LANCE", "MICRO LAUNCHER", "SURGE"]);
+    expect(assaulters?.specialists[0]?.name).toBe("Grenadier");
+    expect(specialists?.weapons.find((weapon) => weapon.name === "Anti-Material Rifle")?.keywords).toEqual(["AP (2)", "Deployed"]);
+    expect(golem?.weapons.find((weapon) => weapon.name === "Scorcher")?.keywords).toEqual(["Seeking"]);
   });
 
   it("adds verified force and unit records to the search index", async () => {
@@ -98,5 +128,7 @@ describe("Packet 3 curated force slice", () => {
     expect(searchIndex.data.records.some((record) => record.entityType === "force" && record.title === "Harlow 1st Reaction Force")).toBe(true);
     expect(searchIndex.data.records.some((record) => record.entityType === "unit" && record.title === "Harlow Springbok AI" && record.aliases.includes("hfr-6773"))).toBe(true);
     expect(searchIndex.data.records.some((record) => record.entityType === "unit" && record.title === "Harlow Assault Team" && record.keywords.includes("p34"))).toBe(true);
+    expect(searchIndex.data.records.some((record) => record.entityType === "force" && record.title === "UN Raid Force Alpha")).toBe(true);
+    expect(searchIndex.data.records.some((record) => record.entityType === "unit" && record.title === "Golem Unit" && record.aliases.includes("rfa-4393"))).toBe(true);
   });
 });

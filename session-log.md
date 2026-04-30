@@ -157,3 +157,75 @@ This section seeds the log with the major project milestones that were already c
 - Validation: `bun run test -- src/features/builder/roster-builder.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, `bun run lint`, and `bun run build` passed. Initial lint found two new TypeScript issues in builder files; both were fixed and lint was rerun successfully.
 - Manual QA: recorded in `docs/qa/packet-5.md`; confirmed the slice uses only verified Harlow force/unit data and does not invent points, handlers, BLKLIST options, or matched play content.
 - Follow-up: Packet 5 still needs duplication, fuller saved-roster reload/round-trip UX, richer illegal-state checks, and final manual roster QA before completion.
+
+## 2026-04-29 - Packet 5 Saved Roster Round Trip
+
+- Scope: continue Packet 5 builder work by polishing saved-roster workflows for the verified Harlow core group slice.
+- Outcome: added saved roster loading back into the draft, roster duplication, saved-roster legality status, and updated automated coverage for save/load/duplicate behavior.
+- Validation: `bun run test -- src/features/builder/roster-builder.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, `bun run lint`, and `bun run build` passed. An initial timestamp assertion in the new duplication test was too strict for same-millisecond roster creation and was corrected.
+- Manual QA: recorded in `docs/qa/packet-5.md`; compared the supported core group assumption against `markdown/BLKOUT-PRINT-AT-HOME-RULEBOOK.md` lines 310-330.
+- Follow-up: Packet 5 still needs final illegal-state UX, deletion edge-case QA, and an export-readiness decision for the current roster summary before completion.
+
+## 2026-04-29 - Packet 5 Completed
+
+- Scope: close the remaining Packet 5 decisions and illegal-state UX for the Harlow core builder slice.
+- Outcome: user chose to defer roster export until the builder and match tracker prove a stable table-use summary shape; duplicate unit selections now show slot-level guidance and keep saving disabled. Packet 5 is marked complete and Packet 6 is the next incomplete packet.
+- Validation: `bun run test -- src/features/builder/roster-builder.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, `bun run lint`, and `bun run build` passed.
+- Manual QA: updated `docs/qa/packet-5.md`; the builder remains limited to the sourced core group structure in `markdown/BLKOUT-PRINT-AT-HOME-RULEBOOK.md` lines 310-330 and does not add unsupported export, points, handlers, BLKLIST, or matched play content.
+- Follow-up: start Packet 6 with the smallest Harlow/Dockyard Assault match tracker slice.
+
+## 2026-04-29 - Packet 6 Match Tracker Started
+
+- Scope: implement the first local-first match tracker slice for saved Harlow rosters and Dockyard Assault.
+- Outcome: added match-state helpers, local match persistence, `/matches` setup from saved rosters, and `/matches/:matchId` tracker UI for round progression, unit activation/pinned/destroyed state, manual Overrun scores, initiative notes, hardpoints, points of interest, and smoke marker toggles.
+- Validation: `bun run test -- src/features/matches/match-tracker.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, `bun run lint`, and `bun run build` passed.
+- Manual QA: recorded in `docs/qa/packet-6.md`; confirmed the tracker links to sourced scenario/rules/unit pages and does not attempt spatial automation or inferred line-of-sight/terrain adjudication.
+- Follow-up: Packet 6 still needs a full mock-game walkthrough, mobile table-use QA, roster import edge cases, and scenario helper polish before completion.
+
+## 2026-04-29 - Packet 6 Tracker State Coverage
+
+- Scope: fill the remaining explicit Packet 6 tracker-state gaps and add a real UI walkthrough test.
+- Outcome: added damage mark tracking and manual control-point tracking to match state and UI; added smoke coverage that starts a match from a saved roster, updates activation/damage/pinned/token/control-point/initiative state, advances the round, and verifies local persistence.
+- Validation: `bun run test -- src/features/matches/match-tracker.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, `bun run lint`, and `bun run build` passed.
+- Manual QA: updated `docs/qa/packet-6.md`; tracker still stays within sourced/manual table-state tracking and avoids spatial or line-of-sight automation.
+- Follow-up: Packet 6 needs browser/device mobile table-use QA and any small table-flow polish discovered there before completion.
+
+## 2026-04-29 - Packet 6 Saved Match Edge Handling
+
+- Scope: polish local match management and roster import edge cases for Packet 6.
+- Outcome: added saved-match deletion from `/matches` and a clear recovery state when a stored match references a missing roster instead of rendering broken unit controls.
+- Validation: `bun run test -- src/features/matches/match-tracker.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, `bun run lint`, and `bun run build` passed.
+- Manual QA: updated `docs/qa/packet-6.md`; edge handling remains local-only and does not invent replacement roster or unit data.
+- Follow-up: Packet 6 still needs browser/device mobile table-use QA and any small table-flow polish discovered there before completion.
+
+## 2026-04-29 - Packet 6 Completed
+
+- Scope: close the remaining Packet 6 table-use polish for the Harlow/Dockyard Assault tracker.
+- Outcome: added a compact table snapshot for quick mobile/table-side checks covering round, ready units, score, control points, pinned/destroyed counts, active tokens, and last initiative note. Packet 6 is marked complete and Packet 7 is the next incomplete packet.
+- Validation: `bun run test -- src/features/matches/match-tracker.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, `bun run lint`, and `bun run build` passed. The first test update used ambiguous text assertions after adding snapshot labels; assertions were tightened to account for duplicated table labels.
+- Manual QA: updated `docs/qa/packet-6.md`; tracker remains a manual table-state aid and does not automate spatial, terrain, line-of-sight, or unsourced scenario decisions.
+- Follow-up: start Packet 7 only with source-backed catalog/matched-play expansion, preserving Review D gating for broader matched play decisions.
+
+## 2026-04-29 - Packet 7 Matched Play Reference Started
+
+- Scope: start Packet 7 without broad catalog prioritization by exposing already source-backed matched-play supplemental rules.
+- Outcome: supplemental ETL now extracts `[2.2] MATCHED PLAY GROUP BUILDING` as `matched-play-group-building`; app runtime loads `public/data/rules/supplemental.json`; `/rules/matched-play` now renders matched-play rules, group-building structure, citations, and an explicit gate that builder support waits for verified handler and BLKLIST data.
+- Validation: `bun run build:data`, `bun run test -- src/test/packet-1-parsers.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, `bun run lint`, and `bun run build` passed. Initial smoke assertions were tightened because the route intentionally repeats group-building clauses in detail and summary sections.
+- Manual QA: recorded in `docs/qa/packet-7.md`; compared group-building extraction against `markdown/BLKOUT_Supplemental_4-26.md` lines 134-158.
+- Follow-up: Review D is now pending before broad catalog expansion; user needs to prioritize additional forces, scenarios, or factions. Continue only source-backed reference work that does not require guessing handler, BLKLIST, duster, or unit data.
+
+## 2026-04-29 - Packet 7 Screenshot Force Import
+
+- Scope: import user-provided screenshot card sheets into the verified force catalog.
+- Outcome: added Harlow Engineers, Harlow Veterans, and Harlow Crickets to Harlow 1st Reaction Force; added UN Raid Force Alpha plus UN UTG Assaulters, UN UTG Specialists, and Golem Unit. Regenerated force/search data now exposes 2 verified forces and 9 verified units.
+- Validation: `bun run build:data`, `bun run test -- src/test/packet-3-forces.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, `bun run lint`, and `bun run build` passed.
+- Manual QA: updated `docs/qa/packet-7.md` and `screenshots/extraction-progress.md`; used the mirrored double-sided print ordering rule for Harlow and UN Raid Force Alpha sheets. New records use screenshot citations and do not rely on OCR-only verification.
+- Follow-up: continue Packet 7 by either adding another source-backed screenshot force set or generalizing the core builder to support verified force selection. Matched-play builder support remains gated until handlers and BLKLIST units are verified.
+
+## 2026-05-01 - Packet 7 Verified Force Builder, Tracker, And Export Expansion
+
+- Scope: continue Packet 7 without relying on unfinished card transcriptions by expanding the existing core builder across verified force data.
+- Outcome: generalized `/builder` from the original Harlow-only slice into a verified core roster builder with force selection, selected-force unit scoping, per-force default unit slots, saved-roster force restoration, and smoke coverage for saving a UN Raid Force Alpha core roster. Updated match setup copy and tests so Dockyard Assault trackers can start from saved verified-force rosters, including UN Raid Force Alpha. Added copyable plain Markdown saved-roster export previews sourced only from verified force/unit data and copyable live-match table-state exports sourced only from manual tracker state.
+- Validation: `bun run test -- src/features/builder/roster-builder.test.ts src/features/matches/match-tracker.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, and `bun run lint` passed.
+- Manual QA: updated `docs/qa/packet-7.md`; confirmed this still validates only core group structure and does not invent matched-play handlers, BLKLIST entries, points, dusters, or unsupported export data.
+- Follow-up: next Packet 7 work can either add another source-backed force set or add source-backed roster/export polish for all verified core forces while preserving matched-play gating.

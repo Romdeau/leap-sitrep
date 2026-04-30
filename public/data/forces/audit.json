@@ -1,8 +1,8 @@
 {
   "meta": {
     "kind": "force-audit",
-    "version": "packet-3",
-    "generatedAt": "2026-04-27T07:37:24.333Z",
+    "version": "packet-7",
+    "generatedAt": "2026-04-29T03:51:09.528Z",
     "sourceDocumentIds": [
       "blkout-unit-cards-ocr",
       "blkout-unit-cards-screenshots"
@@ -216,6 +216,153 @@
             "label": "HFR-6773 OCR excerpt",
             "lineStart": 49,
             "lineEnd": 68
+          }
+        ]
+      },
+      {
+        "id": "hfr-6774-raw",
+        "cardId": "HFR-6774",
+        "name": "Harlow Engineers",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/harlow-1st-reaction/harlow-team2-side1.png",
+          "Back screenshot: screenshots/harlow-1st-reaction/harlow-team2-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6774 screenshot pair",
+            "excerpt": "screenshots/harlow-1st-reaction/harlow-team2-side1.png / screenshots/harlow-1st-reaction/harlow-team2-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "hfr-6775-raw",
+        "cardId": "HFR-6775",
+        "name": "Harlow Veterans",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/harlow-1st-reaction/harlow-team2-side1.png",
+          "Back screenshot: screenshots/harlow-1st-reaction/harlow-team2-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6775 screenshot pair",
+            "excerpt": "screenshots/harlow-1st-reaction/harlow-team2-side1.png / screenshots/harlow-1st-reaction/harlow-team2-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "hfr-6776-raw",
+        "cardId": "HFR-6776",
+        "name": "Harlow Crickets",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/harlow-1st-reaction/harlow-team2-side1.png",
+          "Back screenshot: screenshots/harlow-1st-reaction/harlow-team2-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "HFR-6776 screenshot pair",
+            "excerpt": "screenshots/harlow-1st-reaction/harlow-team2-side1.png / screenshots/harlow-1st-reaction/harlow-team2-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "rfa-4390-raw",
+        "cardId": "RFA-4390",
+        "name": "UN Raid Force Alpha",
+        "recordType": "force",
+        "rawLines": [
+          "Front screenshot: screenshots/un-raidforce-alpha/un-raidforce-alpha-side1.jpg",
+          "Back screenshot: screenshots/un-raidforce-alpha/un-raidforce-alpha-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "RFA-4390 screenshot pair",
+            "excerpt": "screenshots/un-raidforce-alpha/un-raidforce-alpha-side1.jpg / screenshots/un-raidforce-alpha/un-raidforce-alpha-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "rfa-4391-raw",
+        "cardId": "RFA-4391",
+        "name": "UN UTG Assaulters",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/un-raidforce-alpha/un-raidforce-alpha-side1.jpg",
+          "Back screenshot: screenshots/un-raidforce-alpha/un-raidforce-alpha-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "RFA-4391 screenshot pair",
+            "excerpt": "screenshots/un-raidforce-alpha/un-raidforce-alpha-side1.jpg / screenshots/un-raidforce-alpha/un-raidforce-alpha-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "rfa-4392-raw",
+        "cardId": "RFA-4392",
+        "name": "UN UTG Specialists",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/un-raidforce-alpha/un-raidforce-alpha-side1.jpg",
+          "Back screenshot: screenshots/un-raidforce-alpha/un-raidforce-alpha-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "RFA-4392 screenshot pair",
+            "excerpt": "screenshots/un-raidforce-alpha/un-raidforce-alpha-side1.jpg / screenshots/un-raidforce-alpha/un-raidforce-alpha-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "rfa-4393-raw",
+        "cardId": "RFA-4393",
+        "name": "Golem Unit",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/un-raidforce-alpha/un-raidforce-alpha-side1.jpg",
+          "Back screenshot: screenshots/un-raidforce-alpha/un-raidforce-alpha-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "RFA-4393 screenshot pair",
+            "excerpt": "screenshots/un-raidforce-alpha/un-raidforce-alpha-side1.jpg / screenshots/un-raidforce-alpha/un-raidforce-alpha-side2.png"
           }
         ]
       }

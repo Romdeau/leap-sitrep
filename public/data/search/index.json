@@ -2,7 +2,7 @@
   "meta": {
     "kind": "search-index",
     "version": "packet-2",
-    "generatedAt": "2026-04-28T14:04:29.659Z",
+    "generatedAt": "2026-04-29T03:51:09.528Z",
     "sourceDocumentIds": [
       "blkout-lore-primer",
       "blkout-core-rulebook",
@@ -2927,7 +2927,41 @@
         "relatedIds": [
           "harlow-control-team",
           "harlow-assault-team",
-          "harlow-springbok-ai"
+          "harlow-springbok-ai",
+          "harlow-engineers",
+          "harlow-veterans",
+          "harlow-crickets"
+        ]
+      },
+      {
+        "id": "un-raid-force-alpha",
+        "entityType": "force",
+        "title": "UN Raid Force Alpha",
+        "summary": "Close Assault: Models in this Unit may Move 2” after their Activation ends, only if it would bring them into CQC with an Enemy Model. Cross Fire: If more than one Model in this Unit Targets the same Enemy Model, their Weapons gain +1 Damage. Switchback: Place a Smoke Token within 4” of a Model in this Unit before Activating. All Models may be Moved up to 2” before Activating. UN Raid Team Alpha: All UN Raid Team Alpha UTG Assaulter and Specialist Units gain an additional D10 roll in all Skill Checks, including Shooting and Close Quarters Combat (CQC).",
+        "keywords": [
+          "RFA-4390",
+          "un-raid-force-alpha",
+          "boost jump",
+          "lance",
+          "micro launcher",
+          "surge"
+        ],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike",
+          "rfa-4390"
+        ],
+        "route": "/forces/un-raid-force-alpha",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "un-utg-assaulters",
+          "un-utg-specialists",
+          "golem-unit"
         ]
       },
       {
@@ -2995,6 +3029,138 @@
         ],
         "relatedIds": [
           "harlow-1st-reaction-force"
+        ]
+      },
+      {
+        "id": "harlow-engineers",
+        "entityType": "unit",
+        "title": "Harlow Engineers",
+        "summary": "Specialist 1: Engineer",
+        "keywords": [
+          "HFR-6774",
+          "carbine",
+          "at launcher"
+        ],
+        "aliases": [
+          "hfr-6774"
+        ],
+        "route": "/units/harlow-engineers",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "harlow-1st-reaction-force"
+        ]
+      },
+      {
+        "id": "harlow-veterans",
+        "entityType": "unit",
+        "title": "Harlow Veterans",
+        "summary": "Traits: Jump (4), Low Tech",
+        "keywords": [
+          "HFR-6775",
+          "carbine",
+          "machetes",
+          "pulse grenades"
+        ],
+        "aliases": [
+          "hfr-6775"
+        ],
+        "route": "/units/harlow-veterans",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "harlow-1st-reaction-force"
+        ]
+      },
+      {
+        "id": "harlow-crickets",
+        "entityType": "unit",
+        "title": "Harlow Crickets",
+        "summary": "Traits: AI, Drone Engineer Grouping: This unit does not count toward the Unit limit when grouped with Harlow engineers, and it cannot benefit from Force Cards. Self Destruct: Remove this model after using this weapon.",
+        "keywords": [
+          "HFR-6776",
+          "self destruct"
+        ],
+        "aliases": [
+          "hfr-6776"
+        ],
+        "route": "/units/harlow-crickets",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "harlow-1st-reaction-force"
+        ]
+      },
+      {
+        "id": "un-utg-assaulters",
+        "entityType": "unit",
+        "title": "UN UTG Assaulters",
+        "summary": "Traits: Jump(4) Specialist 1: Grenadier",
+        "keywords": [
+          "RFA-4391",
+          "m7 carbine",
+          "grenade launcher"
+        ],
+        "aliases": [
+          "utg",
+          "urban tactical groups",
+          "twin moons program",
+          "rfa-4391"
+        ],
+        "route": "/units/un-utg-assaulters",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "un-raid-force-alpha"
+        ]
+      },
+      {
+        "id": "un-utg-specialists",
+        "entityType": "unit",
+        "title": "UN UTG Specialists",
+        "summary": "Traits: Jump(4) Specialist 1: Marksman",
+        "keywords": [
+          "RFA-4392",
+          "m7 carbine",
+          "anti-material rifle"
+        ],
+        "aliases": [
+          "utg",
+          "urban tactical groups",
+          "twin moons program",
+          "rfa-4392"
+        ],
+        "route": "/units/un-utg-specialists",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "un-raid-force-alpha"
+        ]
+      },
+      {
+        "id": "golem-unit",
+        "entityType": "unit",
+        "title": "Golem Unit",
+        "summary": "Traits: Jump(4) Specialist 1: Fire Support",
+        "keywords": [
+          "RFA-4393",
+          "fpr auto",
+          "scorcher"
+        ],
+        "aliases": [
+          "rfa-4393"
+        ],
+        "route": "/units/golem-unit",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "un-raid-force-alpha"
         ]
       }
     ]

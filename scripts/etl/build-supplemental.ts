@@ -35,9 +35,12 @@ export async function buildSupplementalDataset(options: {
 }
 
 function extractMatchedPlayRules(lines: Awaited<ReturnType<typeof readSourceLines>>): RuleSection[] {
-  const section = extractSection(lines, "[2.1] MATCHED PLAY RULES", "[2.2] MATCHED PLAY GROUP BUILDING");
-  const blocks = collectTextBlocks(section.lines);
-  const contentBlocks = blocks.slice(1);
+  const rulesSection = extractSection(lines, "[2.1] MATCHED PLAY RULES", "[2.2] MATCHED PLAY GROUP BUILDING");
+  const groupBuildingSection = extractSection(lines, "[2.2] MATCHED PLAY GROUP BUILDING", "[3.0] MATCHED PLAY SCENARIOS");
+  const rulesBlocks = collectTextBlocks(rulesSection.lines);
+  const ruleContentBlocks = rulesBlocks.slice(1);
+  const groupBuildingBlocks = collectTextBlocks(groupBuildingSection.lines);
+  const groupBuildingContentBlocks = groupBuildingBlocks.slice(1);
 
   return [
     {
@@ -45,10 +48,20 @@ function extractMatchedPlayRules(lines: Awaited<ReturnType<typeof readSourceLine
       title: "Matched Play Rules",
       category: "matched-play",
       mode: "matched-play",
-      overview: normalizeWhitespace(contentBlocks.map((block) => block.text).join(" ")),
+      overview: normalizeWhitespace(ruleContentBlocks.map((block) => block.text).join(" ")),
       subsections: [],
-      body: normalizeWhitespace(contentBlocks.map((block) => block.text).join(" ")),
-      citations: [createCitation("Matched play rules", section.lineStart, section.lineEnd)],
+      body: normalizeWhitespace(ruleContentBlocks.map((block) => block.text).join(" ")),
+      citations: [createCitation("Matched play rules", rulesSection.lineStart, rulesSection.lineEnd)],
+    },
+    {
+      id: "matched-play-group-building",
+      title: "Matched Play Group Building",
+      category: "matched-play",
+      mode: "matched-play",
+      overview: normalizeWhitespace(groupBuildingContentBlocks.map((block) => block.text).join(" ")),
+      subsections: [],
+      body: normalizeWhitespace(groupBuildingContentBlocks.map((block) => block.text).join(" ")),
+      citations: [createCitation("Matched play group building", groupBuildingSection.lineStart, groupBuildingSection.lineEnd)],
     },
   ];
 }

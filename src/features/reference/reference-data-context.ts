@@ -13,6 +13,7 @@ export interface ReferenceDataBundle {
   sourceRegistry: SourceRegistryFile;
   lore: LoreDatasetFile;
   rules: RulesDatasetFile;
+  supplemental: RulesDatasetFile;
   forces: ForceDatasetFile;
   scenarios: ScenarioDatasetFile;
   searchIndex: SearchIndexFile;

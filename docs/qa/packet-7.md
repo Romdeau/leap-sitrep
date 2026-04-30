@@ -1,0 +1,23 @@
+# Packet 7 QA
+
+- Started Packet 7 with the safest source-backed expansion: matched-play supplemental reference, not broad force catalog expansion.
+- Confirmed Review D is required before choosing which additional factions, forces, or scenarios to prioritize for broad catalog work.
+- Confirmed the supplemental parser now extracts `[2.2] MATCHED PLAY GROUP BUILDING` as `matched-play-group-building` with citations to `markdown/BLKOUT_Supplemental_4-26.md` lines 134-158.
+- Confirmed `/rules/matched-play` displays sourced matched-play group structure and clearly gates builder support until handler and BLKLIST data are verified.
+- Confirmed no handler profiles, BLKLIST unit data, duster data, or matched-play roster legality is invented in this slice.
+- Automated coverage includes parser assertions for the matched-play group-building structure and app smoke coverage for the matched-play reference route.
+- Imported the Harlow strike-team screenshot sheet into the force dataset as three additional verified Harlow units: Harlow Engineers, Harlow Veterans, and Harlow Crickets.
+- Imported the UN Raid Force Alpha screenshot sheet into the force dataset as one verified force and three verified units: UN UTG Assaulters, UN UTG Specialists, and Golem Unit.
+- Confirmed the double-sided mirrored pairing rule was used for both print-ready unit sheets: side 1 left pairs with side 2 right, center with center, and side 1 right with side 2 left.
+- Confirmed the new records use screenshot citations and do not depend on OCR-only verification.
+- Confirmed Harlow available units now increase from 3 to 6, while UN Raid Force Alpha is available as a second verified force catalog entry.
+- Generalized `/builder` from the original Harlow-only Packet 5 slice into a verified core roster builder that can select among verified forces and automatically limits unit slots to the selected force's verified units.
+- Confirmed the builder can save a legal UN Raid Force Alpha core roster from the verified `RFA-4390` force and `RFA-4391` through `RFA-4393` units.
+- Confirmed the Packet 6 match setup/tracker path is no longer Harlow-specific in copy or behavior: a saved UN Raid Force Alpha core roster can start a Dockyard Assault tracker and displays the UN units from the saved roster.
+- Added a saved-roster table export preview for verified core rosters. The export is plain Markdown, includes force/card id, legality, selected unit card ids and basic stats, optional notes, and an explicit source gate.
+- Added a `Copy export` action for saved roster export previews with clipboard status feedback.
+- Confirmed export previews work for the verified-force builder path with UN Raid Force Alpha and do not include unsupported points, handlers, BLKLIST, duster, or matched-play validation details.
+- Added a live-match table-state export for Dockyard Assault trackers. The export is copyable Markdown and includes scenario, force, round, score, control points, active tokens, unit activation/damage/pinned/destroyed state, initiative log, and an explicit manual-state source gate.
+- Confirmed builder validation still only covers core group structure: 1 verified force card and 3 distinct units from that same force. It still does not add matched-play handler, BLKLIST, points, or duster validation.
+- Automated validation for the builder/tracker/export expansion: `bun run test -- src/features/builder/roster-builder.test.ts src/features/matches/match-tracker.test.ts src/test/app.smoke.test.tsx`, `bun run typecheck`, and `bun run lint`.
+- Current limitation: this is a Packet 7 starter slice, not the full exit gate. Broad catalog expansion and matched-play builder validation still require Review D prioritization and verified underlying data.
