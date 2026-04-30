@@ -7,6 +7,7 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageHero } from "@/components/ui/page-hero";
+import { RecentList, type RecentListItem } from "@/components/ui/recent-list";
 import { SectionTabs } from "@/components/ui/section-tabs";
 import { SideRail } from "@/components/ui/side-rail";
 import { TopicTOC } from "@/components/ui/topic-toc";
@@ -22,6 +23,9 @@ import type {
   WeaponProfile,
 } from "@/lib/types/domain";
 import type { RulesDatasetFile, SearchIndexRecord } from "@/lib/types/generated";
+
+import { loadStoredRosters } from "@/features/builder/roster-builder";
+import { loadStoredMatches } from "@/features/matches/match-tracker";
 
 import { useReferenceData } from "./use-reference-data";
 
@@ -187,10 +191,10 @@ function CitationList({ citations }: { citations: SourceCitation[] }) {
 }
 
 function ReferenceStatusCard() {
-  // Moved to /dev/status. Kept as a no-op shim so we can rip out call sites
-  // incrementally during the layout refactor (Phase A).
+  // Moved to /dev/status as part of Phase A. Removed in Phase E.
   return null;
 }
+void ReferenceStatusCard;
 
 export function SearchOverlay({ buttonClassName, buttonLabel = "Search" }: { buttonClassName?: string; buttonLabel?: string } = {}) {
   const navigate = useNavigate();
@@ -520,58 +524,152 @@ export function ReferenceHomeRoute() {
   const harlow = forces.data.forces.find((force) => force.id === "harlow-1st-reaction-force");
   const dockyardAssault = scenarios.data.scenarios.find((scenario) => scenario.id === "dockyard-assault");
 
+  const [recentRosters, setRecentRosters] = useState<RecentListItem[]>([]);
+  const [recentMatches, setRecentMatches] = useState<RecentListItem[]>([]);
+
+  useEffect(() => {
+    const refreshRecents = () => {
+      const rosters = loadStoredRosters();
+      const matches = loadStoredMatches();
+
+      const forceById = new Map(forces.data.forces.map((force) => [force.id, force]));
+      const scenarioById = new Map(scenarios.data.scenarios.map((scenario) => [scenario.id, scenario]));
+
+      const sortedRosters = [...rosters]
+        .sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1))
+        .slice(0, 4);
+      const sortedMatches = [...matches]
+        .sort((a, b) => (a.savedAt < b.savedAt ? 1 : -1))
+        .slice(0, 4);
+
+      setRecentRosters(
+        sortedRosters.map((roster) => {
+          const force = forceById.get(roster.forceId);
+          return {
+            id: roster.id,
+            title: force?.name ?? roster.forceId,
+            subtitle: `${roster.unitIds.length} units · ${roster.mode}`,
+            trailing: new Date(roster.updatedAt).toLocaleDateString(),
+            to: "/builder",
+          };
+        }),
+      );
+      setRecentMatches(
+        sortedMatches.map((match) => {
+          const scenario = scenarioById.get(match.scenarioId);
+          return {
+            id: match.id,
+            title: scenario?.title ?? match.scenarioId,
+            subtitle: `Round ${match.round}`,
+            trailing: new Date(match.savedAt).toLocaleDateString(),
+            to: `/matches/${match.id}`,
+          };
+        }),
+      );
+    };
+
+    refreshRecents();
+
+    const onStorage = (event: StorageEvent) => {
+      if (
+        event.key === null ||
+        event.key === "leap-sitrep.matches.v1" ||
+        event.key === "leap-sitrep.rosters.v1"
+      ) {
+        refreshRecents();
+      }
+    };
+
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, [forces.data.forces, scenarios.data.scenarios]);
+
   return (
     <div className="space-y-6">
       <PageHero
-        eyebrow="Reference"
+        eyebrow="Hub"
         title="Reference hub"
-        description="Authority lore, Harlow force data, effective rules, and Dockyard Assault are all reachable from here, with citations attached throughout."
-        assetCode="REF-HUB-00"
-        assetCodeSecondary="SEED"
-        matrixSource="reference-hub"
+        description="Active match, recent rosters, quick lookup, and the seed-slice featured pages — everything you need at the table."
+        assetCode="HUB-00"
+        assetCodeSecondary="TABLE"
+        matrixSource="hub"
+        actions={
+          <>
+            <Button asChild variant="outline">
+              <Link to="/builder">New roster</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link to="/matches">Matches</Link>
+            </Button>
+          </>
+        }
       />
 
-      <ReferenceStatusCard />
-
-      <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-        <Card>
-          <CardHeader>
-            <CardTitle>Seed slice jump points</CardTitle>
-            <CardDescription>Direct paths for the first complete read-only vertical slice.</CardDescription>
-          </CardHeader>
-          <CardContent className="grid gap-3 sm:grid-cols-2">
-            <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/lore/factions/the-authority">
-              <div className="font-medium">Authority overview</div>
-              <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">The main political and military power on ABOL.</p>
-            </Link>
-            <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/lore/timeline">
-              <div className="font-medium">Timeline</div>
-              <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Chronology from discovery through the ABOL conflicts.</p>
-            </Link>
-            <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/forces/harlow-1st-reaction-force">
-              <div className="font-medium">Harlow 1st Reaction Force</div>
-              <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Verified force card and unit links.</p>
-            </Link>
-            <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/scenarios/dockyard-assault">
-              <div className="font-medium">Dockyard Assault</div>
-              <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Core scenario setup, special rules, and overrun scoring.</p>
-            </Link>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Slice summary</CardTitle>
-            <CardDescription>Fast-read context for the current working reference set.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm leading-6 text-[color:var(--muted-foreground)]">
-            <p>{authority?.summary}</p>
-            <p>
-              {harlow?.name} is linked into this slice as the first manually verified tabletop force, and {dockyardAssault?.title} anchors the scenario reference route.
-            </p>
-          </CardContent>
-        </Card>
+      <div className="grid gap-6 lg:grid-cols-2">
+        <RecentList
+          title="Recent rosters"
+          description="Last touched roster drafts saved on this device."
+          items={recentRosters}
+          emptyState="No saved rosters yet — open the builder to draft one."
+          headerAction={
+            <Button asChild size="sm" variant="outline">
+              <Link to="/builder">Open builder</Link>
+            </Button>
+          }
+        />
+        <RecentList
+          title="Recent matches"
+          description="Saved live-tracker matches, most recent first."
+          items={recentMatches}
+          emptyState="No active or saved matches yet."
+          headerAction={
+            <Button asChild size="sm" variant="outline">
+              <Link to="/matches">Open matches</Link>
+            </Button>
+          }
+        />
       </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Quick lookup</CardTitle>
+          <CardDescription>
+            Search rules, lore, forces, units, scenarios, and glossary terms in one step. Press{" "}
+            <kbd className="rounded border border-[color:var(--border)] px-1.5 py-0.5 text-xs">Ctrl</kbd>
+            {" / "}
+            <kbd className="rounded border border-[color:var(--border)] px-1.5 py-0.5 text-xs">⌘</kbd>
+            {" + "}
+            <kbd className="rounded border border-[color:var(--border)] px-1.5 py-0.5 text-xs">K</kbd>{" "}
+            anywhere to open the palette.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <SearchOverlay buttonClassName="w-full justify-start text-sm" buttonLabel="Open quick lookup" />
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Featured</CardTitle>
+          <CardDescription>The verified seed slice — Authority lore, Harlow force, Dockyard Assault scenario.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+          <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/lore/factions/the-authority">
+            <div className="font-medium">Authority overview</div>
+            <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">
+              {authority ? summarizeText(authority.summary, 120) : "The main political and military power on ABOL."}
+            </p>
+          </Link>
+          <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/forces/harlow-1st-reaction-force">
+            <div className="font-medium">{harlow?.name ?? "Harlow 1st Reaction Force"}</div>
+            <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Verified force card and unit links.</p>
+          </Link>
+          <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/scenarios/dockyard-assault">
+            <div className="font-medium">{dockyardAssault?.title ?? "Dockyard Assault"}</div>
+            <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Core scenario setup, special rules, and overrun scoring.</p>
+          </Link>
+        </CardContent>
+      </Card>
 
       <Card>
         <CardHeader>
