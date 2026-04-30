@@ -3,9 +3,11 @@ import { useEffect, useMemo, useState } from "react";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 
 import { Badge } from "@/components/ui/badge";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageHero } from "@/components/ui/page-hero";
+import { SideRail } from "@/components/ui/side-rail";
 import type {
   ArmoryItem,
   CitationBackedText,
@@ -723,6 +725,14 @@ export function LoreFactionDetailRoute() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumb
+        items={[
+          { label: "Reference", to: "/lore" },
+          { label: "Lore", to: "/lore" },
+          { label: faction.name },
+        ]}
+      />
+
       <PageHero
         eyebrow="Reference / Lore / Faction"
         title={faction.name}
@@ -739,53 +749,95 @@ export function LoreFactionDetailRoute() {
         }
       />
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Overview</CardTitle>
-          <CardDescription>This summary comes directly from the extracted lore primer dataset.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-sm leading-7 text-[color:var(--muted-foreground)]">{faction.summary}</p>
-          <div className="flex flex-wrap gap-2">
-            {faction.regions.map((region) => (
-              <Badge key={region} variant="outline">
-                {region}
-              </Badge>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+        <div className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Overview</CardTitle>
+              <CardDescription>This summary comes directly from the extracted lore primer dataset.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-sm leading-7 text-[color:var(--muted-foreground)]">{faction.summary}</p>
+              <div className="flex flex-wrap gap-2">
+                {faction.regions.map((region) => (
+                  <Badge key={region} variant="outline">
+                    {region}
+                  </Badge>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
 
-      {relatedForces.length > 0 ? (
-        <Card>
-          <CardHeader>
-            <CardTitle>Related playable forces</CardTitle>
-            <CardDescription>This route distinguishes lore factions from tabletop force cards.</CardDescription>
-          </CardHeader>
-          <CardContent className="grid gap-3 md:grid-cols-2">
-            {relatedForces.map((force) => (
-              <Link
-                key={force.id}
-                className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
-                to={`/forces/${force.id}`}
-              >
-                <div className="font-medium">{force.name}</div>
-                <div className="mt-2 text-sm text-[color:var(--muted-foreground)]">{force.cardId}</div>
-              </Link>
-            ))}
-          </CardContent>
-        </Card>
-      ) : null}
+          {relatedForces.length > 0 ? (
+            <Card>
+              <CardHeader>
+                <CardTitle>Related playable forces</CardTitle>
+                <CardDescription>This route distinguishes lore factions from tabletop force cards.</CardDescription>
+              </CardHeader>
+              <CardContent className="grid gap-3 md:grid-cols-2">
+                {relatedForces.map((force) => (
+                  <Link
+                    key={force.id}
+                    className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
+                    to={`/forces/${force.id}`}
+                  >
+                    <div className="font-medium">{force.name}</div>
+                    <div className="mt-2 text-sm text-[color:var(--muted-foreground)]">{force.cardId}</div>
+                  </Link>
+                ))}
+              </CardContent>
+            </Card>
+          ) : null}
+        </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Citations</CardTitle>
-          <CardDescription>Visible source anchors are part of the product contract for important rules and lore.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <CitationList citations={faction.citations} />
-        </CardContent>
-      </Card>
+        <SideRail
+          sections={[
+            {
+              id: "regions",
+              title: "Regions",
+              children:
+                faction.regions.length > 0 ? (
+                  <ul className="flex flex-wrap gap-2">
+                    {faction.regions.map((region) => (
+                      <li key={region}>
+                        <Badge variant="outline">{region}</Badge>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-[color:var(--muted-foreground)]">No regions recorded.</p>
+                ),
+            },
+            {
+              id: "related-forces",
+              title: "Playable forces",
+              children:
+                relatedForces.length > 0 ? (
+                  <ul className="space-y-2">
+                    {relatedForces.map((force) => (
+                      <li key={force.id}>
+                        <Link
+                          className="block rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
+                          to={`/forces/${force.id}`}
+                        >
+                          <div className="font-medium">{force.name}</div>
+                          <div className="mt-1 text-xs text-[color:var(--muted-foreground)]">{force.cardId}</div>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-[color:var(--muted-foreground)]">No related forces yet.</p>
+                ),
+            },
+            {
+              id: "citations",
+              title: "Citations",
+              children: <CitationList citations={faction.citations} />,
+            },
+          ]}
+        />
+      </div>
     </div>
   );
 }
@@ -1102,8 +1154,19 @@ export function UsrDetailRoute() {
     return <EmptyState description="No universal special rule matched this route." title="USR not found" />;
   }
 
+  const relatedRules = rules.data.rules.filter((rule) => usr.relatedRuleIds.includes(rule.id));
+
   return (
     <div className="space-y-6">
+      <Breadcrumb
+        items={[
+          { label: "Reference", to: "/rules" },
+          { label: "Rules", to: "/rules" },
+          { label: "USR", to: "/rules" },
+          { label: usr.name },
+        ]}
+      />
+
       <PageHero
         eyebrow="Reference / Rules / USR"
         title={usr.name}
@@ -1113,41 +1176,84 @@ export function UsrDetailRoute() {
         matrixSource={`usr-${usr.id}`}
       />
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Current text</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 text-sm leading-6 text-[color:var(--muted-foreground)]">
-          {splitClauses(usr.currentText).map((clause, index) => (
-            <p key={`${usr.id}-${index}`}>{clause}</p>
-          ))}
-        </CardContent>
-      </Card>
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+        <div className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Current text</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm leading-6 text-[color:var(--muted-foreground)]">
+              {splitClauses(usr.currentText).map((clause, index) => (
+                <p key={`${usr.id}-${index}`}>{clause}</p>
+              ))}
+            </CardContent>
+          </Card>
 
-      {usr.notes.length > 0 ? (
-        <Card>
-          <CardHeader>
-            <CardTitle>Examples and notes</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {usr.notes.map((note) => (
-              <div key={note.id} className="rounded-2xl border border-[color:var(--border)] p-4">
-                <div className="font-medium">{note.label}</div>
-                <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{note.text}</p>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      ) : null}
+          {usr.notes.length > 0 ? (
+            <Card>
+              <CardHeader>
+                <CardTitle>Examples and notes</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {usr.notes.map((note) => (
+                  <div key={note.id} className="rounded-2xl border border-[color:var(--border)] p-4">
+                    <div className="font-medium">{note.label}</div>
+                    <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{note.text}</p>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          ) : null}
+        </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Citations</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <CitationList citations={usr.citations} />
-        </CardContent>
-      </Card>
+        <SideRail
+          sections={[
+            {
+              id: "aliases",
+              title: "Aliases",
+              children:
+                usr.aliases.length > 0 ? (
+                  <ul className="flex flex-wrap gap-2">
+                    {usr.aliases.map((alias) => (
+                      <li key={alias}>
+                        <Badge variant="outline">{alias}</Badge>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-[color:var(--muted-foreground)]">No aliases recorded.</p>
+                ),
+            },
+            {
+              id: "related-rules",
+              title: "Related rules",
+              children:
+                relatedRules.length > 0 ? (
+                  <ul className="space-y-2">
+                    {relatedRules.map((rule) => (
+                      <li key={rule.id}>
+                        <Link
+                          className="block rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
+                          to={`/rules/core#${rule.id}`}
+                        >
+                          <div className="font-medium">{rule.title}</div>
+                          <div className="mt-1 text-xs text-[color:var(--muted-foreground)]">{rule.category}</div>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-[color:var(--muted-foreground)]">No related rules linked yet.</p>
+                ),
+            },
+            {
+              id: "citations",
+              title: "Citations",
+              children: <CitationList citations={usr.citations} />,
+            },
+          ]}
+        />
+      </div>
     </div>
   );
 }
@@ -1206,6 +1312,14 @@ export function ForceDetailRoute() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumb
+        items={[
+          { label: "Reference", to: "/forces" },
+          { label: "Forces", to: "/forces" },
+          { label: force.name },
+        ]}
+      />
+
       <PageHero
         eyebrow="Reference / Forces / Detail"
         title={force.name}
@@ -1215,53 +1329,108 @@ export function ForceDetailRoute() {
         matrixSource={`force-${force.id}`}
       />
 
-      <div className="grid gap-6 xl:grid-cols-[1fr_0.9fr]">
-        <CitationBackedCard items={force.forceRules} title="Force rules" />
-        <CitationBackedCard items={force.battleDrills} title="Battle drills" />
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+        <div className="space-y-6">
+          <div className="grid gap-6 xl:grid-cols-2">
+            <CitationBackedCard items={force.forceRules} title="Force rules" />
+            <CitationBackedCard items={force.battleDrills} title="Battle drills" />
+          </div>
+
+          <Card id="armory">
+            <CardHeader>
+              <CardTitle>Armory</CardTitle>
+              <CardDescription>Armory options stay attached to the force card, with weapon profile metadata preserved where available.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ArmoryList items={force.armory} />
+            </CardContent>
+          </Card>
+
+          <Card id="units">
+            <CardHeader>
+              <CardTitle>Units in this force</CardTitle>
+              <CardDescription>All seed units link directly into the verified unit detail routes.</CardDescription>
+            </CardHeader>
+            <CardContent className="grid gap-3 md:grid-cols-3">
+              {units.map((unit) => (
+                <Link
+                  key={unit.id}
+                  className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
+                  to={`/units/${unit.id}`}
+                >
+                  <div className="font-medium">{unit.name}</div>
+                  <div className="mt-2 text-sm text-[color:var(--muted-foreground)]">{unit.cardId}</div>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <Badge variant="outline">Move {unit.stats.move ?? "-"}</Badge>
+                    <Badge variant="outline">Shoot {unit.stats.shoot ?? "-"}</Badge>
+                    <Badge variant="outline">Armor {unit.stats.armor ?? "-"}</Badge>
+                  </div>
+                </Link>
+              ))}
+            </CardContent>
+          </Card>
+        </div>
+
+        <SideRail
+          sections={[
+            {
+              id: "lore-alignment",
+              title: "Lore alignment",
+              children: parentFaction ? (
+                <Link
+                  className="block rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
+                  to={`/lore/${parentFaction.id}`}
+                >
+                  <div className="font-medium">{parentFaction.name}</div>
+                  <div className="mt-1 text-xs text-[color:var(--muted-foreground)]">{summarizeText(parentFaction.summary, 100)}</div>
+                </Link>
+              ) : (
+                <p className="text-[color:var(--muted-foreground)]">No parent faction recorded.</p>
+              ),
+            },
+            {
+              id: "units-rail",
+              title: `Units (${units.length})`,
+              children:
+                units.length > 0 ? (
+                  <ul className="space-y-2">
+                    {units.map((unit) => (
+                      <li key={unit.id}>
+                        <Link
+                          className="block rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
+                          to={`/units/${unit.id}`}
+                        >
+                          <div className="font-medium">{unit.name}</div>
+                          <div className="mt-1 text-xs text-[color:var(--muted-foreground)]">{unit.cardId}</div>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-[color:var(--muted-foreground)]">No units linked.</p>
+                ),
+            },
+            {
+              id: "armory-rail",
+              title: "Armory",
+              children: (
+                <a
+                  className="block rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
+                  href="#armory"
+                >
+                  <div className="font-medium">Jump to armory</div>
+                  <div className="mt-1 text-xs text-[color:var(--muted-foreground)]">{force.armory.length} entries</div>
+                </a>
+              ),
+            },
+            {
+              id: "citations",
+              title: "Citations",
+              children: <CitationList citations={force.citations} />,
+            },
+          ]}
+        />
       </div>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Armory</CardTitle>
-          <CardDescription>Armory options stay attached to the force card, with weapon profile metadata preserved where available.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ArmoryList items={force.armory} />
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Units in this force</CardTitle>
-          <CardDescription>All three seed units link directly into the verified unit detail routes.</CardDescription>
-        </CardHeader>
-        <CardContent className="grid gap-3 md:grid-cols-3">
-          {units.map((unit) => (
-            <Link
-              key={unit.id}
-              className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
-              to={`/units/${unit.id}`}
-            >
-              <div className="font-medium">{unit.name}</div>
-              <div className="mt-2 text-sm text-[color:var(--muted-foreground)]">{unit.cardId}</div>
-              <div className="mt-3 flex flex-wrap gap-2">
-                <Badge variant="outline">Move {unit.stats.move ?? "-"}</Badge>
-                <Badge variant="outline">Shoot {unit.stats.shoot ?? "-"}</Badge>
-                <Badge variant="outline">Armor {unit.stats.armor ?? "-"}</Badge>
-              </div>
-            </Link>
-          ))}
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Citations</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <CitationList citations={force.citations} />
-        </CardContent>
-      </Card>
     </div>
   );
 }
@@ -1279,6 +1448,15 @@ export function UnitDetailRoute() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumb
+        items={[
+          { label: "Reference", to: "/forces" },
+          { label: "Forces", to: "/forces" },
+          ...(force ? [{ label: force.name, to: `/forces/${force.id}` }] : []),
+          { label: unit.name },
+        ]}
+      />
+
       <PageHero
         eyebrow="Reference / Forces / Unit"
         title={unit.name}
@@ -1295,60 +1473,91 @@ export function UnitDetailRoute() {
         }
       />
 
-      <KeyValueGrid
-        items={[
-          { label: "Models", value: String(unit.modelCount) },
-          { label: "Move", value: unit.stats.move },
-          { label: "Shoot", value: unit.stats.shoot },
-          { label: "Armor", value: unit.stats.armor },
-          { label: "Hack", value: unit.stats.hack },
-        ]}
-      />
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+        <div className="space-y-6">
+          <KeyValueGrid
+            items={[
+              { label: "Models", value: String(unit.modelCount) },
+              { label: "Move", value: unit.stats.move },
+              { label: "Shoot", value: unit.stats.shoot },
+              { label: "Armor", value: unit.stats.armor },
+              { label: "Hack", value: unit.stats.hack },
+            ]}
+          />
 
-      <div className="grid gap-6 xl:grid-cols-[1fr_0.9fr]">
-        <Card>
-          <CardHeader>
-            <CardTitle>Weapons</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <WeaponList weapons={unit.weapons} />
-          </CardContent>
-        </Card>
+          <div className="grid gap-6 xl:grid-cols-2">
+            <Card>
+              <CardHeader>
+                <CardTitle>Weapons</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <WeaponList weapons={unit.weapons} />
+              </CardContent>
+            </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Specialists</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            {unit.specialists.length > 0 ? (
-              unit.specialists.map((specialist) => (
-                <div key={specialist.id} className="rounded-2xl border border-[color:var(--border)] p-4">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="font-medium">Slot {specialist.slot}</span>
-                    <Badge variant="outline">{specialist.name}</Badge>
-                  </div>
-                  {specialist.description ? (
-                    <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{specialist.description}</p>
-                  ) : null}
-                </div>
-              ))
-            ) : (
-              <p className="text-sm text-[color:var(--muted-foreground)]">No specialist slots are recorded on this unit.</p>
-            )}
-          </CardContent>
-        </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Specialists</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {unit.specialists.length > 0 ? (
+                  unit.specialists.map((specialist) => (
+                    <div key={specialist.id} className="rounded-2xl border border-[color:var(--border)] p-4">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="font-medium">Slot {specialist.slot}</span>
+                        <Badge variant="outline">{specialist.name}</Badge>
+                      </div>
+                      {specialist.description ? (
+                        <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{specialist.description}</p>
+                      ) : null}
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-sm text-[color:var(--muted-foreground)]">No specialist slots are recorded on this unit.</p>
+                )}
+              </CardContent>
+            </Card>
+          </div>
+
+          <CitationBackedCard items={unit.abilities} title="Abilities and traits" />
+        </div>
+
+        <SideRail
+          sections={[
+            {
+              id: "parent-force",
+              title: "Parent force",
+              children: force ? (
+                <Link
+                  className="block rounded-md border border-[color:var(--border)] p-2 transition hover:bg-[color:var(--surface-muted)]"
+                  to={`/forces/${force.id}`}
+                >
+                  <div className="font-medium">{force.name}</div>
+                  <div className="mt-1 text-xs text-[color:var(--muted-foreground)]">{force.cardId}</div>
+                </Link>
+              ) : (
+                <p className="text-[color:var(--muted-foreground)]">No parent force recorded.</p>
+              ),
+            },
+            {
+              id: "use-in-builder",
+              title: "Use in builder",
+              children: force ? (
+                <Button asChild className="w-full" variant="outline">
+                  <Link to={`/builder?force=${force.id}`}>Open in builder</Link>
+                </Button>
+              ) : (
+                <p className="text-[color:var(--muted-foreground)]">Builder requires a parent force.</p>
+              ),
+            },
+            {
+              id: "citations",
+              title: "Citations",
+              children: <CitationList citations={unit.citations} />,
+            },
+          ]}
+        />
       </div>
-
-      <CitationBackedCard items={unit.abilities} title="Abilities and traits" />
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Citations</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <CitationList citations={unit.citations} />
-        </CardContent>
-      </Card>
     </div>
   );
 }
@@ -1403,6 +1612,14 @@ export function ScenarioDetailRoute() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumb
+        items={[
+          { label: "Reference", to: "/scenarios" },
+          { label: "Scenarios", to: "/scenarios" },
+          { label: scenario.title },
+        ]}
+      />
+
       <PageHero
         eyebrow="Reference / Scenarios / Detail"
         title={scenario.title}
@@ -1412,30 +1629,82 @@ export function ScenarioDetailRoute() {
         matrixSource={`scenario-${scenario.id}`}
       />
 
-      <KeyValueGrid
-        items={[
-          { label: "Mode", value: scenario.mode },
-          { label: "Table", value: scenario.tableSize },
-          { label: "Hardpoints", value: scenario.hardpoints.join(", ") || "0" },
-          { label: "Points of interest", value: scenario.pointsOfInterest.join(", ") || "0" },
-          { label: "Seed slice", value: scenario.id === "dockyard-assault" ? "Yes" : "No" },
-        ]}
-      />
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+        <div className="space-y-6">
+          <KeyValueGrid
+            items={[
+              { label: "Mode", value: scenario.mode },
+              { label: "Table", value: scenario.tableSize },
+              { label: "Hardpoints", value: scenario.hardpoints.join(", ") || "0" },
+              { label: "Points of interest", value: scenario.pointsOfInterest.join(", ") || "0" },
+            ]}
+          />
 
-      <div className="grid gap-6 xl:grid-cols-3">
-        <TextListCard description="Deployment and table setup steps." items={scenario.setup} title="Setup" />
-        <TextListCard description="Overrun and win-condition text." items={scenario.scoringRules} title="Scoring" />
-        <TextListCard description="Scenario-specific twists and flavor." items={scenario.specialRules} title="Special rules" />
+          <div className="grid gap-6 xl:grid-cols-3">
+            <TextListCard description="Deployment and table setup steps." items={scenario.setup} title="Setup" />
+            <TextListCard description="Overrun and win-condition text." items={scenario.scoringRules} title="Scoring" />
+            <TextListCard description="Scenario-specific twists and flavor." items={scenario.specialRules} title="Special rules" />
+          </div>
+        </div>
+
+        <SideRail
+          sections={[
+            {
+              id: "summary",
+              title: "Summary",
+              children: (
+                <dl className="space-y-2 text-sm">
+                  <div className="flex justify-between gap-2">
+                    <dt className="text-[color:var(--muted-foreground)]">Mode</dt>
+                    <dd className="font-medium">{scenario.mode}</dd>
+                  </div>
+                  <div className="flex justify-between gap-2">
+                    <dt className="text-[color:var(--muted-foreground)]">Table</dt>
+                    <dd className="font-medium">{scenario.tableSize}</dd>
+                  </div>
+                </dl>
+              ),
+            },
+            {
+              id: "hardpoints",
+              title: `Hardpoints (${scenario.hardpoints.length})`,
+              children:
+                scenario.hardpoints.length > 0 ? (
+                  <ul className="flex flex-wrap gap-2">
+                    {scenario.hardpoints.map((hp) => (
+                      <li key={hp}>
+                        <Badge variant="outline">{hp}</Badge>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-[color:var(--muted-foreground)]">None recorded.</p>
+                ),
+            },
+            {
+              id: "pois",
+              title: `Points of interest (${scenario.pointsOfInterest.length})`,
+              children:
+                scenario.pointsOfInterest.length > 0 ? (
+                  <ul className="flex flex-wrap gap-2">
+                    {scenario.pointsOfInterest.map((poi) => (
+                      <li key={poi}>
+                        <Badge variant="outline">{poi}</Badge>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-[color:var(--muted-foreground)]">None recorded.</p>
+                ),
+            },
+            {
+              id: "citations",
+              title: "Citations",
+              children: <CitationList citations={scenario.citations} />,
+            },
+          ]}
+        />
       </div>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Citations</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <CitationList citations={scenario.citations} />
-        </CardContent>
-      </Card>
     </div>
   );
 }
