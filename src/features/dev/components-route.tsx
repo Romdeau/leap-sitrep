@@ -10,7 +10,7 @@ import { PageHero } from "@/components/ui/page-hero";
 import { RegistrationFrame } from "@/components/ui/registration-frame";
 import { StatBlock } from "@/components/ui/stat-block";
 import { useTheme } from "@/app/providers/use-theme";
-import { FACTION_LABELS, FACTION_VALUES, type Faction } from "@/app/providers/theme-types";
+import { FACTION_LABELS, FACTION_VALUES } from "@/app/providers/theme-types";
 
 export function DevComponentsRoute() {
   const { theme, setFaction } = useTheme();
@@ -34,7 +34,7 @@ export function DevComponentsRoute() {
             <Button
               key={value}
               variant={faction === value ? "default" : "outline"}
-              onClick={() => setFaction(value as Faction)}
+              onClick={() => setFaction(value)}
             >
               {FACTION_LABELS[value]}
             </Button>

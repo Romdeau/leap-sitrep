@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { AppShell } from "@/app/app-shell";
 import { BuilderRoute } from "@/features/builder/builder-route";
 import { DevComponentsRoute } from "@/features/dev/components-route";
+import { DevStatusRoute } from "@/features/dev/status-route";
 import { MatchDetailRoute, MatchesRoute } from "@/features/matches/matches-route";
 import {
   ForceDetailRoute,
@@ -43,6 +44,7 @@ export function AppRouter() {
         <Route element={<MatchDetailRoute />} path="matches/:matchId" />
         <Route element={<GlossaryRoute />} path="glossary" />
         <Route element={<DevComponentsRoute />} path="dev/components" />
+        <Route element={<DevStatusRoute />} path="dev/status" />
         <Route element={<Navigate replace to="/" />} path="*" />
       </Route>
     </Routes>

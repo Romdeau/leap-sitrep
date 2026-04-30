@@ -188,6 +188,28 @@ export const appRouteManifest: RouteManifestEntry[] = [
     dataContracts: ["GlossaryTerm"],
     nav: true,
   },
+  {
+    id: "dev-status",
+    path: "/dev/status",
+    label: "Dev Status",
+    shortLabel: "Dev Status",
+    section: "Hub",
+    summary: "Internal dataset and packet activation snapshot.",
+    activationPacket: 0,
+    dataContracts: ["RouteManifestEntry", "SourceDocument"],
+    nav: false,
+  },
+  {
+    id: "dev-components",
+    path: "/dev/components",
+    label: "Dev Components",
+    shortLabel: "Dev Components",
+    section: "Hub",
+    summary: "Primitive harness for QA across factions and modes.",
+    activationPacket: 0,
+    dataContracts: [],
+    nav: false,
+  },
 ];
 
 export const primaryNavigation = appRouteManifest.filter((route) => route.nav);

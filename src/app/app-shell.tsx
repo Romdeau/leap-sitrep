@@ -1,8 +1,9 @@
 import { Monitor, Moon, RotateCcw, Sun } from "lucide-react";
-import { NavLink, Outlet } from "react-router-dom";
+import { useState } from "react";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 
+import { ActiveMatchStrip } from "@/components/ui/active-match-strip";
 import { Button } from "@/components/ui/button";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { EyebrowLabel } from "@/components/ui/eyebrow-label";
 import { useTheme } from "@/app/providers/use-theme";
 import {
@@ -14,8 +15,54 @@ import {
 } from "@/app/providers/theme-types";
 import { MobileSearchButton, SearchOverlay } from "@/features/reference/reference-ui";
 import { useReferenceDataState } from "@/features/reference/use-reference-data";
-import { primaryNavigation } from "@/lib/routes/manifest";
+import { appRouteManifest } from "@/lib/routes/manifest";
+import type { RouteManifestEntry } from "@/lib/types/domain";
 import { cn } from "@/lib/utils";
+
+type SectionKey = "Hub" | "Reference" | "Play";
+
+const SECTION_ORDER: SectionKey[] = ["Hub", "Reference", "Play"];
+
+const SECTION_DEFAULT_PATH: Record<SectionKey, string> = {
+  Hub: "/",
+  Reference: "/lore",
+  Play: "/builder",
+};
+
+const SECTION_LABEL: Record<SectionKey, string> = {
+  Hub: "Home",
+  Reference: "Reference",
+  Play: "Play",
+};
+
+const SECTION_SUBNAV: Record<SectionKey, RouteManifestEntry[]> = {
+  Hub: appRouteManifest.filter((route) => route.section === "Hub" && route.nav),
+  Reference: appRouteManifest.filter((route) => route.section === "Reference" && route.nav),
+  Play: appRouteManifest.filter((route) => route.section === "Play" && route.nav),
+};
+
+function activeSection(pathname: string): SectionKey {
+  // Best-match by deepest matching route in the manifest.
+  let best: { entry: RouteManifestEntry; score: number } | null = null;
+
+  for (const entry of appRouteManifest) {
+    if (entry.path === "/") {
+      if (pathname === "/") {
+        best = { entry, score: 1 };
+      }
+      continue;
+    }
+
+    if (pathname === entry.path || pathname.startsWith(`${entry.path}/`)) {
+      const score = entry.path.length;
+      if (best === null || score > best.score) {
+        best = { entry, score };
+      }
+    }
+  }
+
+  return (best?.entry.section ?? "Hub");
+}
 
 function navClassName(isActive: boolean) {
   return cn(
@@ -91,58 +138,127 @@ function AppearanceToggleButton({
   );
 }
 
-export function AppShell() {
-  const { resetTheme, resolvedAppearance, setAppearance, setFaction, theme } = useTheme();
-  const referenceDataState = useReferenceDataState();
+function TopProgressBar() {
+  return (
+    <div
+      aria-label="Loading reference data"
+      aria-live="polite"
+      className="h-0.5 w-full overflow-hidden bg-[color:var(--surface-muted)]"
+      role="progressbar"
+    >
+      <div className="h-full w-1/3 animate-[loader_1.2s_ease-in-out_infinite] bg-[color:var(--accent)]" />
+      <style>{`
+        @keyframes loader {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(400%); }
+        }
+      `}</style>
+    </div>
+  );
+}
 
-  const content =
-    referenceDataState.status === "loading" ? (
-      <Card>
-        <CardHeader>
-          <EyebrowLabel>Sync</EyebrowLabel>
-          <CardTitle>Loading reference datasets</CardTitle>
-          <CardDescription>
-            Reading lore, rules, supplemental, force, scenario, search, and source registry files from `public/data/`.
-          </CardDescription>
-        </CardHeader>
-      </Card>
-    ) : referenceDataState.status === "error" ? (
-      <Card>
-        <CardHeader>
-          <EyebrowLabel className="text-[color:var(--danger)]">Reference Load Error</EyebrowLabel>
-          <CardTitle>Reference data failed to load</CardTitle>
-          <CardDescription>{referenceDataState.message}</CardDescription>
-        </CardHeader>
-      </Card>
-    ) : (
-      <Outlet />
-    );
-  const mobileNavigation = primaryNavigation.slice(0, referenceDataState.status === "ready" ? 7 : 8);
+function ReferenceErrorBanner({ message }: { message: string }) {
+  return (
+    <div
+      className="border-b border-[color:var(--danger)] bg-[color:color-mix(in_srgb,var(--danger)_8%,var(--surface))]"
+      role="alert"
+    >
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-2 sm:px-6 lg:px-8">
+        <EyebrowLabel className="text-[color:var(--danger)]">Reference load error</EyebrowLabel>
+        <span className="text-xs text-[color:var(--foreground)]">{message}</span>
+      </div>
+    </div>
+  );
+}
+
+function MobileSheet({
+  items,
+  onClose,
+  title,
+}: {
+  items: RouteManifestEntry[];
+  onClose: () => void;
+  title: string;
+}) {
+  return (
+    <div
+      className="fixed inset-0 z-40 bg-[color:color-mix(in_srgb,var(--foreground)_28%,transparent)] backdrop-blur-sm md:hidden"
+      onClick={onClose}
+      role="presentation"
+    >
+      <div
+        className="absolute inset-x-0 bottom-0 rounded-t-2xl border-t border-[color:var(--border-strong)] bg-[color:var(--surface)] p-4 pb-24"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <div className="mb-3 flex items-center justify-between">
+          <EyebrowLabel>{title}</EyebrowLabel>
+          <Button onClick={onClose} size="sm" variant="ghost">
+            Close
+          </Button>
+        </div>
+        <ul className="grid grid-cols-2 gap-2">
+          {items.map((item) => (
+            <li key={item.id}>
+              <NavLink
+                className="block rounded-md border border-[color:var(--border)] p-3 text-sm font-semibold uppercase tracking-[0.12em] text-[color:var(--foreground)] transition-colors hover:border-[color:var(--accent)] hover:text-[color:var(--accent)]"
+                onClick={onClose}
+                to={item.path}
+              >
+                {item.shortLabel}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export function AppShell() {
+  const { resetTheme, setAppearance, setFaction, theme } = useTheme();
+  const referenceDataState = useReferenceDataState();
+  const location = useLocation();
+  const section = activeSection(location.pathname);
+  const subnav = SECTION_SUBNAV[section];
+  const [mobileSheet, setMobileSheet] = useState<SectionKey | null>(null);
 
   return (
     <div className="min-h-screen text-[color:var(--foreground)]">
       <header className="border-b border-[color:var(--border-strong)] bg-[color:var(--surface)]">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-5 sm:px-6 lg:px-8">
-          {/* top row: wordmark + faction strip + utility cluster */}
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex flex-wrap items-center gap-5">
-              <NavLink className="group flex items-baseline gap-1" to="/">
-                <span className="font-display text-2xl font-bold uppercase leading-none tracking-wide text-[color:var(--foreground)]">
-                  BLKOUT
-                </span>
-                <span className="font-display text-2xl font-bold uppercase leading-none text-[color:var(--accent)]">
-                  /
-                </span>
-                <span className="font-display text-2xl font-bold uppercase leading-none tracking-wide text-[color:var(--foreground)]">
-                  Sitrep
-                </span>
-              </NavLink>
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 sm:px-6 lg:px-8">
+          {/* Row 1: wordmark + search + theme cluster + faction popover */}
+          <div className="flex flex-wrap items-center gap-3">
+            <NavLink className="group flex items-baseline gap-1" to="/">
+              <span className="font-display text-2xl font-bold uppercase leading-none tracking-wide text-[color:var(--foreground)]">
+                BLKOUT
+              </span>
+              <span className="font-display text-2xl font-bold uppercase leading-none text-[color:var(--accent)]">
+                /
+              </span>
+              <span className="font-display text-2xl font-bold uppercase leading-none tracking-wide text-[color:var(--foreground)]">
+                Sitrep
+              </span>
+            </NavLink>
 
+            <div className="ml-auto flex flex-wrap items-center gap-2">
+              {referenceDataState.status === "ready" ? (
+                <SearchOverlay buttonClassName="h-9 px-3 text-xs" />
+              ) : null}
               <div className="hidden h-6 w-px bg-[color:var(--border)] sm:block" aria-hidden />
-
-              <div className="flex items-center gap-3">
-                <EyebrowLabel className="hidden sm:inline">Faction</EyebrowLabel>
-                <div className="flex items-center gap-1.5">
+              <details className="relative">
+                <summary
+                  aria-label="Faction tint"
+                  className="flex h-9 cursor-pointer list-none items-center gap-2 rounded-md border border-[color:var(--border)] px-2 text-xs font-semibold uppercase tracking-[0.12em] text-[color:var(--muted-foreground)] hover:text-[color:var(--foreground)]"
+                  title={`Faction: ${FACTION_LABELS[theme.faction]}`}
+                >
+                  <span
+                    aria-hidden
+                    className="h-3 w-3 rounded-sm border border-[color:var(--border-strong)]"
+                    style={{ backgroundColor: FACTION_SWATCH[theme.faction] }}
+                  />
+                  <span className="hidden sm:inline">{FACTION_LABELS[theme.faction]}</span>
+                </summary>
+                <div className="absolute right-0 top-full z-30 mt-2 flex flex-wrap items-center gap-2 rounded-md border border-[color:var(--border)] bg-[color:var(--surface)] p-2 shadow-[var(--shadow)]">
                   {FACTION_VALUES.map((faction) => (
                     <FactionSwatch
                       key={faction}
@@ -152,13 +268,7 @@ export function AppShell() {
                     />
                   ))}
                 </div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2">
-              {referenceDataState.status === "ready" ? (
-                <SearchOverlay buttonClassName="h-9 px-3 text-xs" />
-              ) : null}
+              </details>
               <AppearanceToggleButton
                 active={theme.appearance === "light"}
                 appearance="light"
@@ -186,67 +296,150 @@ export function AppShell() {
             </div>
           </div>
 
-          {/* desktop nav */}
-          <nav aria-label="Primary" className="hidden border-t border-[color:var(--border-faint)] pt-2 md:block">
+          {/* Row 2a: section nav (Hub / Reference / Play) */}
+          <nav aria-label="Sections" className="hidden border-t border-[color:var(--border-faint)] pt-2 md:block">
             <ul className="flex flex-wrap gap-1">
-              {primaryNavigation.map((route) => (
-                <li key={route.id}>
-                  <NavLink
-                    className={({ isActive }) => navClassName(isActive)}
-                    end={route.path === "/"}
-                    to={route.path}
-                  >
-                    {({ isActive }) => (
-                      <>
-                        <span>{route.shortLabel}</span>
-                        <ActiveUnderline isActive={isActive} />
-                      </>
-                    )}
-                  </NavLink>
-                </li>
-              ))}
+              {SECTION_ORDER.map((key) => {
+                const isActive = key === section;
+                return (
+                  <li key={key}>
+                    <NavLink
+                      className={navClassName(isActive)}
+                      end={key === "Hub"}
+                      to={SECTION_DEFAULT_PATH[key]}
+                    >
+                      <span>{SECTION_LABEL[key]}</span>
+                      <ActiveUnderline isActive={isActive} />
+                    </NavLink>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 
-          {/* resolved appearance hint (subtle, replaces the ThemeProvider card) */}
-          <div className="flex items-center gap-2 text-[0.6875rem] uppercase tracking-[0.16em] text-[color:var(--subtle-foreground)]">
-            <span>
-              Mode <span className="text-[color:var(--muted-foreground)]">{resolvedAppearance}</span>
-            </span>
-            <span aria-hidden>·</span>
-            <span>
-              Faction{" "}
-              <span className="text-[color:var(--muted-foreground)]">{FACTION_LABELS[theme.faction]}</span>
-            </span>
-          </div>
+          {/* Row 2b: sub-nav strip for active section */}
+          {subnav.length > 0 ? (
+            <nav aria-label={`${SECTION_LABEL[section]} sub-navigation`} className="hidden md:block">
+              <ul className="flex flex-wrap gap-1">
+                {subnav.map((route) => (
+                  <li key={route.id}>
+                    <NavLink
+                      className={({ isActive }) =>
+                        cn(
+                          navClassName(isActive),
+                          "py-1 text-[0.6875rem] tracking-[0.16em]",
+                        )
+                      }
+                      end={route.path === "/"}
+                      to={route.path}
+                    >
+                      {({ isActive }) => (
+                        <>
+                          <span>{route.shortLabel}</span>
+                          <ActiveUnderline isActive={isActive} />
+                        </>
+                      )}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ) : null}
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl px-4 py-6 pb-28 sm:px-6 lg:px-8">{content}</main>
+      {referenceDataState.status === "loading" ? <TopProgressBar /> : null}
+      {referenceDataState.status === "error" ? (
+        <ReferenceErrorBanner message={referenceDataState.message} />
+      ) : null}
 
+      <ActiveMatchStrip />
+
+      <main className="mx-auto max-w-7xl px-4 py-6 pb-28 sm:px-6 lg:px-8">
+        {referenceDataState.status === "ready" ? (
+          <Outlet />
+        ) : referenceDataState.status === "loading" ? (
+          <div
+            aria-live="polite"
+            className="rounded-md border border-[color:var(--border)] bg-[color:var(--surface)] p-6 text-sm text-[color:var(--muted-foreground)]"
+            role="status"
+          >
+            <EyebrowLabel>Sync</EyebrowLabel>
+            <p className="mt-2">Loading reference datasets…</p>
+          </div>
+        ) : (
+          <div
+            className="rounded-md border border-[color:var(--danger)] bg-[color:var(--surface)] p-6 text-sm"
+            role="alert"
+          >
+            <EyebrowLabel className="text-[color:var(--danger)]">Reference Load Error</EyebrowLabel>
+            <p className="mt-2 text-[color:var(--foreground)]">Reference data failed to load.</p>
+            <p className="mt-1 text-[color:var(--muted-foreground)]">{referenceDataState.message}</p>
+          </div>
+        )}
+      </main>
+
+      {/* Mobile bottom nav: stable 4 cells */}
       <nav
         aria-label="Mobile"
         className="fixed inset-x-0 bottom-0 z-30 border-t border-[color:var(--border-strong)] bg-[color:var(--surface)] px-3 py-2 md:hidden"
       >
         <div className="mx-auto grid max-w-3xl grid-cols-4 gap-1">
-          {mobileNavigation.map((route) => (
-            <NavLink
-              key={route.id}
-              className={({ isActive }) => cn(navClassName(isActive), "px-1 text-center text-[0.6875rem]")}
-              end={route.path === "/"}
-              to={route.path}
-            >
-              {({ isActive }) => (
-                <>
-                  <span>{route.shortLabel}</span>
-                  <ActiveUnderline isActive={isActive} />
-                </>
-              )}
-            </NavLink>
-          ))}
-          {referenceDataState.status === "ready" ? <MobileSearchButton /> : null}
+          <NavLink
+            className={({ isActive }) => cn(navClassName(isActive), "px-1 text-center text-[0.6875rem]")}
+            end
+            to="/"
+          >
+            {({ isActive }) => (
+              <>
+                <span>Home</span>
+                <ActiveUnderline isActive={isActive} />
+              </>
+            )}
+          </NavLink>
+          <button
+            aria-haspopup="menu"
+            aria-expanded={mobileSheet === "Reference"}
+            className={cn(
+              navClassName(section === "Reference"),
+              "px-1 text-center text-[0.6875rem]",
+            )}
+            onClick={() => setMobileSheet("Reference")}
+            type="button"
+          >
+            <span>Reference</span>
+            <ActiveUnderline isActive={section === "Reference"} />
+          </button>
+          <button
+            aria-haspopup="menu"
+            aria-expanded={mobileSheet === "Play"}
+            className={cn(
+              navClassName(section === "Play"),
+              "px-1 text-center text-[0.6875rem]",
+            )}
+            onClick={() => setMobileSheet("Play")}
+            type="button"
+          >
+            <span>Play</span>
+            <ActiveUnderline isActive={section === "Play"} />
+          </button>
+          {referenceDataState.status === "ready" ? (
+            <MobileSearchButton />
+          ) : (
+            <span className={cn(navClassName(false), "px-1 text-center text-[0.6875rem] opacity-50")}>
+              Search
+            </span>
+          )}
         </div>
       </nav>
+
+      {mobileSheet !== null ? (
+        <MobileSheet
+          items={SECTION_SUBNAV[mobileSheet]}
+          onClose={() => setMobileSheet(null)}
+          title={SECTION_LABEL[mobileSheet]}
+        />
+      ) : null}
     </div>
   );
 }

@@ -5,7 +5,6 @@ import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { primaryNavigation } from "@/lib/routes/manifest";
 import type {
   ArmoryItem,
   CitationBackedText,
@@ -183,48 +182,9 @@ function CitationList({ citations }: { citations: SourceCitation[] }) {
 }
 
 function ReferenceStatusCard() {
-  const { forces, lore, rules, scenarios } = useReferenceData();
-
-  return (
-    <Card>
-      <CardHeader>
-        <div className="flex flex-wrap gap-2">
-          <Badge variant="accent">Packet 4 In Progress</Badge>
-          <Badge variant="outline">Reference Slice</Badge>
-        </div>
-        <CardTitle>Seed slice reference data is live</CardTitle>
-        <CardDescription>
-          This vertical slice now reads the generated Packet 1-3 datasets directly instead of placeholder scaffolding.
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <div className="rounded-2xl border border-[color:var(--border)] p-4">
-          <div className="text-sm font-semibold">Lore dataset</div>
-          <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">
-            {lore.data.factions.length} factions and {lore.data.events.length} timeline events.
-          </p>
-        </div>
-        <div className="rounded-2xl border border-[color:var(--border)] p-4">
-          <div className="text-sm font-semibold">Rules dataset</div>
-          <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">
-            {rules.data.rules.length} rules and {rules.data.effectiveRules.length} effective overlays.
-          </p>
-        </div>
-        <div className="rounded-2xl border border-[color:var(--border)] p-4">
-          <div className="text-sm font-semibold">Force slice</div>
-          <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">
-            {forces.data.forces.length} verified force and {forces.data.units.length} verified units.
-          </p>
-        </div>
-        <div className="rounded-2xl border border-[color:var(--border)] p-4">
-          <div className="text-sm font-semibold">Scenario coverage</div>
-          <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">
-            {scenarios.data.scenarios.length} extracted core scenarios with citations.
-          </p>
-        </div>
-      </CardContent>
-    </Card>
-  );
+  // Moved to /dev/status. Kept as a no-op shim so we can rip out call sites
+  // incrementally during the layout refactor (Phase A).
+  return null;
 }
 
 export function SearchOverlay({ buttonClassName, buttonLabel = "Search" }: { buttonClassName?: string; buttonLabel?: string } = {}) {
@@ -585,13 +545,6 @@ export function ReferenceHomeRoute() {
   return (
     <div className="space-y-6">
       <SectionIntro
-        badges={
-          <>
-            <Badge variant="accent">Packet 4 Seed Slice</Badge>
-            <Badge variant="outline">Citations Visible</Badge>
-            <Badge variant="outline">Local-first Data</Badge>
-          </>
-        }
         description="Authority lore, Harlow force data, effective rules, and Dockyard Assault now connect through the same generated datasets."
         title="Reference hub"
       />
@@ -640,23 +593,34 @@ export function ReferenceHomeRoute() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Primary navigation</CardTitle>
-          <CardDescription>Packet 4 routes are now active for the seed slice; later play flows remain reserved.</CardDescription>
+          <CardTitle>Section index</CardTitle>
+          <CardDescription>Top-level destinations across reference and play.</CardDescription>
         </CardHeader>
-        <CardContent className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-          {primaryNavigation.map((route) => (
-            <Link
-              key={route.id}
-              className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
-              to={route.path}
-            >
-              <div className="flex items-center justify-between gap-3">
-                <span className="font-medium">{route.label}</span>
-                <Badge variant={route.activationPacket <= 4 ? "accent" : "outline"}>Packet {route.activationPacket}</Badge>
-              </div>
-              <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">{route.summary}</p>
-            </Link>
-          ))}
+        <CardContent className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+          <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/lore">
+            <div className="font-medium">Lore</div>
+            <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Factions, timeline, glossary anchors.</p>
+          </Link>
+          <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/forces">
+            <div className="font-medium">Forces</div>
+            <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Playable force browser and unit cards.</p>
+          </Link>
+          <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/rules">
+            <div className="font-medium">Rules</div>
+            <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Core, matched play, USRs.</p>
+          </Link>
+          <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/scenarios">
+            <div className="font-medium">Scenarios</div>
+            <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Setup, scoring, special rules.</p>
+          </Link>
+          <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/builder">
+            <div className="font-medium">Builder</div>
+            <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Roster builder and legality checks.</p>
+          </Link>
+          <Link className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]" to="/matches">
+            <div className="font-medium">Matches</div>
+            <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">Saved matches and live tracker.</p>
+          </Link>
         </CardContent>
       </Card>
     </div>

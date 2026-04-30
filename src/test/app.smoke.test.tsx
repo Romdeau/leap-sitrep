@@ -1009,13 +1009,12 @@ describe("App smoke test", () => {
     );
   });
 
-  it("renders the Packet 4 reference home from generated datasets", async () => {
+  it("renders the reference home from generated datasets", async () => {
     render(<App />);
 
     expect(await screen.findByText("Reference hub")).toBeInTheDocument();
-    expect(screen.getByText("Seed slice reference data is live")).toBeInTheDocument();
     expect(screen.getByText("Authority overview")).toBeInTheDocument();
-    expect(screen.getAllByRole("link", { name: "Forces" }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: /Forces/ }).length).toBeGreaterThan(0);
   });
 
   it("opens search and returns seed slice results", async () => {
