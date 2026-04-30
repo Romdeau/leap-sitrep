@@ -7,7 +7,9 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageHero } from "@/components/ui/page-hero";
+import { SectionTabs } from "@/components/ui/section-tabs";
 import { SideRail } from "@/components/ui/side-rail";
+import { TopicTOC } from "@/components/ui/topic-toc";
 import type {
   ArmoryItem,
   CitationBackedText,
@@ -914,6 +916,16 @@ export function RulesLandingRoute() {
         }
       />
 
+      <SectionTabs
+        ariaLabel="Rules sections"
+        tabs={[
+          { id: "overview", label: "Overview", to: "/rules", end: true },
+          { id: "core", label: "Core", to: "/rules/core" },
+          { id: "matched-play", label: "Matched Play", to: "/rules/matched-play" },
+          { id: "usr", label: "USR", to: "/rules#usr" },
+        ]}
+      />
+
       <Card>
         <CardHeader>
           <CardTitle>Seed topics</CardTitle>
@@ -926,7 +938,7 @@ export function RulesLandingRoute() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card id="usr">
         <CardHeader>
           <CardTitle>Universal special rules</CardTitle>
           <CardDescription>
@@ -995,83 +1007,103 @@ export function RulesCoreRoute() {
         matrixSource="rules-core"
       />
 
-      {topics.map(({ rule, effectiveRule }) => {
-        const faqEntries = faqByTopic.get(rule.id) ?? [];
-        const combinedCitations = [...rule.citations, ...(effectiveRule?.citations ?? [])];
+      <SectionTabs
+        ariaLabel="Rules sections"
+        tabs={[
+          { id: "overview", label: "Overview", to: "/rules", end: true },
+          { id: "core", label: "Core", to: "/rules/core" },
+          { id: "matched-play", label: "Matched Play", to: "/rules/matched-play" },
+        ]}
+      />
 
-        return (
-          <Card id={rule.id} key={rule.id}>
-            <CardHeader>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="outline">{rule.category}</Badge>
-                {effectiveRule ? <Badge variant="accent">Effective text</Badge> : null}
-              </div>
-              <CardTitle>{rule.title}</CardTitle>
-              <CardDescription>{effectiveRule?.precedenceReason ?? "No supplemental override is currently attached."}</CardDescription>
-            </CardHeader>
-            <CardContent className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">Core text</h3>
-                  {rule.overview ? (
-                    <div className="mt-3 space-y-2 text-sm leading-6 text-[color:var(--muted-foreground)]">
-                      {splitClauses(rule.overview).map((clause, index) => (
-                        <p key={`${rule.id}-overview-${index}`}>{clause}</p>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="mt-3 text-sm text-[color:var(--muted-foreground)]">No standalone overview paragraph is present for this rule.</p>
-                  )}
-                </div>
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_240px]">
+        <div className="space-y-6">
+          {topics.map(({ rule, effectiveRule }) => {
+            const faqEntries = faqByTopic.get(rule.id) ?? [];
+            const combinedCitations = [...rule.citations, ...(effectiveRule?.citations ?? [])];
 
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">Subsections</h3>
-                  <div className="mt-3">
-                    {rule.subsections.length > 0 ? (
-                      <RuleSubsectionList subsections={rule.subsections} />
-                    ) : (
-                      <p className="text-sm text-[color:var(--muted-foreground)]">No numbered subsections were extracted for this rule.</p>
-                    )}
+            return (
+              <Card id={rule.id} key={rule.id}>
+                <CardHeader>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="outline">{rule.category}</Badge>
+                    {effectiveRule ? <Badge variant="accent">Effective text</Badge> : null}
                   </div>
-                </div>
-
-                {effectiveRule ? (
-                  <div>
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">Effective ruling</h3>
-                    <div className="mt-3">
-                      <EffectiveRuleDiff effectiveRule={effectiveRule} />
+                  <CardTitle>{rule.title}</CardTitle>
+                  <CardDescription>{effectiveRule?.precedenceReason ?? "No supplemental override is currently attached."}</CardDescription>
+                </CardHeader>
+                <CardContent className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">Core text</h3>
+                      {rule.overview ? (
+                        <div className="mt-3 space-y-2 text-sm leading-6 text-[color:var(--muted-foreground)]">
+                          {splitClauses(rule.overview).map((clause, index) => (
+                            <p key={`${rule.id}-overview-${index}`}>{clause}</p>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="mt-3 text-sm text-[color:var(--muted-foreground)]">No standalone overview paragraph is present for this rule.</p>
+                      )}
                     </div>
-                  </div>
-                ) : null}
-              </div>
 
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">Linked FAQ</h3>
-                  <div className="mt-3 space-y-3">
-                    {faqEntries.slice(0, 4).map((entry) => (
-                      <div key={entry.id} className="rounded-2xl border border-[color:var(--border)] p-4">
-                        <div className="font-medium">{entry.question}</div>
-                        <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{entry.answer}</p>
+                    <div>
+                      <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">Subsections</h3>
+                      <div className="mt-3">
+                        {rule.subsections.length > 0 ? (
+                          <RuleSubsectionList subsections={rule.subsections} />
+                        ) : (
+                          <p className="text-sm text-[color:var(--muted-foreground)]">No numbered subsections were extracted for this rule.</p>
+                        )}
                       </div>
-                    ))}
-                    {faqEntries.length === 0 ? (
-                      <p className="text-sm text-[color:var(--muted-foreground)]">No linked FAQ extracted for this topic.</p>
+                    </div>
+
+                    {effectiveRule ? (
+                      <div>
+                        <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">Effective ruling</h3>
+                        <div className="mt-3">
+                          <EffectiveRuleDiff effectiveRule={effectiveRule} />
+                        </div>
+                      </div>
                     ) : null}
                   </div>
-                </div>
 
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">Citations</h3>
-                  <div className="mt-3">
-                    <CitationList citations={combinedCitations} />
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">Linked FAQ</h3>
+                      <div className="mt-3 space-y-3">
+                        {faqEntries.slice(0, 4).map((entry) => (
+                          <div key={entry.id} className="rounded-2xl border border-[color:var(--border)] p-4">
+                            <div className="font-medium">{entry.question}</div>
+                            <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{entry.answer}</p>
+                          </div>
+                        ))}
+                        {faqEntries.length === 0 ? (
+                          <p className="text-sm text-[color:var(--muted-foreground)]">No linked FAQ extracted for this topic.</p>
+                        ) : null}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted-foreground)]">Citations</h3>
+                      <div className="mt-3">
+                        <CitationList citations={combinedCitations} />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        );
-      })}
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+
+        <aside className="hidden lg:sticky lg:top-6 lg:block lg:self-start">
+          <TopicTOC
+            entries={topics.map(({ rule }) => ({ id: rule.id, label: rule.title }))}
+            title="Topics"
+          />
+        </aside>
+      </div>
     </div>
   );
 }
@@ -1090,6 +1122,15 @@ export function RulesMatchedPlayRoute() {
         assetCode="RUL-MTC-00"
         assetCodeSecondary="SUPPLEMENTAL"
         matrixSource="rules-matched-play"
+      />
+
+      <SectionTabs
+        ariaLabel="Rules sections"
+        tabs={[
+          { id: "overview", label: "Overview", to: "/rules", end: true },
+          { id: "core", label: "Core", to: "/rules/core" },
+          { id: "matched-play", label: "Matched Play", to: "/rules/matched-play" },
+        ]}
       />
 
       {groupBuilding ? (

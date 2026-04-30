@@ -1082,7 +1082,8 @@ describe("App smoke test", () => {
     await user.click(screen.getAllByRole("button", { name: "Search" })[0]);
     await user.type(screen.getByPlaceholderText("Search rules, lore, forces, units, scenarios, or glossary terms"), "smoke grenade");
 
-    expect(await screen.findByText("USR")).toBeInTheDocument();
+    const usrBadges = await screen.findAllByText("USR");
+    expect(usrBadges.length).toBeGreaterThan(0);
   });
 
   it("surfaces sourced matched play group building rules", async () => {
