@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { EyebrowLabel } from "@/components/ui/eyebrow-label";
 import { PageHero } from "@/components/ui/page-hero";
 import { StatBlock } from "@/components/ui/stat-block";
+import { WizardStepper } from "@/components/ui/wizard-stepper";
 import type { Force, Roster, UnitCard } from "@/lib/types/domain";
 import { useReferenceData } from "@/features/reference/use-reference-data";
 
@@ -140,6 +141,10 @@ export function BuilderRoute() {
     setCopiedRosterId(rosterId);
   }
 
+  const hasForce = force !== undefined;
+  const hasUniqueUnits = selectedUnitIds.length === 3 && new Set(selectedUnitIds).size === 3;
+  const hasNotes = notes.trim().length > 0;
+
   return (
     <div className="space-y-6">
       <PageHero
@@ -151,118 +156,206 @@ export function BuilderRoute() {
         matrixSource={force?.id ?? "blkout-roster"}
       />
 
+      <WizardStepper
+        steps={[
+          {
+            id: "force",
+            label: "Force",
+            description: hasForce ? "Selected" : "Pick a verified card",
+            complete: hasForce,
+            active: !hasForce,
+          },
+          {
+            id: "units",
+            label: "Units",
+            description: `${selectedUnitIds.length}/3 slots`,
+            complete: hasUniqueUnits,
+            active: hasForce && !hasUniqueUnits,
+          },
+          {
+            id: "notes",
+            label: "Notes",
+            description: hasNotes ? "Notes added" : "Optional",
+            complete: hasNotes,
+            active: hasUniqueUnits && !hasNotes,
+          },
+          {
+            id: "review",
+            label: "Review & Save",
+            description: validation.isLegal ? "Roster legal" : "Resolve issues",
+            complete: false,
+            active: hasUniqueUnits,
+          },
+        ]}
+      />
+
       <div className="grid gap-6 xl:grid-cols-[1fr_0.85fr]">
-        <Card>
-          <CardHeader>
-            <CardTitle>Roster draft</CardTitle>
-            <CardDescription>No points or handlers are invented here; this slice only validates the core group structure currently supported by verified data.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-5">
-            <div className="reg-frame relative rounded-sm border border-[color:var(--border)] bg-[color:var(--surface)] p-4">
-              <span aria-hidden className="reg-bl" />
-              <span aria-hidden className="reg-br" />
-              <label className="block space-y-2">
-                <EyebrowLabel>Force card</EyebrowLabel>
-                <select
-                  className={FIELD_INPUT_CLASS}
-                  onChange={(event) => updateForce(event.target.value)}
-                  value={force?.id ?? ""}
-                >
-                  {forces.data.forces.map((candidate) => (
-                    <option key={candidate.id} value={candidate.id}>
-                      {candidate.name} ({candidate.cardId})
-                    </option>
-                  ))}
-                </select>
-              </label>
-              {force ? (
-                <div className="mt-3 flex flex-wrap items-center gap-2">
-                  <span className="font-display text-base font-semibold uppercase tracking-wide">{force.name}</span>
-                  <Badge variant="outline">{force.cardId}</Badge>
-                  <Badge variant="outline">{units.length} verified units</Badge>
-                </div>
-              ) : null}
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-3">
-              {[0, 1, 2].map((slotIndex) => (
-                <UnitSlotField
-                  key={slotIndex}
-                  isDuplicate={(selectedUnitIdCounts[selectedUnitIds[slotIndex] ?? ""] ?? 0) > 1}
-                  slotIndex={slotIndex}
-                  unitId={selectedUnitIds[slotIndex] ?? ""}
-                  units={units}
-                  onChange={updateUnitSlot}
-                />
-              ))}
-            </div>
-
-            <label className="block space-y-2">
-              <EyebrowLabel>Roster notes</EyebrowLabel>
-              <textarea
-                className="min-h-24 w-full rounded-sm border border-[color:var(--border)] bg-[color:var(--surface-sunken)] p-4 text-sm text-[color:var(--foreground)] outline-none transition focus:border-[color:var(--accent)] focus:ring-2 focus:ring-[color:var(--ring)]/40"
-                onChange={(event) => setNotes(event.target.value)}
-                placeholder="Optional table notes, deployment reminders, or source-check notes."
-                value={notes}
-              />
-            </label>
-
-            <div className="flex flex-wrap gap-3">
-              <Button disabled={!validation.isLegal} onClick={saveRoster}>
-                Save roster
-              </Button>
-              {force ? (
-                <Button asChild variant="outline">
-                  <Link to={`/forces/${force.id}`}>Review force source</Link>
-                </Button>
-              ) : null}
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Legality and summary</CardTitle>
-            <CardDescription>Validation stays intentionally narrow until matched play and broader card data are verified.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-5">
-            <div className="reg-frame relative rounded-sm border border-[color:var(--border)] bg-[color:var(--surface)] p-4">
-              <span aria-hidden className="reg-bl" />
-              <span aria-hidden className="reg-br" />
-              <div className="flex flex-wrap items-center gap-2">
-                <Badge variant={validation.isLegal ? "accent" : "danger"}>{validation.isLegal ? "Legal" : "Needs attention"}</Badge>
-                <span className="font-display text-sm font-semibold uppercase tracking-wide">Core group validation</span>
+        <div className="space-y-6">
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <Badge variant="outline">Step 1</Badge>
+                <CardTitle>Force</CardTitle>
               </div>
-              <div className="mt-3 space-y-2 text-sm leading-6 text-[color:var(--muted-foreground)]">
-                {validation.messages.map((message) => (
-                  <p key={message}>{message}</p>
+              <CardDescription>Pick the verified force card the rest of the roster will draw from.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="reg-frame relative rounded-sm border border-[color:var(--border)] bg-[color:var(--surface)] p-4">
+                <span aria-hidden className="reg-bl" />
+                <span aria-hidden className="reg-br" />
+                <label className="block space-y-2">
+                  <EyebrowLabel>Force card</EyebrowLabel>
+                  <select
+                    className={FIELD_INPUT_CLASS}
+                    onChange={(event) => updateForce(event.target.value)}
+                    value={force?.id ?? ""}
+                  >
+                    {forces.data.forces.map((candidate) => (
+                      <option key={candidate.id} value={candidate.id}>
+                        {candidate.name} ({candidate.cardId})
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                {force ? (
+                  <div className="mt-3 flex flex-wrap items-center gap-2">
+                    <span className="font-display text-base font-semibold uppercase tracking-wide">{force.name}</span>
+                    <Badge variant="outline">{force.cardId}</Badge>
+                    <Badge variant="outline">{units.length} verified units</Badge>
+                  </div>
+                ) : null}
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <Badge variant="outline">Step 2</Badge>
+                <CardTitle>Units</CardTitle>
+              </div>
+              <CardDescription>Three distinct unit cards from the chosen force.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-4 md:grid-cols-3">
+                {[0, 1, 2].map((slotIndex) => (
+                  <UnitSlotField
+                    key={slotIndex}
+                    isDuplicate={(selectedUnitIdCounts[selectedUnitIds[slotIndex] ?? ""] ?? 0) > 1}
+                    slotIndex={slotIndex}
+                    unitId={selectedUnitIds[slotIndex] ?? ""}
+                    units={units}
+                    onChange={updateUnitSlot}
+                  />
                 ))}
               </div>
-            </div>
+            </CardContent>
+          </Card>
 
-            <div className="space-y-3">
-              {selectedUnits.map((unit) => (
-                <Link
-                  key={unit.id}
-                  className="reg-frame relative block rounded-sm border border-[color:var(--border)] bg-[color:var(--surface)] p-4 transition hover:border-[color:var(--accent)] hover:bg-[color:var(--surface-muted)]"
-                  to={`/units/${unit.id}`}
-                >
-                  <span aria-hidden className="reg-bl" />
-                  <span aria-hidden className="reg-br" />
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="font-display text-base font-semibold uppercase tracking-wide">{unit.name}</span>
-                    <Badge variant="outline">{unit.cardId}</Badge>
-                  </div>
-                  <StatBlock
-                    className="mt-3"
-                    keys={["move", "shoot", "armor"]}
-                    stats={{ move: unit.stats.move ?? "-", shoot: unit.stats.shoot ?? "-", armor: unit.stats.armor ?? "-" }}
-                  />
-                </Link>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <Badge variant="outline">Step 3</Badge>
+                <CardTitle>Notes</CardTitle>
+              </div>
+              <CardDescription>Optional table notes. Free text — no validation.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <label className="block space-y-2">
+                <EyebrowLabel>Roster notes</EyebrowLabel>
+                <textarea
+                  className="min-h-24 w-full rounded-sm border border-[color:var(--border)] bg-[color:var(--surface-sunken)] p-4 text-sm text-[color:var(--foreground)] outline-none transition focus:border-[color:var(--accent)] focus:ring-2 focus:ring-[color:var(--ring)]/40"
+                  onChange={(event) => setNotes(event.target.value)}
+                  placeholder="Optional table notes, deployment reminders, or source-check notes."
+                  value={notes}
+                />
+              </label>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <Badge variant="outline">Step 4</Badge>
+                <CardTitle>Review & Save</CardTitle>
+              </div>
+              <CardDescription>Confirm the roster reads as legal, then save it locally.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-3">
+                <Button disabled={!validation.isLegal} onClick={saveRoster}>
+                  Save roster
+                </Button>
+                {force ? (
+                  <Button asChild variant="outline">
+                    <Link to={`/forces/${force.id}`}>Review force source</Link>
+                  </Button>
+                ) : null}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <aside className="space-y-4 xl:sticky xl:top-6 xl:self-start">
+          <Card>
+            <CardHeader>
+              <CardTitle>Legality and summary</CardTitle>
+              <CardDescription>Validation stays narrow until matched play and broader card data are verified.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-5">
+              <div className="reg-frame relative rounded-sm border border-[color:var(--border)] bg-[color:var(--surface)] p-4">
+                <span aria-hidden className="reg-bl" />
+                <span aria-hidden className="reg-br" />
+                <div className="flex flex-wrap items-center gap-2">
+                  <Badge variant={validation.isLegal ? "accent" : "danger"}>{validation.isLegal ? "Legal" : "Needs attention"}</Badge>
+                  <span className="font-display text-sm font-semibold uppercase tracking-wide">Core group validation</span>
+                </div>
+                <div className="mt-3 space-y-2 text-sm leading-6 text-[color:var(--muted-foreground)]">
+                  {validation.messages.map((message) => (
+                    <p key={message}>{message}</p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                {selectedUnits.map((unit) => (
+                  <Link
+                    key={unit.id}
+                    className="reg-frame relative block rounded-sm border border-[color:var(--border)] bg-[color:var(--surface)] p-4 transition hover:border-[color:var(--accent)] hover:bg-[color:var(--surface-muted)]"
+                    to={`/units/${unit.id}`}
+                  >
+                    <span aria-hidden className="reg-bl" />
+                    <span aria-hidden className="reg-br" />
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="font-display text-base font-semibold uppercase tracking-wide">{unit.name}</span>
+                      <Badge variant="outline">{unit.cardId}</Badge>
+                    </div>
+                    <StatBlock
+                      className="mt-3"
+                      keys={["move", "shoot", "armor"]}
+                      stats={{ move: unit.stats.move ?? "-", shoot: unit.stats.shoot ?? "-", armor: unit.stats.armor ?? "-" }}
+                    />
+                  </Link>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </aside>
+      </div>
+
+      {/* Sticky bottom action bar — mobile-only mirror of Save action. */}
+      <div className="sticky bottom-0 z-20 -mx-4 border-t border-[color:var(--border)] bg-[color:var(--surface)]/95 px-4 py-3 backdrop-blur xl:hidden">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2 text-xs">
+            <Badge variant={validation.isLegal ? "accent" : "danger"}>{validation.isLegal ? "Legal" : "Issues"}</Badge>
+            <span className="text-[color:var(--muted-foreground)]" aria-hidden>
+              {validation.messages.length > 0 ? `${validation.messages.length} note${validation.messages.length === 1 ? "" : "s"}` : ""}
+            </span>
+          </div>
+          <Button disabled={!validation.isLegal} onClick={saveRoster} size="sm">
+            Save
+          </Button>
+        </div>
       </div>
 
       <Card>
