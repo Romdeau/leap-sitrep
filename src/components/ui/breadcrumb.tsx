@@ -33,11 +33,20 @@ export function Breadcrumb({ className, items }: BreadcrumbProps) {
     >
       {items.map((item, index) => {
         const isLast = index === items.length - 1;
+        const isFirst = index === 0;
+        // On small screens, collapse middle items (everything that isn't first or last) to keep the bar single-line.
+        const collapseOnMobile = !isLast && !isFirst && items.length > 2;
 
         return (
           <Fragment key={`${index}-${typeof item.label === "string" ? item.label : "node"}`}>
             {index > 0 ? (
-              <span aria-hidden className="text-[color:var(--border-strong)]">
+              <span
+                aria-hidden
+                className={cn(
+                  "text-[color:var(--border-strong)]",
+                  collapseOnMobile ? "hidden sm:inline" : undefined,
+                )}
+              >
                 /
               </span>
             ) : null}
@@ -45,8 +54,9 @@ export function Breadcrumb({ className, items }: BreadcrumbProps) {
               <span
                 className={cn(
                   isLast
-                    ? "text-[color:var(--muted-foreground)]"
+                    ? "max-w-[14rem] truncate text-[color:var(--muted-foreground)] sm:max-w-none"
                     : "text-[color:var(--subtle-foreground)]",
+                  collapseOnMobile ? "hidden sm:inline" : undefined,
                 )}
                 aria-current={isLast ? "page" : undefined}
               >
@@ -54,12 +64,26 @@ export function Breadcrumb({ className, items }: BreadcrumbProps) {
               </span>
             ) : (
               <Link
-                className="text-[color:var(--subtle-foreground)] transition-colors hover:text-[color:var(--foreground)]"
+                className={cn(
+                  "text-[color:var(--subtle-foreground)] transition-colors hover:text-[color:var(--foreground)]",
+                  collapseOnMobile ? "hidden sm:inline" : undefined,
+                )}
                 to={item.to}
               >
                 {item.label}
               </Link>
             )}
+            {/* When middle items collapse on mobile, surface a single ellipsis after the first item. */}
+            {isFirst && items.length > 2 ? (
+              <span aria-hidden className="text-[color:var(--border-strong)] sm:hidden">
+                /
+              </span>
+            ) : null}
+            {isFirst && items.length > 2 ? (
+              <span aria-hidden className="text-[color:var(--subtle-foreground)] sm:hidden">
+                …
+              </span>
+            ) : null}
           </Fragment>
         );
       })}

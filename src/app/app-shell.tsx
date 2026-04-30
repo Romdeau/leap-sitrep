@@ -1,5 +1,5 @@
 import { Monitor, Moon, RotateCcw, Sun } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 
 import { ActiveMatchStrip } from "@/components/ui/active-match-strip";
@@ -180,14 +180,27 @@ function MobileSheet({
   onClose: () => void;
   title: string;
 }) {
+  // Close on Escape so the sheet behaves like a dialog.
+  useEffect(() => {
+    function onKey(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
   return (
     <div
+      aria-label={title}
+      aria-modal="true"
       className="fixed inset-0 z-40 bg-[color:color-mix(in_srgb,var(--foreground)_28%,transparent)] backdrop-blur-sm md:hidden"
       onClick={onClose}
-      role="presentation"
+      role="dialog"
     >
       <div
-        className="absolute inset-x-0 bottom-0 rounded-t-2xl border-t border-[color:var(--border-strong)] bg-[color:var(--surface)] p-4 pb-24"
+        className="absolute inset-x-0 bottom-0 max-h-[80vh] overflow-y-auto rounded-t-2xl border-t border-[color:var(--border-strong)] bg-[color:var(--surface)] p-4 pb-24 shadow-[var(--shadow)]"
         onClick={(event) => event.stopPropagation()}
       >
         <div className="mb-3 flex items-center justify-between">
