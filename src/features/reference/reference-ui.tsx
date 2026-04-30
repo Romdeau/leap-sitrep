@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { FilterChips } from "@/components/ui/filter-chips";
 import { PageHero } from "@/components/ui/page-hero";
 import { RecentList, type RecentListItem } from "@/components/ui/recent-list";
 import { SectionTabs } from "@/components/ui/section-tabs";
@@ -709,7 +710,7 @@ export function ReferenceHomeRoute() {
 
 export function LoreHubRoute() {
   const { lore } = useReferenceData();
-  const highlightedFactions = lore.data.factions.filter((faction) => ["the-authority", "harlow-1st-assault-battalion"].includes(faction.id));
+  const factions = [...lore.data.factions].sort((left, right) => left.name.localeCompare(right.name));
   const glossaryHighlights = lore.data.glossary.filter((term) => ["abol", "leap", "sssa", "utg"].includes(term.id));
 
   return (
@@ -733,45 +734,45 @@ export function LoreHubRoute() {
         }
       />
 
-      <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-        <Card>
-          <CardHeader>
-            <CardTitle>Faction starting points</CardTitle>
-            <CardDescription>The seed slice begins with the Authority power structure and its Harlow enforcement arm.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {highlightedFactions.map((faction) => (
-              <Link
-                key={faction.id}
-                className="block rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
-                to={`/lore/factions/${faction.id}`}
-              >
-                <div className="font-medium">{faction.name}</div>
-                <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{summarizeText(faction.summary, 300)}</p>
-              </Link>
-            ))}
-          </CardContent>
-        </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Factions</CardTitle>
+          <CardDescription>
+            {factions.length} extracted faction{factions.length === 1 ? "" : "s"}. Tap a card to read its primer.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {factions.map((faction) => (
+            <Link
+              key={faction.id}
+              className="block rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
+              to={`/lore/factions/${faction.id}`}
+            >
+              <div className="font-medium">{faction.name}</div>
+              <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{summarizeText(faction.summary, 240)}</p>
+            </Link>
+          ))}
+        </CardContent>
+      </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Glossary anchors</CardTitle>
-            <CardDescription>Terms that recur throughout the Authority and ABOL slice.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            {glossaryHighlights.map((term) => (
-              <Link
-                key={term.id}
-                className="block rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
-                to="/glossary"
-              >
-                <div className="font-medium">{term.term}</div>
-                <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{term.meaning}</p>
-              </Link>
-            ))}
-          </CardContent>
-        </Card>
-      </div>
+      <Card>
+        <CardHeader>
+          <CardTitle>Glossary anchors</CardTitle>
+          <CardDescription>Terms that recur throughout the Authority and ABOL slice.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2">
+          {glossaryHighlights.map((term) => (
+            <Link
+              key={term.id}
+              className="block rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
+              to="/glossary"
+            >
+              <div className="font-medium">{term.term}</div>
+              <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{term.meaning}</p>
+            </Link>
+          ))}
+        </CardContent>
+      </Card>
     </div>
   );
 }
@@ -1398,7 +1399,45 @@ export function UsrDetailRoute() {
 }
 
 export function ForcesRoute() {
-  const { forces } = useReferenceData();
+  const { forces, lore } = useReferenceData();
+  const [confidenceFilter, setConfidenceFilter] = useState<string | null>(null);
+
+  const allForces = forces.data.forces;
+
+  const confidenceOptions = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const force of allForces) {
+      counts.set(force.confidence, (counts.get(force.confidence) ?? 0) + 1);
+    }
+    return Array.from(counts.entries()).map(([confidence, count]) => ({
+      id: confidence,
+      label: confidence,
+      count,
+    }));
+  }, [allForces]);
+
+  const filteredForces = confidenceFilter
+    ? allForces.filter((force) => force.confidence === confidenceFilter)
+    : allForces;
+
+  // Group filtered forces by parent lore faction so the index reflects who fields each force.
+  const grouped = useMemo(() => {
+    const byFaction = new Map<string, { factionName: string; forces: typeof allForces }>();
+    for (const force of filteredForces) {
+      const faction = lore.data.factions.find((candidate) => candidate.id === force.parentLoreFactionId);
+      const key = force.parentLoreFactionId || "__unaligned";
+      const factionName = faction?.name ?? "Unaligned";
+      const bucket = byFaction.get(key);
+      if (bucket) {
+        bucket.forces.push(force);
+      } else {
+        byFaction.set(key, { factionName, forces: [force] });
+      }
+    }
+    return Array.from(byFaction.entries()).sort((left, right) =>
+      left[1].factionName.localeCompare(right[1].factionName),
+    );
+  }, [filteredForces, lore.data.factions]);
 
   return (
     <div className="space-y-6">
@@ -1411,28 +1450,48 @@ export function ForcesRoute() {
         matrixSource="forces-hub"
       />
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Verified forces</CardTitle>
-          <CardDescription>The seed slice is the authoritative tabletop reference set today.</CardDescription>
-        </CardHeader>
-        <CardContent className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {forces.data.forces.map((force) => (
-            <Link
-              key={force.id}
-              className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
-              to={`/forces/${force.id}`}
-            >
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="font-medium">{force.name}</span>
-                <Badge variant="accent">{force.confidence}</Badge>
-              </div>
-              <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">{force.cardId}</p>
-              <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{summarizeText(force.forceRules[0]?.text ?? "No force rule text available.")}</p>
-            </Link>
-          ))}
-        </CardContent>
-      </Card>
+      <FilterChips
+        label="Confidence"
+        options={confidenceOptions}
+        value={confidenceFilter}
+        onChange={setConfidenceFilter}
+        allCount={allForces.length}
+      />
+
+      {grouped.length === 0 ? (
+        <Card>
+          <CardContent className="py-10 text-center text-sm text-[color:var(--muted-foreground)]">
+            No forces match the current filter.
+          </CardContent>
+        </Card>
+      ) : (
+        grouped.map(([key, { factionName, forces: bucketForces }]) => (
+          <Card key={key}>
+            <CardHeader>
+              <CardTitle>{factionName}</CardTitle>
+              <CardDescription>
+                {bucketForces.length} force{bucketForces.length === 1 ? "" : "s"}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {bucketForces.map((force) => (
+                <Link
+                  key={force.id}
+                  className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
+                  to={`/forces/${force.id}`}
+                >
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-medium">{force.name}</span>
+                    <Badge variant="accent">{force.confidence}</Badge>
+                  </div>
+                  <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">{force.cardId}</p>
+                  <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{summarizeText(force.forceRules[0]?.text ?? "No force rule text available.")}</p>
+                </Link>
+              ))}
+            </CardContent>
+          </Card>
+        ))
+      )}
     </div>
   );
 }
@@ -1703,6 +1762,24 @@ export function UnitDetailRoute() {
 
 export function ScenariosRoute() {
   const { scenarios } = useReferenceData();
+  const [modeFilter, setModeFilter] = useState<string | null>(null);
+
+  const allScenarios = scenarios.data.scenarios;
+  const modeOptions = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const scenario of allScenarios) {
+      counts.set(scenario.mode, (counts.get(scenario.mode) ?? 0) + 1);
+    }
+    return Array.from(counts.entries()).map(([mode, count]) => ({
+      id: mode,
+      label: mode,
+      count,
+    }));
+  }, [allScenarios]);
+
+  const filteredScenarios = modeFilter
+    ? allScenarios.filter((scenario) => scenario.mode === modeFilter)
+    : allScenarios;
 
   return (
     <div className="space-y-6">
@@ -1715,12 +1792,23 @@ export function ScenariosRoute() {
         matrixSource="scenarios-hub"
       />
 
+      <FilterChips
+        label="Mode"
+        options={modeOptions}
+        value={modeFilter}
+        onChange={setModeFilter}
+        allCount={allScenarios.length}
+      />
+
       <Card>
         <CardHeader>
           <CardTitle>Core scenarios</CardTitle>
+          <CardDescription>
+            {filteredScenarios.length} of {allScenarios.length} scenario{allScenarios.length === 1 ? "" : "s"}
+          </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4 md:grid-cols-2">
-          {scenarios.data.scenarios.map((scenario) => (
+          {filteredScenarios.map((scenario) => (
             <Link
               key={scenario.id}
               className="rounded-2xl border border-[color:var(--border)] p-4 transition hover:bg-[color:var(--surface-muted)]"
