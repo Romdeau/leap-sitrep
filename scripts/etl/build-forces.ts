@@ -824,7 +824,7 @@ export async function buildForceDataset(options: {
       role: "UNKNOWN",
       cost: "UNKNOWN",
       grunts: 1,
-      stats: { move: "5", skill: "4", armor: "3/4", "damage-track": 1 },
+      stats: { move: "5", skill: "4", armor: "3/4", "damage-track": 2 },
       specialists: [],
       weapons: [
         createWeapon("tfb-9863-weapon-gauss-saw", "Gauss SAW", "32”/1", null, ["Cyclic", "AP (2)", "Auto (2)"], [artifactCitation("Boone Razorback front", "screenshots/boone-recon-force/boone-recon-side1.jpg")]),
@@ -1022,7 +1022,7 @@ export async function buildForceDataset(options: {
       role: "UNKNOWN",
       cost: "UNKNOWN",
       grunts: 2,
-      stats: { move: "4", skill: "6", armor: "3/6", "damage-track": 1 },
+      stats: { move: "4", skill: "6", armor: "3/6", "damage-track": 3 },
       specialists: [
         createSpecialist("unr-462-specialist-1", 1, "Data Specialist", "Data Spike", "Data Spike", [artifactCitation("UN Reserve Fireteam specialist", "markdown/Unit-Cards-Printable-2026.md lines 343-352")]),
         createSpecialist("unr-462-specialist-2", 2, "SAW Gunner", "AT Launcher | 8-32”/3 AP (2), Blast (1)", "AT Launcher", [artifactCitation("UN Reserve Fireteam specialist", "markdown/Unit-Cards-Printable-2026.md lines 348-354")]),

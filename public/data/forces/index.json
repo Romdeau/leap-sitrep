@@ -2,7 +2,7 @@
   "meta": {
     "kind": "forces",
     "version": "packet-7",
-    "generatedAt": "2026-05-06T06:09:51.347Z",
+    "generatedAt": "2026-05-06T06:29:16.481Z",
     "sourceDocumentIds": [
       "blkout-unit-cards-ocr",
       "blkout-unit-cards-screenshots"
@@ -2204,7 +2204,7 @@
           "move": "5",
           "skill": "4",
           "armor": "3/4",
-          "damage-track": 1
+          "damage-track": 2
         },
         "specialists": [],
         "weapons": [
@@ -3096,7 +3096,7 @@
           "move": "4",
           "skill": "6",
           "armor": "3/6",
-          "damage-track": 1
+          "damage-track": 3
         },
         "specialists": [
           {
