@@ -332,8 +332,8 @@ export function BuilderRoute() {
                     </div>
                     <StatBlock
                       className="mt-3"
-                      keys={["shoot", "move", "armor"]}
-                      stats={{ move: unit.stats.move ?? "-", shoot: unit.stats.shoot ?? "-", armor: unit.stats.armor ?? "-" }}
+                      keys={["skill", "move", "armor"]}
+                      stats={{ move: unit.stats.move ?? "-", skill: unit.stats.skill ?? "-", armor: unit.stats.armor ?? "-" }}
                     />
                   </Link>
                 ))}

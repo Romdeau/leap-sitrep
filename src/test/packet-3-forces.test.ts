@@ -23,7 +23,7 @@ describe("Packet 3 curated force slice", () => {
     expect(forceDataset.meta.confidence).toBe("verified");
     expect(forceDataset.data.forces).toHaveLength(2);
     expect(forceDataset.data.forces[0]?.cardId).toBe("HFR-6770");
-    expect(forceDataset.data.forces[0]?.parentLoreFactionId).toBe("the-authority");
+    expect(forceDataset.data.forces[0]?.faction).toBe("the-authority");
     expect(forceDataset.data.units.map((unit) => unit.cardId)).toEqual(["HFR-6771", "HFR-6772", "HFR-6773", "HFR-6774", "HFR-6775", "HFR-6776", "RFA-4391", "RFA-4392", "RFA-4393"]);
     expect(auditDataset.meta.confidence).toBe("raw");
     expect(auditDataset.data.rawCards).toHaveLength(11);
@@ -41,17 +41,17 @@ describe("Packet 3 curated force slice", () => {
     const force = forceDataset.data.forces[0];
 
     expect(controlTeam?.weapons.map((weapon) => weapon.name)).toEqual(["FAL-32C", "Grenade Launcher"]);
-    expect(controlTeam?.specialists.find((specialist) => specialist.slot === 2)?.weaponId).toBe("hfr-6771-weapon-grenade-launcher");
+    expect(controlTeam?.specialists.find((specialist) => specialist.slot === 2)?.weapon).toBe("Grenade Launcher");
 
     expect(assaultTeam?.specialists.find((specialist) => specialist.slot === 1)?.name).toBe("Machine Gunner");
-    expect(assaultTeam?.weapons.find((weapon) => weapon.id === "hfr-6772-weapon-p34")?.keywords).toEqual(["Cyclic", "Heavy"]);
+    expect(assaultTeam?.weapons.find((weapon) => weapon.id === "hfr-6772-weapon-p34")?.traits).toEqual(["Cyclic", "Heavy"]);
 
-    expect(springbok?.abilities.map((entry) => entry.label)).toEqual(["Chaff Discharge", "Traits"]);
-    expect(springbok?.weapons[0]?.keywords).toEqual(["CQB", "Sustained (1)"]);
+    expect(springbok?.abilities.map((entry) => entry.name)).toEqual(["Chaff Discharge", "Traits"]);
+    expect(springbok?.weapons[0]?.traits).toEqual(["CQB", "Sustained (1)"]);
 
-    expect(force?.battleDrills.map((entry) => entry.label)).toEqual(["Assaulters", "Chaff", "Stims"]);
+    expect(force?.battleDrills.map((entry) => entry.name)).toEqual(["Assaulters", "Chaff", "Stims"]);
     expect(force?.armory.map((entry) => entry.name)).toEqual(["BOOST JUMP", "FRAG LAUNCHER", "HEAD", "MICRO LAUNCHER"]);
-    expect(force?.forceRules[0]?.text).toContain("+2 Movement when Sprinting");
+    expect(force?.rules[0]?.text).toContain("+2 Movement when Sprinting");
   });
 
   it("adds verified Harlow strike-team units and UN Raid Force Alpha cards", async () => {
@@ -71,17 +71,17 @@ describe("Packet 3 curated force slice", () => {
 
     expect(harlowUnits.map((unit) => unit.cardId)).toEqual(["HFR-6771", "HFR-6772", "HFR-6773", "HFR-6774", "HFR-6775", "HFR-6776"]);
     expect(engineers?.specialists[0]?.name).toBe("Engineer");
-    expect(engineers?.weapons.find((weapon) => weapon.name === "AT Launcher")?.keywords).toEqual(["AP (2)", "Blast (1)"]);
+    expect(engineers?.weapons.find((weapon) => weapon.name === "AT Launcher")?.traits).toEqual(["AP (2)", "Blast (1)"]);
     expect(veterans?.weapons.map((weapon) => weapon.name)).toEqual(["Carbine", "Machetes", "Pulse Grenades"]);
-    expect(crickets?.abilities.map((ability) => ability.label)).toEqual(["Traits", "Engineer Grouping", "Self Destruct"]);
+    expect(crickets?.abilities.map((ability) => ability.name)).toEqual(["Traits", "Engineer Grouping", "Self Destruct"]);
 
     expect(raidForce?.cardId).toBe("RFA-4390");
-    expect(raidForce?.parentLoreFactionId).toBe("un-raid-force-alpha");
-    expect(raidForce?.battleDrills.map((entry) => entry.label)).toEqual(["Close Assault", "Cross Fire", "Switchback"]);
+    expect(raidForce?.faction).toBe("the-authority");
+    expect(raidForce?.battleDrills.map((entry) => entry.name)).toEqual(["Close Assault", "Cross Fire", "Switchback"]);
     expect(raidForce?.armory.map((entry) => entry.name)).toEqual(["BOOST JUMP", "LANCE", "MICRO LAUNCHER", "SURGE"]);
     expect(assaulters?.specialists[0]?.name).toBe("Grenadier");
-    expect(specialists?.weapons.find((weapon) => weapon.name === "Anti-Material Rifle")?.keywords).toEqual(["AP (2)", "Deployed"]);
-    expect(golem?.weapons.find((weapon) => weapon.name === "Scorcher")?.keywords).toEqual(["Seeking"]);
+    expect(specialists?.weapons.find((weapon) => weapon.name === "Anti-Material Rifle")?.traits).toEqual(["AP (2)", "Deployed"]);
+    expect(golem?.weapons.find((weapon) => weapon.name === "Scorcher")?.traits).toEqual(["Seeking"]);
   });
 
   it("adds verified force and unit records to the search index", async () => {

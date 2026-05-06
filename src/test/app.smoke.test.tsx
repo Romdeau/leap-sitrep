@@ -492,11 +492,11 @@ const forcesFixture = {
         id: "harlow-1st-reaction-force",
         cardId: "HFR-6770",
         name: "Harlow 1st Reaction Force",
-        parentLoreFactionId: "the-authority",
+        faction: "the-authority",
         battleDrills: [
           {
             id: "hfr-6770-battle-drill-chaff",
-            label: "Chaff",
+            name: "Chaff",
             text: "Place a Smoke Token (Chaff) within 6 inches of a model before activating.",
             citations: [
               {
@@ -507,10 +507,10 @@ const forcesFixture = {
             ],
           },
         ],
-        forceRules: [
+        rules: [
           {
             id: "hfr-6770-force-rule",
-            label: "Harlow First Reaction Force",
+            name: "Harlow First Reaction Force",
             text: "Harlow First Reaction Force Units gain +2 Movement when Sprinting.",
             citations: [
               {
@@ -525,6 +525,9 @@ const forcesFixture = {
           {
             id: "hfr-6770-armory-boost-jump",
             name: "BOOST JUMP",
+            type: "gear",
+            cost: "UNKNOWN",
+            restrictions: "UNKNOWN",
             text: "Model gains Jump (4).",
             citations: [
               {
@@ -535,6 +538,7 @@ const forcesFixture = {
             ],
           },
         ],
+        notes: [],
         citations: [
           {
             documentId: "blkout-unit-cards-screenshots",
@@ -548,12 +552,12 @@ const forcesFixture = {
         id: "un-raid-force-alpha",
         cardId: "RFA-4390",
         name: "UN Raid Force Alpha",
-        parentLoreFactionId: "un-raid-force-alpha",
+        faction: "the-authority",
         battleDrills: [],
-        forceRules: [
+        rules: [
           {
             id: "rfa-4390-force-rule",
-            label: "UN Raid Team Alpha",
+            name: "UN Raid Team Alpha",
             text: "All UN Raid Team Alpha UTG Assaulter and Specialist Units gain an additional D10 roll in all Skill Checks.",
             citations: [
               {
@@ -565,6 +569,7 @@ const forcesFixture = {
           },
         ],
         armory: [],
+        notes: [],
         citations: [
           {
             documentId: "blkout-unit-cards-screenshots",
@@ -581,13 +586,16 @@ const forcesFixture = {
         cardId: "HFR-6771",
         forceId: "harlow-1st-reaction-force",
         name: "Harlow Control Team",
-        modelCount: 1,
+        faction: "the-authority",
+        unitType: "UNKNOWN",
+        role: "UNKNOWN",
+        cost: "UNKNOWN",
+        grunts: 1,
         stats: {
           move: "4",
-          shoot: "6",
+          skill: "6",
           armor: "1/6",
-          hack: null,
-          wounds: null,
+          "damage-track": 1,
         },
         specialists: [
           {
@@ -609,7 +617,7 @@ const forcesFixture = {
             name: "FAL-32C",
             range: "24 inches/1",
             damage: null,
-            keywords: ["CQB"],
+            traits: ["CQB"],
             citations: [
               {
                 documentId: "blkout-unit-cards-screenshots",
@@ -622,7 +630,7 @@ const forcesFixture = {
         abilities: [
           {
             id: "hfr-6771-control-ability",
-            label: "Activation Control",
+            name: "Activation Control",
             text: "One Unit may be Activated after this Unit without spending a Control Point.",
             citations: [
               {
@@ -633,6 +641,7 @@ const forcesFixture = {
             ],
           },
         ],
+        notes: [],
         citations: [
           {
             documentId: "blkout-unit-cards-screenshots",
@@ -647,20 +656,23 @@ const forcesFixture = {
         cardId: "HFR-6772",
         forceId: "harlow-1st-reaction-force",
         name: "Harlow Assault Team",
-        modelCount: 2,
+        faction: "the-authority",
+        unitType: "UNKNOWN",
+        role: "UNKNOWN",
+        cost: "UNKNOWN",
+        grunts: 2,
         stats: {
           move: "4",
-          shoot: "6",
+          skill: "6",
           armor: "1/6",
-          hack: null,
-          wounds: null,
+          "damage-track": 1,
         },
         specialists: [],
         weapons: [],
         abilities: [
           {
             id: "hfr-6772-team-leader",
-            label: "Team Leader",
+            name: "Team Leader",
             text: "When this Model gains a Ready Token it may give it to a Model in this Unit that has already made an Action.",
             citations: [
               {
@@ -671,6 +683,7 @@ const forcesFixture = {
             ],
           },
         ],
+        notes: [],
         citations: [
           {
             documentId: "blkout-unit-cards-screenshots",
@@ -685,20 +698,23 @@ const forcesFixture = {
         cardId: "HFR-6773",
         forceId: "harlow-1st-reaction-force",
         name: "Harlow Springbok AI",
-        modelCount: 2,
+        faction: "the-authority",
+        unitType: "UNKNOWN",
+        role: "UNKNOWN",
+        cost: "UNKNOWN",
+        grunts: 2,
         stats: {
           move: "6",
-          shoot: "6",
+          skill: "6",
           armor: "2/6",
-          hack: null,
-          wounds: null,
+          "damage-track": 1,
         },
         specialists: [],
         weapons: [],
         abilities: [
           {
             id: "hfr-6773-traits",
-            label: "Traits",
+            name: "Traits",
             text: "AI, Jump(4)",
             citations: [
               {
@@ -709,6 +725,7 @@ const forcesFixture = {
             ],
           },
         ],
+        notes: [],
         citations: [
           {
             documentId: "blkout-unit-cards-screenshots",
@@ -723,17 +740,21 @@ const forcesFixture = {
         cardId: "RFA-4391",
         forceId: "un-raid-force-alpha",
         name: "UN UTG Assaulters",
-        modelCount: 1,
+        faction: "the-authority",
+        unitType: "UNKNOWN",
+        role: "UNKNOWN",
+        cost: "UNKNOWN",
+        grunts: 1,
         stats: {
           move: "6",
-          shoot: "5",
+          skill: "5",
           armor: "1/5",
-          hack: null,
-          wounds: null,
+          "damage-track": 1,
         },
         specialists: [],
         weapons: [],
         abilities: [],
+        notes: [],
         citations: [],
         confidence: "verified",
       },
@@ -742,17 +763,21 @@ const forcesFixture = {
         cardId: "RFA-4392",
         forceId: "un-raid-force-alpha",
         name: "UN UTG Specialists",
-        modelCount: 1,
+        faction: "the-authority",
+        unitType: "UNKNOWN",
+        role: "UNKNOWN",
+        cost: "UNKNOWN",
+        grunts: 1,
         stats: {
           move: "6",
-          shoot: "5",
+          skill: "5",
           armor: "1/5",
-          hack: null,
-          wounds: null,
+          "damage-track": 1,
         },
         specialists: [],
         weapons: [],
         abilities: [],
+        notes: [],
         citations: [],
         confidence: "verified",
       },
@@ -761,17 +786,21 @@ const forcesFixture = {
         cardId: "RFA-4393",
         forceId: "un-raid-force-alpha",
         name: "Golem Unit",
-        modelCount: 1,
+        faction: "the-authority",
+        unitType: "UNKNOWN",
+        role: "UNKNOWN",
+        cost: "UNKNOWN",
+        grunts: 1,
         stats: {
           move: "4",
-          shoot: "5",
+          skill: "5",
           armor: "3/5",
-          hack: null,
-          wounds: null,
+          "damage-track": 1,
         },
         specialists: [],
         weapons: [],
         abilities: [],
+        notes: [],
         citations: [],
         confidence: "verified",
       },

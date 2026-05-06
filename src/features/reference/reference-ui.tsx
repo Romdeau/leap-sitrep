@@ -383,7 +383,7 @@ function CitationBackedCard({ title, items }: { title: string; items: CitationBa
       <CardContent className="space-y-4">
         {items.map((item) => (
           <div key={item.id} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
-            <div className="font-medium">{item.label}</div>
+            <div className="font-medium">{item.name}</div>
             <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{item.text}</p>
           </div>
         ))}
@@ -468,12 +468,12 @@ function WeaponList({ weapons }: { weapons: WeaponProfile[] }) {
         <div key={weapon.id} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
           <div className="flex flex-wrap items-center gap-2">
             <span className="font-medium">{weapon.name}</span>
-            {weapon.carrier ? <Badge variant="outline">{weapon.carrier}</Badge> : null}
+            {weapon.carrier && weapon.carrier !== "N/A" ? <Badge variant="outline">{weapon.carrier}</Badge> : null}
           </div>
           <div className="mt-3 flex flex-wrap gap-2 text-sm">
             {weapon.range ? <Badge variant="outline">Range {weapon.range}</Badge> : null}
             {weapon.damage ? <Badge variant="outline">Damage {weapon.damage}</Badge> : null}
-            {weapon.keywords.map((keyword) => (
+            {weapon.traits.map((keyword) => (
               <Badge key={`${weapon.id}-${keyword}`} variant="outline">
                 {keyword}
               </Badge>
@@ -492,11 +492,12 @@ function ArmoryList({ items }: { items: ArmoryItem[] }) {
         <div key={item.id} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
           <div className="font-medium">{item.name}</div>
           <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{item.text}</p>
-          {item.profile ? (
+          {item.weapon ? (
             <div className="mt-3 flex flex-wrap gap-2 text-sm">
-              {item.profile.range ? <Badge variant="outline">Range {item.profile.range}</Badge> : null}
-              {item.profile.keywords.map((keyword) => (
-                <Badge key={`${item.profile?.id}-${keyword}`} variant="outline">
+              {item.weapon.range ? <Badge variant="outline">Range {item.weapon.range}</Badge> : null}
+              {item.weapon.damage ? <Badge variant="outline">Damage {item.weapon.damage}</Badge> : null}
+              {item.weapon.traits.map((keyword) => (
+                <Badge key={`${item.weapon?.id}-${keyword}`} variant="outline">
                   {keyword}
                 </Badge>
               ))}
@@ -818,7 +819,7 @@ export function LoreFactionDetailRoute() {
   const { forces, lore } = useReferenceData();
 
   const faction = lore.data.factions.find((candidate) => candidate.id === slug);
-  const relatedForces = forces.data.forces.filter((force) => force.parentLoreFactionId === faction?.id);
+  const relatedForces = forces.data.forces.filter((force) => force.faction === faction?.id);
 
   if (faction === undefined) {
     return <EmptyState description="No lore faction matched this route parameter." title="Faction not found" />;
@@ -1337,7 +1338,7 @@ export function UsrDetailRoute() {
               <CardContent className="space-y-4">
                 {usr.notes.map((note) => (
                   <div key={note.id} className="sub-frame rounded-md border border-[color:var(--border)] p-4">
-                    <div className="font-medium">{note.label}</div>
+                    <div className="font-medium">{note.name}</div>
                     <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{note.text}</p>
                   </div>
                 ))}
@@ -1424,8 +1425,8 @@ export function ForcesRoute() {
   const grouped = useMemo(() => {
     const byFaction = new Map<string, { factionName: string; forces: typeof allForces }>();
     for (const force of filteredForces) {
-      const faction = lore.data.factions.find((candidate) => candidate.id === force.parentLoreFactionId);
-      const key = force.parentLoreFactionId || "__unaligned";
+      const faction = lore.data.factions.find((candidate) => candidate.id === force.faction);
+      const key = force.faction || "__unaligned";
       const factionName = faction?.name ?? "Unaligned";
       const bucket = byFaction.get(key);
       if (bucket) {
@@ -1485,7 +1486,7 @@ export function ForcesRoute() {
                     <Badge variant="accent">{force.confidence}</Badge>
                   </div>
                   <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">{force.cardId}</p>
-                  <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{summarizeText(force.forceRules[0]?.text ?? "No force rule text available.")}</p>
+                  <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">{summarizeText(force.rules[0]?.text ?? "No force rule text available.")}</p>
                 </Link>
               ))}
             </CardContent>
@@ -1506,7 +1507,7 @@ export function ForceDetailRoute() {
   }
 
   const units = forces.data.units.filter((unit) => unit.forceId === force.id);
-  const parentFaction = lore.data.factions.find((faction) => faction.id === force.parentLoreFactionId);
+  const parentFaction = lore.data.factions.find((faction) => faction.id === force.faction);
 
   return (
     <div className="space-y-6">
@@ -1530,7 +1531,7 @@ export function ForceDetailRoute() {
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
         <div className="space-y-6">
           <div className="grid gap-6 xl:grid-cols-2">
-            <CitationBackedCard items={force.forceRules} title="Force rules" />
+            <CitationBackedCard items={force.rules} title="Force rules" />
             <CitationBackedCard items={force.battleDrills} title="Battle drills" />
           </div>
 
@@ -1559,7 +1560,7 @@ export function ForceDetailRoute() {
                   <div className="font-medium">{unit.name}</div>
                   <div className="mt-2 text-sm text-[color:var(--muted-foreground)]">{unit.cardId}</div>
                   <div className="mt-3 flex flex-wrap gap-2">
-                    <Badge variant="outline">Skill {unit.stats.shoot ?? "-"}</Badge>
+                    <Badge variant="outline">Skill {unit.stats.skill ?? "-"}</Badge>
                     <Badge variant="outline">Move {unit.stats.move ?? "-"}</Badge>
                     <Badge variant="outline">Armor {unit.stats.armor ?? "-"}</Badge>
                   </div>
@@ -1675,11 +1676,12 @@ export function UnitDetailRoute() {
         <div className="space-y-6">
           <KeyValueGrid
             items={[
-              { label: "Models", value: String(unit.modelCount + unit.specialists.length) },
-              { label: "Grunts", value: String(unit.modelCount) },
-              { label: "Skill", value: unit.stats.shoot },
+              { label: "Models", value: String(unit.grunts + unit.specialists.length) },
+              { label: "Grunts", value: String(unit.grunts) },
+              { label: "Skill", value: unit.stats.skill },
               { label: "Move", value: unit.stats.move },
               { label: "Armor", value: unit.stats.armor },
+              { label: "Damage Track", value: unit.stats["damage-track"] != null ? String(unit.stats["damage-track"]) : null },
             ]}
           />
 

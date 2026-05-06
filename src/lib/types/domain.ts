@@ -143,7 +143,7 @@ export interface WeaponProfile {
   name: string;
   range: string | null;
   damage: string | null;
-  keywords: string[];
+  traits: string[];
   carrier?: string;
   firingModeNotes?: string;
   citations: SourceCitation[];
@@ -151,7 +151,7 @@ export interface WeaponProfile {
 
 export interface CitationBackedText {
   id: string;
-  label: string;
+  name: string;
   text: string;
   citations: SourceCitation[];
 }
@@ -159,8 +159,11 @@ export interface CitationBackedText {
 export interface ArmoryItem {
   id: string;
   name: string;
+  type?: string;
+  cost?: string;
+  restrictions?: string;
   text: string;
-  profile?: WeaponProfile;
+  weapon?: WeaponProfile;
   citations: SourceCitation[];
 }
 
@@ -169,16 +172,15 @@ export interface UnitSpecialist {
   slot: number;
   name: string;
   description?: string;
-  weaponId?: string;
+  weapon?: string;
   citations: SourceCitation[];
 }
 
 export interface UnitStats {
   move: string | null;
-  shoot: string | null;
+  skill: string | null;
   armor: string | null;
-  hack: string | null;
-  wounds: string | null;
+  "damage-track": number | null;
 }
 
 export interface UnitCard {
@@ -186,11 +188,16 @@ export interface UnitCard {
   cardId: string;
   forceId: string;
   name: string;
-  modelCount: number;
+  faction: string;
+  unitType: string;
+  role: string;
+  cost: string;
+  grunts: number;
   stats: UnitStats;
   specialists: UnitSpecialist[];
   weapons: WeaponProfile[];
   abilities: CitationBackedText[];
+  notes?: string[];
   citations: SourceCitation[];
   confidence: ConfidenceLevel;
 }
@@ -199,10 +206,11 @@ export interface Force {
   id: string;
   cardId: string;
   name: string;
-  parentLoreFactionId: string;
+  faction: string;
   battleDrills: CitationBackedText[];
-  forceRules: CitationBackedText[];
+  rules: CitationBackedText[];
   armory: ArmoryItem[];
+  notes?: string[];
   citations: SourceCitation[];
   confidence: ConfidenceLevel;
 }

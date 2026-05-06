@@ -217,27 +217,27 @@ function buildScenarioRecords(dataset: ScenarioDatasetFile): SearchIndexRecord[]
 function buildForceRecords(dataset: ForceDatasetFile): SearchIndexRecord[] {
   return [
     ...dataset.data.forces.map((force) => ({
-      id: force.id,
-      entityType: "force" as const,
-      title: force.name,
-      summary: [
-        ...force.battleDrills.map((entry) => `${entry.label}: ${entry.text}`),
-        ...force.forceRules.map((entry) => `${entry.label}: ${entry.text}`),
-      ].join(" "),
-      keywords: [force.cardId, force.parentLoreFactionId, ...force.armory.map((item) => item.name.toLowerCase())],
+        id: force.id,
+        entityType: "force" as const,
+        title: force.name,
+        summary: [
+          ...force.battleDrills.map((entry) => `${entry.name}: ${entry.text}`),
+          ...force.rules.map((entry) => `${entry.name}: ${entry.text}`),
+        ].join(" "),
+      keywords: [force.cardId, force.faction, ...force.armory.map((item) => item.name.toLowerCase())],
       aliases: [...inferAliases(force.name), force.cardId.toLowerCase()],
       route: `/forces/${force.id}`,
       sourceDocumentIds: Array.from(new Set(force.citations.map((citation) => citation.documentId))),
       relatedIds: dataset.data.units.filter((unit) => unit.forceId === force.id).map((unit) => unit.id),
     })),
     ...dataset.data.units.map((unit) => ({
-      id: unit.id,
-      entityType: "unit" as const,
-      title: unit.name,
-      summary: [
-        ...unit.abilities.map((entry) => `${entry.label}: ${entry.text}`),
-        ...unit.specialists.map((specialist) => `Specialist ${specialist.slot}: ${specialist.name}`),
-      ].join(" "),
+        id: unit.id,
+        entityType: "unit" as const,
+        title: unit.name,
+        summary: [
+          ...unit.abilities.map((entry) => `${entry.name}: ${entry.text}`),
+          ...unit.specialists.map((specialist) => `Specialist ${specialist.slot}: ${specialist.name}`),
+        ].join(" "),
       keywords: [unit.cardId, ...unit.weapons.map((weapon) => weapon.name.toLowerCase())],
       aliases: [...inferAliases(unit.name), unit.cardId.toLowerCase()],
       route: `/units/${unit.id}`,

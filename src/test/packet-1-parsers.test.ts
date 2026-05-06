@@ -127,10 +127,10 @@ describe("Packet 1 ETL parsers", () => {
     const drone = rules.find((rule) => rule.name === "Drone");
 
     expect(ap?.currentText).toContain("increase the Target’s Armor Check by +X");
-    expect(ap?.notes[0]?.label).toContain("Example");
+    expect(ap?.notes[0]?.name).toContain("Example");
     expect(ap?.notes[0]?.text).toContain("Armor 2/4");
     expect(smokeGrenade?.relatedRuleIds).toContain("smoke");
-    expect(drone?.notes[0]?.label).toContain("Note");
+    expect(drone?.notes[0]?.name).toContain("Note");
     expect(drone?.notes[0]?.text).toContain("Close Quarters Combat");
   });
 });

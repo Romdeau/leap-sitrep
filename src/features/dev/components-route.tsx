@@ -92,8 +92,8 @@ export function DevComponentsRoute() {
 
       <Section title="Stat block" description="Mirrors the unit-card stat cluster.">
         <div className="space-y-3">
-          <StatBlock stats={{ move: 6, shoot: "4+", armor: 5 }} />
-          <StatBlock keys={["move", "shoot", "armor", "hack", "wounds"]} stats={{ move: 5, shoot: "3+", armor: 4, hack: "5+", wounds: 3 }} />
+          <StatBlock stats={{ move: 6, skill: "4+", armor: 5 }} />
+          <StatBlock keys={["move", "skill", "armor", "damage-track"]} stats={{ move: 5, skill: "3+", armor: 4, "damage-track": 3 }} />
         </div>
       </Section>
 

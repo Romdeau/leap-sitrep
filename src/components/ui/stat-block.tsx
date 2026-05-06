@@ -1,12 +1,12 @@
 import type { ReactNode } from "react";
 
-import { ChevronsUp, Crosshair, Cpu, Shield, Skull } from "lucide-react";
+import { ChevronsUp, Crosshair, Shield, Skull } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
 import { EyebrowLabel } from "./eyebrow-label";
 
-export type StatKey = "move" | "shoot" | "armor" | "hack" | "wounds";
+export type StatKey = "move" | "skill" | "armor" | "damage-track";
 
 interface StatDef {
   label: string;
@@ -14,11 +14,10 @@ interface StatDef {
 }
 
 const STAT_DEFS: Record<StatKey, StatDef> = {
-  shoot: { label: "Skill", Icon: Crosshair },
+  skill: { label: "Skill", Icon: Crosshair },
   move: { label: "Move", Icon: ChevronsUp },
   armor: { label: "Armor", Icon: Shield },
-  hack: { label: "Hack", Icon: Cpu },
-  wounds: { label: "Wounds", Icon: Skull },
+  "damage-track": { label: "Damage Track", Icon: Skull },
 };
 
 interface StatBlockProps {
@@ -32,7 +31,7 @@ interface StatBlockProps {
  * StatBlock — small icon + value row matching the Skill/Move/Armor cluster
  * printed on every unit card. Replaces ad-hoc `KeyValueGrid` for unit stats.
  */
-export function StatBlock({ className, keys = ["shoot", "move", "armor"], stats }: StatBlockProps) {
+export function StatBlock({ className, keys = ["skill", "move", "armor"], stats }: StatBlockProps) {
   return (
     <dl className={cn("flex flex-wrap items-stretch gap-2", className)}>
       {keys.map((key) => {

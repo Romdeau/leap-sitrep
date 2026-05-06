@@ -56,7 +56,7 @@ function parseRuleBody(name: string, lines: Awaited<ReturnType<typeof readSource
       const label = normalizeWhitespace(text.replace(/^##\s+/, ""));
       notes.push({
         id: `${slugify(name)}-note-${noteIndex + 1}`,
-        label,
+        name: label,
         text: label,
         citations: [createCitation(`USR ${name} ${label}`, block.lineStart, block.lineEnd)],
       });

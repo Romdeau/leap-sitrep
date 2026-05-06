@@ -30,7 +30,7 @@ export async function buildForceDataset(options: {
     id: "harlow-1st-reaction-force",
     cardId: "HFR-6770",
     name: "Harlow 1st Reaction Force",
-    parentLoreFactionId: "the-authority",
+    faction: "the-authority",
     battleDrills: [
       createTextRecord(
         "hfr-6770-battle-drill-assaulters",
@@ -60,7 +60,7 @@ export async function buildForceDataset(options: {
         ],
       ),
     ],
-    forceRules: [
+    rules: [
       createTextRecord(
         "hfr-6770-force-rule",
         "Harlow First Reaction Force",
@@ -75,12 +75,18 @@ export async function buildForceDataset(options: {
       createArmoryItem(
         "hfr-6770-armory-boost-jump",
         "BOOST JUMP",
+        "gear",
+        "UNKNOWN",
+        "UNKNOWN",
         "Model gains Jump (4)",
         [screenshotCitation("Force card armory", 2), ocrCitation(lines, "BOOST JUMP", "OCR armory cross-check")],
       ),
       createArmoryItem(
         "hfr-6770-armory-frag-launcher",
         "FRAG LAUNCHER",
+        "weapon",
+        "UNKNOWN",
+        "UNKNOWN",
         "Sustained (2), Medium",
         [screenshotCitation("Force card armory", 2), ocrCitation(lines, "FRAG LAUNCHER | 24”/1", "OCR armory cross-check")],
         createWeapon(
@@ -95,6 +101,9 @@ export async function buildForceDataset(options: {
       createArmoryItem(
         "hfr-6770-armory-head",
         "HEAD",
+        "weapon",
+        "UNKNOWN",
+        "UNKNOWN",
         "Blast (1)",
         [screenshotCitation("Force card armory", 2), ocrCitation(lines, "HEAD | 16”/4", "OCR armory cross-check")],
         createWeapon(
@@ -109,6 +118,9 @@ export async function buildForceDataset(options: {
       createArmoryItem(
         "hfr-6770-armory-micro-launcher",
         "MICRO LAUNCHER",
+        "weapon",
+        "UNKNOWN",
+        "UNKNOWN",
         "Blast (1), Heavy",
         [screenshotCitation("Force card armory", 2), ocrCitation(lines, "MICRO LAUNCHER | 4-16”/2", "OCR armory cross-check")],
         createWeapon(
@@ -121,6 +133,7 @@ export async function buildForceDataset(options: {
         ),
       ),
     ],
+    notes: [],
     citations: [screenshotCitation("Force card front", 1), screenshotCitation("Force card back", 2)],
     confidence: "verified",
   };
@@ -128,7 +141,7 @@ export async function buildForceDataset(options: {
     id: "un-raid-force-alpha",
     cardId: "RFA-4390",
     name: "UN Raid Force Alpha",
-    parentLoreFactionId: "un-raid-force-alpha",
+    faction: "the-authority",
     battleDrills: [
       createTextRecord(
         "rfa-4390-battle-drill-close-assault",
@@ -149,7 +162,7 @@ export async function buildForceDataset(options: {
         [screenshotCitation("UN Raid Force Alpha force back", 14)],
       ),
     ],
-    forceRules: [
+    rules: [
       createTextRecord(
         "rfa-4390-force-rule",
         "UN Raid Team Alpha",
@@ -158,10 +171,13 @@ export async function buildForceDataset(options: {
       ),
     ],
     armory: [
-      createArmoryItem("rfa-4390-armory-boost-jump", "BOOST JUMP", "Model gains Jump (6)", [screenshotCitation("UN Raid Force Alpha force back", 14)]),
+      createArmoryItem("rfa-4390-armory-boost-jump", "BOOST JUMP", "gear", "UNKNOWN", "UNKNOWN", "Model gains Jump (6)", [screenshotCitation("UN Raid Force Alpha force back", 14)]),
       createArmoryItem(
         "rfa-4390-armory-lance",
         "LANCE",
+        "weapon",
+        "UNKNOWN",
+        "UNKNOWN",
         "AP (3)",
         [screenshotCitation("UN Raid Force Alpha force back", 14)],
         createWeapon("rfa-4390-armory-lance-profile", "Lance", "12\u201d/1", null, ["AP (3)"], [screenshotCitation("UN Raid Force Alpha force back", 14)]),
@@ -169,6 +185,9 @@ export async function buildForceDataset(options: {
       createArmoryItem(
         "rfa-4390-armory-micro-launcher",
         "MICRO LAUNCHER",
+        "weapon",
+        "UNKNOWN",
+        "UNKNOWN",
         "Blast (1), Heavy",
         [screenshotCitation("UN Raid Force Alpha force back", 14)],
         createWeapon(
@@ -183,11 +202,15 @@ export async function buildForceDataset(options: {
       createArmoryItem(
         "rfa-4390-armory-surge",
         "SURGE",
+        "weapon",
+        "UNKNOWN",
+        "UNKNOWN",
         "EMP Only",
         [screenshotCitation("UN Raid Force Alpha force back", 14)],
         createWeapon("rfa-4390-armory-surge-profile", "Surge", "16\u201d/2", null, ["EMP Only"], [screenshotCitation("UN Raid Force Alpha force back", 14)]),
       ),
     ],
+    notes: [],
     citations: [screenshotCitation("UN Raid Force Alpha force front", 13), screenshotCitation("UN Raid Force Alpha force back", 14)],
     confidence: "verified",
   };
@@ -198,13 +221,16 @@ export async function buildForceDataset(options: {
       cardId: "HFR-6771",
       forceId: force.id,
       name: "Harlow Control Team",
-      modelCount: 1,
+      faction: force.faction,
+      unitType: "UNKNOWN",
+      role: "UNKNOWN",
+      cost: "UNKNOWN",
+      grunts: 1,
       stats: {
         move: "4",
-        shoot: "6",
+        skill: "6",
         armor: "1/6",
-        hack: null,
-        wounds: null,
+        "damage-track": 1,
       },
       specialists: [
         createSpecialist("hfr-6771-specialist-1", 1, "Data Spike", undefined, undefined, [screenshotCitation("HFR-6771 back", 4)]),
@@ -213,7 +239,7 @@ export async function buildForceDataset(options: {
           2,
           "Grenade Launcher",
           "Grenade Launcher | 24\u201d/2 Blast (1)",
-          "hfr-6771-weapon-grenade-launcher",
+          "Grenade Launcher",
           [screenshotCitation("HFR-6771 back", 4)],
         ),
       ],
@@ -226,7 +252,7 @@ export async function buildForceDataset(options: {
           null,
           ["Blast (1)"],
           [screenshotCitation("HFR-6771 back", 4)],
-          "Grenade Launcher",
+          "N/A",
         ),
       ],
       abilities: [
@@ -237,6 +263,7 @@ export async function buildForceDataset(options: {
           [screenshotCitation("HFR-6771 back", 4), ocrCitation(lines, "One Unit may be Activated after this", "OCR unit text cross-check")],
         ),
       ],
+      notes: [],
       citations: [screenshotCitation("HFR-6771 front", 3), screenshotCitation("HFR-6771 back", 4)],
       confidence: "verified",
     },
@@ -245,13 +272,16 @@ export async function buildForceDataset(options: {
       cardId: "HFR-6772",
       forceId: force.id,
       name: "Harlow Assault Team",
-      modelCount: 2,
+      faction: force.faction,
+      unitType: "UNKNOWN",
+      role: "UNKNOWN",
+      cost: "UNKNOWN",
+      grunts: 2,
       stats: {
         move: "4",
-        shoot: "6",
+        skill: "6",
         armor: "1/6",
-        hack: null,
-        wounds: null,
+        "damage-track": 1,
       },
       specialists: [
         createSpecialist(
@@ -259,7 +289,7 @@ export async function buildForceDataset(options: {
           1,
           "Machine Gunner",
           "P34 | 24\u201d/1 Cyclic, Heavy",
-          "hfr-6772-weapon-p34",
+          "P34",
           [screenshotCitation("HFR-6772 back", 6)],
         ),
         createSpecialist(
@@ -291,6 +321,7 @@ export async function buildForceDataset(options: {
           [screenshotCitation("HFR-6772 back", 6), ocrCitation(lines, "When this Model gains a Ready Token", "OCR unit text cross-check")],
         ),
       ],
+      notes: [],
       citations: [screenshotCitation("HFR-6772 front", 5), screenshotCitation("HFR-6772 back", 6)],
       confidence: "verified",
     },
@@ -299,13 +330,16 @@ export async function buildForceDataset(options: {
       cardId: "HFR-6773",
       forceId: force.id,
       name: "Harlow Springbok AI",
-      modelCount: 2,
+      faction: force.faction,
+      unitType: "UNKNOWN",
+      role: "UNKNOWN",
+      cost: "UNKNOWN",
+      grunts: 2,
       stats: {
         move: "6",
-        shoot: "6",
+        skill: "6",
         armor: "2/6",
-        hack: null,
-        wounds: null,
+        "damage-track": 1,
       },
       specialists: [],
       weapons: [
@@ -332,6 +366,7 @@ export async function buildForceDataset(options: {
           [screenshotCitation("HFR-6773 back", 8), ocrCitation(lines, "AI, Jump(4)", "OCR unit text cross-check")],
         ),
       ],
+      notes: [],
       citations: [screenshotCitation("HFR-6773 front", 7), screenshotCitation("HFR-6773 back", 8)],
       confidence: "verified",
     },
@@ -340,13 +375,16 @@ export async function buildForceDataset(options: {
       cardId: "HFR-6774",
       forceId: force.id,
       name: "Harlow Engineers",
-      modelCount: 1,
+      faction: force.faction,
+      unitType: "UNKNOWN",
+      role: "UNKNOWN",
+      cost: "UNKNOWN",
+      grunts: 1,
       stats: {
         move: "4",
-        shoot: "6",
+        skill: "6",
         armor: "1/6",
-        hack: null,
-        wounds: null,
+        "damage-track": 1,
       },
       specialists: [
         createSpecialist(
@@ -354,7 +392,7 @@ export async function buildForceDataset(options: {
           1,
           "Engineer",
           "AT Launcher | 8-32\u201d/3 AP (2), Blast (1)",
-          "hfr-6774-weapon-at-launcher",
+          "AT Launcher",
           [screenshotCitation("HFR-6774 back", 10)],
         ),
       ],
@@ -371,6 +409,7 @@ export async function buildForceDataset(options: {
         ),
       ],
       abilities: [],
+      notes: [],
       citations: [screenshotCitation("HFR-6774 front", 9), screenshotCitation("HFR-6774 back", 10)],
       confidence: "verified",
     },
@@ -379,13 +418,16 @@ export async function buildForceDataset(options: {
       cardId: "HFR-6775",
       forceId: force.id,
       name: "Harlow Veterans",
-      modelCount: 3,
+      faction: force.faction,
+      unitType: "UNKNOWN",
+      role: "UNKNOWN",
+      cost: "UNKNOWN",
+      grunts: 3,
       stats: {
         move: "6",
-        shoot: "5",
+        skill: "5",
         armor: "1/6",
-        hack: null,
-        wounds: null,
+        "damage-track": 1,
       },
       specialists: [],
       weapons: [
@@ -394,6 +436,7 @@ export async function buildForceDataset(options: {
         createWeapon("hfr-6775-weapon-pulse-grenades", "Pulse Grenades", "6\u201d/1", null, ["Blast (1)", "EMP"], [screenshotCitation("HFR-6775 front", 11)]),
       ],
       abilities: [createTextRecord("hfr-6775-traits", "Traits", "Jump (4), Low Tech", [screenshotCitation("HFR-6775 back", 12)])],
+      notes: [],
       citations: [screenshotCitation("HFR-6775 front", 11), screenshotCitation("HFR-6775 back", 12)],
       confidence: "verified",
     },
@@ -402,13 +445,16 @@ export async function buildForceDataset(options: {
       cardId: "HFR-6776",
       forceId: force.id,
       name: "Harlow Crickets",
-      modelCount: 2,
+      faction: force.faction,
+      unitType: "UNKNOWN",
+      role: "UNKNOWN",
+      cost: "UNKNOWN",
+      grunts: 2,
       stats: {
         move: "6",
-        shoot: "7",
+        skill: "7",
         armor: "1/8",
-        hack: null,
-        wounds: null,
+        "damage-track": 1,
       },
       specialists: [],
       weapons: [
@@ -424,6 +470,7 @@ export async function buildForceDataset(options: {
         ),
         createTextRecord("hfr-6776-self-destruct", "Self Destruct", "Remove this model after using this weapon.", [screenshotCitation("HFR-6776 front", 13)]),
       ],
+      notes: [],
       citations: [screenshotCitation("HFR-6776 front", 13), screenshotCitation("HFR-6776 back", 14)],
       confidence: "verified",
     },
@@ -432,13 +479,16 @@ export async function buildForceDataset(options: {
       cardId: "RFA-4391",
       forceId: unRaidForceAlpha.id,
       name: "UN UTG Assaulters",
-      modelCount: 1,
+      faction: unRaidForceAlpha.faction,
+      unitType: "UNKNOWN",
+      role: "UNKNOWN",
+      cost: "UNKNOWN",
+      grunts: 1,
       stats: {
         move: "6",
-        shoot: "5",
+        skill: "5",
         armor: "1/5",
-        hack: null,
-        wounds: null,
+        "damage-track": 1,
       },
       specialists: [
         createSpecialist(
@@ -446,15 +496,16 @@ export async function buildForceDataset(options: {
           1,
           "Grenadier",
           "Grenade Launcher | 24\u201d/2 Blast (1)",
-          "rfa-4391-weapon-grenade-launcher",
+          "Grenade Launcher",
           [screenshotCitation("RFA-4391 back", 16)],
         ),
       ],
       weapons: [
         createWeapon("rfa-4391-weapon-m7-carbine", "M7 Carbine", "18\u201d/1", null, ["CQB"], [screenshotCitation("RFA-4391 front", 15)]),
-        createWeapon("rfa-4391-weapon-grenade-launcher", "Grenade Launcher", "24\u201d/2", null, ["Blast (1)"], [screenshotCitation("RFA-4391 back", 16)], "Grenadier"),
+        createWeapon("rfa-4391-weapon-grenade-launcher", "Grenade Launcher", "24\u201d/2", null, ["Blast (1)"], [screenshotCitation("RFA-4391 back", 16)], "N/A"),
       ],
       abilities: [createTextRecord("rfa-4391-traits", "Traits", "Jump(4)", [screenshotCitation("RFA-4391 back", 16)])],
+      notes: [],
       citations: [screenshotCitation("RFA-4391 front", 15), screenshotCitation("RFA-4391 back", 16)],
       confidence: "verified",
     },
@@ -463,21 +514,24 @@ export async function buildForceDataset(options: {
       cardId: "RFA-4392",
       forceId: unRaidForceAlpha.id,
       name: "UN UTG Specialists",
-      modelCount: 1,
+      faction: unRaidForceAlpha.faction,
+      unitType: "UNKNOWN",
+      role: "UNKNOWN",
+      cost: "UNKNOWN",
+      grunts: 1,
       stats: {
         move: "6",
-        shoot: "5",
+        skill: "5",
         armor: "1/5",
-        hack: null,
-        wounds: null,
+        "damage-track": 1,
       },
       specialists: [
         createSpecialist(
           "rfa-4392-specialist-1",
           1,
-          "Marksman",
+          "N/A",
           "Anti-Material Rifle | 32\u201d/2 AP (2), Deployed",
-          "rfa-4392-weapon-anti-material-rifle",
+          "Anti-Material Rifle",
           [screenshotCitation("RFA-4392 back", 18)],
         ),
       ],
@@ -494,6 +548,7 @@ export async function buildForceDataset(options: {
         ),
       ],
       abilities: [createTextRecord("rfa-4392-traits", "Traits", "Jump(4)", [screenshotCitation("RFA-4392 back", 18)])],
+      notes: [],
       citations: [screenshotCitation("RFA-4392 front", 17), screenshotCitation("RFA-4392 back", 18)],
       confidence: "verified",
     },
@@ -502,13 +557,16 @@ export async function buildForceDataset(options: {
       cardId: "RFA-4393",
       forceId: unRaidForceAlpha.id,
       name: "Golem Unit",
-      modelCount: 1,
+      faction: unRaidForceAlpha.faction,
+      unitType: "UNKNOWN",
+      role: "UNKNOWN",
+      cost: "UNKNOWN",
+      grunts: 1,
       stats: {
         move: "4",
-        shoot: "5",
+        skill: "5",
         armor: "3/5",
-        hack: null,
-        wounds: null,
+        "damage-track": 1,
       },
       specialists: [
         createSpecialist(
@@ -516,15 +574,16 @@ export async function buildForceDataset(options: {
           1,
           "Fire Support",
           "Scorcher | 18\u201d/2 Seeking",
-          "rfa-4393-weapon-scorcher",
+          "Scorcher",
           [screenshotCitation("RFA-4393 back", 20)],
         ),
       ],
       weapons: [
         createWeapon("rfa-4393-weapon-fpr-auto", "FPR Auto", "24\u201d/1", null, ["Sustained (1)"], [screenshotCitation("RFA-4393 front", 19)]),
-        createWeapon("rfa-4393-weapon-scorcher", "Scorcher", "18\u201d/2", null, ["Seeking"], [screenshotCitation("RFA-4393 back", 20)], "Fire Support"),
+        createWeapon("rfa-4393-weapon-scorcher", "Scorcher", "18\u201d/2", null, ["Seeking"], [screenshotCitation("RFA-4393 back", 20)], "N/A"),
       ],
       abilities: [createTextRecord("rfa-4393-traits", "Traits", "Jump(4)", [screenshotCitation("RFA-4393 back", 20)])],
+      notes: [],
       citations: [screenshotCitation("RFA-4393 front", 19), screenshotCitation("RFA-4393 back", 20)],
       confidence: "verified",
     },
@@ -571,18 +630,21 @@ export async function buildForceDataset(options: {
   };
 }
 
-function createTextRecord(id: string, label: string, text: string, citations: SourceCitation[]): CitationBackedText {
-  return { id, label, text, citations };
+function createTextRecord(id: string, name: string, text: string, citations: SourceCitation[]): CitationBackedText {
+  return { id, name, text, citations };
 }
 
 function createArmoryItem(
   id: string,
   name: string,
+  type: string,
+  cost: string,
+  restrictions: string,
   text: string,
   citations: SourceCitation[],
-  profile?: WeaponProfile,
+  weapon?: WeaponProfile,
 ): ArmoryItem {
-  return { id, name, text, profile, citations };
+  return { id, name, type, cost, restrictions, text, weapon, citations };
 }
 
 function createWeapon(
@@ -590,11 +652,11 @@ function createWeapon(
   name: string,
   range: string,
   damage: string | null,
-  keywords: string[],
+  traits: string[],
   citations: SourceCitation[],
   carrier?: string,
 ): WeaponProfile {
-  return { id, name, range, damage, keywords, citations, carrier };
+  return { id, name, range, damage, traits, citations, carrier };
 }
 
 function createSpecialist(
@@ -602,10 +664,10 @@ function createSpecialist(
   slot: number,
   name: string,
   description: string | undefined,
-  weaponId: string | undefined,
+  weapon: string | undefined,
   citations: SourceCitation[],
 ): UnitSpecialist {
-  return { id, slot, name, description, weaponId, citations };
+  return { id, slot, name, description, weapon, citations };
 }
 
 function screenshotCitation(label: string, screenshotNumber: number): SourceCitation {

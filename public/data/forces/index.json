@@ -2,7 +2,7 @@
   "meta": {
     "kind": "forces",
     "version": "packet-7",
-    "generatedAt": "2026-04-29T03:51:09.528Z",
+    "generatedAt": "2026-05-06T04:29:49.759Z",
     "sourceDocumentIds": [
       "blkout-unit-cards-ocr",
       "blkout-unit-cards-screenshots"
@@ -15,11 +15,11 @@
         "id": "harlow-1st-reaction-force",
         "cardId": "HFR-6770",
         "name": "Harlow 1st Reaction Force",
-        "parentLoreFactionId": "the-authority",
+        "faction": "the-authority",
         "battleDrills": [
           {
             "id": "hfr-6770-battle-drill-assaulters",
-            "label": "Assaulters",
+            "name": "Assaulters",
             "text": "Models in this Unit cannot be Targeted by Overwatch when Repositioning.",
             "citations": [
               {
@@ -39,7 +39,7 @@
           },
           {
             "id": "hfr-6770-battle-drill-chaff",
-            "label": "Chaff",
+            "name": "Chaff",
             "text": "Place a Smoke Token (Chaff) within 6” of a Model in this Unit before Activating. Chaff Smoke Tokens Dissipate on a 10+.",
             "citations": [
               {
@@ -59,7 +59,7 @@
           },
           {
             "id": "hfr-6770-battle-drill-stims",
-            "label": "Stims",
+            "name": "Stims",
             "text": "Models in this Unit gain +2 Movement for their Activation.",
             "citations": [
               {
@@ -78,10 +78,10 @@
             ]
           }
         ],
-        "forceRules": [
+        "rules": [
           {
             "id": "hfr-6770-force-rule",
-            "label": "Harlow First Reaction Force",
+            "name": "Harlow First Reaction Force",
             "text": "Harlow First Reaction Force Units gain +2 Movement when Sprinting.",
             "citations": [
               {
@@ -104,6 +104,9 @@
           {
             "id": "hfr-6770-armory-boost-jump",
             "name": "BOOST JUMP",
+            "type": "gear",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
             "text": "Model gains Jump (4)",
             "citations": [
               {
@@ -124,13 +127,16 @@
           {
             "id": "hfr-6770-armory-frag-launcher",
             "name": "FRAG LAUNCHER",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
             "text": "Sustained (2), Medium",
-            "profile": {
+            "weapon": {
               "id": "hfr-6770-armory-frag-launcher-profile",
               "name": "Frag Launcher",
               "range": "24”/1",
               "damage": null,
-              "keywords": [
+              "traits": [
                 "Sustained (2)",
                 "Medium"
               ],
@@ -162,13 +168,16 @@
           {
             "id": "hfr-6770-armory-head",
             "name": "HEAD",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
             "text": "Blast (1)",
-            "profile": {
+            "weapon": {
               "id": "hfr-6770-armory-head-profile",
               "name": "HEAD",
               "range": "16”/4",
               "damage": null,
-              "keywords": [
+              "traits": [
                 "Blast (1)"
               ],
               "citations": [
@@ -199,13 +208,16 @@
           {
             "id": "hfr-6770-armory-micro-launcher",
             "name": "MICRO LAUNCHER",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
             "text": "Blast (1), Heavy",
-            "profile": {
+            "weapon": {
               "id": "hfr-6770-armory-micro-launcher-profile",
               "name": "Micro Launcher",
               "range": "4-16”/2",
               "damage": null,
-              "keywords": [
+              "traits": [
                 "Blast (1)",
                 "Heavy"
               ],
@@ -235,6 +247,7 @@
             ]
           }
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-unit-cards-screenshots",
@@ -255,11 +268,11 @@
         "id": "un-raid-force-alpha",
         "cardId": "RFA-4390",
         "name": "UN Raid Force Alpha",
-        "parentLoreFactionId": "un-raid-force-alpha",
+        "faction": "the-authority",
         "battleDrills": [
           {
             "id": "rfa-4390-battle-drill-close-assault",
-            "label": "Close Assault",
+            "name": "Close Assault",
             "text": "Models in this Unit may Move 2” after their Activation ends, only if it would bring them into CQC with an Enemy Model.",
             "citations": [
               {
@@ -272,7 +285,7 @@
           },
           {
             "id": "rfa-4390-battle-drill-cross-fire",
-            "label": "Cross Fire",
+            "name": "Cross Fire",
             "text": "If more than one Model in this Unit Targets the same Enemy Model, their Weapons gain +1 Damage.",
             "citations": [
               {
@@ -285,7 +298,7 @@
           },
           {
             "id": "rfa-4390-battle-drill-switchback",
-            "label": "Switchback",
+            "name": "Switchback",
             "text": "Place a Smoke Token within 4” of a Model in this Unit before Activating. All Models may be Moved up to 2” before Activating.",
             "citations": [
               {
@@ -297,10 +310,10 @@
             ]
           }
         ],
-        "forceRules": [
+        "rules": [
           {
             "id": "rfa-4390-force-rule",
-            "label": "UN Raid Team Alpha",
+            "name": "UN Raid Team Alpha",
             "text": "All UN Raid Team Alpha UTG Assaulter and Specialist Units gain an additional D10 roll in all Skill Checks, including Shooting and Close Quarters Combat (CQC).",
             "citations": [
               {
@@ -316,6 +329,9 @@
           {
             "id": "rfa-4390-armory-boost-jump",
             "name": "BOOST JUMP",
+            "type": "gear",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
             "text": "Model gains Jump (6)",
             "citations": [
               {
@@ -329,13 +345,16 @@
           {
             "id": "rfa-4390-armory-lance",
             "name": "LANCE",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
             "text": "AP (3)",
-            "profile": {
+            "weapon": {
               "id": "rfa-4390-armory-lance-profile",
               "name": "Lance",
               "range": "12”/1",
               "damage": null,
-              "keywords": [
+              "traits": [
                 "AP (3)"
               ],
               "citations": [
@@ -359,13 +378,16 @@
           {
             "id": "rfa-4390-armory-micro-launcher",
             "name": "MICRO LAUNCHER",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
             "text": "Blast (1), Heavy",
-            "profile": {
+            "weapon": {
               "id": "rfa-4390-armory-micro-launcher-profile",
               "name": "Micro Launcher",
               "range": "4-16”/2",
               "damage": null,
-              "keywords": [
+              "traits": [
                 "Blast (1)",
                 "Heavy"
               ],
@@ -390,13 +412,16 @@
           {
             "id": "rfa-4390-armory-surge",
             "name": "SURGE",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
             "text": "EMP Only",
-            "profile": {
+            "weapon": {
               "id": "rfa-4390-armory-surge-profile",
               "name": "Surge",
               "range": "16”/2",
               "damage": null,
-              "keywords": [
+              "traits": [
                 "EMP Only"
               ],
               "citations": [
@@ -418,6 +443,7 @@
             ]
           }
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-unit-cards-screenshots",
@@ -441,13 +467,16 @@
         "cardId": "HFR-6771",
         "forceId": "harlow-1st-reaction-force",
         "name": "Harlow Control Team",
-        "modelCount": 1,
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 1,
         "stats": {
           "move": "4",
-          "shoot": "6",
+          "skill": "6",
           "armor": "1/6",
-          "hack": null,
-          "wounds": null
+          "damage-track": 1
         },
         "specialists": [
           {
@@ -468,7 +497,7 @@
             "slot": 2,
             "name": "Grenade Launcher",
             "description": "Grenade Launcher | 24”/2 Blast (1)",
-            "weaponId": "hfr-6771-weapon-grenade-launcher",
+            "weapon": "Grenade Launcher",
             "citations": [
               {
                 "documentId": "blkout-unit-cards-screenshots",
@@ -485,7 +514,7 @@
             "name": "FAL-32C",
             "range": "24”/1",
             "damage": null,
-            "keywords": [
+            "traits": [
               "CQB"
             ],
             "citations": [
@@ -502,7 +531,7 @@
             "name": "Grenade Launcher",
             "range": "24”/2",
             "damage": null,
-            "keywords": [
+            "traits": [
               "Blast (1)"
             ],
             "citations": [
@@ -513,13 +542,13 @@
                 "excerpt": "Verified against Packet 3 screenshot 4"
               }
             ],
-            "carrier": "Grenade Launcher"
+            "carrier": "N/A"
           }
         ],
         "abilities": [
           {
             "id": "hfr-6771-control-ability",
-            "label": "Activation Control",
+            "name": "Activation Control",
             "text": "One Unit may be Activated after this Unit without spending a Control Point.",
             "citations": [
               {
@@ -538,6 +567,7 @@
             ]
           }
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-unit-cards-screenshots",
@@ -559,13 +589,16 @@
         "cardId": "HFR-6772",
         "forceId": "harlow-1st-reaction-force",
         "name": "Harlow Assault Team",
-        "modelCount": 2,
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 2,
         "stats": {
           "move": "4",
-          "shoot": "6",
+          "skill": "6",
           "armor": "1/6",
-          "hack": null,
-          "wounds": null
+          "damage-track": 1
         },
         "specialists": [
           {
@@ -573,7 +606,7 @@
             "slot": 1,
             "name": "Machine Gunner",
             "description": "P34 | 24”/1 Cyclic, Heavy",
-            "weaponId": "hfr-6772-weapon-p34",
+            "weapon": "P34",
             "citations": [
               {
                 "documentId": "blkout-unit-cards-screenshots",
@@ -604,7 +637,7 @@
             "name": "FAL-32C",
             "range": "24”/1",
             "damage": null,
-            "keywords": [
+            "traits": [
               "CQB"
             ],
             "citations": [
@@ -621,7 +654,7 @@
             "name": "P34",
             "range": "24”/1",
             "damage": null,
-            "keywords": [
+            "traits": [
               "Cyclic",
               "Heavy"
             ],
@@ -639,7 +672,7 @@
         "abilities": [
           {
             "id": "hfr-6772-team-leader",
-            "label": "Team Leader",
+            "name": "Team Leader",
             "text": "When this Model gains a Ready Token it may give it to a Model in this Unit that has already made an Action.",
             "citations": [
               {
@@ -658,6 +691,7 @@
             ]
           }
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-unit-cards-screenshots",
@@ -679,13 +713,16 @@
         "cardId": "HFR-6773",
         "forceId": "harlow-1st-reaction-force",
         "name": "Harlow Springbok AI",
-        "modelCount": 2,
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 2,
         "stats": {
           "move": "6",
-          "shoot": "6",
+          "skill": "6",
           "armor": "2/6",
-          "hack": null,
-          "wounds": null
+          "damage-track": 1
         },
         "specialists": [],
         "weapons": [
@@ -694,7 +731,7 @@
             "name": "FAL-32D",
             "range": "24”/1",
             "damage": null,
-            "keywords": [
+            "traits": [
               "CQB",
               "Sustained (1)"
             ],
@@ -711,7 +748,7 @@
         "abilities": [
           {
             "id": "hfr-6773-chaff-discharge",
-            "label": "Chaff Discharge",
+            "name": "Chaff Discharge",
             "text": "Mark a box to prevent a single Overwatch Reaction from Targeting this Model during its Activation.",
             "citations": [
               {
@@ -731,7 +768,7 @@
           },
           {
             "id": "hfr-6773-traits",
-            "label": "Traits",
+            "name": "Traits",
             "text": "AI, Jump(4)",
             "citations": [
               {
@@ -750,6 +787,7 @@
             ]
           }
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-unit-cards-screenshots",
@@ -771,13 +809,16 @@
         "cardId": "HFR-6774",
         "forceId": "harlow-1st-reaction-force",
         "name": "Harlow Engineers",
-        "modelCount": 1,
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 1,
         "stats": {
           "move": "4",
-          "shoot": "6",
+          "skill": "6",
           "armor": "1/6",
-          "hack": null,
-          "wounds": null
+          "damage-track": 1
         },
         "specialists": [
           {
@@ -785,7 +826,7 @@
             "slot": 1,
             "name": "Engineer",
             "description": "AT Launcher | 8-32”/3 AP (2), Blast (1)",
-            "weaponId": "hfr-6774-weapon-at-launcher",
+            "weapon": "AT Launcher",
             "citations": [
               {
                 "documentId": "blkout-unit-cards-screenshots",
@@ -802,7 +843,7 @@
             "name": "Carbine",
             "range": "18”/1",
             "damage": null,
-            "keywords": [
+            "traits": [
               "CQB"
             ],
             "citations": [
@@ -819,7 +860,7 @@
             "name": "AT Launcher",
             "range": "8-32”/3",
             "damage": null,
-            "keywords": [
+            "traits": [
               "AP (2)",
               "Blast (1)"
             ],
@@ -835,6 +876,7 @@
           }
         ],
         "abilities": [],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-unit-cards-screenshots",
@@ -856,13 +898,16 @@
         "cardId": "HFR-6775",
         "forceId": "harlow-1st-reaction-force",
         "name": "Harlow Veterans",
-        "modelCount": 3,
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 3,
         "stats": {
           "move": "6",
-          "shoot": "5",
+          "skill": "5",
           "armor": "1/6",
-          "hack": null,
-          "wounds": null
+          "damage-track": 1
         },
         "specialists": [],
         "weapons": [
@@ -871,7 +916,7 @@
             "name": "Carbine",
             "range": "18”/1",
             "damage": null,
-            "keywords": [
+            "traits": [
               "CQB"
             ],
             "citations": [
@@ -888,7 +933,7 @@
             "name": "Machetes",
             "range": "2”/1",
             "damage": null,
-            "keywords": [
+            "traits": [
               "AP (1)",
               "Melee"
             ],
@@ -906,7 +951,7 @@
             "name": "Pulse Grenades",
             "range": "6”/1",
             "damage": null,
-            "keywords": [
+            "traits": [
               "Blast (1)",
               "EMP"
             ],
@@ -923,7 +968,7 @@
         "abilities": [
           {
             "id": "hfr-6775-traits",
-            "label": "Traits",
+            "name": "Traits",
             "text": "Jump (4), Low Tech",
             "citations": [
               {
@@ -935,6 +980,7 @@
             ]
           }
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-unit-cards-screenshots",
@@ -956,13 +1002,16 @@
         "cardId": "HFR-6776",
         "forceId": "harlow-1st-reaction-force",
         "name": "Harlow Crickets",
-        "modelCount": 2,
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 2,
         "stats": {
           "move": "6",
-          "shoot": "7",
+          "skill": "7",
           "armor": "1/8",
-          "hack": null,
-          "wounds": null
+          "damage-track": 1
         },
         "specialists": [],
         "weapons": [
@@ -971,7 +1020,7 @@
             "name": "Self Destruct",
             "range": "4”/1",
             "damage": null,
-            "keywords": [
+            "traits": [
               "AP (4)",
               "CQB"
             ],
@@ -988,7 +1037,7 @@
         "abilities": [
           {
             "id": "hfr-6776-traits",
-            "label": "Traits",
+            "name": "Traits",
             "text": "AI, Drone",
             "citations": [
               {
@@ -1001,7 +1050,7 @@
           },
           {
             "id": "hfr-6776-engineer-grouping",
-            "label": "Engineer Grouping",
+            "name": "Engineer Grouping",
             "text": "This unit does not count toward the Unit limit when grouped with Harlow engineers, and it cannot benefit from Force Cards.",
             "citations": [
               {
@@ -1014,7 +1063,7 @@
           },
           {
             "id": "hfr-6776-self-destruct",
-            "label": "Self Destruct",
+            "name": "Self Destruct",
             "text": "Remove this model after using this weapon.",
             "citations": [
               {
@@ -1026,6 +1075,7 @@
             ]
           }
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-unit-cards-screenshots",
@@ -1047,13 +1097,16 @@
         "cardId": "RFA-4391",
         "forceId": "un-raid-force-alpha",
         "name": "UN UTG Assaulters",
-        "modelCount": 1,
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 1,
         "stats": {
           "move": "6",
-          "shoot": "5",
+          "skill": "5",
           "armor": "1/5",
-          "hack": null,
-          "wounds": null
+          "damage-track": 1
         },
         "specialists": [
           {
@@ -1061,7 +1114,7 @@
             "slot": 1,
             "name": "Grenadier",
             "description": "Grenade Launcher | 24”/2 Blast (1)",
-            "weaponId": "rfa-4391-weapon-grenade-launcher",
+            "weapon": "Grenade Launcher",
             "citations": [
               {
                 "documentId": "blkout-unit-cards-screenshots",
@@ -1078,7 +1131,7 @@
             "name": "M7 Carbine",
             "range": "18”/1",
             "damage": null,
-            "keywords": [
+            "traits": [
               "CQB"
             ],
             "citations": [
@@ -1095,7 +1148,7 @@
             "name": "Grenade Launcher",
             "range": "24”/2",
             "damage": null,
-            "keywords": [
+            "traits": [
               "Blast (1)"
             ],
             "citations": [
@@ -1106,13 +1159,13 @@
                 "excerpt": "Verified against Packet 3 screenshot 16"
               }
             ],
-            "carrier": "Grenadier"
+            "carrier": "N/A"
           }
         ],
         "abilities": [
           {
             "id": "rfa-4391-traits",
-            "label": "Traits",
+            "name": "Traits",
             "text": "Jump(4)",
             "citations": [
               {
@@ -1124,6 +1177,7 @@
             ]
           }
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-unit-cards-screenshots",
@@ -1145,21 +1199,24 @@
         "cardId": "RFA-4392",
         "forceId": "un-raid-force-alpha",
         "name": "UN UTG Specialists",
-        "modelCount": 1,
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 1,
         "stats": {
           "move": "6",
-          "shoot": "5",
+          "skill": "5",
           "armor": "1/5",
-          "hack": null,
-          "wounds": null
+          "damage-track": 1
         },
         "specialists": [
           {
             "id": "rfa-4392-specialist-1",
             "slot": 1,
-            "name": "Marksman",
+            "name": "N/A",
             "description": "Anti-Material Rifle | 32”/2 AP (2), Deployed",
-            "weaponId": "rfa-4392-weapon-anti-material-rifle",
+            "weapon": "Anti-Material Rifle",
             "citations": [
               {
                 "documentId": "blkout-unit-cards-screenshots",
@@ -1176,7 +1233,7 @@
             "name": "M7 Carbine",
             "range": "18”/1",
             "damage": null,
-            "keywords": [
+            "traits": [
               "CQB"
             ],
             "citations": [
@@ -1193,7 +1250,7 @@
             "name": "Anti-Material Rifle",
             "range": "32”/2",
             "damage": null,
-            "keywords": [
+            "traits": [
               "AP (2)",
               "Deployed"
             ],
@@ -1211,7 +1268,7 @@
         "abilities": [
           {
             "id": "rfa-4392-traits",
-            "label": "Traits",
+            "name": "Traits",
             "text": "Jump(4)",
             "citations": [
               {
@@ -1223,6 +1280,7 @@
             ]
           }
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-unit-cards-screenshots",
@@ -1244,13 +1302,16 @@
         "cardId": "RFA-4393",
         "forceId": "un-raid-force-alpha",
         "name": "Golem Unit",
-        "modelCount": 1,
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 1,
         "stats": {
           "move": "4",
-          "shoot": "5",
+          "skill": "5",
           "armor": "3/5",
-          "hack": null,
-          "wounds": null
+          "damage-track": 1
         },
         "specialists": [
           {
@@ -1258,7 +1319,7 @@
             "slot": 1,
             "name": "Fire Support",
             "description": "Scorcher | 18”/2 Seeking",
-            "weaponId": "rfa-4393-weapon-scorcher",
+            "weapon": "Scorcher",
             "citations": [
               {
                 "documentId": "blkout-unit-cards-screenshots",
@@ -1275,7 +1336,7 @@
             "name": "FPR Auto",
             "range": "24”/1",
             "damage": null,
-            "keywords": [
+            "traits": [
               "Sustained (1)"
             ],
             "citations": [
@@ -1292,7 +1353,7 @@
             "name": "Scorcher",
             "range": "18”/2",
             "damage": null,
-            "keywords": [
+            "traits": [
               "Seeking"
             ],
             "citations": [
@@ -1303,13 +1364,13 @@
                 "excerpt": "Verified against Packet 3 screenshot 20"
               }
             ],
-            "carrier": "Fire Support"
+            "carrier": "N/A"
           }
         ],
         "abilities": [
           {
             "id": "rfa-4393-traits",
-            "label": "Traits",
+            "name": "Traits",
             "text": "Jump(4)",
             "citations": [
               {
@@ -1321,6 +1382,7 @@
             ]
           }
         ],
+        "notes": [],
         "citations": [
           {
             "documentId": "blkout-unit-cards-screenshots",

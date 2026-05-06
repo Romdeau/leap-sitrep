@@ -2,7 +2,7 @@
   "meta": {
     "kind": "search-index",
     "version": "packet-2",
-    "generatedAt": "2026-04-29T03:51:09.528Z",
+    "generatedAt": "2026-05-06T04:29:49.759Z",
     "sourceDocumentIds": [
       "blkout-lore-primer",
       "blkout-core-rulebook",
@@ -2940,7 +2940,7 @@
         "summary": "Close Assault: Models in this Unit may Move 2” after their Activation ends, only if it would bring them into CQC with an Enemy Model. Cross Fire: If more than one Model in this Unit Targets the same Enemy Model, their Weapons gain +1 Damage. Switchback: Place a Smoke Token within 4” of a Model in this Unit before Activating. All Models may be Moved up to 2” before Activating. UN Raid Team Alpha: All UN Raid Team Alpha UTG Assaulter and Specialist Units gain an additional D10 roll in all Skill Checks, including Shooting and Close Quarters Combat (CQC).",
         "keywords": [
           "RFA-4390",
-          "un-raid-force-alpha",
+          "the-authority",
           "boost jump",
           "lance",
           "micro launcher",
@@ -3122,7 +3122,7 @@
         "id": "un-utg-specialists",
         "entityType": "unit",
         "title": "UN UTG Specialists",
-        "summary": "Traits: Jump(4) Specialist 1: Marksman",
+        "summary": "Traits: Jump(4) Specialist 1: N/A",
         "keywords": [
           "RFA-4392",
           "m7 carbine",

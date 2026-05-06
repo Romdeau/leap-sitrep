@@ -2,7 +2,7 @@
   "meta": {
     "kind": "rules",
     "version": "packet-2",
-    "generatedAt": "2026-04-28T00:50:49.213Z",
+    "generatedAt": "2026-05-06T04:29:49.759Z",
     "sourceDocumentIds": [
       "blkout-core-rulebook",
       "blkout-supplemental"
@@ -1182,7 +1182,7 @@
         "notes": [
           {
             "id": "ap-x-note-1",
-            "label": "Example: A Model with Armor 2/4 hit by an AP(2) Weapon would now have Armor 2/6 for that attack",
+            "name": "Example: A Model with Armor 2/4 hit by an AP(2) Weapon would now have Armor 2/6 for that attack",
             "text": "Example: A Model with Armor 2/4 hit by an AP(2) Weapon would now have Armor 2/6 for that attack",
             "citations": [
               {
@@ -1273,7 +1273,7 @@
         "notes": [
           {
             "id": "cqb-note-1",
-            "label": "Example: A Weapon with a 24″ Range may re-roll failed Shots against a Target within 12″",
+            "name": "Example: A Weapon with a 24″ Range may re-roll failed Shots against a Target within 12″",
             "text": "Example: A Weapon with a 24″ Range may re-roll failed Shots against a Target within 12″",
             "citations": [
               {
@@ -1415,7 +1415,7 @@
         "notes": [
           {
             "id": "drone-note-1",
-            "label": "Note: Drones do not participate in CQC — if an enemy Model moves into Base-to-Base contact, no Close Quarters Combat occurs",
+            "name": "Note: Drones do not participate in CQC — if an enemy Model moves into Base-to-Base contact, no Close Quarters Combat occurs",
             "text": "Note: Drones do not participate in CQC — if an enemy Model moves into Base-to-Base contact, no Close Quarters Combat occurs",
             "citations": [
               {
@@ -1652,7 +1652,7 @@
         "notes": [
           {
             "id": "outsourced-note-1",
-            "label": "Note: Some Specialists may have exceptions to this rule — for example, the E4 Mafia in Hired Killers may explicitly use Battle Drills",
+            "name": "Note: Some Specialists may have exceptions to this rule — for example, the E4 Mafia in Hired Killers may explicitly use Battle Drills",
             "text": "Note: Some Specialists may have exceptions to this rule — for example, the E4 Mafia in Hired Killers may explicitly use Battle Drills",
             "citations": [
               {
@@ -1740,7 +1740,7 @@
         "notes": [
           {
             "id": "seeking-note-1",
-            "label": "Example: When firing a Seeking Weapon, you roll 2D10 against Targets in Cover, and 3D10 against Targets not in Cover",
+            "name": "Example: When firing a Seeking Weapon, you roll 2D10 against Targets in Cover, and 3D10 against Targets not in Cover",
             "text": "Example: When firing a Seeking Weapon, you roll 2D10 against Targets in Cover, and 3D10 against Targets not in Cover",
             "citations": [
               {
@@ -1822,7 +1822,7 @@
         "notes": [
           {
             "id": "smoke-grenade-x-note-1",
-            "label": "Note: See Rules [8.8] Smoke for more information about this core ability",
+            "name": "Note: See Rules [8.8] Smoke for more information about this core ability",
             "text": "Note: See Rules [8.8] Smoke for more information about this core ability",
             "citations": [
               {
@@ -1878,7 +1878,7 @@
         "notes": [
           {
             "id": "sustained-x-note-1",
-            "label": "Example: A Model with Armor 1/6 is hit by a Sustained (2) Weapon. It rolls 1D10 for Armor. If it succeeds, it must reroll that die up to 2 times or until it fails. The final roll determines the result",
+            "name": "Example: A Model with Armor 1/6 is hit by a Sustained (2) Weapon. It rolls 1D10 for Armor. If it succeeds, it must reroll that die up to 2 times or until it fails. The final roll determines the result",
             "text": "Example: A Model with Armor 1/6 is hit by a Sustained (2) Weapon. It rolls 1D10 for Armor. If it succeeds, it must reroll that die up to 2 times or until it fails. The final roll determines the result",
             "citations": [
               {
