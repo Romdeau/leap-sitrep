@@ -148,15 +148,15 @@ html.light {
 
 /* ---------- Faction tints (override accent family only) ---------- */
 html[data-faction="black-pact"] {
-  --accent: #f5c518;
-  --accent-foreground: #0b0b0c;
-  --accent-edge: #f5c518;
+  --accent: #d62830;
+  --accent-foreground: #fff6f1;
+  --accent-edge: #d62830;
   --accent-muted: color-mix(in srgb, var(--accent) 14%, var(--surface));
   --danger: #c8202c;
   --ring: var(--accent);
 }
 html[data-mode="light"][data-faction="black-pact"] {
-  --accent: #c99a00;
+  --accent: #b61f25;
 }
 
 html[data-faction="dusters"] {
@@ -193,15 +193,15 @@ html[data-mode="light"][data-faction="boone"] {
 }
 
 html[data-faction="authority"] {
-  --accent: #d62830;
-  --accent-foreground: #fff6f1;
-  --accent-edge: #d62830;
+  --accent: #2f6fb3;
+  --accent-foreground: #eef6ff;
+  --accent-edge: #2f6fb3;
   --accent-muted: color-mix(in srgb, var(--accent) 14%, var(--surface));
   --danger: #f5c518;
   --ring: var(--accent);
 }
 html[data-mode="light"][data-faction="authority"] {
-  --accent: #b61f25;
+  --accent: #245c97;
 }
 
 /* ---------- Base reset ---------- */
@@ -381,4 +381,3 @@ button.sub-frame:hover::before {
 .sub-frame--accent::before {
   background: var(--accent-edge);
 }
-
