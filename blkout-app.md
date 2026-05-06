@@ -188,9 +188,9 @@ The app should separate narrative entities from tabletop entities.
 - `FaqEntry`: question, answer, topic, source references
 - `ErrataEntry`: target, old text summary, new text summary, source references
 - `UniversalSpecialRule`: name, current text, aliases, related rules, source references
-- `Force`: force id, force name, parent lore faction, battle drills, force rule, armory, source references
-- `UnitCard`: unit id, force id, name, stats, model counts, specialists, weapons, abilities, source references
-- `WeaponProfile`: range, damage, keywords, firing mode notes, source references
+- `Force`: force id, force name, faction, battle drills, rules, armory, notes, source references
+- `UnitCard`: unit id, force id, name, faction, unit type, role, cost, grunts, stats, specialists, weapons, abilities, notes, source references
+- `WeaponProfile`: range, damage, traits, carrier, firing mode notes, source references
 - `Scenario`: scenario id, mode, setup, scoring rules, special rules, table size, hardpoints, points of interest, source references
 
 ### Player-State Entities

@@ -14,5 +14,5 @@
 - Confirmed the scenario detail route renders `Dockyard Assault` setup, scoring, special rules, and source citation from `public/data/scenarios/core.json`.
 - Confirmed the search overlay returns seed-slice results for queries such as `return fire`, with routes resolving to the Packet 4 reference pages instead of placeholders.
 - Confirmed table-side mobile lookup remains available from the fixed bottom navigation by adding a dedicated mobile Search action; the smoke test opens it and finds `Harlow 1st Reaction Force` from the generated search index.
-- Confirmed `public/data/forces/index.json` now uses the canonical lore id `parentLoreFactionId: "the-authority"`, matching `public/data/lore/index.json` without a Packet 4 UI compatibility workaround.
+- Confirmed `public/data/forces/index.json` now uses canonical `faction` ids such as `the-authority`, matching `public/data/lore/index.json` without a Packet 4 UI compatibility workaround.
 - Current limitation: this session tightened automated mobile-navigation coverage and production build validation, but a browser/device visual pass at phone and desktop sizes should still be done before marking Packet 4 complete.

@@ -14,4 +14,4 @@
   - `screenshots/harlow-springbok-ai-side1.png` for front-face stats, model count badge, and `FAL-32D | 24”/1` with `CQB, Sustained (1)`.
   - `screenshots/harlow-springbok-ai-side2.png` for `Chaff Discharge`, the two checkbox markers on-card, and `AI, Jump(4)`.
 - Confirmed OCR text remains separate from curated records by emitting `public/data/forces/audit.json` with raw line excerpts from `markdown/Unit-Cards-Printable-2026.md`.
-- Known limitation: the current shared `UnitStats` contract still models only `move`, `shoot`, `armor`, `hack`, and `wounds`, so the front-face icon values are stored only for the fields already represented by the contract. No additional stat was invented beyond what the current contract can safely encode.
+- The generated force dataset now follows the canonical card schema directly, including `skill`, `grunts`, `damage-track`, `traits`, and citation-backed `name` fields for rules and abilities.

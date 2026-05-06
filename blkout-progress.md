@@ -205,7 +205,7 @@ Most recent targeted validation passed for Packet 7 verified-force builder/track
 - The user performed a major cleanup pass on `markdown/BLKOUT-PRINT-AT-HOME-RULEBOOK.md`, including removing the table of contents, removing acknowledgements, and fixing section ordering. The parsers were then simplified and scenario extraction improved.
 - Scenario bleed in Packet 1 was fixed so later scenarios no longer absorb each other or the `[10] REFERENCE` section.
 - Packet 3 was verified against real card screenshots in `screenshots/`, not just OCR markdown.
-- `UnitStats` still only models `move`, `shoot`, `armor`, `hack`, and `wounds`. No extra card-front stat meanings were invented beyond that contract.
+- The force/unit dataset now follows the canonical card schema directly: `skill`, `grunts`, `damage-track`, `traits`, `rules`, and `faction` are emitted without the older runtime-only field names.
 - The out-of-order `[4.7] DATA ATTACKS` material in `markdown/BLKOUT_Supplemental_4-26.md` is now handled by the supplemental parser. Packet 2 now recovers those FAQ/errata records and links them into the `data-attacks` effective rule.
 - Packet 4 now reads the generated datasets directly through a shared reference-data provider and exposes citations across lore, rules, force, unit, scenario, and glossary routes.
 - Core rule ETL now emits structured rule subsections (`overview` plus numbered `subsections`) instead of relying only on a flat `body` blob, and the Packet 4 rules UI renders those subsections directly.
