@@ -26,6 +26,7 @@ describe("Packet 3 curated force slice", () => {
       "un-raid-force-alpha",
       "boone-recon-force",
       "manticor-borz-group",
+      "un-3rd-battalion",
     ]);
     expect(forceDataset.data.forces.find((force) => force.id === "harlow-1st-reaction-force")?.cardId).toBe("HFR-6770");
     expect(forceDataset.data.forces.find((force) => force.id === "harlow-1st-reaction-force")?.faction).toBe("the-authority");
@@ -48,9 +49,18 @@ describe("Packet 3 curated force slice", () => {
       "MBG-122",
       "MBG-123",
       "MBG-121",
+      "MBG-126",
+      "MBG-125",
+      "MBG-124",
+      "UNR-462",
+      "UNR-463",
+      "UNR-461",
+      "UNF-882",
+      "UNF-881",
+      "UNF-883",
     ]);
     expect(auditDataset.meta.confidence).toBe("raw");
-    expect(auditDataset.data.rawCards).toHaveLength(22);
+    expect(auditDataset.data.rawCards).toHaveLength(32);
   });
 
   it("captures weapon structure and specialist linkage for the verified units", async () => {
@@ -156,5 +166,8 @@ describe("Packet 3 curated force slice", () => {
     expect(searchIndex.data.records.some((record) => record.entityType === "unit" && record.title === "Golem Unit" && record.aliases.includes("rfa-4393"))).toBe(true);
     expect(searchIndex.data.records.some((record) => record.entityType === "force" && record.title === "Boone Recon Force")).toBe(true);
     expect(searchIndex.data.records.some((record) => record.entityType === "force" && record.title === "Manticor Borz Group")).toBe(true);
+    expect(searchIndex.data.records.some((record) => record.entityType === "force" && record.title === "UN 3rd Battalion")).toBe(true);
+    expect(searchIndex.data.records.some((record) => record.entityType === "unit" && record.title === "Manticor Cyka Bravo")).toBe(true);
+    expect(searchIndex.data.records.some((record) => record.entityType === "unit" && record.title === "UN Reserve Fireteam")).toBe(true);
   });
 });

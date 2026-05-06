@@ -2,7 +2,7 @@
   "meta": {
     "kind": "forces",
     "version": "packet-7",
-    "generatedAt": "2026-05-06T05:54:59.235Z",
+    "generatedAt": "2026-05-06T06:09:51.347Z",
     "sourceDocumentIds": [
       "blkout-unit-cards-ocr",
       "blkout-unit-cards-screenshots"
@@ -832,6 +832,185 @@
           }
         ],
         "confidence": "verified"
+      },
+      {
+        "id": "un-3rd-battalion",
+        "cardId": "UNR-460",
+        "name": "UN 3rd Battalion",
+        "faction": "the-authority",
+        "battleDrills": [
+          {
+            "id": "unr-460-battle-drill-arsenal",
+            "name": "Arsenal",
+            "text": "This Unit may use one Armory Item without marking a Combat Load during this Activation.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN 3rd Battalion battle drills",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-side2.png"
+              }
+            ]
+          },
+          {
+            "id": "unr-460-battle-drill-peel-back",
+            "name": "Peel Back",
+            "text": "Infantry Models in this Unit may be Moved up to 2” at the end of the Unit's Activation.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN 3rd Battalion battle drills",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-side2.png"
+              }
+            ]
+          },
+          {
+            "id": "unr-460-battle-drill-switchback",
+            "name": "Switchback",
+            "text": "Place a Smoke Token within 4” of a Model in this Unit before Activating. All Models may be Moved up to 2” before Activating.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN 3rd Battalion battle drills",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-side2.png"
+              }
+            ]
+          }
+        ],
+        "rules": [
+          {
+            "id": "unr-460-force-rule",
+            "name": "UN 3rd Battalion",
+            "text": "All UN 3rd Battalion non-AI Infantry Models that are Base-to-Base with another Infantry Model may re-roll all Failed Shots with non Armory weapons.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN 3rd Battalion force rule",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-side2.png"
+              }
+            ]
+          }
+        ],
+        "armory": [
+          {
+            "id": "unr-460-armory-boost-jump",
+            "name": "BOOST JUMP",
+            "type": "gear",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
+            "text": "Model gains Jump (4)",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN 3rd Battalion armory",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-side2.png"
+              }
+            ]
+          },
+          {
+            "id": "unr-460-armory-corner-chasers",
+            "name": "CORNER CHASERS",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
+            "text": "CQB, Indirect",
+            "weapon": {
+              "id": "unr-460-armory-corner-chasers-profile",
+              "name": "Corner Chasers",
+              "range": "16”/1",
+              "damage": null,
+              "traits": [
+                "CQB",
+                "Indirect"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "UN 3rd Battalion armory",
+                  "excerpt": "screenshots/un-3rd-batallion/un-3rd-side2.png"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN 3rd Battalion armory",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-side2.png"
+              }
+            ]
+          },
+          {
+            "id": "unr-460-armory-microwave-gun",
+            "name": "MICROWAVE GUN",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
+            "text": "EMP",
+            "weapon": {
+              "id": "unr-460-armory-microwave-gun-profile",
+              "name": "Microwave Gun",
+              "range": "8”/1",
+              "damage": null,
+              "traits": [
+                "EMP"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "UN 3rd Battalion armory",
+                  "excerpt": "screenshots/un-3rd-batallion/un-3rd-side2.png"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN 3rd Battalion armory",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-side2.png"
+              }
+            ]
+          },
+          {
+            "id": "unr-460-armory-shotgun",
+            "name": "SHOTGUN",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
+            "text": "AP (3), CQB",
+            "weapon": {
+              "id": "unr-460-armory-shotgun-profile",
+              "name": "Shotgun",
+              "range": "8”/1",
+              "damage": null,
+              "traits": [
+                "AP (3)",
+                "CQB"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "UN 3rd Battalion armory",
+                  "excerpt": "screenshots/un-3rd-batallion/un-3rd-side2.png"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN 3rd Battalion armory",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-side2.png"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UN 3rd Battalion screenshot pair",
+            "excerpt": "screenshots/un-3rd-batallion/un-3rd-side1.jpg / screenshots/un-3rd-batallion/un-3rd-side2.png"
+          }
+        ],
+        "confidence": "verified"
       }
     ],
     "units": [
@@ -966,7 +1145,7 @@
         "unitType": "UNKNOWN",
         "role": "UNKNOWN",
         "cost": "UNKNOWN",
-        "grunts": 2,
+        "grunts": 1,
         "stats": {
           "move": "4",
           "skill": "6",
@@ -1090,7 +1269,7 @@
         "unitType": "UNKNOWN",
         "role": "UNKNOWN",
         "cost": "UNKNOWN",
-        "grunts": 2,
+        "grunts": 1,
         "stats": {
           "move": "6",
           "skill": "6",
@@ -1379,7 +1558,7 @@
         "unitType": "UNKNOWN",
         "role": "UNKNOWN",
         "cost": "UNKNOWN",
-        "grunts": 2,
+        "grunts": 1,
         "stats": {
           "move": "6",
           "skill": "7",
@@ -2488,7 +2667,7 @@
         "unitType": "UNKNOWN",
         "role": "UNKNOWN",
         "cost": "UNKNOWN",
-        "grunts": 2,
+        "grunts": 1,
         "stats": {
           "move": "4",
           "skill": "6",
@@ -2644,6 +2823,788 @@
             "documentId": "blkout-unit-cards-screenshots",
             "label": "Manticor Insertion screenshot pair",
             "excerpt": "screenshots/manticor-borz-group/manticor-borz-side1.png / screenshots/manticor-borz-group/manticor-borz-side2.png"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "manticor-cyka-bravo",
+        "cardId": "MBG-126",
+        "forceId": "manticor-borz-group",
+        "name": "Manticor Cyka Bravo",
+        "faction": "chimera",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 2,
+        "stats": {
+          "move": "4",
+          "skill": "6",
+          "armor": "2/4",
+          "damage-track": 1
+        },
+        "specialists": [],
+        "weapons": [
+          {
+            "id": "mbg-126-weapon-smg",
+            "name": "SMG",
+            "range": "12”/1",
+            "damage": null,
+            "traits": [
+              "CQB"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Cyka Bravo OCR block",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 189-204"
+              }
+            ]
+          },
+          {
+            "id": "mbg-126-weapon-boarding-axe",
+            "name": "Boarding Axe",
+            "range": "2”/1",
+            "damage": null,
+            "traits": [
+              "Melee",
+              "AP (3)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Cyka Bravo OCR block",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 197-203"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "id": "mbg-126-traits",
+            "name": "Traits",
+            "text": "Powered",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Cyka Bravo OCR block",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 206-215"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Manticor Cyka Bravo OCR block",
+            "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 187-215"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "ubiytsa-control-team",
+        "cardId": "MBG-125",
+        "forceId": "manticor-borz-group",
+        "name": "Ubiytsa Control Team",
+        "faction": "chimera",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 1,
+        "stats": {
+          "move": "6",
+          "skill": "6",
+          "armor": "1/6",
+          "damage-track": 1
+        },
+        "specialists": [
+          {
+            "id": "mbg-125-specialist-1",
+            "slot": 1,
+            "name": "Controller",
+            "description": "One Unit may be Activated after this Unit without spending a Control Point.",
+            "weapon": "N/A",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Ubiytsa Control Team OCR block",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 210-215"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "mbg-125-weapon-heavy-rifle",
+            "name": "Heavy Rifle",
+            "range": "12”/1",
+            "damage": null,
+            "traits": [
+              "AP (3)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Ubiytsa Control Team OCR block",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 197-203"
+              }
+            ]
+          },
+          {
+            "id": "mbg-125-weapon-boarding-axe",
+            "name": "Boarding Axe",
+            "range": "2”/1",
+            "damage": null,
+            "traits": [
+              "Melee",
+              "AP (3)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Ubiytsa Control Team OCR block",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 202-203"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "id": "mbg-125-activation-control",
+            "name": "Activation Control",
+            "text": "One Unit may be Activated after this Unit without spending a Control Point.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Ubiytsa Control Team OCR block",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 212-214"
+              }
+            ]
+          },
+          {
+            "id": "mbg-125-traits",
+            "name": "Traits",
+            "text": "Low Tech",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Ubiytsa Control Team OCR block",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 210-211"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Ubiytsa Control Team OCR block",
+            "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 187-215"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "manticor-ubiytsa",
+        "cardId": "MBG-124",
+        "forceId": "manticor-borz-group",
+        "name": "Manticor Ubiytsa",
+        "faction": "chimera",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 3,
+        "stats": {
+          "move": "6",
+          "skill": "6",
+          "armor": "1/6",
+          "damage-track": 1
+        },
+        "specialists": [],
+        "weapons": [
+          {
+            "id": "mbg-124-weapon-heavy-rifle",
+            "name": "Heavy Rifle",
+            "range": "12”/1",
+            "damage": null,
+            "traits": [
+              "AP (3)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Ubiytsa OCR block",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 197-203"
+              }
+            ]
+          },
+          {
+            "id": "mbg-124-weapon-boarding-axe",
+            "name": "Boarding Axe",
+            "range": "2”/1",
+            "damage": null,
+            "traits": [
+              "Melee",
+              "AP (3)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Ubiytsa OCR block",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 202-203"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "id": "mbg-124-traits",
+            "name": "Traits",
+            "text": "Low Tech",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Ubiytsa OCR block",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 210-211"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Manticor Ubiytsa OCR block",
+            "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 187-215"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "un-reserve-fireteam",
+        "cardId": "UNR-462",
+        "forceId": "un-3rd-battalion",
+        "name": "UN Reserve Fireteam",
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 2,
+        "stats": {
+          "move": "4",
+          "skill": "6",
+          "armor": "3/6",
+          "damage-track": 1
+        },
+        "specialists": [
+          {
+            "id": "unr-462-specialist-1",
+            "slot": 1,
+            "name": "Data Specialist",
+            "description": "Data Spike",
+            "weapon": "Data Spike",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Reserve Fireteam specialist",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 343-352"
+              }
+            ]
+          },
+          {
+            "id": "unr-462-specialist-2",
+            "slot": 2,
+            "name": "SAW Gunner",
+            "description": "AT Launcher | 8-32”/3 AP (2), Blast (1)",
+            "weapon": "AT Launcher",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Reserve Fireteam specialist",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 348-354"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "unr-462-weapon-rifles",
+            "name": "Rifles",
+            "range": "24”/1",
+            "damage": null,
+            "traits": [
+              "Medium"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Reserve Fireteam front",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 307-313"
+              }
+            ]
+          },
+          {
+            "id": "unr-462-weapon-at-launcher",
+            "name": "AT Launcher",
+            "range": "8-32”/3",
+            "damage": null,
+            "traits": [
+              "AP (2)",
+              "Blast (1)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Reserve Fireteam specialist",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 351-354"
+              }
+            ],
+            "carrier": "SAW Gunner"
+          }
+        ],
+        "abilities": [],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UN Reserve Fireteam OCR block",
+            "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 297-354"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "un-peacemaker",
+        "cardId": "UNR-463",
+        "forceId": "un-3rd-battalion",
+        "name": "UN Peacemaker",
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 1,
+        "stats": {
+          "move": "4",
+          "skill": "6",
+          "armor": "3/6",
+          "damage-track": 1
+        },
+        "specialists": [],
+        "weapons": [
+          {
+            "id": "unr-463-weapon-hmg",
+            "name": "HMG",
+            "range": "6-32”/1",
+            "damage": null,
+            "traits": [],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Peacemaker front",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 307-313"
+              }
+            ]
+          },
+          {
+            "id": "unr-463-weapon-missile-system",
+            "name": "Missile System",
+            "range": "8-32”/2",
+            "damage": null,
+            "traits": [
+              "AP (2)",
+              "Auto (1)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Peacemaker front",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 307-313"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "id": "unr-463-traits",
+            "name": "Traits",
+            "text": "Drone, AI, Damage Track",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Peacemaker OCR block",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 339-344"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UN Peacemaker OCR block",
+            "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 297-344"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "un-pointmen",
+        "cardId": "UNR-461",
+        "forceId": "un-3rd-battalion",
+        "name": "UN Pointmen",
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 2,
+        "stats": {
+          "move": "4",
+          "skill": "7",
+          "armor": "1/5",
+          "damage-track": 1
+        },
+        "specialists": [
+          {
+            "id": "unr-461-specialist-1",
+            "slot": 1,
+            "name": "Comms Bot",
+            "description": "AI, Shield",
+            "weapon": "N/A",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Pointmen OCR block",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 339-354"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "unr-461-weapon-rifles",
+            "name": "Rifles",
+            "range": "24”/1",
+            "damage": null,
+            "traits": [
+              "Medium"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Pointmen front",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 307-313"
+              }
+            ]
+          },
+          {
+            "id": "unr-461-weapon-micro-grenades",
+            "name": "Micro Grenades",
+            "range": "6”/1",
+            "damage": null,
+            "traits": [
+              "Blast (1)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Pointmen front",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 311-313"
+              }
+            ]
+          },
+          {
+            "id": "unr-461-weapon-lmg",
+            "name": "LMG",
+            "range": "32”/1",
+            "damage": null,
+            "traits": [
+              "Cyclic",
+              "Heavy"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Pointmen specialist",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 349-354"
+              }
+            ],
+            "carrier": "Comms Bot"
+          }
+        ],
+        "abilities": [
+          {
+            "id": "unr-461-traits",
+            "name": "Traits",
+            "text": "AI, Shield",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Pointmen OCR block",
+                "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 339-344"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UN Pointmen OCR block",
+            "excerpt": "markdown/Unit-Cards-Printable-2026.md lines 297-354"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "un-raid-team",
+        "cardId": "UNF-882",
+        "forceId": "un-3rd-battalion",
+        "name": "UN Raid Team",
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 3,
+        "stats": {
+          "move": "6",
+          "skill": "5",
+          "armor": "1/5",
+          "damage-track": 1
+        },
+        "specialists": [],
+        "weapons": [
+          {
+            "id": "unf-882-weapon-carbines",
+            "name": "Carbines",
+            "range": "18”/1",
+            "damage": null,
+            "traits": [
+              "CQB"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Raid Team front",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side1.png"
+              }
+            ]
+          },
+          {
+            "id": "unf-882-weapon-micro-grenades",
+            "name": "Micro Grenades",
+            "range": "6”/1",
+            "damage": null,
+            "traits": [
+              "Blast (1)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Raid Team front",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side1.png"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "id": "unf-882-traits",
+            "name": "Traits",
+            "text": "Jump (4)",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN Raid Team",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side2.png"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UN Raid Team screenshot pair",
+            "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side1.png / screenshots/un-3rd-batallion/un-3rd-part2-side2.png"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "un-utg-mothers",
+        "cardId": "UNF-881",
+        "forceId": "un-3rd-battalion",
+        "name": "UN UTG Mothers",
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 2,
+        "stats": {
+          "move": "6",
+          "skill": "4",
+          "armor": "2/5",
+          "damage-track": 1
+        },
+        "specialists": [],
+        "weapons": [
+          {
+            "id": "unf-881-weapon-pdw",
+            "name": "PDW",
+            "range": "8”/1",
+            "damage": null,
+            "traits": [],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN UTG Mothers front",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side1.png"
+              }
+            ]
+          },
+          {
+            "id": "unf-881-weapon-elite-melee",
+            "name": "Elite Melee",
+            "range": "4”/1",
+            "damage": null,
+            "traits": [
+              "AP (2)",
+              "Cyclic",
+              "Melee"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN UTG Mothers front",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side1.png"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "id": "unf-881-traits",
+            "name": "Traits",
+            "text": "Jump (4)",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN UTG Mothers",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side2.png"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UN UTG Mothers screenshot pair",
+            "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side1.png / screenshots/un-3rd-batallion/un-3rd-part2-side2.png"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "un-batcon",
+        "cardId": "UNF-883",
+        "forceId": "un-3rd-battalion",
+        "name": "UN BATCON",
+        "faction": "the-authority",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 1,
+        "stats": {
+          "move": "4",
+          "skill": "5",
+          "armor": "1/5",
+          "damage-track": 1
+        },
+        "specialists": [
+          {
+            "id": "unf-883-specialist-1",
+            "slot": 1,
+            "name": "Comms Bot",
+            "description": "Data Spike",
+            "weapon": "Data Spike",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN BATCON specialist",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side2.png"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "unf-883-weapon-rifles",
+            "name": "Rifles",
+            "range": "24”/1",
+            "damage": null,
+            "traits": [
+              "Medium"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN BATCON front",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side1.png"
+              }
+            ]
+          },
+          {
+            "id": "unf-883-weapon-micro-grenades",
+            "name": "Micro Grenades",
+            "range": "6”/1",
+            "damage": null,
+            "traits": [
+              "Blast (1)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN BATCON front",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side1.png"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "id": "unf-883-activation-control",
+            "name": "Activation Control",
+            "text": "One Unit may be Activated after this Unit without spending a Control Point.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN BATCON",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side2.png"
+              }
+            ]
+          },
+          {
+            "id": "unf-883-traits",
+            "name": "Traits",
+            "text": "Jump (4), AI",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "UN BATCON",
+                "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side2.png"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UN BATCON screenshot pair",
+            "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side1.png / screenshots/un-3rd-batallion/un-3rd-part2-side2.png"
           }
         ],
         "confidence": "verified"

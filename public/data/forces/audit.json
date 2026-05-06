@@ -2,7 +2,7 @@
   "meta": {
     "kind": "force-audit",
     "version": "packet-7",
-    "generatedAt": "2026-05-06T05:39:54.122Z",
+    "generatedAt": "2026-05-06T06:02:06.637Z",
     "sourceDocumentIds": [
       "blkout-unit-cards-ocr",
       "blkout-unit-cards-screenshots"
@@ -594,6 +594,216 @@
             "documentId": "blkout-unit-cards-screenshots",
             "label": "MBG-123 screenshot pair",
             "excerpt": "screenshots/manticor-borz-group/manticor-borz-side1.png / screenshots/manticor-borz-group/manticor-borz-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "mbg-124-raw",
+        "cardId": "MBG-124",
+        "name": "Manticor Ubiytsa",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/manticor-borz-group/manticor-borz-side1.png",
+          "Back screenshot: screenshots/manticor-borz-group/manticor-borz-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "MBG-124 screenshot pair",
+            "excerpt": "screenshots/manticor-borz-group/manticor-borz-side1.png / screenshots/manticor-borz-group/manticor-borz-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "mbg-125-raw",
+        "cardId": "MBG-125",
+        "name": "Ubiytsa Control Team",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/manticor-borz-group/manticor-borz-side1.png",
+          "Back screenshot: screenshots/manticor-borz-group/manticor-borz-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "MBG-125 screenshot pair",
+            "excerpt": "screenshots/manticor-borz-group/manticor-borz-side1.png / screenshots/manticor-borz-group/manticor-borz-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "mbg-126-raw",
+        "cardId": "MBG-126",
+        "name": "Manticor Cyka Bravo",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/manticor-borz-group/manticor-borz-side1.png",
+          "Back screenshot: screenshots/manticor-borz-group/manticor-borz-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "MBG-126 screenshot pair",
+            "excerpt": "screenshots/manticor-borz-group/manticor-borz-side1.png / screenshots/manticor-borz-group/manticor-borz-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "unr-460-raw",
+        "cardId": "UNR-460",
+        "name": "UN 3rd Battalion",
+        "recordType": "force",
+        "rawLines": [
+          "Front screenshot: screenshots/un-3rd-batallion/un-3rd-side1.jpg",
+          "Back screenshot: screenshots/un-3rd-batallion/un-3rd-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UNR-460 screenshot pair",
+            "excerpt": "screenshots/un-3rd-batallion/un-3rd-side1.jpg / screenshots/un-3rd-batallion/un-3rd-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "unr-462-raw",
+        "cardId": "UNR-462",
+        "name": "UN Reserve Fireteam",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/un-3rd-batallion/un-3rd-side1.jpg",
+          "Back screenshot: screenshots/un-3rd-batallion/un-3rd-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UNR-462 screenshot pair",
+            "excerpt": "screenshots/un-3rd-batallion/un-3rd-side1.jpg / screenshots/un-3rd-batallion/un-3rd-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "unr-463-raw",
+        "cardId": "UNR-463",
+        "name": "UN Peacemaker",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/un-3rd-batallion/un-3rd-side1.jpg",
+          "Back screenshot: screenshots/un-3rd-batallion/un-3rd-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UNR-463 screenshot pair",
+            "excerpt": "screenshots/un-3rd-batallion/un-3rd-side1.jpg / screenshots/un-3rd-batallion/un-3rd-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "unr-461-raw",
+        "cardId": "UNR-461",
+        "name": "UN Pointmen",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/un-3rd-batallion/un-3rd-side1.jpg",
+          "Back screenshot: screenshots/un-3rd-batallion/un-3rd-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UNR-461 screenshot pair",
+            "excerpt": "screenshots/un-3rd-batallion/un-3rd-side1.jpg / screenshots/un-3rd-batallion/un-3rd-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "unf-881-raw",
+        "cardId": "UNF-881",
+        "name": "UN UTG Mothers",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/un-3rd-batallion/un-3rd-part2-side1.png",
+          "Back screenshot: screenshots/un-3rd-batallion/un-3rd-part2-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UNF-881 screenshot pair",
+            "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side1.png / screenshots/un-3rd-batallion/un-3rd-part2-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "unf-882-raw",
+        "cardId": "UNF-882",
+        "name": "UN Raid Team",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/un-3rd-batallion/un-3rd-part2-side1.png",
+          "Back screenshot: screenshots/un-3rd-batallion/un-3rd-part2-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UNF-882 screenshot pair",
+            "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side1.png / screenshots/un-3rd-batallion/un-3rd-part2-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "unf-883-raw",
+        "cardId": "UNF-883",
+        "name": "UN BATCON",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/un-3rd-batallion/un-3rd-part2-side1.png",
+          "Back screenshot: screenshots/un-3rd-batallion/un-3rd-part2-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "UNF-883 screenshot pair",
+            "excerpt": "screenshots/un-3rd-batallion/un-3rd-part2-side1.png / screenshots/un-3rd-batallion/un-3rd-part2-side2.png"
           }
         ]
       }

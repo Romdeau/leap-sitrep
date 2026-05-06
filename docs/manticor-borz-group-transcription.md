@@ -137,7 +137,7 @@ notes: []
 | Unit Type | UNKNOWN |
 | Role / Class | UNKNOWN |
 | Cost / Points | UNKNOWN |
-| Grunts | 2 |
+| Grunts | 1 |
 | Source Image / Page | Manual Input|
 | Confidence | verified |
 

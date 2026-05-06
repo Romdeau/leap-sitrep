@@ -2,7 +2,7 @@
   "meta": {
     "kind": "search-index",
     "version": "packet-2",
-    "generatedAt": "2026-05-06T05:54:59.235Z",
+    "generatedAt": "2026-05-06T06:02:06.637Z",
     "sourceDocumentIds": [
       "blkout-lore-primer",
       "blkout-core-rulebook",
@@ -3033,7 +3033,39 @@
         "relatedIds": [
           "manticor-bratva-team",
           "manticor-cyka-team",
-          "manticor-insertion-team"
+          "manticor-insertion-team",
+          "manticor-cyka-bravo",
+          "ubiytsa-control-team",
+          "manticor-ubiytsa"
+        ]
+      },
+      {
+        "id": "un-3rd-battalion",
+        "entityType": "force",
+        "title": "UN 3rd Battalion",
+        "summary": "Arsenal: This Unit may use one Armory Item without marking a Combat Load during this Activation. Peel Back: Infantry Models in this Unit may be Moved up to 2” at the end of the Unit's Activation. Switchback: Place a Smoke Token within 4” of a Model in this Unit before Activating. All Models may be Moved up to 2” before Activating. UN 3rd Battalion: All UN 3rd Battalion non-AI Infantry Models that are Base-to-Base with another Infantry Model may re-roll all Failed Shots with non Armory weapons.",
+        "keywords": [
+          "UNR-460",
+          "the-authority",
+          "boost jump",
+          "corner chasers",
+          "microwave gun",
+          "shotgun"
+        ],
+        "aliases": [
+          "unr-460"
+        ],
+        "route": "/forces/un-3rd-battalion",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "un-reserve-fireteam",
+          "un-peacemaker",
+          "un-pointmen",
+          "un-raid-team",
+          "un-utg-mothers",
+          "un-batcon"
         ]
       },
       {
@@ -3423,6 +3455,204 @@
         ],
         "relatedIds": [
           "manticor-borz-group"
+        ]
+      },
+      {
+        "id": "manticor-cyka-bravo",
+        "entityType": "unit",
+        "title": "Manticor Cyka Bravo",
+        "summary": "Traits: Powered",
+        "keywords": [
+          "MBG-126",
+          "smg",
+          "boarding axe"
+        ],
+        "aliases": [
+          "mbg-126"
+        ],
+        "route": "/units/manticor-cyka-bravo",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "manticor-borz-group"
+        ]
+      },
+      {
+        "id": "ubiytsa-control-team",
+        "entityType": "unit",
+        "title": "Ubiytsa Control Team",
+        "summary": "Activation Control: One Unit may be Activated after this Unit without spending a Control Point. Traits: Low Tech Specialist 1: Controller",
+        "keywords": [
+          "MBG-125",
+          "heavy rifle",
+          "boarding axe"
+        ],
+        "aliases": [
+          "mbg-125"
+        ],
+        "route": "/units/ubiytsa-control-team",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "manticor-borz-group"
+        ]
+      },
+      {
+        "id": "manticor-ubiytsa",
+        "entityType": "unit",
+        "title": "Manticor Ubiytsa",
+        "summary": "Traits: Low Tech",
+        "keywords": [
+          "MBG-124",
+          "heavy rifle",
+          "boarding axe"
+        ],
+        "aliases": [
+          "mbg-124"
+        ],
+        "route": "/units/manticor-ubiytsa",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "manticor-borz-group"
+        ]
+      },
+      {
+        "id": "un-reserve-fireteam",
+        "entityType": "unit",
+        "title": "UN Reserve Fireteam",
+        "summary": "Specialist 1: Data Specialist Specialist 2: SAW Gunner",
+        "keywords": [
+          "UNR-462",
+          "rifles",
+          "at launcher"
+        ],
+        "aliases": [
+          "unr-462"
+        ],
+        "route": "/units/un-reserve-fireteam",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "un-3rd-battalion"
+        ]
+      },
+      {
+        "id": "un-peacemaker",
+        "entityType": "unit",
+        "title": "UN Peacemaker",
+        "summary": "Traits: Drone, AI, Damage Track",
+        "keywords": [
+          "UNR-463",
+          "hmg",
+          "missile system"
+        ],
+        "aliases": [
+          "unr-463"
+        ],
+        "route": "/units/un-peacemaker",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "un-3rd-battalion"
+        ]
+      },
+      {
+        "id": "un-pointmen",
+        "entityType": "unit",
+        "title": "UN Pointmen",
+        "summary": "Traits: AI, Shield Specialist 1: Comms Bot",
+        "keywords": [
+          "UNR-461",
+          "rifles",
+          "micro grenades",
+          "lmg"
+        ],
+        "aliases": [
+          "unr-461"
+        ],
+        "route": "/units/un-pointmen",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "un-3rd-battalion"
+        ]
+      },
+      {
+        "id": "un-raid-team",
+        "entityType": "unit",
+        "title": "UN Raid Team",
+        "summary": "Traits: Jump (4)",
+        "keywords": [
+          "UNF-882",
+          "carbines",
+          "micro grenades"
+        ],
+        "aliases": [
+          "ai",
+          "artificial intelligence",
+          "powered",
+          "data knife",
+          "data spike",
+          "unf-882"
+        ],
+        "route": "/units/un-raid-team",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "un-3rd-battalion"
+        ]
+      },
+      {
+        "id": "un-utg-mothers",
+        "entityType": "unit",
+        "title": "UN UTG Mothers",
+        "summary": "Traits: Jump (4)",
+        "keywords": [
+          "UNF-881",
+          "pdw",
+          "elite melee"
+        ],
+        "aliases": [
+          "utg",
+          "urban tactical groups",
+          "twin moons program",
+          "unf-881"
+        ],
+        "route": "/units/un-utg-mothers",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "un-3rd-battalion"
+        ]
+      },
+      {
+        "id": "un-batcon",
+        "entityType": "unit",
+        "title": "UN BATCON",
+        "summary": "Activation Control: One Unit may be Activated after this Unit without spending a Control Point. Traits: Jump (4), AI Specialist 1: Comms Bot",
+        "keywords": [
+          "UNF-883",
+          "rifles",
+          "micro grenades"
+        ],
+        "aliases": [
+          "unf-883"
+        ],
+        "route": "/units/un-batcon",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "un-3rd-battalion"
         ]
       }
     ]
