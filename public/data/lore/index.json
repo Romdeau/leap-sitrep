@@ -2,7 +2,7 @@
   "meta": {
     "kind": "lore",
     "version": "packet-1",
-    "generatedAt": "2026-04-27T07:37:24.333Z",
+    "generatedAt": "2026-05-06T05:54:59.235Z",
     "sourceDocumentIds": [
       "blkout-lore-primer"
     ],
@@ -167,6 +167,24 @@
             "label": "Faction section: The Headless",
             "lineStart": 747,
             "lineEnd": 773
+          }
+        ]
+      },
+      {
+        "id": "united-martian-protectorate",
+        "name": "United Martian Protectorate (UMP)",
+        "summary": "Task Force Boone represents the United Martian Protectorate presence in the current extracted force catalog.",
+        "ideology": "Task Force Boone represents the United Martian Protectorate presence in the current extracted force catalog.",
+        "regions": [],
+        "relatedForceIds": [
+          "boone-recon-force"
+        ],
+        "citations": [
+          {
+            "documentId": "blkout-lore-primer",
+            "label": "Taskforce Boone timeline reference",
+            "lineStart": 233,
+            "lineEnd": 236
           }
         ]
       }

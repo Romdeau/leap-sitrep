@@ -14,19 +14,43 @@ const projectRoot = process.cwd();
 const generatedAt = "2026-04-27T00:00:00.000Z";
 
 describe("Packet 3 curated force slice", () => {
-  it("builds verified Harlow force and seed units with printed card ids", async () => {
+  it("builds the verified force catalog with printed card ids", async () => {
     const { forceDataset, auditDataset } = await buildForceDataset({
       filePath: path.join(projectRoot, "markdown/Unit-Cards-Printable-2026.md"),
       generatedAt,
     });
 
     expect(forceDataset.meta.confidence).toBe("verified");
-    expect(forceDataset.data.forces).toHaveLength(2);
-    expect(forceDataset.data.forces[0]?.cardId).toBe("HFR-6770");
-    expect(forceDataset.data.forces[0]?.faction).toBe("the-authority");
-    expect(forceDataset.data.units.map((unit) => unit.cardId)).toEqual(["HFR-6771", "HFR-6772", "HFR-6773", "HFR-6774", "HFR-6775", "HFR-6776", "RFA-4391", "RFA-4392", "RFA-4393"]);
+    expect(forceDataset.data.forces.map((force) => force.id)).toEqual([
+      "harlow-1st-reaction-force",
+      "un-raid-force-alpha",
+      "boone-recon-force",
+      "manticor-borz-group",
+    ]);
+    expect(forceDataset.data.forces.find((force) => force.id === "harlow-1st-reaction-force")?.cardId).toBe("HFR-6770");
+    expect(forceDataset.data.forces.find((force) => force.id === "harlow-1st-reaction-force")?.faction).toBe("the-authority");
+    expect(forceDataset.data.units.map((unit) => unit.cardId)).toEqual([
+      "HFR-6771",
+      "HFR-6772",
+      "HFR-6773",
+      "HFR-6774",
+      "HFR-6775",
+      "HFR-6776",
+      "RFA-4391",
+      "RFA-4392",
+      "RFA-4393",
+      "TFB-9862",
+      "TFB-9861",
+      "TFB-9863",
+      "TFB-9864",
+      "TFB-9865",
+      "TFB-9866",
+      "MBG-122",
+      "MBG-123",
+      "MBG-121",
+    ]);
     expect(auditDataset.meta.confidence).toBe("raw");
-    expect(auditDataset.data.rawCards).toHaveLength(11);
+    expect(auditDataset.data.rawCards).toHaveLength(22);
   });
 
   it("captures weapon structure and specialist linkage for the verified units", async () => {
@@ -130,5 +154,7 @@ describe("Packet 3 curated force slice", () => {
     expect(searchIndex.data.records.some((record) => record.entityType === "unit" && record.title === "Harlow Assault Team" && record.keywords.includes("p34"))).toBe(true);
     expect(searchIndex.data.records.some((record) => record.entityType === "force" && record.title === "UN Raid Force Alpha")).toBe(true);
     expect(searchIndex.data.records.some((record) => record.entityType === "unit" && record.title === "Golem Unit" && record.aliases.includes("rfa-4393"))).toBe(true);
+    expect(searchIndex.data.records.some((record) => record.entityType === "force" && record.title === "Boone Recon Force")).toBe(true);
+    expect(searchIndex.data.records.some((record) => record.entityType === "force" && record.title === "Manticor Borz Group")).toBe(true);
   });
 });

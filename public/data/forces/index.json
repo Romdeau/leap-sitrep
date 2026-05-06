@@ -2,7 +2,7 @@
   "meta": {
     "kind": "forces",
     "version": "packet-7",
-    "generatedAt": "2026-05-06T04:29:49.759Z",
+    "generatedAt": "2026-05-06T05:54:59.235Z",
     "sourceDocumentIds": [
       "blkout-unit-cards-ocr",
       "blkout-unit-cards-screenshots"
@@ -456,6 +456,379 @@
             "label": "UN Raid Force Alpha force back",
             "sectionId": "screenshot-14",
             "excerpt": "Verified against Packet 3 screenshot 14"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "boone-recon-force",
+        "cardId": "TFB-9860",
+        "name": "Boone Recon Force",
+        "faction": "united-martian-protectorate",
+        "battleDrills": [
+          {
+            "id": "tfb-9860-battle-drill-overwhelming-fire",
+            "name": "Overwhelming Fire",
+            "text": "Return Fire Reactions that Target Models in this Unit with the Cyclic Special Rule may never roll more than 1D10.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Recon Force battle drills",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          },
+          {
+            "id": "tfb-9860-battle-drill-small-unit-tactics",
+            "name": "Small Unit Tactics",
+            "text": "Up to half of the Models rounding up in the Unit may make the Shoot Action during the Reposition step of their Activation. This will cost them their Action during their Activation. Afterward, the remaining Models in the Unit may Reposition and then make an Action.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Recon Force battle drills",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          },
+          {
+            "id": "tfb-9860-battle-drill-tactical-positioning",
+            "name": "Tactical Positioning",
+            "text": "During this Activation, Overwatch Targeting Models in this Unit suffers -1D10.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Recon Force battle drills",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          }
+        ],
+        "rules": [
+          {
+            "id": "tfb-9860-force-rule",
+            "name": "Boone Recon Force",
+            "text": "Once Per Round one non-AI or Powered Infantry Model may make the Data Attack Action.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Recon Force rule",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          }
+        ],
+        "armory": [
+          {
+            "id": "tfb-9860-armory-disposable-launcher",
+            "name": "DISPOSABLE LAUNCHER",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
+            "text": "Blast (1)",
+            "weapon": {
+              "id": "tfb-9860-armory-disposable-launcher-profile",
+              "name": "Disposable Launcher",
+              "range": "4-18”/3",
+              "damage": null,
+              "traits": [
+                "Blast (1)"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "Boone Recon Force armory",
+                  "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Recon Force armory",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          },
+          {
+            "id": "tfb-9860-armory-pulse-grenade",
+            "name": "PULSE GRENADE",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
+            "text": "EMP, Blast (1)",
+            "weapon": {
+              "id": "tfb-9860-armory-pulse-grenade-profile",
+              "name": "Pulse Grenade",
+              "range": "6”/1",
+              "damage": null,
+              "traits": [
+                "EMP",
+                "Blast (1)"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "Boone Recon Force armory",
+                  "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Recon Force armory",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          },
+          {
+            "id": "tfb-9860-armory-smoke-grenade",
+            "name": "SMOKE GRENADE",
+            "type": "gear",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
+            "text": "Place a Smoke Token within 4” of a Grunt Model in this Unit before Repositioning.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Recon Force armory",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          },
+          {
+            "id": "tfb-9860-armory-tracking-bombs",
+            "name": "TRACKING BOMBS",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
+            "text": "AP (2), Indirect",
+            "weapon": {
+              "id": "tfb-9860-armory-tracking-bombs-profile",
+              "name": "Tracking Bombs",
+              "range": "16”/1",
+              "damage": null,
+              "traits": [
+                "AP (2)",
+                "Indirect"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "Boone Recon Force armory",
+                  "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Recon Force armory",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Boone Recon Force screenshot pair",
+            "excerpt": "screenshots/boone-recon-force/boone-recon-side1.jpg / screenshots/boone-recon-force/boone-recon-side2.png"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "manticor-borz-group",
+        "cardId": "MBG-120",
+        "name": "Manticor Borz Group",
+        "faction": "chimera",
+        "battleDrills": [
+          {
+            "id": "mbg-120-battle-drill-linked",
+            "name": "Linked",
+            "text": "When a Model in this Unit makes the Ready Action, one Model in the Unit that has already made an Action may gain a Ready Token instead of the Model making the Action.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Borz Group transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          },
+          {
+            "id": "mbg-120-battle-drill-targeting-smoke",
+            "name": "Targeting Smoke",
+            "text": "Place a Smoke Token within 6” of a Model in this Unit. This Unit will ignore the effects of the Smoke Token during their Activation. Enemy Units will treat the Smoke Token as normal.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Borz Group transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          },
+          {
+            "id": "mbg-120-battle-drill-thorax-shields",
+            "name": "Thorax Shields",
+            "text": "Models in this Unit gain +1D10 for Armour Checks during this Activation.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Borz Group transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          }
+        ],
+        "rules": [
+          {
+            "id": "mbg-120-force-rule",
+            "name": "Manticor Borz Group Force",
+            "text": "Manticor Borz Group Models ignore the first point of Damage suffered from a Blast Weapon.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Borz Group transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          }
+        ],
+        "armory": [
+          {
+            "id": "mbg-120-armory-air-burst-rifle",
+            "name": "AIR BURST RIFLE",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
+            "text": "Seeking",
+            "weapon": {
+              "id": "mbg-120-armory-air-burst-rifle-profile",
+              "name": "Air Burst Rifle",
+              "range": "24”/1",
+              "damage": "1",
+              "traits": [
+                "Seeking"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "Manticor Borz Group transcription",
+                  "excerpt": "docs/manticor-borz-group-transcription.md"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Borz Group transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          },
+          {
+            "id": "mbg-120-armory-rpg33",
+            "name": "RPG33",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
+            "text": "Blast (1)",
+            "weapon": {
+              "id": "mbg-120-armory-rpg33-profile",
+              "name": "RPG33",
+              "range": "16”",
+              "damage": "4",
+              "traits": [
+                "Blast (1)"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "Manticor Borz Group transcription",
+                  "excerpt": "docs/manticor-borz-group-transcription.md"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Borz Group transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          },
+          {
+            "id": "mbg-120-armory-strip-grenades",
+            "name": "STRIP GRENADES",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
+            "text": "Blast (2)",
+            "weapon": {
+              "id": "mbg-120-armory-strip-grenades-profile",
+              "name": "Strip Grenades",
+              "range": "6”",
+              "damage": "2",
+              "traits": [
+                "Blast (2)"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "Manticor Borz Group transcription",
+                  "excerpt": "docs/manticor-borz-group-transcription.md"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Borz Group transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          },
+          {
+            "id": "mbg-120-armory-thermite-launcher",
+            "name": "THERMITE LAUNCHER",
+            "type": "weapon",
+            "cost": "UNKNOWN",
+            "restrictions": "UNKNOWN",
+            "text": "1 Shot only, Sustained (6)",
+            "weapon": {
+              "id": "mbg-120-armory-thermite-launcher-profile",
+              "name": "Thermite Launcher",
+              "range": "8”",
+              "damage": "1",
+              "traits": [
+                "1 Shot only",
+                "Sustained (6)"
+              ],
+              "citations": [
+                {
+                  "documentId": "blkout-unit-cards-screenshots",
+                  "label": "Manticor Borz Group transcription",
+                  "excerpt": "docs/manticor-borz-group-transcription.md"
+                }
+              ]
+            },
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Borz Group transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Manticor Borz screenshot pair",
+            "excerpt": "screenshots/manticor-borz-group/manticor-borz-side1.png / screenshots/manticor-borz-group/manticor-borz-side2.png"
           }
         ],
         "confidence": "verified"
@@ -1395,6 +1768,882 @@
             "label": "RFA-4393 back",
             "sectionId": "screenshot-20",
             "excerpt": "Verified against Packet 3 screenshot 20"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "boone-vat-element",
+        "cardId": "TFB-9862",
+        "forceId": "boone-recon-force",
+        "name": "Boone VAT Element",
+        "faction": "united-martian-protectorate",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 1,
+        "stats": {
+          "move": "6",
+          "skill": "6",
+          "armor": "1/6",
+          "damage-track": 1
+        },
+        "specialists": [
+          {
+            "id": "tfb-9862-specialist-1",
+            "slot": 1,
+            "name": "Data Specialist",
+            "description": "Jammer | 12”, Data Knife | 6”",
+            "weapon": "Jammer",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone VAT Element specialists",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          },
+          {
+            "id": "tfb-9862-specialist-2",
+            "slot": 2,
+            "name": "SAW Gunner",
+            "description": "Compact LMG | 24”/1 Cyclic, CQB",
+            "weapon": "Compact LMG",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone VAT Element specialists",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "tfb-9862-weapon-carbine",
+            "name": "Carbine",
+            "range": "18”/1",
+            "damage": null,
+            "traits": [
+              "CQB"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone VAT Element front",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side1.jpg"
+              }
+            ]
+          },
+          {
+            "id": "tfb-9862-weapon-jammer",
+            "name": "Jammer",
+            "range": "12”",
+            "damage": null,
+            "traits": [],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone VAT Element specialists",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ],
+            "carrier": "Data Specialist"
+          },
+          {
+            "id": "tfb-9862-weapon-data-knife",
+            "name": "Data Knife",
+            "range": "6”",
+            "damage": null,
+            "traits": [],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone VAT Element specialists",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ],
+            "carrier": "Data Specialist"
+          },
+          {
+            "id": "tfb-9862-weapon-compact-lmg",
+            "name": "Compact LMG",
+            "range": "24”/1",
+            "damage": null,
+            "traits": [
+              "Cyclic",
+              "CQB"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone VAT Element specialists",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ],
+            "carrier": "SAW Gunner"
+          }
+        ],
+        "abilities": [
+          {
+            "id": "tfb-9862-traits",
+            "name": "Traits",
+            "text": "Jump (4)",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone VAT Element",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Boone VAT Element screenshot pair",
+            "excerpt": "screenshots/boone-recon-force/boone-recon-side1.jpg / screenshots/boone-recon-force/boone-recon-side2.png"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "boone-recon-team",
+        "cardId": "TFB-9861",
+        "forceId": "boone-recon-force",
+        "name": "Boone Recon Team",
+        "faction": "united-martian-protectorate",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 2,
+        "stats": {
+          "move": "6",
+          "skill": "4",
+          "armor": "1/6",
+          "damage-track": 1
+        },
+        "specialists": [
+          {
+            "id": "tfb-9861-specialist-1",
+            "slot": 1,
+            "name": "Team Leader",
+            "description": "When this Model would gain a Ready Token from the Ready Action, it may instead give it to a Model in the Unit that has already made an Action.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Recon Team specialists",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          },
+          {
+            "id": "tfb-9861-specialist-2",
+            "slot": 2,
+            "name": "SAW Gunner",
+            "description": "LMG | 32”/1 Cyclic, Heavy",
+            "weapon": "LMG",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Recon Team specialists",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "tfb-9861-weapon-heavy-rifle",
+            "name": "Heavy Rifle",
+            "range": "24”/1",
+            "damage": null,
+            "traits": [],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Recon Team front",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side1.jpg"
+              }
+            ]
+          },
+          {
+            "id": "tfb-9861-weapon-lmg",
+            "name": "LMG",
+            "range": "32”/1",
+            "damage": null,
+            "traits": [
+              "Cyclic",
+              "Heavy"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Recon Team specialists",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ],
+            "carrier": "SAW Gunner"
+          }
+        ],
+        "abilities": [
+          {
+            "id": "tfb-9861-team-leader",
+            "name": "Team Leader",
+            "text": "When this Model would gain a Ready Token from the Ready Action, it may instead give it to a Model in the Unit that has already made an Action.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Recon Team specialists",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Boone Recon Team screenshot pair",
+            "excerpt": "screenshots/boone-recon-force/boone-recon-side1.jpg / screenshots/boone-recon-force/boone-recon-side2.png"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "boone-razorback",
+        "cardId": "TFB-9863",
+        "forceId": "boone-recon-force",
+        "name": "Boone Razorback",
+        "faction": "united-martian-protectorate",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 1,
+        "stats": {
+          "move": "5",
+          "skill": "4",
+          "armor": "3/4",
+          "damage-track": 1
+        },
+        "specialists": [],
+        "weapons": [
+          {
+            "id": "tfb-9863-weapon-gauss-saw",
+            "name": "Gauss SAW",
+            "range": "32”/1",
+            "damage": null,
+            "traits": [
+              "Cyclic",
+              "AP (2)",
+              "Auto (2)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Razorback front",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side1.jpg"
+              }
+            ]
+          },
+          {
+            "id": "tfb-9863-weapon-razorback-atgm",
+            "name": "Razorback ATGM",
+            "range": "6-32”/2",
+            "damage": null,
+            "traits": [
+              "Blast (1)",
+              "Indirect"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Razorback front",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side1.jpg"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "id": "tfb-9863-traits",
+            "name": "Traits",
+            "text": "Drone, AI, Damage Track",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Razorback",
+                "excerpt": "screenshots/boone-recon-force/boone-recon-side2.png"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Boone Razorback screenshot pair",
+            "excerpt": "screenshots/boone-recon-force/boone-recon-side1.jpg / screenshots/boone-recon-force/boone-recon-side2.png"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "boone-control-team",
+        "cardId": "TFB-9864",
+        "forceId": "boone-recon-force",
+        "name": "Boone Control Team",
+        "faction": "united-martian-protectorate",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 1,
+        "stats": {
+          "move": "5",
+          "skill": "6",
+          "armor": "1/6",
+          "damage-track": 1
+        },
+        "specialists": [
+          {
+            "id": "tfb-9864-specialist-1",
+            "slot": 1,
+            "name": "Data Specialist",
+            "description": "Data Specialist",
+            "weapon": "N/A",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Control Team summary",
+                "excerpt": "screenshots/extraction-progress.md"
+              }
+            ]
+          },
+          {
+            "id": "tfb-9864-specialist-2",
+            "slot": 2,
+            "name": "Grenadier",
+            "description": "Grenadier",
+            "weapon": "N/A",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Control Team summary",
+                "excerpt": "screenshots/extraction-progress.md"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "tfb-9864-weapon-carbine",
+            "name": "Carbine",
+            "range": "18”/1",
+            "damage": null,
+            "traits": [],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Control Team summary",
+                "excerpt": "screenshots/extraction-progress.md"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "id": "tfb-9864-activation-control",
+            "name": "Activation Control",
+            "text": "One Unit may be Activated after this Unit without spending a Control Point.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Control Team summary",
+                "excerpt": "screenshots/extraction-progress.md"
+              }
+            ]
+          },
+          {
+            "id": "tfb-9864-traits",
+            "name": "Traits",
+            "text": "Jump (4)",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Control Team summary",
+                "excerpt": "screenshots/extraction-progress.md"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Boone Control Team screenshot",
+            "excerpt": "screenshots/boone-recon-force/boone-control-team.png"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "boone-marksman-team",
+        "cardId": "TFB-9865",
+        "forceId": "boone-recon-force",
+        "name": "Boone Marksman Team",
+        "faction": "united-martian-protectorate",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 1,
+        "stats": {
+          "move": "5",
+          "skill": "6",
+          "armor": "1/6",
+          "damage-track": 1
+        },
+        "specialists": [
+          {
+            "id": "tfb-9865-specialist-1",
+            "slot": 1,
+            "name": "Marksman",
+            "description": "Marksman (AMR)",
+            "weapon": "AMR",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Marksman Team summary",
+                "excerpt": "screenshots/extraction-progress.md"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "tfb-9865-weapon-carbine",
+            "name": "Carbine",
+            "range": "18”/1",
+            "damage": null,
+            "traits": [],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Marksman Team summary",
+                "excerpt": "screenshots/extraction-progress.md"
+              }
+            ]
+          },
+          {
+            "id": "tfb-9865-weapon-amr",
+            "name": "AMR",
+            "range": "UNKNOWN",
+            "damage": null,
+            "traits": [],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Marksman Team summary",
+                "excerpt": "screenshots/extraction-progress.md"
+              }
+            ],
+            "carrier": "Marksman"
+          }
+        ],
+        "abilities": [
+          {
+            "id": "tfb-9865-traits",
+            "name": "Traits",
+            "text": "Jump (4)",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone Marksman Team summary",
+                "excerpt": "screenshots/extraction-progress.md"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Boone Marksman Team screenshot",
+            "excerpt": "screenshots/boone-recon-force/boone-marksman-team.png"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "boone-spt",
+        "cardId": "TFB-9866",
+        "forceId": "boone-recon-force",
+        "name": "Boone SPT",
+        "faction": "united-martian-protectorate",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 1,
+        "stats": {
+          "move": "5",
+          "skill": "4",
+          "armor": "3/4",
+          "damage-track": 1
+        },
+        "specialists": [
+          {
+            "id": "tfb-9866-specialist-1",
+            "slot": 1,
+            "name": "Fire Support",
+            "description": "Fire Support (Scorcher)",
+            "weapon": "Scorcher",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone SPT summary",
+                "excerpt": "screenshots/extraction-progress.md"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "tfb-9866-weapon-fpr-auto",
+            "name": "FPR Auto",
+            "range": "UNKNOWN",
+            "damage": null,
+            "traits": [],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone SPT summary",
+                "excerpt": "screenshots/extraction-progress.md"
+              }
+            ]
+          },
+          {
+            "id": "tfb-9866-weapon-scorcher",
+            "name": "Scorcher",
+            "range": "UNKNOWN",
+            "damage": null,
+            "traits": [],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone SPT summary",
+                "excerpt": "screenshots/extraction-progress.md"
+              }
+            ],
+            "carrier": "Fire Support"
+          }
+        ],
+        "abilities": [
+          {
+            "id": "tfb-9866-traits",
+            "name": "Traits",
+            "text": "Jump (4)",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Boone SPT summary",
+                "excerpt": "screenshots/extraction-progress.md"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Boone SPT screenshot",
+            "excerpt": "screenshots/boone-recon-force/boone-spt.png"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "manticor-bratva-team",
+        "cardId": "MBG-122",
+        "forceId": "manticor-borz-group",
+        "name": "Manticor Bratva Team",
+        "faction": "chimera",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 2,
+        "stats": {
+          "move": "4",
+          "skill": "6",
+          "armor": "1/4",
+          "damage-track": 1
+        },
+        "specialists": [
+          {
+            "id": "mbg-122-specialist-1",
+            "slot": 1,
+            "name": "Data Spike",
+            "description": "N/A",
+            "weapon": "N/A",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Bratva transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          },
+          {
+            "id": "mbg-122-specialist-2",
+            "slot": 2,
+            "name": "HMG",
+            "description": "Shield, HMG | 4-24”/2 Sustained (2), Deployed",
+            "weapon": "HMG",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Bratva transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "mbg-122-weapon-akmz-2",
+            "name": "AKMZ-2",
+            "range": "24”",
+            "damage": "1",
+            "traits": [
+              "Medium"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Bratva transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          },
+          {
+            "id": "mbg-122-weapon-hmg",
+            "name": "HMG",
+            "range": "4-24”/2",
+            "damage": null,
+            "traits": [
+              "Sustained (2)",
+              "Deployed"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Bratva transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ],
+            "carrier": "HMG"
+          }
+        ],
+        "abilities": [
+          {
+            "id": "mbg-122-shield",
+            "name": "Shield",
+            "text": "Shield",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Bratva transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          },
+          {
+            "id": "mbg-122-initiative",
+            "name": "Initiative",
+            "text": "If at least two Models from this Unit are on the Table, you may roll an additional D10 for Initiative. Use the highest result rolled.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Bratva transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Manticor Bratva screenshot pair",
+            "excerpt": "screenshots/manticor-borz-group/manticor-borz-side1.png / screenshots/manticor-borz-group/manticor-borz-side2.png"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "manticor-cyka-team",
+        "cardId": "MBG-123",
+        "forceId": "manticor-borz-group",
+        "name": "Manticor Cyka Team",
+        "faction": "chimera",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 2,
+        "stats": {
+          "move": "4",
+          "skill": "6",
+          "armor": "2/4",
+          "damage-track": 2
+        },
+        "specialists": [],
+        "weapons": [
+          {
+            "id": "mbg-123-weapon-syy-1",
+            "name": "SYY-1",
+            "range": "24”",
+            "damage": "1",
+            "traits": [
+              "Cyclic",
+              "Heavy"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Cyka transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          },
+          {
+            "id": "mbg-123-weapon-grenade-launcher",
+            "name": "Grenade Launcher",
+            "range": "24”/2",
+            "damage": "N/A",
+            "traits": [
+              "Blast (1)"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Cyka transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          }
+        ],
+        "abilities": [],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Manticor Cyka screenshot pair",
+            "excerpt": "screenshots/manticor-borz-group/manticor-borz-side1.png / screenshots/manticor-borz-group/manticor-borz-side2.png"
+          }
+        ],
+        "confidence": "verified"
+      },
+      {
+        "id": "manticor-insertion-team",
+        "cardId": "MBG-121",
+        "forceId": "manticor-borz-group",
+        "name": "Manticor Insertion Team",
+        "faction": "chimera",
+        "unitType": "UNKNOWN",
+        "role": "UNKNOWN",
+        "cost": "UNKNOWN",
+        "grunts": 2,
+        "stats": {
+          "move": "4",
+          "skill": "6",
+          "armor": "1/4",
+          "damage-track": 1
+        },
+        "specialists": [
+          {
+            "id": "mbg-121-specialist-1",
+            "slot": 1,
+            "name": "Machine Gunner",
+            "description": "SYY-1 | 24”/1 Cyclic, Heavy",
+            "weapon": "SYY-1",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Insertion transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          },
+          {
+            "id": "mbg-121-specialist-2",
+            "slot": 2,
+            "name": "Sidewinder",
+            "description": "Sidewinder (2 uses) | Check one of these boxes to allow this Model to use its Action to make a Skill Check. If it passes, you may give a Unit with a Model within 12” of this Model a Pinned Marker.",
+            "weapon": "N/A",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Insertion transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          }
+        ],
+        "weapons": [
+          {
+            "id": "mbg-121-weapon-akmz-2",
+            "name": "AKMZ-2",
+            "range": "24”",
+            "damage": "1",
+            "traits": [
+              "Medium"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Insertion transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          },
+          {
+            "id": "mbg-121-weapon-syy-1",
+            "name": "SYY-1",
+            "range": "24”/1",
+            "damage": null,
+            "traits": [
+              "Cyclic",
+              "Heavy"
+            ],
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Insertion transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ],
+            "carrier": "Machine Gunner"
+          }
+        ],
+        "abilities": [
+          {
+            "id": "mbg-121-sidewinder",
+            "name": "Sidewinder",
+            "text": "Sidewinder (2 uses) | Check one of these boxes to allow this Model to use its Action to make a Skill Check. If it passes, you may give a Unit with a Model within 12” of this Model a Pinned Marker.",
+            "citations": [
+              {
+                "documentId": "blkout-unit-cards-screenshots",
+                "label": "Manticor Insertion transcription",
+                "excerpt": "docs/manticor-borz-group-transcription.md"
+              }
+            ]
+          }
+        ],
+        "notes": [],
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "Manticor Insertion screenshot pair",
+            "excerpt": "screenshots/manticor-borz-group/manticor-borz-side1.png / screenshots/manticor-borz-group/manticor-borz-side2.png"
           }
         ],
         "confidence": "verified"

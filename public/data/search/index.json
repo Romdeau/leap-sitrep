@@ -2,7 +2,7 @@
   "meta": {
     "kind": "search-index",
     "version": "packet-2",
-    "generatedAt": "2026-05-06T04:29:49.759Z",
+    "generatedAt": "2026-05-06T05:54:59.235Z",
     "sourceDocumentIds": [
       "blkout-lore-primer",
       "blkout-core-rulebook",
@@ -2119,6 +2119,23 @@
         "relatedIds": []
       },
       {
+        "id": "united-martian-protectorate",
+        "entityType": "lore-faction",
+        "title": "United Martian Protectorate (UMP)",
+        "summary": "Task Force Boone represents the United Martian Protectorate presence in the current extracted force catalog.",
+        "keywords": [
+          "boone-recon-force"
+        ],
+        "aliases": [],
+        "route": "/lore/factions/united-martian-protectorate",
+        "sourceDocumentIds": [
+          "blkout-lore-primer"
+        ],
+        "relatedIds": [
+          "boone-recon-force"
+        ]
+      },
+      {
         "id": "timeline-2022-1",
         "entityType": "lore-event",
         "title": "2022: The VLA detects mysterious radio activity from deep space",
@@ -2965,6 +2982,61 @@
         ]
       },
       {
+        "id": "boone-recon-force",
+        "entityType": "force",
+        "title": "Boone Recon Force",
+        "summary": "Overwhelming Fire: Return Fire Reactions that Target Models in this Unit with the Cyclic Special Rule may never roll more than 1D10. Small Unit Tactics: Up to half of the Models rounding up in the Unit may make the Shoot Action during the Reposition step of their Activation. This will cost them their Action during their Activation. Afterward, the remaining Models in the Unit may Reposition and then make an Action. Tactical Positioning: During this Activation, Overwatch Targeting Models in this Unit suffers -1D10. Boone Recon Force: Once Per Round one non-AI or Powered Infantry Model may make the Data Attack Action.",
+        "keywords": [
+          "TFB-9860",
+          "united-martian-protectorate",
+          "disposable launcher",
+          "pulse grenade",
+          "smoke grenade",
+          "tracking bombs"
+        ],
+        "aliases": [
+          "tfb-9860"
+        ],
+        "route": "/forces/boone-recon-force",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "boone-vat-element",
+          "boone-recon-team",
+          "boone-razorback",
+          "boone-control-team",
+          "boone-marksman-team",
+          "boone-spt"
+        ]
+      },
+      {
+        "id": "manticor-borz-group",
+        "entityType": "force",
+        "title": "Manticor Borz Group",
+        "summary": "Linked: When a Model in this Unit makes the Ready Action, one Model in the Unit that has already made an Action may gain a Ready Token instead of the Model making the Action. Targeting Smoke: Place a Smoke Token within 6” of a Model in this Unit. This Unit will ignore the effects of the Smoke Token during their Activation. Enemy Units will treat the Smoke Token as normal. Thorax Shields: Models in this Unit gain +1D10 for Armour Checks during this Activation. Manticor Borz Group Force: Manticor Borz Group Models ignore the first point of Damage suffered from a Blast Weapon.",
+        "keywords": [
+          "MBG-120",
+          "chimera",
+          "air burst rifle",
+          "rpg33",
+          "strip grenades",
+          "thermite launcher"
+        ],
+        "aliases": [
+          "mbg-120"
+        ],
+        "route": "/forces/manticor-borz-group",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "manticor-bratva-team",
+          "manticor-cyka-team",
+          "manticor-insertion-team"
+        ]
+      },
+      {
         "id": "harlow-control-team",
         "entityType": "unit",
         "title": "Harlow Control Team",
@@ -3161,6 +3233,196 @@
         ],
         "relatedIds": [
           "un-raid-force-alpha"
+        ]
+      },
+      {
+        "id": "boone-vat-element",
+        "entityType": "unit",
+        "title": "Boone VAT Element",
+        "summary": "Traits: Jump (4) Specialist 1: Data Specialist Specialist 2: SAW Gunner",
+        "keywords": [
+          "TFB-9862",
+          "carbine",
+          "jammer",
+          "data knife",
+          "compact lmg"
+        ],
+        "aliases": [
+          "tfb-9862"
+        ],
+        "route": "/units/boone-vat-element",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "boone-recon-force"
+        ]
+      },
+      {
+        "id": "boone-recon-team",
+        "entityType": "unit",
+        "title": "Boone Recon Team",
+        "summary": "Team Leader: When this Model would gain a Ready Token from the Ready Action, it may instead give it to a Model in the Unit that has already made an Action. Specialist 1: Team Leader Specialist 2: SAW Gunner",
+        "keywords": [
+          "TFB-9861",
+          "heavy rifle",
+          "lmg"
+        ],
+        "aliases": [
+          "tfb-9861"
+        ],
+        "route": "/units/boone-recon-team",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "boone-recon-force"
+        ]
+      },
+      {
+        "id": "boone-razorback",
+        "entityType": "unit",
+        "title": "Boone Razorback",
+        "summary": "Traits: Drone, AI, Damage Track",
+        "keywords": [
+          "TFB-9863",
+          "gauss saw",
+          "razorback atgm"
+        ],
+        "aliases": [
+          "tfb-9863"
+        ],
+        "route": "/units/boone-razorback",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "boone-recon-force"
+        ]
+      },
+      {
+        "id": "boone-control-team",
+        "entityType": "unit",
+        "title": "Boone Control Team",
+        "summary": "Activation Control: One Unit may be Activated after this Unit without spending a Control Point. Traits: Jump (4) Specialist 1: Data Specialist Specialist 2: Grenadier",
+        "keywords": [
+          "TFB-9864",
+          "carbine"
+        ],
+        "aliases": [
+          "tfb-9864"
+        ],
+        "route": "/units/boone-control-team",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "boone-recon-force"
+        ]
+      },
+      {
+        "id": "boone-marksman-team",
+        "entityType": "unit",
+        "title": "Boone Marksman Team",
+        "summary": "Traits: Jump (4) Specialist 1: Marksman",
+        "keywords": [
+          "TFB-9865",
+          "carbine",
+          "amr"
+        ],
+        "aliases": [
+          "tfb-9865"
+        ],
+        "route": "/units/boone-marksman-team",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "boone-recon-force"
+        ]
+      },
+      {
+        "id": "boone-spt",
+        "entityType": "unit",
+        "title": "Boone SPT",
+        "summary": "Traits: Jump (4) Specialist 1: Fire Support",
+        "keywords": [
+          "TFB-9866",
+          "fpr auto",
+          "scorcher"
+        ],
+        "aliases": [
+          "tfb-9866"
+        ],
+        "route": "/units/boone-spt",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "boone-recon-force"
+        ]
+      },
+      {
+        "id": "manticor-bratva-team",
+        "entityType": "unit",
+        "title": "Manticor Bratva Team",
+        "summary": "Shield: Shield Initiative: If at least two Models from this Unit are on the Table, you may roll an additional D10 for Initiative. Use the highest result rolled. Specialist 1: Data Spike Specialist 2: HMG",
+        "keywords": [
+          "MBG-122",
+          "akmz-2",
+          "hmg"
+        ],
+        "aliases": [
+          "mbg-122"
+        ],
+        "route": "/units/manticor-bratva-team",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "manticor-borz-group"
+        ]
+      },
+      {
+        "id": "manticor-cyka-team",
+        "entityType": "unit",
+        "title": "Manticor Cyka Team",
+        "summary": "",
+        "keywords": [
+          "MBG-123",
+          "syy-1",
+          "grenade launcher"
+        ],
+        "aliases": [
+          "mbg-123"
+        ],
+        "route": "/units/manticor-cyka-team",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "manticor-borz-group"
+        ]
+      },
+      {
+        "id": "manticor-insertion-team",
+        "entityType": "unit",
+        "title": "Manticor Insertion Team",
+        "summary": "Sidewinder: Sidewinder (2 uses) | Check one of these boxes to allow this Model to use its Action to make a Skill Check. If it passes, you may give a Unit with a Model within 12” of this Model a Pinned Marker. Specialist 1: Machine Gunner Specialist 2: Sidewinder",
+        "keywords": [
+          "MBG-121",
+          "akmz-2",
+          "syy-1"
+        ],
+        "aliases": [
+          "mbg-121"
+        ],
+        "route": "/units/manticor-insertion-team",
+        "sourceDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "relatedIds": [
+          "manticor-borz-group"
         ]
       }
     ]

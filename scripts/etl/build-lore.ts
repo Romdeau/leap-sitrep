@@ -144,7 +144,7 @@ function extractFactions(lines: Awaited<ReturnType<typeof readSourceLines>>): Lo
 
   const uniqueEntries = dedupeNamedEntries(entries);
 
-  return uniqueEntries.map((entry) => ({
+  const factions = uniqueEntries.map((entry) => ({
     id: slugify(entry.title),
     name: toTitleCase(entry.title),
     summary: entry.body,
@@ -159,6 +159,24 @@ function extractFactions(lines: Awaited<ReturnType<typeof readSourceLines>>): Lo
       }),
     ],
   }));
+
+  factions.push({
+    id: "united-martian-protectorate",
+    name: "United Martian Protectorate (UMP)",
+    summary: "Task Force Boone represents the United Martian Protectorate presence in the current extracted force catalog.",
+    ideology: "Task Force Boone represents the United Martian Protectorate presence in the current extracted force catalog.",
+    regions: [],
+    relatedForceIds: ["boone-recon-force"],
+    citations: [
+      createCitation({
+        label: "Taskforce Boone timeline reference",
+        lineStart: 233,
+        lineEnd: 236,
+      }),
+    ],
+  });
+
+  return factions;
 }
 
 function extractLocations(lines: Awaited<ReturnType<typeof readSourceLines>>): LoreLocation[] {

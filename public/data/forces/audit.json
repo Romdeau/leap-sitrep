@@ -2,7 +2,7 @@
   "meta": {
     "kind": "force-audit",
     "version": "packet-7",
-    "generatedAt": "2026-04-29T03:51:09.528Z",
+    "generatedAt": "2026-05-06T05:39:54.122Z",
     "sourceDocumentIds": [
       "blkout-unit-cards-ocr",
       "blkout-unit-cards-screenshots"
@@ -363,6 +363,237 @@
             "documentId": "blkout-unit-cards-screenshots",
             "label": "RFA-4393 screenshot pair",
             "excerpt": "screenshots/un-raidforce-alpha/un-raidforce-alpha-side1.jpg / screenshots/un-raidforce-alpha/un-raidforce-alpha-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "tfb-9860-raw",
+        "cardId": "TFB-9860",
+        "name": "Boone Recon Force",
+        "recordType": "force",
+        "rawLines": [
+          "Front screenshot: screenshots/boone-recon-force/boone-recon-side1.jpg",
+          "Back screenshot: screenshots/boone-recon-force/boone-recon-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "TFB-9860 screenshot pair",
+            "excerpt": "screenshots/boone-recon-force/boone-recon-side1.jpg / screenshots/boone-recon-force/boone-recon-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "tfb-9861-raw",
+        "cardId": "TFB-9861",
+        "name": "Boone Recon Team",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/boone-recon-force/boone-recon-side1.jpg",
+          "Back screenshot: screenshots/boone-recon-force/boone-recon-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "TFB-9861 screenshot pair",
+            "excerpt": "screenshots/boone-recon-force/boone-recon-side1.jpg / screenshots/boone-recon-force/boone-recon-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "tfb-9862-raw",
+        "cardId": "TFB-9862",
+        "name": "Boone VAT Element",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/boone-recon-force/boone-recon-side1.jpg",
+          "Back screenshot: screenshots/boone-recon-force/boone-recon-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "TFB-9862 screenshot pair",
+            "excerpt": "screenshots/boone-recon-force/boone-recon-side1.jpg / screenshots/boone-recon-force/boone-recon-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "tfb-9863-raw",
+        "cardId": "TFB-9863",
+        "name": "Boone Razorback",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/boone-recon-force/boone-recon-side1.jpg",
+          "Back screenshot: screenshots/boone-recon-force/boone-recon-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "TFB-9863 screenshot pair",
+            "excerpt": "screenshots/boone-recon-force/boone-recon-side1.jpg / screenshots/boone-recon-force/boone-recon-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "tfb-9864-raw",
+        "cardId": "TFB-9864",
+        "name": "Boone Control Team",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/boone-recon-force/boone-control-team.png",
+          "Back screenshot: screenshots/boone-recon-force/boone-control-team.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "TFB-9864 screenshot pair",
+            "excerpt": "screenshots/boone-recon-force/boone-control-team.png / screenshots/boone-recon-force/boone-control-team.png"
+          }
+        ]
+      },
+      {
+        "id": "tfb-9865-raw",
+        "cardId": "TFB-9865",
+        "name": "Boone Marksman Team",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/boone-recon-force/boone-marksman-team.png",
+          "Back screenshot: screenshots/boone-recon-force/boone-marksman-team.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "TFB-9865 screenshot pair",
+            "excerpt": "screenshots/boone-recon-force/boone-marksman-team.png / screenshots/boone-recon-force/boone-marksman-team.png"
+          }
+        ]
+      },
+      {
+        "id": "tfb-9866-raw",
+        "cardId": "TFB-9866",
+        "name": "Boone SPT",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/boone-recon-force/boone-spt.png",
+          "Back screenshot: screenshots/boone-recon-force/boone-spt.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "TFB-9866 screenshot pair",
+            "excerpt": "screenshots/boone-recon-force/boone-spt.png / screenshots/boone-recon-force/boone-spt.png"
+          }
+        ]
+      },
+      {
+        "id": "mbg-120-raw",
+        "cardId": "MBG-120",
+        "name": "Manticor Borz Group",
+        "recordType": "force",
+        "rawLines": [
+          "Front screenshot: screenshots/manticor-borz-group/manticor-borz-side1.png",
+          "Back screenshot: screenshots/manticor-borz-group/manticor-borz-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "MBG-120 screenshot pair",
+            "excerpt": "screenshots/manticor-borz-group/manticor-borz-side1.png / screenshots/manticor-borz-group/manticor-borz-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "mbg-121-raw",
+        "cardId": "MBG-121",
+        "name": "Manticor Insertion Team",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/manticor-borz-group/manticor-borz-side1.png",
+          "Back screenshot: screenshots/manticor-borz-group/manticor-borz-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "MBG-121 screenshot pair",
+            "excerpt": "screenshots/manticor-borz-group/manticor-borz-side1.png / screenshots/manticor-borz-group/manticor-borz-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "mbg-122-raw",
+        "cardId": "MBG-122",
+        "name": "Manticor Bratva Team",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/manticor-borz-group/manticor-borz-side1.png",
+          "Back screenshot: screenshots/manticor-borz-group/manticor-borz-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "MBG-122 screenshot pair",
+            "excerpt": "screenshots/manticor-borz-group/manticor-borz-side1.png / screenshots/manticor-borz-group/manticor-borz-side2.png"
+          }
+        ]
+      },
+      {
+        "id": "mbg-123-raw",
+        "cardId": "MBG-123",
+        "name": "Manticor Cyka Team",
+        "recordType": "unit",
+        "rawLines": [
+          "Front screenshot: screenshots/manticor-borz-group/manticor-borz-side1.png",
+          "Back screenshot: screenshots/manticor-borz-group/manticor-borz-side2.png"
+        ],
+        "verificationDocumentIds": [
+          "blkout-unit-cards-screenshots"
+        ],
+        "notes": "Curated directly from screenshots; no OCR markdown source is available for this card yet.",
+        "citations": [
+          {
+            "documentId": "blkout-unit-cards-screenshots",
+            "label": "MBG-123 screenshot pair",
+            "excerpt": "screenshots/manticor-borz-group/manticor-borz-side1.png / screenshots/manticor-borz-group/manticor-borz-side2.png"
           }
         ]
       }

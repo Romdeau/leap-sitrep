@@ -103,6 +103,7 @@ export function MatchesRoute() {
               <label className="block space-y-2">
                 <EyebrowLabel>Saved roster</EyebrowLabel>
                 <select
+                  aria-label="Saved roster"
                   className={FIELD_INPUT_CLASS}
                   onChange={(event) => setSelectedRosterId(event.target.value)}
                   value={selectedRosterId}
