@@ -142,9 +142,9 @@ Force: Harlow 1st Reaction Force (HFR-6770)
 Legality: Legal
 
 Units:
-1. harlow-control-team (harlow-control-team) - Move -, Shoot -, Armor -
-2. harlow-assault-team (harlow-assault-team) - Move -, Shoot -, Armor -
-3. harlow-springbok-ai (harlow-springbok-ai) - Move -, Shoot -, Armor -
+1. harlow-control-team (harlow-control-team) - Skill -, Move -, Armor -
+2. harlow-assault-team (harlow-assault-team) - Skill -, Move -, Armor -
+3. harlow-springbok-ai (harlow-springbok-ai) - Skill -, Move -, Armor -
 
 Notes:
 Table note

@@ -1559,8 +1559,8 @@ export function ForceDetailRoute() {
                   <div className="font-medium">{unit.name}</div>
                   <div className="mt-2 text-sm text-[color:var(--muted-foreground)]">{unit.cardId}</div>
                   <div className="mt-3 flex flex-wrap gap-2">
+                    <Badge variant="outline">Skill {unit.stats.shoot ?? "-"}</Badge>
                     <Badge variant="outline">Move {unit.stats.move ?? "-"}</Badge>
-                    <Badge variant="outline">Shoot {unit.stats.shoot ?? "-"}</Badge>
                     <Badge variant="outline">Armor {unit.stats.armor ?? "-"}</Badge>
                   </div>
                 </Link>
@@ -1675,11 +1675,11 @@ export function UnitDetailRoute() {
         <div className="space-y-6">
           <KeyValueGrid
             items={[
-              { label: "Models", value: String(unit.modelCount) },
+              { label: "Models", value: String(unit.modelCount + unit.specialists.length) },
+              { label: "Grunts", value: String(unit.modelCount) },
+              { label: "Skill", value: unit.stats.shoot },
               { label: "Move", value: unit.stats.move },
-              { label: "Shoot", value: unit.stats.shoot },
               { label: "Armor", value: unit.stats.armor },
-              { label: "Hack", value: unit.stats.hack },
             ]}
           />
 
@@ -1974,4 +1974,3 @@ export function GlossaryRoute() {
     </div>
   );
 }
-

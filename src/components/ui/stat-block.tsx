@@ -14,7 +14,7 @@ interface StatDef {
 }
 
 const STAT_DEFS: Record<StatKey, StatDef> = {
-  shoot: { label: "Shoot", Icon: Crosshair },
+  shoot: { label: "Skill", Icon: Crosshair },
   move: { label: "Move", Icon: ChevronsUp },
   armor: { label: "Armor", Icon: Shield },
   hack: { label: "Hack", Icon: Cpu },
@@ -24,12 +24,12 @@ const STAT_DEFS: Record<StatKey, StatDef> = {
 interface StatBlockProps {
   className?: string;
   stats: Partial<Record<StatKey, string | number | null | undefined>>;
-  /** Restricts and orders which stats render; defaults to shoot/move/armor. */
+  /** Restricts and orders which stats render; defaults to skill/move/armor. */
   keys?: readonly StatKey[];
 }
 
 /**
- * StatBlock — small icon + value row matching the Move/Shoot/Armor cluster
+ * StatBlock — small icon + value row matching the Skill/Move/Armor cluster
  * printed on every unit card. Replaces ad-hoc `KeyValueGrid` for unit stats.
  */
 export function StatBlock({ className, keys = ["shoot", "move", "armor"], stats }: StatBlockProps) {

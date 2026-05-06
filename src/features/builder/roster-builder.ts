@@ -104,7 +104,7 @@ export function formatCoreRosterExport({ force, roster, units, validation }: Ros
         return `${index + 1}. MISSING UNIT (${unitId})`;
       }
 
-      return `${index + 1}. ${unit.name} (${unit.cardId}) - Move ${unit.stats.move ?? "-"}, Shoot ${unit.stats.shoot ?? "-"}, Armor ${unit.stats.armor ?? "-"}`;
+      return `${index + 1}. ${unit.name} (${unit.cardId}) - Skill ${unit.stats.shoot ?? "-"}, Move ${unit.stats.move ?? "-"}, Armor ${unit.stats.armor ?? "-"}`;
     }),
     "",
   ];
